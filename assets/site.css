@@ -466,7 +466,7 @@ input[type=range] { width: 100%; accent-color: #fff; }
 .hero::after, .wall::after, .final::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--grain); opacity: .9; }
 .hero::before { height: 520px; bottom: 560px; opacity: 1; }
 @media (max-width: 600px) { .hero::before { bottom: 440px; height: 380px; } }
-.wall::before { height: 80%; opacity: .7; }
+.wall::before { height: 70%; bottom: 22%; opacity: .7; }
 .page-head::before { height: 120%; bottom: -20%; opacity: .55; width: min(1200px, 120vw); }
 .story::before { top: 0; bottom: auto; height: 340px; transform: translateX(-50%) scaleY(-1); opacity: .45; }
 
