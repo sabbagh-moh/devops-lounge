@@ -26,12 +26,13 @@ Post in the ask-a-question forum with what you tried and the error you see. When
 ## Free developer tools (run in the browser, nothing uploaded)
 ### Prompt Builder
 URL: https://lounge.xmoh.dev/tools/prompt-builder/
-Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
-- It understands the request: It tells a project from code, a bug, a review, a question or an image, and recognizes 14 kinds of projects, 27 well-known products as references, 13 design styles, 15 languages and 41 frameworks and services.
-- It adds what experts add: For a project: the pages and features that kind of product needs, a stack, a quality bar and the questions to answer first. For a reference like Gymshark: what to borrow, and a reminder not to copy the brand.
-- Images get a real look: Your mood words become a film or cinematographer reference, light, lens, color and film stock, written in the syntax of Midjourney, Stable Diffusion, Flux or ChatGPT.
-- Q: Does it use AI? A: No. It runs a set of rules in your browser, so it is instant, free and private. Use the prompt it builds with any AI assistant you like.
-- Q: Which image models does it support? A: Midjourney (with --ar and --no), Stable Diffusion (with a negative prompt), Flux and ChatGPT image generation.
+Describe what you want in your own words. It reads the request, asks what is missing, and writes a professional prompt for Claude, ChatGPT, Gemini, Cursor or Midjourney, built on the official prompting guides.
+- It reads the request: It tells a project from code, a bug, a review, a question or an image, and picks up the type of product, the references you name, the audience, the stack and the mood.
+- It asks what is missing: After the first draft it asks only the questions that would change the result: the main job, the audience, the feel, the stack, the shot or the light. Every answer rewrites the prompt.
+- It writes like the guides say: Role, context, requirements, a plan-first process, acceptance criteria and a self-check, in XML for Claude, Markdown for ChatGPT and Gemini, or a task brief with verification for coding agents. Image prompts follow medium, subject, shot, light, lens and color, in the syntax of each model.
+- Q: Is it an AI? A: It works like one, but it runs on rules and a knowledge base in your browser, so it is instant, free and private. Paste the prompt into any AI you like.
+- Q: Which assistants does it write for? A: Claude (XML sections), ChatGPT and Gemini (Markdown sections), Cursor or Claude Code (a task brief with acceptance criteria and verification), and for images Midjourney, ChatGPT images, Flux and Stable Diffusion.
+- Q: Why does it ask questions? A: Because the best prompts carry the details only you know: who it is for, what it must do and what done looks like. Answer the ones you care about and skip the rest.
 - Q: Is my idea sent anywhere? A: No. Everything happens on this page. Nothing is uploaded or stored.
 
 ### Token Counter

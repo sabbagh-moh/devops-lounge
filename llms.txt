@@ -13,7 +13,7 @@ Members ask programming questions in forums with solved tags, get code reviews, 
 - [Tips for developers](https://lounge.xmoh.dev/tips/): 62 short practical tips.
 
 ## Free tools (run in the browser)
-- [Prompt Builder](https://lounge.xmoh.dev/tools/prompt-builder/): Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
+- [Prompt Builder](https://lounge.xmoh.dev/tools/prompt-builder/): Describe what you want in your own words. It reads the request, asks what is missing, and writes a professional prompt for Claude, ChatGPT, Gemini, Cursor or Midjourney, built on the official prompting guides.
 - [Token Counter](https://lounge.xmoh.dev/tools/token-counter/): Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
 - [AI Tool Schema Builder](https://lounge.xmoh.dev/tools/tool-schema/): Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
 - [MCP Config Generator](https://lounge.xmoh.dev/tools/mcp-config/): Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.
