@@ -673,3 +673,17 @@ input[type=range] { width: 100%; accent-color: #fff; }
   .faq-title { font-size: 16px; }
   .footer-social-wrap { justify-content: flex-start; gap: 10px 16px; }
 }
+@media (max-width: 991px) {
+  .nav-components { overflow: visible; }
+  .navbar.is-open .nav-link-wrapper { display: flex; z-index: 10000; }
+}
+@media (max-width: 767px) {
+  .hero-device .app, .cta-device .app { grid-template-columns: minmax(0, 1fr); }
+  .hero-device .app .rail, .hero-device .app .side, .cta-device .app .rail, .cta-device .app .side { display: none; }
+  .hero-device { border-width: 6px; border-radius: 26px 26px 0 0; padding: 6px 6px 0; }
+  .hero-device .app { height: 460px; border-radius: 18px 18px 0 0; }
+  .hero-stage { padding: 28px 14px 0; }
+  .main .head span { display: none; }
+  .feed .embed { max-width: none; }
+  .cta-device { width: calc(100% + 120px); }
+}
