@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Developer tools, CLIs and libraries worth knowing | DevOps Lounge</title>
-<meta name="description" content="42 hand-picked resources with a short note on each. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infr">
+<title>Free developer tools: prompt builder, cron, regex, JSON, JWT and more | DevOps Lounge</title>
+<meta name="description" content="Free developer tools that run in your browser: a prompt builder for code and images, a cron builder, regex tester, JSON formatter, JWT decoder and more.">
 <link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevOps Lounge">
-<meta property="og:title" content="Developer tools, CLIs and libraries worth knowing | DevOps Lounge">
-<meta property="og:description" content="42 hand-picked resources with a short note on each. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infr">
+<meta property="og:title" content="Free developer tools: prompt builder, cron, regex, JSON, JWT and more | DevOps Lounge">
+<meta property="og:description" content="Free developer tools that run in your browser: a prompt builder for code and images, a cron builder, regex tester, JSON formatter, JWT decoder and more.">
 <meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/">
 <meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,246 +21,59 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
 <link rel="stylesheet" href="/devops-lounge/assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Developer tools, CLIs and libraries worth knowing","url":"https://sabbagh-moh.github.io/devops-lounge/tools/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://sabbagh-moh.github.io/devops-lounge/"},"mainEntity":{"@type":"ItemList","numberOfItems":42,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://opentofu.org/","name":"OpenTofu"},{"@type":"ListItem","position":2,"url":"https://docs.ansible.com/","name":"Ansible"},{"@type":"ListItem","position":3,"url":"https://prometheus.io/","name":"Prometheus"},{"@type":"ListItem","position":4,"url":"https://grafana.com/oss/grafana/","name":"Grafana"},{"@type":"ListItem","position":5,"url":"https://trivy.dev/","name":"Trivy"},{"@type":"ListItem","position":6,"url":"https://fastapi.tiangolo.com/","name":"FastAPI"},{"@type":"ListItem","position":7,"url":"https://www.postgresql.org/","name":"PostgreSQL"},{"@type":"ListItem","position":8,"url":"https://vite.dev/","name":"Vite"},{"@type":"ListItem","position":9,"url":"https://playwright.dev/","name":"Playwright"},{"@type":"ListItem","position":10,"url":"https://scikit-learn.org/","name":"scikit-learn"},{"@type":"ListItem","position":11,"url":"https://github.com/huggingface/transformers","name":"Hugging Face Transformers"},{"@type":"ListItem","position":12,"url":"https://flutter.dev/","name":"Flutter"},{"@type":"ListItem","position":13,"url":"https://tauri.app/","name":"Tauri"},{"@type":"ListItem","position":14,"url":"https://godotengine.org/","name":"Godot Engine"},{"@type":"ListItem","position":15,"url":"https://github.com/BurntSushi/ripgrep","name":"ripgrep"},{"@type":"ListItem","position":16,"url":"https://jqlang.org/","name":"jq"},{"@type":"ListItem","position":17,"url":"https://k9scli.io/","name":"k9s"},{"@type":"ListItem","position":18,"url":"https://github.com/jesseduffield/lazygit","name":"lazygit"},{"@type":"ListItem","position":19,"url":"https://www.shellcheck.net/","name":"ShellCheck"},{"@type":"ListItem","position":20,"url":"https://caddyserver.com/","name":"Caddy"},{"@type":"ListItem","position":21,"url":"https://github.com/junegunn/fzf","name":"fzf"},{"@type":"ListItem","position":22,"url":"https://github.com/gitleaks/gitleaks","name":"Gitleaks"},{"@type":"ListItem","position":23,"url":"https://duckdb.org/","name":"DuckDB"},{"@type":"ListItem","position":24,"url":"https://pre-commit.com/","name":"pre-commit"},{"@type":"ListItem","position":25,"url":"https://github.com/hadolint/hadolint","name":"hadolint"},{"@type":"ListItem","position":26,"url":"https://www.usebruno.com/","name":"Bruno"},{"@type":"ListItem","position":27,"url":"https://github.com/wagoodman/dive","name":"dive"},{"@type":"ListItem","position":28,"url":"https://htmx.org/","name":"htmx"},{"@type":"ListItem","position":29,"url":"https://github.com/semgrep/semgrep","name":"Semgrep"},{"@type":"ListItem","position":30,"url":"https://github.com/nektos/act","name":"act"},{"@type":"ListItem","position":31,"url":"https://www.sqlite.org/","name":"SQLite"},{"@type":"ListItem","position":32,"url":"https://github.com/sharkdp/bat","name":"bat"},{"@type":"ListItem","position":33,"url":"https://github.com/louislam/uptime-kuma","name":"Uptime Kuma"},{"@type":"ListItem","position":34,"url":"https://www.mkdocs.org/","name":"MkDocs"},{"@type":"ListItem","position":35,"url":"https://www.zaproxy.org/","name":"ZAP"},{"@type":"ListItem","position":36,"url":"https://hoppscotch.io/","name":"Hoppscotch"},{"@type":"ListItem","position":37,"url":"https://valkey.io/","name":"Valkey"},{"@type":"ListItem","position":38,"url":"https://github.com/tmux/tmux","name":"tmux"},{"@type":"ListItem","position":39,"url":"https://github.com/renovatebot/renovate","name":"Renovate"},{"@type":"ListItem","position":40,"url":"https://www.wireshark.org/","name":"Wireshark"},{"@type":"ListItem","position":41,"url":"https://excalidraw.com/","name":"Excalidraw"},{"@type":"ListItem","position":42,"url":"https://github.com/httpie/cli","name":"HTTPie"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Developer tools","url":"https://sabbagh-moh.github.io/devops-lounge/tools/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://sabbagh-moh.github.io/devops-lounge/"},"mainEntity":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/","name":"Prompt Builder"},{"@type":"ListItem","position":2,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/cron/","name":"Cron Builder"},{"@type":"ListItem","position":3,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/regex/","name":"Regex Tester"},{"@type":"ListItem","position":4,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/json/","name":"JSON Formatter"},{"@type":"ListItem","position":5,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/jwt/","name":"JWT Decoder"},{"@type":"ListItem","position":6,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/","name":"Timestamp Converter"},{"@type":"ListItem","position":7,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/base64/","name":"Base64 and URL Encoder"},{"@type":"ListItem","position":8,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/password/","name":"Password and UUID Generator"},{"@type":"ListItem","position":9,"url":"https://sabbagh-moh.github.io/devops-lounge/tools/chmod/","name":"chmod Calculator"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"}]}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/" aria-current="page">Resources</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a></nav>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a></nav>
   <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
 </div></header>
 <main>
-
-<div class="wrap">
-  <section class="page-head">
-    <a class="crumb" href="/devops-lounge/">DevOps Lounge</a>
-    <h1 class="title">Tools developers keep</h1>
-    <p class="lede">Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.</p>
-    <nav class="meta" aria-label="Jump to"><a href="#devops">DevOps 12</a><a href="#backend">Backend 8</a><a href="#general">General 8</a><a href="#security">Security 5</a><a href="#data-ml">Data/ML 3</a><a href="#frontend">Frontend 2</a><a href="#web">Web 1</a><a href="#mobile">Mobile 1</a><a href="#app">App 1</a><a href="#gamedev">GameDev 1</a></nav>
-  </section>
-  <section class="group" id="devops"><h2>DevOps <small>12</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://opentofu.org/" rel="noopener">OpenTofu</a></h3>
-  <p>An open-source, community-driven infrastructure-as-code tool that is a fork of Terraform.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=opentofu.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>opentofu.org</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://docs.ansible.com/" rel="noopener">Ansible</a></h3>
-  <p>Agentless automation for configuring servers and deploying software using readable YAML playbooks.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=docs.ansible.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>docs.ansible.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://prometheus.io/" rel="noopener">Prometheus</a></h3>
-  <p>A widely used open-source monitoring system and time-series database with its own query language.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=prometheus.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>prometheus.io</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://grafana.com/oss/grafana/" rel="noopener">Grafana</a></h3>
-  <p>Open-source dashboards for your metrics, logs and traces from many data sources.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=grafana.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>grafana.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://k9scli.io/" rel="noopener">k9s</a></h3>
-  <p>A terminal UI for managing Kubernetes clusters. It makes it much faster to inspect pods, read logs and jump between resources than typing kubectl commands.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=k9scli.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>k9scli.io</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.shellcheck.net/" rel="noopener">ShellCheck</a></h3>
-  <p>A linter that finds bugs in shell scripts, such as unquoted variables. Try it in the browser or add it to your CI.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=shellcheck.net&sz=64" width="20" height="20" alt="" loading="lazy"><span>shellcheck.net</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/hadolint/hadolint" rel="noopener">hadolint</a></h3>
-  <p>A Dockerfile linter that catches bad practices and checks the shell code inside your RUN instructions.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/wagoodman/dive" rel="noopener">dive</a></h3>
-  <p>Explore each layer of a Docker image and find wasted space, so you can make your images smaller.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/nektos/act" rel="noopener">act</a></h3>
-  <p>Run your GitHub Actions workflows locally to test changes without pushing a commit every time.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/louislam/uptime-kuma" rel="noopener">Uptime Kuma</a></h3>
-  <p>A self-hosted monitoring tool with a clean dashboard, status pages and many notification options.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/tmux/tmux" rel="noopener">tmux</a></h3>
-  <p>A terminal multiplexer. Split your terminal into panes and keep sessions running after you disconnect from a server.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/renovatebot/renovate" rel="noopener">Renovate</a></h3>
-  <p>Automates dependency updates by opening pull requests, so your projects do not silently fall behind.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Tool</span></div>
-</li></ul></section><section class="group" id="backend"><h2>Backend <small>8</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://fastapi.tiangolo.com/" rel="noopener">FastAPI</a></h3>
-  <p>A modern Python web framework that uses type hints for validation and automatic API docs.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=fastapi.tiangolo.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>fastapi.tiangolo.com</span><span>Framework</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.postgresql.org/" rel="noopener">PostgreSQL</a></h3>
-  <p>A powerful open-source relational database and a safe default for most applications.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=postgresql.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>postgresql.org</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://caddyserver.com/" rel="noopener">Caddy</a></h3>
-  <p>A web server and reverse proxy that gets and renews HTTPS certificates automatically, with very little configuration.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=caddyserver.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>caddyserver.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.usebruno.com/" rel="noopener">Bruno</a></h3>
-  <p>An open-source API client that stores your collections as plain files, so they can live in Git with your code.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=usebruno.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>usebruno.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.sqlite.org/" rel="noopener">SQLite</a></h3>
-  <p>A small, reliable database stored in a single file, with no server required. It is often all a small project needs.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=sqlite.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>sqlite.org</span><span>Library</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://hoppscotch.io/" rel="noopener">Hoppscotch</a></h3>
-  <p>A lightweight, open-source API testing tool that runs in your browser and can also be self-hosted.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=hoppscotch.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>hoppscotch.io</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://valkey.io/" rel="noopener">Valkey</a></h3>
-  <p>An open-source, high-performance key-value datastore, forked from Redis and backed by the Linux Foundation.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=valkey.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>valkey.io</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/httpie/cli" rel="noopener">HTTPie</a></h3>
-  <p>A friendly command-line HTTP client with readable syntax and formatted output, made for working with APIs.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li></ul></section><section class="group" id="general"><h2>General <small>8</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://github.com/BurntSushi/ripgrep" rel="noopener">ripgrep</a></h3>
-  <p>An extremely fast tool for searching code that respects your .gitignore by default.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://jqlang.org/" rel="noopener">jq</a></h3>
-  <p>A small command-line tool for slicing, filtering and transforming JSON.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=jqlang.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>jqlang.org</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/jesseduffield/lazygit" rel="noopener">lazygit</a></h3>
-  <p>A simple terminal UI for Git. Staging single lines, rebasing and resolving conflicts all become much easier to see and do.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/junegunn/fzf" rel="noopener">fzf</a></h3>
-  <p>A general-purpose fuzzy finder for the command line. Use it to search files, shell history, Git branches and anything else you can pipe into it.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://pre-commit.com/" rel="noopener">pre-commit</a></h3>
-  <p>A framework for managing Git hooks, so linters and formatters run automatically before every commit.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=pre-commit.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>pre-commit.com</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/sharkdp/bat" rel="noopener">bat</a></h3>
-  <p>A cat replacement with syntax highlighting, line numbers and Git integration.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.mkdocs.org/" rel="noopener">MkDocs</a></h3>
-  <p>Turn a folder of Markdown files into a clean documentation site, with very little setup.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=mkdocs.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>mkdocs.org</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://excalidraw.com/" rel="noopener">Excalidraw</a></h3>
-  <p>A free, open-source whiteboard with a hand-drawn style. It is great for quick architecture diagrams.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=excalidraw.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>excalidraw.com</span><span>Tool</span></div>
-</li></ul></section><section class="group" id="security"><h2>Security <small>5</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://trivy.dev/" rel="noopener">Trivy</a></h3>
-  <p>An open-source scanner for vulnerabilities and misconfigurations in containers, code and infrastructure.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=trivy.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>trivy.dev</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/gitleaks/gitleaks" rel="noopener">Gitleaks</a></h3>
-  <p>Finds passwords, API keys and tokens in your Git history. Run it as a pre-commit hook or in CI before a secret gets out.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/semgrep/semgrep" rel="noopener">Semgrep</a></h3>
-  <p>Fast static analysis for many languages, with rules that look like the code you are searching for.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>CLI</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.zaproxy.org/" rel="noopener">ZAP</a></h3>
-  <p>A free, open-source web application security scanner. Only use it against applications you own or have permission to test.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=zaproxy.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>zaproxy.org</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://www.wireshark.org/" rel="noopener">Wireshark</a></h3>
-  <p>The classic network protocol analyzer. See exactly what is on the wire when something will not connect.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=wireshark.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>wireshark.org</span><span>Tool</span></div>
-</li></ul></section><section class="group" id="data-ml"><h2>Data/ML <small>3</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://scikit-learn.org/" rel="noopener">scikit-learn</a></h3>
-  <p>The standard Python library for classic machine learning, with excellent documentation.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=scikit-learn.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>scikit-learn.org</span><span>Library</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://github.com/huggingface/transformers" rel="noopener">Hugging Face Transformers</a></h3>
-  <p>An open-source library for using and training state-of-the-art machine learning models.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Library</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://duckdb.org/" rel="noopener">DuckDB</a></h3>
-  <p>An in-process analytical database. Query CSV and Parquet files with SQL on your laptop, with no server to run.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=duckdb.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>duckdb.org</span><span>Tool</span></div>
-</li></ul></section><section class="group" id="frontend"><h2>Frontend <small>2</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://vite.dev/" rel="noopener">Vite</a></h3>
-  <p>A fast frontend build tool and dev server with instant updates as you edit.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=vite.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>vite.dev</span><span>Tool</span></div>
-</li>
-<li class="res">
-  <h3><a href="https://htmx.org/" rel="noopener">htmx</a></h3>
-  <p>A small library that adds dynamic behaviour with HTML attributes. Build interactive pages without a large frontend framework.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=htmx.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>htmx.org</span><span>Library</span></div>
-</li></ul></section><section class="group" id="web"><h2>Web <small>1</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://playwright.dev/" rel="noopener">Playwright</a></h3>
-  <p>Reliable end-to-end browser testing across Chromium, Firefox and WebKit.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=playwright.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>playwright.dev</span><span>Library</span></div>
-</li></ul></section><section class="group" id="mobile"><h2>Mobile <small>1</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://flutter.dev/" rel="noopener">Flutter</a></h3>
-  <p>Google's open-source UI toolkit for building mobile, web and desktop apps from a single codebase.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=flutter.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>flutter.dev</span><span>Framework</span></div>
-</li></ul></section><section class="group" id="app"><h2>App <small>1</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://tauri.app/" rel="noopener">Tauri</a></h3>
-  <p>Build small, secure desktop and mobile apps with a web frontend and a Rust backend.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=tauri.app&sz=64" width="20" height="20" alt="" loading="lazy"><span>tauri.app</span><span>Framework</span></div>
-</li></ul></section><section class="group" id="gamedev"><h2>GameDev <small>1</small></h2><ul class="list">
-<li class="res">
-  <h3><a href="https://godotengine.org/" rel="noopener">Godot Engine</a></h3>
-  <p>A free and open-source 2D and 3D game engine with no royalties.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=godotengine.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>godotengine.org</span><span>Framework</span></div>
-</li></ul></section>
-  <section class="group"><h2>More from the Vault</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/ai/">AI for developers 60</a><a href="/devops-lounge/skills/">Core developer skills 55</a><a href="/devops-lounge/open-source/">Open source worth reading 59</a><a href="/devops-lounge/learn/">Free ways to learn to code 33</a></nav></section>
-</div>
-
+<div class="wrap"><section class="page-head"><a class="crumb" href="/devops-lounge/">DevOps Lounge</a><h1 class="title">Tools that run in your browser.</h1><p class="lede">Free, instant and private. Nothing you type leaves the page.</p></section>
+<section class="group"><div class="bento"><a class="tile tile-hero" href="/devops-lounge/tools/prompt-builder/">
+  <pre class="mini-prompt"><span>You are a senior TypeScript engineer who works with React.</span>
+<b>## Task</b>
+A hook that debounces a search input
+<b>## Requirements</b>
+- Handle errors and invalid input
+- Include unit tests</pre>
+  <div class="tile-copy"><h3>Prompt Builder</h3><p>Turn a rough idea into a prompt that gets good answers.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/cron/">
+  <span class="sample">30 9 * * 1-5</span>
+  <div class="tile-copy"><h3>Cron Builder</h3><p>Build a cron schedule and see exactly when it runs.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/regex/">
+  <span class="sample">/\w+@\w+/</span>
+  <div class="tile-copy"><h3>Regex Tester</h3><p>Test a regular expression and see every match highlighted.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/json/">
+  <span class="sample">{ &quot;ok&quot;: true }</span>
+  <div class="tile-copy"><h3>JSON Formatter</h3><p>Format, validate and minify JSON, with the exact error spot.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/jwt/">
+  <span class="sample">eyJhbGciOi…</span>
+  <div class="tile-copy"><h3>JWT Decoder</h3><p>Read a JSON Web Token and check when it expires.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/timestamp/">
+  <span class="sample">1762000000</span>
+  <div class="tile-copy"><h3>Timestamp Converter</h3><p>Convert Unix time to a readable date and back.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/base64/">
+  <span class="sample">TG91bmdl</span>
+  <div class="tile-copy"><h3>Base64 and URL Encoder</h3><p>Encode and decode Base64 and URL text, Unicode included.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/password/">
+  <span class="sample">k7#Qm…</span>
+  <div class="tile-copy"><h3>Password and UUID Generator</h3><p>Strong random passwords and UUIDs, made on your device.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/chmod/">
+  <span class="sample">755</span>
+  <div class="tile-copy"><h3>chmod Calculator</h3><p>Linux file permissions in numbers, letters and the command.</p></div>
+</a></div></section></div>
 <div class="wrap"><section class="final">
-  <div><h2>Talk it through with people who use it.</h2><p>Ask about any of these in the server, share what you build with them, and get new picks every day.</p></div>
+  <div><h2>Pull up a chair.</h2><p>Join, pick your language and what you work on, and say hi. It takes a minute.</p></div>
   <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
 </section></div>
 </main>
 <footer><div class="wrap">
   <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
+
 </body>
 </html>

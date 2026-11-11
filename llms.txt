@@ -9,8 +9,19 @@ Members ask programming questions in forums with solved tags, get code reviews, 
 - [Core developer skills](https://sabbagh-moh.github.io/devops-lounge/skills/): 55 picks. The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.
 - [Open source worth reading](https://sabbagh-moh.github.io/devops-lounge/open-source/): 59 picks. Awesome lists, starter templates and complete applications on GitHub, sorted by area. Reading real code is the fastest way to learn how projects are put together.
 - [Free ways to learn to code](https://sabbagh-moh.github.io/devops-lounge/learn/): 33 picks. Free courses, books, docs and practice sites, sorted by area and marked by level, so you can start where you are.
-- [Tools developers keep](https://sabbagh-moh.github.io/devops-lounge/tools/): 42 picks. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.
+- [Tools developers keep](https://sabbagh-moh.github.io/devops-lounge/toolbox/): 42 picks. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.
 - [Tips for developers](https://sabbagh-moh.github.io/devops-lounge/tips/): 62 short practical tips.
+
+## Free tools (run in the browser)
+- [Prompt Builder](https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/): Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answers.
+- [Cron Builder](https://sabbagh-moh.github.io/devops-lounge/tools/cron/): Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
+- [Regex Tester](https://sabbagh-moh.github.io/devops-lounge/tools/regex/): Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
+- [JSON Formatter](https://sabbagh-moh.github.io/devops-lounge/tools/json/): Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.
+- [JWT Decoder](https://sabbagh-moh.github.io/devops-lounge/tools/jwt/): Paste a token to read its header and payload, and see when it was issued and when it expires.
+- [Timestamp Converter](https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/): Paste a Unix timestamp in seconds or milliseconds, or any date, and get every format you need.
+- [Base64 and URL Encoder](https://sabbagh-moh.github.io/devops-lounge/tools/base64/): Encode or decode Base64 and URL text. Arabic, emoji and every other character are handled correctly.
+- [Password and UUID Generator](https://sabbagh-moh.github.io/devops-lounge/tools/password/): Strong passwords and v4 UUIDs, made with your browser's secure random generator. Nothing is sent or saved.
+- [chmod Calculator](https://sabbagh-moh.github.io/devops-lounge/tools/chmod/): Tick who can read, write and run a file. You get the number, the letters and the command to paste.
 
 ## Tracks
 - [AI](https://sabbagh-moh.github.io/devops-lounge/tracks/ai/): Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.

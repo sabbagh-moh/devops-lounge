@@ -6,6 +6,10 @@ Ask programming questions in forums with solved tags, get code reviews, share pr
 
 This repository is the community's website, and the list below is the Vault: 249 free resources our members picked, each with a short note on why.
 
+## Free tools
+
+Developer tools that run in your browser, nothing uploaded: [Prompt Builder](https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/) · [Cron Builder](https://sabbagh-moh.github.io/devops-lounge/tools/cron/) · [Regex Tester](https://sabbagh-moh.github.io/devops-lounge/tools/regex/) · [JSON Formatter](https://sabbagh-moh.github.io/devops-lounge/tools/json/) · [JWT Decoder](https://sabbagh-moh.github.io/devops-lounge/tools/jwt/) · [Timestamp Converter](https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/) · [Base64 and URL Encoder](https://sabbagh-moh.github.io/devops-lounge/tools/base64/) · [Password and UUID Generator](https://sabbagh-moh.github.io/devops-lounge/tools/password/) · [chmod Calculator](https://sabbagh-moh.github.io/devops-lounge/tools/chmod/)
+
 ## Contents
 - [AI for developers](#ai-for-developers)
 - [Core developer skills](#core-developer-skills)
