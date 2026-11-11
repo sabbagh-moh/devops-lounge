@@ -53,7 +53,7 @@ section.block { padding-block: 112px 0; }
 .block-head p { color: var(--text-2); margin: 0; max-width: 36ch; }
 
 .hero { padding-top: clamp(64px, 9vw, 120px); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 13fr); gap: 56px; align-items: center; }
 @media (max-width: 1020px) { .hero-grid { grid-template-columns: 1fr; } }
 .hero-copy .note { margin-top: 18px; font-size: 14px; color: var(--text-3); }
 
@@ -83,7 +83,8 @@ section.block { padding-block: 112px 0; }
 .embed { margin-top: 6px; background: var(--dc-embed); border-left: 4px solid #F5F6F2; border-radius: 4px; padding: 10px 14px 12px; max-width: 520px; display: grid; gap: 6px; }
 .embed a { color: #00A8FC; font-weight: 600; text-decoration: none; }
 .embed p { margin: 0; font-size: 14px; color: var(--dc-text); }
-.embed .f { display: flex; gap: 22px; font-size: 13px; }
+.embed .f { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; }
+.embed { min-width: 0; overflow-wrap: anywhere; }
 .embed .f div { color: var(--dc-muted); }
 .embed .f div b { display: block; color: #F2F3F5; font-size: 12.5px; }
 .embed .banner { border-radius: 6px; margin-top: 4px; }
