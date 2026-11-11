@@ -1,6 +1,6 @@
 # DevOps Lounge: full text
 
-> DevOps Lounge is a free Discord community for developers and DevOps engineers at every level. Join: https://discord.gg/XHtBz8rZp5. Website: https://sabbagh-moh.github.io/devops-lounge/
+> DevOps Lounge is a free Discord community for developers and DevOps engineers at every level. Join: https://discord.gg/XHtBz8rZp5. Website: https://lounge.xmoh.dev/
 
 ## About
 Members ask programming questions in forums with solved tags, get code reviews, share projects in a showroom with upvotes, and find collaborators. There are ten tracks and rooms in English, Arabic, Spanish, Portuguese, French and Russian. A bot trap, raid protection and AutoMod keep spam out.
@@ -25,7 +25,7 @@ Post in the ask-a-question forum with what you tried and the error you see. When
 
 ## Free developer tools (run in the browser, nothing uploaded)
 ### Prompt Builder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/
+URL: https://lounge.xmoh.dev/tools/prompt-builder/
 Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
 - It understands the request: It tells a project from code, a bug, a review, a question or an image, and recognizes 14 kinds of projects, 27 well-known products as references, 13 design styles, 15 languages and 41 frameworks and services.
 - It adds what experts add: For a project: the pages and features that kind of product needs, a stack, a quality bar and the questions to answer first. For a reference like Gymshark: what to borrow, and a reminder not to copy the brand.
@@ -35,7 +35,7 @@ Write your idea the way you would say it, like "a store like Gymshark". The buil
 - Q: Is my idea sent anywhere? A: No. Everything happens on this page. Nothing is uploaded or stored.
 
 ### Token Counter
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/token-counter/
+URL: https://lounge.xmoh.dev/tools/token-counter/
 Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
 - An honest estimate: Common English words are one token, long words several, and Arabic, Russian and Chinese text use more tokens per character. The range covers how real tokenizers differ.
 - Context windows: The bars show how much of each common window size your text fills, before the model writes a word back.
@@ -51,7 +51,7 @@ Rules of thumb:
 - Arabic or Russian text : Often 1.5 to 3 times the tokens of the same length in English
 
 ### AI Tool Schema Builder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/
+URL: https://lounge.xmoh.dev/tools/tool-schema/
 Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
 - One definition, three formats: OpenAI wraps the schema in a function object, Claude calls it input_schema, and MCP calls it inputSchema. The parameters are the same JSON Schema.
 - Strict mode: When every parameter is required, the OpenAI version turns on strict mode so the model must follow the schema exactly.
@@ -60,7 +60,7 @@ Describe a tool and its parameters once. Get the exact JSON that OpenAI function
 - Q: Where do I put this? A: In the tools list of your API request, or in the tools your MCP server lists.
 
 ### MCP Config Generator
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/
+URL: https://lounge.xmoh.dev/tools/mcp-config/
 Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.
 - Each app wants a different file: Claude Desktop, Cursor and Windsurf use an mcpServers object; VS Code uses servers with a type. Claude Code reads .mcp.json or takes claude mcp add commands.
 - Windows: Some apps cannot start npx directly on Windows. Tick the box and npx is started through cmd /c, which fixes the usual "spawn npx ENOENT" error.
@@ -70,7 +70,7 @@ Pick the MCP servers you want and the app you use. Get the exact config file, wh
 - Q: Are these package names current? A: They are the commonly used ones at the time of writing. Check each server's own page before you rely on it.
 
 ### llms.txt Generator
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/llms-txt/
+URL: https://lounge.xmoh.dev/tools/llms-txt/
 Paste your sitemap.xml or a list of pages. Get a clean llms.txt that tells AI assistants what your site is and which pages matter, ready to upload to your site's root.
 - The llms.txt format: A Markdown file at your site's root: a title, a one-line summary in a quote, optional context, then sections of links. Less important pages go under Optional.
 - Grouped for you: Pages are grouped by the first part of their path, the largest groups first, and legal or archive pages move to Optional.
@@ -79,7 +79,7 @@ Paste your sitemap.xml or a list of pages. Get a clean llms.txt that tells AI as
 - Q: Does it replace a sitemap? A: No. The sitemap is for search engines; llms.txt is a short, readable guide for AI assistants. Keep both.
 
 ### JSON to TypeScript
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/json-to-types/
+URL: https://lounge.xmoh.dev/tools/json-to-types/
 Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
 - Merged arrays: Every item in an array is read, so a field that only some items have becomes optional, and mixed types become unions.
 - Named types: Nested objects get their own interfaces, named after their keys. Array items are named in the singular.
@@ -87,7 +87,7 @@ Paste an API response or any JSON example. Get TypeScript interfaces, a Zod sche
 - Q: Is my JSON uploaded? A: No. It is converted in your browser.
 
 ### cURL Converter
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/curl-converter/
+URL: https://lounge.xmoh.dev/tools/curl-converter/
 Paste a cURL command from API docs or your browser's network tab. Get clean fetch, axios or Python requests code with headers, body and auth carried over.
 - Understands the usual flags: -X, -H, -d and its variants, --json, -u for basic auth, -b for cookies, -G for query strings, and line breaks with backslashes.
 - JSON stays JSON: A JSON body becomes a real object in the code, so you can edit it easily.
@@ -104,7 +104,7 @@ cURL flags it understands:
 - -A, --user-agent : The User-Agent header
 
 ### Text Diff
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/diff/
+URL: https://lounge.xmoh.dev/tools/diff/
 Paste two versions of a file, a config or any text. Added and removed lines are marked with their line numbers.
 - Line by line: It finds the longest run of lines the two texts share, then marks everything else as added or removed.
 - Whitespace: Turn on Ignore whitespace to skip changes that are only indentation or spacing.
@@ -112,7 +112,7 @@ Paste two versions of a file, a config or any text. Added and removed lines are 
 - Q: Is my text uploaded? A: No. The comparison runs in your browser.
 
 ### Color and Contrast
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/color-contrast/
+URL: https://lounge.xmoh.dev/tools/color-contrast/
 Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a background for WCAG, and pick a lighter or darker shade.
 - Any format in: Names like navy, hex, rgb(), hsl(), oklch() and more are read by your browser's own color engine.
 - WCAG levels: Body text needs 4.5:1 for AA and 7:1 for AAA. Large or bold text needs 3:1 for AA.
@@ -120,7 +120,7 @@ Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a back
 - Q: Which level should I aim for? A: AA for everything, and AAA for long reading text when you can.
 
 ### Git Command Finder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/
+URL: https://lounge.xmoh.dev/tools/git-commands/
 Describe what you want to do in plain words, like "undo last commit" or "rename branch". Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.
 - Plain words: Type it the way you would ask a friend. The list narrows as you type and opens the only match.
 - Safe by default: Anything that rewrites history or deletes work is marked, and pushed-branch cases point to the safe alternative.
@@ -129,7 +129,7 @@ Describe what you want to do in plain words, like "undo last commit" or "rename 
 - Q: What does --force-with-lease do? A: It force-pushes only if nobody else pushed in the meantime, so you do not overwrite a teammate's work.
 
 ### CIDR Calculator
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/cidr/
+URL: https://lounge.xmoh.dev/tools/cidr/
 Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.
 - Usable hosts: Every range loses two addresses, the network and the broadcast, except /31 and /32. Cloud providers often reserve a few more in each subnet.
 - Planning a VPC: Start with a /16 and split it into /24s: one per subnet and zone, with room to grow.
@@ -137,7 +137,7 @@ Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast
 - Q: Does it handle IPv6? A: Not yet. It covers IPv4, which is what most subnet planning still uses.
 
 ### Cron Builder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/cron/
+URL: https://lounge.xmoh.dev/tools/cron/
 Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
 - Five fields: Minute, hour, day of month, month and day of week. Use * for any value, */n for every n, a-b for a range and commas for lists.
 - Names work too: MON-FRI and JAN-DEC are understood, and so are @daily, @hourly and @weekly.
@@ -160,7 +160,7 @@ Common cron schedules:
 - 0 0 1 1 * : Once a year, on 1 January
 
 ### Regex Tester
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/regex/
+URL: https://lounge.xmoh.dev/tools/regex/
 Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
 - JavaScript flavor: Patterns run with the JavaScript engine in your browser, the same one Node.js uses.
 - Flags: g finds every match, i ignores case, m makes ^ and $ work per line, s lets . match new lines, u enables full Unicode.
@@ -181,7 +181,7 @@ Patterns developers use every day:
 - Leading and trailing spaces : ^\s+|\s+$
 
 ### JSON Formatter
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/json/
+URL: https://lounge.xmoh.dev/tools/json/
 Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.
 - Strict JSON: Keys need double quotes, and trailing commas and comments are not allowed. That is what APIs expect.
 - Exact errors: When the JSON is broken, the line and column of the problem are shown.
@@ -189,7 +189,7 @@ Paste JSON to format it, check that it is valid, sort the keys or minify it. Err
 - Q: Is my data uploaded? A: No. It never leaves this page.
 
 ### JWT Decoder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/jwt/
+URL: https://lounge.xmoh.dev/tools/jwt/
 Paste a token to read its header and payload, and see when it was issued and when it expires.
 - Decoded, not verified: The header and payload are only Base64URL-encoded, so anyone can read them. Checking the signature needs the key.
 - Never paste secrets: Tokens from production give access. Decode them here, where nothing is sent anywhere, then rotate any token you shared by mistake.
@@ -197,7 +197,7 @@ Paste a token to read its header and payload, and see when it was issued and whe
 - Q: Why does my token show as expired? A: The exp claim is in Unix seconds. If it is in the past, servers reject the token.
 
 ### Timestamp Converter
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/
+URL: https://lounge.xmoh.dev/tools/timestamp/
 Paste a Unix timestamp in seconds or milliseconds, or any date, and get every format you need.
 - Seconds or milliseconds: Ten digits are read as seconds and thirteen as milliseconds, which is what JavaScript uses.
 - Any date: Dates like 2026-11-11 14:30 or ISO strings with a time zone also work.
@@ -205,7 +205,7 @@ Paste a Unix timestamp in seconds or milliseconds, or any date, and get every fo
 - Q: Why is my date off by some hours? A: Time zones. The ISO line shows UTC, and the next line shows your local time.
 
 ### Base64 and URL Encoder
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/base64/
+URL: https://lounge.xmoh.dev/tools/base64/
 Encode or decode Base64 and URL text. Arabic, emoji and every other character are handled correctly.
 - UTF-8 first: Text is turned into UTF-8 bytes before encoding, so non-English text and emoji survive the round trip.
 - URL-safe Base64: Decoding also accepts the URL-safe alphabet with - and _.
@@ -213,7 +213,7 @@ Encode or decode Base64 and URL text. Arabic, emoji and every other character ar
 - Q: When do I URL-encode? A: When a value goes inside a URL, like a search query, so characters like & and spaces do not break it.
 
 ### Password and UUID Generator
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/password/
+URL: https://lounge.xmoh.dev/tools/password/
 Strong passwords and v4 UUIDs, made with your browser's secure random generator. Nothing is sent or saved.
 - Real randomness: It uses crypto.getRandomValues, the same source browsers use for encryption, with no bias between characters.
 - No look-alikes: Characters that are easy to confuse, like l, 1, O and 0, are left out.
@@ -221,7 +221,7 @@ Strong passwords and v4 UUIDs, made with your browser's secure random generator.
 - Q: Are the UUIDs unique? A: v4 UUIDs have 122 random bits, so a clash is practically impossible.
 
 ### chmod Calculator
-URL: https://sabbagh-moh.github.io/devops-lounge/tools/chmod/
+URL: https://lounge.xmoh.dev/tools/chmod/
 Tick who can read, write and run a file. You get the number, the letters and the command to paste.
 - Three digits: One each for the owner, the group and everyone else. Read is 4, write is 2 and run is 1, added together.
 - Common picks: 644 for normal files, 755 for scripts and folders, 600 for SSH keys.
@@ -239,52 +239,52 @@ Common permissions:
 
 ## Tracks
 ### AI
-https://sabbagh-moh.github.io/devops-lounge/tracks/ai/
+https://lounge.xmoh.dev/tracks/ai/
 Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.
 Roadmap: https://roadmap.sh/ai-engineer
 
 ### Web Dev
-https://sabbagh-moh.github.io/devops-lounge/tracks/web-dev/
+https://lounge.xmoh.dev/tracks/web-dev/
 General and full-stack web development: how the pieces fit together, from the browser to the database and deployment.
 Roadmap: https://roadmap.sh/full-stack
 
 ### App Dev
-https://sabbagh-moh.github.io/devops-lounge/tracks/app-dev/
+https://lounge.xmoh.dev/tracks/app-dev/
 Desktop and cross-platform applications: packaging, native integration, updates and making software feel at home on every OS.
 Roadmap: https://roadmap.sh/software-architect
 
 ### Frontend
-https://sabbagh-moh.github.io/devops-lounge/tracks/frontend/
+https://lounge.xmoh.dev/tracks/frontend/
 UI, CSS, accessibility, performance and frameworks. Share what you are building and how you solved the tricky parts.
 Roadmap: https://roadmap.sh/frontend
 
 ### Backend
-https://sabbagh-moh.github.io/devops-lounge/tracks/backend/
+https://lounge.xmoh.dev/tracks/backend/
 APIs, databases, queues, caching and the systems behind them. Good place to talk through design decisions.
 Roadmap: https://roadmap.sh/backend
 
 ### Mobile
-https://sabbagh-moh.github.io/devops-lounge/tracks/mobile/
+https://lounge.xmoh.dev/tracks/mobile/
 Native and hybrid iOS and Android. The roadmap below covers Android, and there is an iOS one at roadmap.sh/ios.
 Roadmap: https://roadmap.sh/android
 
 ### Data and ML
-https://sabbagh-moh.github.io/devops-lounge/tracks/data-and-ml/
+https://lounge.xmoh.dev/tracks/data-and-ml/
 Data engineering, analysis and classic machine learning: pipelines, notebooks, features and models.
 Roadmap: https://roadmap.sh/ai-data-scientist
 
 ### Cyber Security
-https://sabbagh-moh.github.io/devops-lounge/tracks/cyber-security/
+https://lounge.xmoh.dev/tracks/cyber-security/
 Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.
 Roadmap: https://roadmap.sh/cyber-security
 
 ### DevOps and Cloud
-https://sabbagh-moh.github.io/devops-lounge/tracks/devops-and-cloud/
+https://lounge.xmoh.dev/tracks/devops-and-cloud/
 CI/CD, containers, infrastructure as code, observability and keeping production calm.
 Roadmap: https://roadmap.sh/devops
 
 ### Game Dev
-https://sabbagh-moh.github.io/devops-lounge/tracks/game-dev/
+https://lounge.xmoh.dev/tracks/game-dev/
 Engines, graphics, gameplay code and shipping your first game. Share builds and ask for playtesters.
 Roadmap: https://roadmap.sh/game-developer
 

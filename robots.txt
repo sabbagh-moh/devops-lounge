@@ -38,4 +38,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://sabbagh-moh.github.io/devops-lounge/sitemap.xml
+Sitemap: https://lounge.xmoh.dev/sitemap.xml
