@@ -463,7 +463,9 @@ input[type=range] { width: 100%; accent-color: #fff; }
     radial-gradient(38% 56% at 62% 100%, var(--wash-blue), transparent 72%);
   filter: blur(40px); opacity: .9;
 }
-.hero::after, .wall::after, .final::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--grain); opacity: .9; }
+/* One grain for the whole page, so no section shows an edge; the closing card keeps its own. */
+body { background-image: var(--grain); }
+.final::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--grain); opacity: .9; }
 .hero::before { height: 520px; bottom: 560px; opacity: 1; }
 @media (max-width: 600px) { .hero::before { bottom: 440px; height: 380px; } }
 .wall::before { height: 70%; bottom: 22%; opacity: .7; }
