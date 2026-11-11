@@ -25,9 +25,9 @@ Members ask programming questions in forums with solved tags, get code reviews, 
 - [Game Dev](https://sabbagh-moh.github.io/devops-lounge/tracks/game-dev/): Engines, graphics, gameplay code and shipping your first game. Share builds and ask for playtesters.
 
 ## FAQ
-- **What is DevOps Lounge?** DevOps Lounge is a free Discord community for developers and DevOps engineers at every level. Members ask questions, share projects, review code and find people to build with.
-- **Is it free to join?** Yes. Joining is free and there is nothing to buy.
-- **Is it for beginners?** Yes. There is a beginner track and a beginner corner, and every help forum welcomes first questions. Experienced engineers are there too, which is what makes the answers good.
+- **What is DevOps Lounge?** A free Discord community for developers and DevOps engineers at every level. Members ask questions, share projects, review code and find people to build with.
+- **Is it free?** Yes. Joining is free and there is nothing to buy.
+- **I am just starting out. Is it for me?** Yes. There is a beginner track and a beginner corner, and every help forum welcomes first questions. Experienced engineers are there too, which is what makes the answers good.
 - **What languages can I talk in?** English is shared by everyone, and there are rooms in Arabic, Spanish, Portuguese, French and Russian.
 - **What topics does it cover?** Ten tracks: AI, web, app development, frontend, backend, mobile, data and ML, security, DevOps and cloud, and game development, plus career and interview help.
-- **How do I get help with my code?** Post in the ask-a-question forum with what you tried and the error you see. When it is solved, the thread is tagged so others can find the answer later. There is also a code review channel.
+- **How do I get help with my code?** Post in the ask-a-question forum with what you tried and the error you see. When it is solved, the thread is tagged so others can find the answer later. There is also a code review forum.

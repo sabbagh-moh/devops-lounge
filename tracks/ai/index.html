@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI developer community on Discord | DevOps Lounge</title>
 <meta name="description" content="A Discord community for AI developers. Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every">
 <link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tracks/ai/">
@@ -14,126 +14,127 @@
 <meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tracks/ai/">
 <meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
 <link rel="apple-touch-icon" href="/devops-lounge/assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
 <link rel="stylesheet" href="/devops-lounge/assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AI resources","url":"https://sabbagh-moh.github.io/devops-lounge/tracks/ai/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://sabbagh-moh.github.io/devops-lounge/"},"mainEntity":{"@type":"ItemList","numberOfItems":18,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.youtube.com/watch?v=zjkBMFhNj_g","name":"Intro to Large Language Models: Karpathy's one-hour talk"},{"@type":"ListItem","position":2,"url":"https://jalammar.github.io/illustrated-transformer/","name":"The Illustrated Transformer"},{"@type":"ListItem","position":3,"url":"https://arxiv.org/abs/1706.03762","name":"Attention Is All You Need, the original transformer paper"},{"@type":"ListItem","position":4,"url":"https://arxiv.org/abs/2005.11401","name":"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"},{"@type":"ListItem","position":5,"url":"https://huggingface.co/learn/llm-course/chapter1/1","name":"Hugging Face LLM Course"},{"@type":"ListItem","position":6,"url":"https://huggingface.co/learn/agents-course/unit0/introduction","name":"Hugging Face Agents Course"},{"@type":"ListItem","position":7,"url":"https://course.fast.ai/","name":"Practical Deep Learning for Coders (fast.ai)"},{"@type":"ListItem","position":8,"url":"https://karpathy.ai/zero-to-hero.html","name":"Neural Networks: Zero to Hero"},{"@type":"ListItem","position":9,"url":"https://github.com/microsoft/generative-ai-for-beginners","name":"Generative AI for Beginners from Microsoft"},{"@type":"ListItem","position":10,"url":"https://www.promptingguide.ai/","name":"Prompt Engineering Guide by DAIR.AI"},{"@type":"ListItem","position":11,"url":"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview","name":"Anthropic prompt engineering documentation"},{"@type":"ListItem","position":12,"url":"https://developers.openai.com/api/docs/guides/prompt-engineering","name":"OpenAI prompt engineering guide"},{"@type":"ListItem","position":13,"url":"https://www.anthropic.com/research/building-effective-agents","name":"Building Effective Agents: workflows vs agents"},{"@type":"ListItem","position":14,"url":"https://lilianweng.github.io/posts/2023-06-23-agent/","name":"LLM Powered Autonomous Agents by Lilian Weng"},{"@type":"ListItem","position":15,"url":"https://github.com/langchain-ai/langgraph","name":"LangGraph: stateful, long-running agent orchestration"},{"@type":"ListItem","position":16,"url":"https://modelcontextprotocol.io/","name":"Model Context Protocol: the official introduction"},{"@type":"ListItem","position":17,"url":"https://github.com/modelcontextprotocol/servers","name":"MCP reference servers repository"},{"@type":"ListItem","position":18,"url":"https://developers.llamaindex.ai/python/framework/","name":"LlamaIndex documentation for building RAG over your data"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AI resources","url":"https://sabbagh-moh.github.io/devops-lounge/tracks/ai/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://sabbagh-moh.github.io/devops-lounge/"},"mainEntity":{"@type":"ItemList","numberOfItems":16,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.youtube.com/watch?v=zjkBMFhNj_g","name":"Intro to Large Language Models: Karpathy's one-hour talk"},{"@type":"ListItem","position":2,"url":"https://jalammar.github.io/illustrated-transformer/","name":"The Illustrated Transformer"},{"@type":"ListItem","position":3,"url":"https://arxiv.org/abs/1706.03762","name":"Attention Is All You Need, the original transformer paper"},{"@type":"ListItem","position":4,"url":"https://arxiv.org/abs/2005.11401","name":"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"},{"@type":"ListItem","position":5,"url":"https://huggingface.co/learn/llm-course/chapter1/1","name":"Hugging Face LLM Course"},{"@type":"ListItem","position":6,"url":"https://huggingface.co/learn/agents-course/unit0/introduction","name":"Hugging Face Agents Course"},{"@type":"ListItem","position":7,"url":"https://course.fast.ai/","name":"Practical Deep Learning for Coders (fast.ai)"},{"@type":"ListItem","position":8,"url":"https://karpathy.ai/zero-to-hero.html","name":"Neural Networks: Zero to Hero"},{"@type":"ListItem","position":9,"url":"https://github.com/microsoft/generative-ai-for-beginners","name":"Generative AI for Beginners from Microsoft"},{"@type":"ListItem","position":10,"url":"https://www.promptingguide.ai/","name":"Prompt Engineering Guide by DAIR.AI"},{"@type":"ListItem","position":11,"url":"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview","name":"Anthropic prompt engineering documentation"},{"@type":"ListItem","position":12,"url":"https://developers.openai.com/api/docs/guides/prompt-engineering","name":"OpenAI prompt engineering guide"},{"@type":"ListItem","position":13,"url":"https://www.anthropic.com/research/building-effective-agents","name":"Building Effective Agents: workflows vs agents"},{"@type":"ListItem","position":14,"url":"https://lilianweng.github.io/posts/2023-06-23-agent/","name":"LLM Powered Autonomous Agents by Lilian Weng"},{"@type":"ListItem","position":15,"url":"https://github.com/langchain-ai/langgraph","name":"LangGraph: stateful, long-running agent orchestration"},{"@type":"ListItem","position":16,"url":"https://modelcontextprotocol.io/","name":"Model Context Protocol: the official introduction"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tracks","item":"https://sabbagh-moh.github.io/devops-lounge/tracks/"},{"@type":"ListItem","position":3,"name":"AI","item":"https://sabbagh-moh.github.io/devops-lounge/tracks/ai/"}]}</script>
 </head>
 <body>
-<header class="top"><div class="bar">
-  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="28" height="28" alt=""><span>DevOps Lounge</span></a>
-  <nav aria-label="Main"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/" aria-current="page">Tracks</a><a href="/devops-lounge/tips/">Tips</a></nav>
-  <a class="join" href="https://discord.gg/XHtBz8rZp5" rel="noopener">Join on Discord</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tracks/" aria-current="page">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a></nav>
+  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
 </div></header>
 <main>
 
-<section class="hero small"><p class="eyebrow"><a href="/devops-lounge/tracks/">Tracks</a></p><h1>AI developers on Discord</h1>
-<p class="lede">Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.</p>
-<p class="actions"><a class="join big" href="https://discord.gg/XHtBz8rZp5" rel="noopener">Join the AI track</a><a class="ghost" href="https://roadmap.sh/ai-engineer" rel="noopener">AI roadmap</a></p></section>
-<section class="group"><h2>How the AI track works</h2>
-<ol class="steps"><li>Join DevOps Lounge and pick <strong>AI</strong> in the welcome menu.</li><li>The AI channel opens, with a pinned starter pack and the roadmap.</li><li>Ask questions in the help forums, where solved threads are tagged so the answers stay findable.</li></ol></section>
-<section class="group"><h2>Start with these</h2><ul class="items">
-<li class="item">
+<div class="wrap">
+  <section class="page-head">
+    <a class="crumb" href="/devops-lounge/tracks/">Tracks</a>
+    <h1 class="title">AI developers on Discord</h1>
+    <p class="lede">Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.</p>
+    <div class="actions"><a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join the AI track</a><a class="btn btn-quiet" href="https://roadmap.sh/ai-engineer" rel="noopener">AI roadmap</a></div>
+  </section>
+  <section class="group"><ul class="steps">
+    <li><b>Join the server</b>Free, and it takes a minute.</li>
+    <li><b>Pick AI</b>The AI room opens, with a pinned starter pack and the roadmap.</li>
+    <li><b>Ask and share</b>Solved questions get tagged, so the answers stay easy to find.</li>
+  </ul></section>
+  <section class="group"><h2>Start with these <small>16</small></h2><ul class="list">
+<li class="res">
   <h3><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" rel="noopener">Intro to Large Language Models: Karpathy's one-hour talk</a></h3>
   <p>A single free talk that explains an LLM as an artifact (a big parameter file plus a small program that runs it), how training and fine-tuning produce one, and where the security problems come from. Start here if you use models daily but have never looked inside.</p>
-  <p class="meta"><span>LLMs</span><span>Beginner</span><span class="host">youtube.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>youtube.com</span><span>LLMs</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://jalammar.github.io/illustrated-transformer/" rel="noopener">The Illustrated Transformer</a></h3>
   <p>Jay Alammar's diagram-driven walkthrough of the architecture from the original transformer paper: self-attention, multi-head attention, positional encoding and the encoder and decoder stacks. Read it before the paper, then keep it open next to the paper.</p>
-  <p class="meta"><span>LLMs</span><span>Intermediate</span><span class="host">jalammar.github.io</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=jalammar.github.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>jalammar.github.io</span><span>LLMs</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://arxiv.org/abs/1706.03762" rel="noopener">Attention Is All You Need, the original transformer paper</a></h3>
   <p>The 2017 paper that introduced the transformer and dropped recurrence in favour of attention. Dense in places, but short, and nearly every modern language model descends from it. Pair it with the illustrated walkthrough.</p>
-  <p class="meta"><span>Papers</span><span>Advanced</span><span class="host">arxiv.org</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://arxiv.org/abs/2005.11401" rel="noopener">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></h3>
   <p>The paper that named RAG: a generator combined with a dense vector index over Wikipedia, trained together. Useful for understanding what the acronym originally meant before it became a catch-all for &quot;put documents in the prompt&quot;.</p>
-  <p class="meta"><span>Papers</span><span>Intermediate</span><span class="host">arxiv.org</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://huggingface.co/learn/llm-course/chapter1/1" rel="noopener">Hugging Face LLM Course</a></h3>
   <p>A free, hands-on course on using and fine-tuning transformer models with the Hugging Face libraries. Good first stop if you want to move from calling an API to understanding tokenizers, models and training loops.</p>
-  <p class="meta"><span>Courses</span><span>Beginner</span><span class="host">huggingface.co</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://huggingface.co/learn/agents-course/unit0/introduction" rel="noopener">Hugging Face Agents Course</a></h3>
   <p>A free course on building, running and evaluating AI agents, with practical units rather than only theory. Reach for it when you want a structured path into agents instead of piecing blog posts together.</p>
-  <p class="meta"><span>Courses</span><span>Beginner</span><span class="host">huggingface.co</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://course.fast.ai/" rel="noopener">Practical Deep Learning for Coders (fast.ai)</a></h3>
   <p>A free, code-first course that teaches deep learning top-down: you build working models early and learn the theory underneath as you go. A strong fit for developers who learn by running things.</p>
-  <p class="meta"><span>Courses</span><span>Intermediate</span><span class="host">course.fast.ai</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=course.fast.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>course.fast.ai</span><span>Courses</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://karpathy.ai/zero-to-hero.html" rel="noopener">Neural Networks: Zero to Hero</a></h3>
   <p>Free video series by Andrej Karpathy that builds from backpropagation by hand up to a GPT-style language model in code. Slow and rewarding: the best way to make the maths feel concrete if you are willing to type along.</p>
-  <p class="meta"><span>Courses</span><span>Intermediate</span><span class="host">karpathy.ai</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=karpathy.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>karpathy.ai</span><span>Courses</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://github.com/microsoft/generative-ai-for-beginners" rel="noopener">Generative AI for Beginners from Microsoft</a></h3>
   <p>A free, open-source 21-lesson course. Lessons are either &quot;Learn&quot; (concepts) or &quot;Build&quot; (code in Python and TypeScript where possible). Pick the lessons you need; they do not have to be taken in order.</p>
-  <p class="meta"><span>Courses</span><span>Beginner</span><span class="host">github.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Courses</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://www.promptingguide.ai/" rel="noopener">Prompt Engineering Guide by DAIR.AI</a></h3>
   <p>A free, community-maintained reference covering prompting techniques, with examples and links to the papers behind them. Use it as a lookup when you want to name and try a technique such as few-shot, chain-of-thought or ReAct.</p>
-  <p class="meta"><span>Prompting</span><span>Beginner</span><span class="host">promptingguide.ai</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=promptingguide.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>promptingguide.ai</span><span>Prompting</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" rel="noopener">Anthropic prompt engineering documentation</a></h3>
   <p>Vendor docs, but the habits transfer to other models: be explicit, show examples, structure your inputs clearly, and iterate against a small set of test cases. Free to read; running the examples needs API access.</p>
-  <p class="meta"><span>Prompting</span><span>Beginner</span><span class="host">platform.claude.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=platform.claude.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>platform.claude.com</span><span>Prompting</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://developers.openai.com/api/docs/guides/prompt-engineering" rel="noopener">OpenAI prompt engineering guide</a></h3>
   <p>OpenAI's official guidance on writing prompts and structuring messages. Read it alongside another vendor's guide: where the two agree, you can trust the advice to travel across models. Free to read; API use is billed.</p>
-  <p class="meta"><span>Prompting</span><span>Beginner</span><span class="host">developers.openai.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=developers.openai.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>developers.openai.com</span><span>Prompting</span><span>Beginner</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener">Building Effective Agents: workflows vs agents</a></h3>
   <p>A calm essay that separates predefined workflows from model-directed agents and lays out five composable patterns. Its main advice is to start with the simplest thing that works and add complexity only when it measurably helps.</p>
-  <p class="meta"><span>Agents</span><span>Intermediate</span><span class="host">anthropic.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://lilianweng.github.io/posts/2023-06-23-agent/" rel="noopener">LLM Powered Autonomous Agents by Lilian Weng</a></h3>
   <p>A thorough overview of agents built around a language model, organised around planning, memory and tool use, with pointers to the research behind each. A good map of the territory before you pick a framework.</p>
-  <p class="meta"><span>Agents</span><span>Intermediate</span><span class="host">lilianweng.github.io</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=lilianweng.github.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>lilianweng.github.io</span><span>Agents</span><span>Intermediate</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://github.com/langchain-ai/langgraph" rel="noopener">LangGraph: stateful, long-running agent orchestration</a></h3>
   <p>MIT-licensed, low-level framework for agents modelled as stateful graphs, with durable execution so a run can resume after a failure. Reach for it when a plain loop stops being enough and you need control over state and flow.</p>
-  <p class="meta"><span>Agents</span><span>Advanced</span><span class="host">github.com</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Agents</span><span>Advanced</span></div>
 </li>
-<li class="item">
+<li class="res">
   <h3><a href="https://modelcontextprotocol.io/" rel="noopener">Model Context Protocol: the official introduction</a></h3>
   <p>Home of the open protocol that lets AI applications connect to tools, data and prompts through a common interface. Start with the introduction and architecture pages, then build a small server of your own.</p>
-  <p class="meta"><span>MCP</span><span>Beginner</span><span class="host">modelcontextprotocol.io</span></p>
-</li>
-<li class="item">
-  <h3><a href="https://github.com/modelcontextprotocol/servers" rel="noopener">MCP reference servers repository</a></h3>
-  <p>Reference implementations of MCP servers, including a filesystem server. Read the source before writing your own; seeing how tools are declared and results returned is faster than reading the spec cold. Review any server before you run it.</p>
-  <p class="meta"><span>MCP</span><span>Beginner</span><span class="host">github.com</span></p>
-</li>
-<li class="item">
-  <h3><a href="https://developers.llamaindex.ai/python/framework/" rel="noopener">LlamaIndex documentation for building RAG over your data</a></h3>
-  <p>Docs for an open-source framework that covers loading data, indexing, retrieval and query engines. A practical way to get a first retrieval pipeline running so you can see where quality really gets lost.</p>
-  <p class="meta"><span>RAG</span><span>Intermediate</span><span class="host">developers.llamaindex.ai</span></p>
+  <div class="src"><img src="https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>modelcontextprotocol.io</span><span>MCP</span><span>Beginner</span></div>
 </li></ul></section>
+</div>
 
-<aside class="cta">
-  <div><h2>Talk about it with other developers</h2><p>Meet other AI developers, get unstuck faster, and show what you are building.</p></div>
-  <a class="join big" href="https://discord.gg/XHtBz8rZp5" rel="noopener">Join DevOps Lounge</a>
-</aside>
+<div class="wrap"><section class="final">
+  <div><h2>Meet the AI crowd.</h2><p>Get unstuck faster and show what you are building to people who do the same work.</p></div>
+  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
+</section></div>
 </main>
-<footer><div class="bar foot">
-  <p><strong>DevOps Lounge</strong> is a free Discord community for developers and DevOps engineers at every level.</p>
-  <p><a href="https://discord.gg/XHtBz8rZp5" rel="noopener">Join the server</a> · <a href="/devops-lounge/tracks/">Tracks</a> · <a href="/devops-lounge/tips/">Tips</a> · <a href="/devops-lounge/ar/" lang="ar">بالعربي</a> · <a href="/devops-lounge/llms.txt">llms.txt</a></p>
+<footer><div class="wrap">
+  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
 </body>
 </html>
