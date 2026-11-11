@@ -3,16 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI Prompt Builder for Developers: code, debugging, security and image prompts | DevOps Lounge</title>
-<meta name="description" content="Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answ">
+<title>AI Prompt Builder: turn an idea into a complete prompt for websites, apps, code and images | DevOps Lounge</title>
+<meta name="description" content="Write your idea the way you would say it, like &quot;a store like Gymshark&quot;. The builder works out what you want, adds the pages, stack, references and quality bar">
 <link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevOps Lounge">
-<meta property="og:title" content="AI Prompt Builder for Developers: code, debugging, security and image prompts | DevOps Lounge">
-<meta property="og:description" content="Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answ">
+<meta property="og:title" content="AI Prompt Builder: turn an idea into a complete prompt for websites, apps, code and images | DevOps Lounge">
+<meta property="og:description" content="Write your idea the way you would say it, like &quot;a store like Gymshark&quot;. The builder works out what you want, adds the pages, stack, references and quality bar">
 <meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/">
-<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og.png">
+<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-prompt-builder.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-prompt-builder.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
@@ -21,23 +24,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
 <link rel="stylesheet" href="/devops-lounge/assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Prompt Builder","url":"https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answers.","keywords":"prompt generator, prompt improver, coding prompt, image prompt, midjourney prompt, security review prompt"}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Prompt Builder","url":"https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Write your idea the way you would say it, like \"a store like Gymshark\". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.","keywords":"prompt generator, prompt improver, coding prompt, image prompt, midjourney prompt, security review prompt"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it use AI?","acceptedAnswer":{"@type":"Answer","text":"No. It runs a set of rules in your browser, so it is instant, free and private. Use the prompt it builds with any AI assistant you like."}},{"@type":"Question","name":"Which image models does it support?","acceptedAnswer":{"@type":"Answer","text":"Midjourney (with --ar and --no), Stable Diffusion (with a negative prompt), Flux and ChatGPT image generation."}},{"@type":"Question","name":"Is my idea sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens on this page. Nothing is uploaded or stored."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"},{"@type":"ListItem","position":3,"name":"Prompt Builder","item":"https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/"}]}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a></nav>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a></nav>
   <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
 </div></header>
 <main>
 
 <div class="wrap">
-  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">Prompt Builder</h1><p class="lede">Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answers.</p></section>
+  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">Prompt Builder</h1><p class="lede">Write your idea the way you would say it, like &quot;a store like Gymshark&quot;. The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.</p></section>
   
 <div class="tool" id="prompt-tool">
-  <div class="seg" role="tablist"><button type="button" role="tab" data-mode="code" aria-selected="true">Write code</button><button type="button" role="tab" data-mode="debug" aria-selected="false">Fix a bug</button><button type="button" role="tab" data-mode="refactor" aria-selected="false">Refactor</button><button type="button" role="tab" data-mode="security" aria-selected="false">Security review</button><button type="button" role="tab" data-mode="explain" aria-selected="false">Explain</button><button type="button" role="tab" data-mode="image" aria-selected="false">Image</button></div>
+  <div class="seg" role="tablist"><button type="button" role="tab" data-mode="project" aria-selected="true">Build a project</button><button type="button" role="tab" data-mode="code" aria-selected="false">Write code</button><button type="button" role="tab" data-mode="debug" aria-selected="false">Fix a bug</button><button type="button" role="tab" data-mode="refactor" aria-selected="false">Refactor</button><button type="button" role="tab" data-mode="security" aria-selected="false">Security review</button><button type="button" role="tab" data-mode="explain" aria-selected="false">Explain</button><button type="button" role="tab" data-mode="image" aria-selected="false">Image</button></div>
   <div class="tool-grid">
     <div class="tool-in">
       <label class="field"><span>Your idea</span><textarea id="pb-idea" rows="5" spellcheck="true"></textarea></label>
@@ -54,7 +58,8 @@
     </div>
   </div>
 </div>
-  <section class="group"><h2>How it works</h2><ul class="steps"><li><b>It reads your words</b>A dictionary of 15 languages and 34 frameworks and services picks out your stack. Error lines are found by their shape.</li><li><b>It adds what experts add</b>A role, the context, clear requirements and the exact output you want. For images: style, light, lens and the right syntax for your model.</li><li><b>It grades the prompt</b>The checklist shows what is missing, like the error message or the language, so the answer is right the first time.</li></ul></section>
+  
+  <section class="group"><h2>How it works</h2><ul class="steps"><li><b>It understands the request</b>It tells a project from code, a bug, a review, a question or an image, and recognizes 14 kinds of projects, 27 well-known products as references, 13 design styles, 15 languages and 41 frameworks and services.</li><li><b>It adds what experts add</b>For a project: the pages and features that kind of product needs, a stack, a quality bar and the questions to answer first. For a reference like Gymshark: what to borrow, and a reminder not to copy the brand.</li><li><b>Images get a real look</b>Your mood words become a film or cinematographer reference, light, lens, color and film stock, written in the syntax of Midjourney, Stable Diffusion, Flux or ChatGPT.</li></ul></section>
   <section class="group"><h2>Questions</h2><div class="faq"><details><summary>Does it use AI?</summary><p>No. It runs a set of rules in your browser, so it is instant, free and private. Use the prompt it builds with any AI assistant you like.</p></details><details><summary>Which image models does it support?</summary><p>Midjourney (with --ar and --no), Stable Diffusion (with a negative prompt), Flux and ChatGPT image generation.</p></details><details><summary>Is my idea sent anywhere?</summary><p>No. Everything happens on this page. Nothing is uploaded or stored.</p></details></div></section>
   <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/tool-schema/">AI Tool Schema Builder</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/jwt/">JWT Decoder</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
 </div>
@@ -66,8 +71,9 @@
 </main>
 <footer><div class="wrap">
   <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
+<script src="/devops-lounge/assets/tools/prompt-kb.js" defer></script>
 <script src="/devops-lounge/assets/tools/prompt.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>

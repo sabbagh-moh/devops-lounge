@@ -478,6 +478,17 @@ body { background-image: var(--grain); }
 .final .btn-primary { background: #fff; color: #000; }
 .final .btn-primary:hover { background: #E5E5EA; }
 
+
+/* ---------- home: a few featured tools; hub: tools in groups ---------- */
+.bento-home { grid-auto-rows: 200px; }
+.bento-home .tile:not(.tile-hero) { justify-content: space-between; }
+.more-link { margin: 22px 0 0; }
+.more-link a { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 999px; background: var(--fill); text-decoration: none; font-weight: 500; transition: background .25s; }
+.more-link a:hover { background: var(--fill-2); }
+.more-link a::after { content: "→"; }
+.tool-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.tool-row .tile { min-height: 210px; }
+.tool-group > h2 small { font: 500 15px var(--mono); color: var(--text-3); }
 /* ---------- bot trap story ---------- */
 .trap-channel { font-weight: 600; color: var(--text-2); margin-bottom: 14px; font-size: 15px; }
 .trap-channel b { color: var(--text-3); font-weight: 400; margin-right: 4px; }
@@ -489,3 +500,17 @@ body { background-image: var(--grain); }
 .spam.caught .spam-text { text-decoration: line-through; color: #FF8A8A; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ---------- reference tables under tools ---------- */
+.ex-scroll { overflow-x: auto; border-radius: 24px; background: var(--card); }
+.ex-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.ex-table th { text-align: left; font-weight: 500; color: var(--text-3); font-size: 13.5px; padding: 16px 22px; border-bottom: 1px solid var(--line); }
+.ex-table td { padding: 13px 22px; border-bottom: 1px solid #2C2C2E; color: var(--text-2); vertical-align: top; }
+.ex-table tr:last-child td { border-bottom: 0; }
+.ex-table td code { background: #000; color: #fff; white-space: nowrap; }
+
+/* ---------- prompt builder: what it understood ---------- */
+#pb-detected { display: flex; flex-wrap: wrap; gap: 8px; min-height: 34px; align-items: center; }
+#pb-detected .u { display: inline-flex; align-items: baseline; gap: 8px; background: #000; border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 13.5px; color: #fff; }
+#pb-detected .u i { font-style: normal; color: var(--text-3); font-size: 12px; }
+#pb-detected .hint { color: var(--text-3); font-size: 14px; }

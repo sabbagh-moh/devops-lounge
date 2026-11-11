@@ -1,0 +1,1412 @@
+# DevOps Lounge: full text
+
+> DevOps Lounge is a free Discord community for developers and DevOps engineers at every level. Join: https://discord.gg/XHtBz8rZp5. Website: https://sabbagh-moh.github.io/devops-lounge/
+
+## About
+Members ask programming questions in forums with solved tags, get code reviews, share projects in a showroom with upvotes, and find collaborators. There are ten tracks and rooms in English, Arabic, Spanish, Portuguese, French and Russian. A bot trap, raid protection and AutoMod keep spam out.
+
+### What is DevOps Lounge?
+A free Discord community for developers and DevOps engineers at every level. Members ask questions, share projects, review code and find people to build with.
+
+### Is it free?
+Yes. Joining is free and there is nothing to buy.
+
+### I am just starting out. Is it for me?
+Yes. There is a beginner track and a beginner corner, and every help forum welcomes first questions. Experienced engineers are there too, which is what makes the answers good.
+
+### What languages can I talk in?
+English is shared by everyone, and there are rooms in Arabic, Spanish, Portuguese, French and Russian.
+
+### What topics does it cover?
+Ten tracks: AI, web, app development, frontend, backend, mobile, data and ML, security, DevOps and cloud, and game development, plus career and interview help.
+
+### How do I get help with my code?
+Post in the ask-a-question forum with what you tried and the error you see. When it is solved, the thread is tagged so others can find the answer later. There is also a code review forum.
+
+## Free developer tools (run in the browser, nothing uploaded)
+### Prompt Builder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/
+Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
+- It understands the request: It tells a project from code, a bug, a review, a question or an image, and recognizes 14 kinds of projects, 27 well-known products as references, 13 design styles, 15 languages and 41 frameworks and services.
+- It adds what experts add: For a project: the pages and features that kind of product needs, a stack, a quality bar and the questions to answer first. For a reference like Gymshark: what to borrow, and a reminder not to copy the brand.
+- Images get a real look: Your mood words become a film or cinematographer reference, light, lens, color and film stock, written in the syntax of Midjourney, Stable Diffusion, Flux or ChatGPT.
+- Q: Does it use AI? A: No. It runs a set of rules in your browser, so it is instant, free and private. Use the prompt it builds with any AI assistant you like.
+- Q: Which image models does it support? A: Midjourney (with --ar and --no), Stable Diffusion (with a negative prompt), Flux and ChatGPT image generation.
+- Q: Is my idea sent anywhere? A: No. Everything happens on this page. Nothing is uploaded or stored.
+
+### Token Counter
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/token-counter/
+Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
+- An honest estimate: Common English words are one token, long words several, and Arabic, Russian and Chinese text use more tokens per character. The range covers how real tokenizers differ.
+- Context windows: The bars show how much of each common window size your text fills, before the model writes a word back.
+- Cost: Enter your model's current input price to see what one request costs. Prices change, so take them from your provider.
+- Q: Is this exact? A: It is an estimate, usually within 10 to 15 percent. Exact counts need the model's own tokenizer, and every model family has a different one.
+- Q: Why does Arabic use more tokens? A: Tokenizers are trained mostly on English, so other scripts get split into smaller pieces.
+- Q: Is my text sent anywhere? A: No. Counting happens in your browser.
+Rules of thumb:
+- 1 token : 4 characters of English, or about 3/4 of a word
+- 100 tokens : About 75 English words
+- 1,000 words of English : About 1,300 tokens
+- A page of code : About 500 to 800 tokens
+- Arabic or Russian text : Often 1.5 to 3 times the tokens of the same length in English
+
+### AI Tool Schema Builder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/
+Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
+- One definition, three formats: OpenAI wraps the schema in a function object, Claude calls it input_schema, and MCP calls it inputSchema. The parameters are the same JSON Schema.
+- Strict mode: When every parameter is required, the OpenAI version turns on strict mode so the model must follow the schema exactly.
+- Descriptions matter: Models choose tools and fill values from the descriptions. The tips point out anything vague.
+- Q: Can I make a parameter optional? A: Untick Required. It stays in the properties but leaves the required list.
+- Q: Where do I put this? A: In the tools list of your API request, or in the tools your MCP server lists.
+
+### JSON to TypeScript
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/json-to-types/
+Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
+- Merged arrays: Every item in an array is read, so a field that only some items have becomes optional, and mixed types become unions.
+- Named types: Nested objects get their own interfaces, named after their keys. Array items are named in the singular.
+- Q: Does it handle dates? A: JSON has no date type, so dates come out as strings. Add z.string().datetime() in Zod if you want them checked.
+- Q: Is my JSON uploaded? A: No. It is converted in your browser.
+
+### cURL Converter
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/curl-converter/
+Paste a cURL command from API docs or your browser's network tab. Get clean fetch, axios or Python requests code with headers, body and auth carried over.
+- Understands the usual flags: -X, -H, -d and its variants, --json, -u for basic auth, -b for cookies, -G for query strings, and line breaks with backslashes.
+- JSON stays JSON: A JSON body becomes a real object in the code, so you can edit it easily.
+- Q: Where do I get a cURL command? A: In Chrome or Edge, open the Network tab, right-click a request and choose Copy as cURL.
+- Q: Are my tokens safe? A: The command never leaves your browser. Still, replace real tokens before you share code.
+cURL flags it understands:
+- -X, --request : HTTP method, like POST or DELETE
+- -H, --header : A request header
+- -d, --data, --data-raw : Request body
+- --json : JSON body, with JSON headers set
+- -u, --user : Basic auth, turned into an Authorization header
+- -b, --cookie : Cookies
+- -G, --get : Send the data as a query string
+- -A, --user-agent : The User-Agent header
+
+### Text Diff
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/diff/
+Paste two versions of a file, a config or any text. Added and removed lines are marked with their line numbers.
+- Line by line: It finds the longest run of lines the two texts share, then marks everything else as added or removed.
+- Whitespace: Turn on Ignore whitespace to skip changes that are only indentation or spacing.
+- Q: How long can the texts be? A: A few thousand lines each works well. Much longer files are better compared with git diff.
+- Q: Is my text uploaded? A: No. The comparison runs in your browser.
+
+### Color and Contrast
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/color-contrast/
+Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a background for WCAG, and pick a lighter or darker shade.
+- Any format in: Names like navy, hex, rgb(), hsl(), oklch() and more are read by your browser's own color engine.
+- WCAG levels: Body text needs 4.5:1 for AA and 7:1 for AAA. Large or bold text needs 3:1 for AA.
+- Q: What is OKLCH? A: A color format where lightness matches how bright colors look to people, which makes building palettes easier.
+- Q: Which level should I aim for? A: AA for everything, and AAA for long reading text when you can.
+
+### Cron Builder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/cron/
+Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
+- Five fields: Minute, hour, day of month, month and day of week. Use * for any value, */n for every n, a-b for a range and commas for lists.
+- Names work too: MON-FRI and JAN-DEC are understood, and so are @daily, @hourly and @weekly.
+- The day rule: When both day fields are set, cron runs when either one matches. The next-run list follows that rule.
+- Q: What does */5 mean? A: Every 5 units of that field. In the minute field, */5 runs at minutes 0, 5, 10 and so on.
+- Q: Is Sunday 0 or 7? A: Both. Cron accepts 0 and 7 for Sunday.
+- Q: Which time zone is used? A: Your browser's. Servers often run cron in UTC, so check your server's time zone too.
+Common cron schedules:
+- * * * * * : Every minute
+- */5 * * * * : Every 5 minutes
+- */15 * * * * : Every 15 minutes
+- 0 * * * * : Every hour, on the hour
+- 0 */6 * * * : Every 6 hours
+- 0 0 * * * : Every day at midnight
+- 0 9 * * * : Every day at 09:00
+- 30 18 * * 1-5 : Weekdays at 18:30
+- 0 9 * * 1 : Every Monday at 09:00
+- 0 0 * * 0 : Every Sunday at midnight
+- 0 0 1 * * : The first day of every month
+- 0 0 1 1 * : Once a year, on 1 January
+
+### Regex Tester
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/regex/
+Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
+- JavaScript flavor: Patterns run with the JavaScript engine in your browser, the same one Node.js uses.
+- Flags: g finds every match, i ignores case, m makes ^ and $ work per line, s lets . match new lines, u enables full Unicode.
+- Groups: Parentheses capture parts of a match. They are listed as $1, $2 and so on.
+- Q: Why does my pattern work here but not in Python? A: Regex flavors differ a little. Lookbehind, named groups and some escapes are written differently in Python, PCRE and JavaScript.
+- Q: Is my text sent anywhere? A: No. Matching happens in your browser.
+Patterns developers use every day:
+- Email address (practical) : [\w.+-]+@[\w-]+\.[\w.-]+
+- URL : https?:\/\/[^\s]+
+- IPv4 address : \b(?:\d{1,3}\.){3}\d{1,3}\b
+- Date (YYYY-MM-DD) : \d{4}-\d{2}-\d{2}
+- Time (HH:MM, 24h) : ([01]\d|2[0-3]):[0-5]\d
+- Hex color : #(?:[0-9a-fA-F]{3}){1,2}\b
+- UUID : [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+- URL slug : ^[a-z0-9]+(?:-[a-z0-9]+)*$
+- Phone, international (E.164) : ^\+[1-9]\d{7,14}$
+- Only digits : ^\d+$
+- Leading and trailing spaces : ^\s+|\s+$
+
+### JSON Formatter
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/json/
+Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.
+- Strict JSON: Keys need double quotes, and trailing commas and comments are not allowed. That is what APIs expect.
+- Exact errors: When the JSON is broken, the line and column of the problem are shown.
+- Q: Is there a size limit? A: Only your browser's memory. Files of several megabytes work fine.
+- Q: Is my data uploaded? A: No. It never leaves this page.
+
+### JWT Decoder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/jwt/
+Paste a token to read its header and payload, and see when it was issued and when it expires.
+- Decoded, not verified: The header and payload are only Base64URL-encoded, so anyone can read them. Checking the signature needs the key.
+- Never paste secrets: Tokens from production give access. Decode them here, where nothing is sent anywhere, then rotate any token you shared by mistake.
+- Q: Can you verify the signature? A: Not here on purpose. Verifying needs your secret or public key, and a key should never be pasted into a website.
+- Q: Why does my token show as expired? A: The exp claim is in Unix seconds. If it is in the past, servers reject the token.
+
+### Timestamp Converter
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/
+Paste a Unix timestamp in seconds or milliseconds, or any date, and get every format you need.
+- Seconds or milliseconds: Ten digits are read as seconds and thirteen as milliseconds, which is what JavaScript uses.
+- Any date: Dates like 2026-11-11 14:30 or ISO strings with a time zone also work.
+- Q: What is Unix time? A: The number of seconds since 1 January 1970 at midnight UTC. Most systems store time this way.
+- Q: Why is my date off by some hours? A: Time zones. The ISO line shows UTC, and the next line shows your local time.
+
+### Base64 and URL Encoder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/base64/
+Encode or decode Base64 and URL text. Arabic, emoji and every other character are handled correctly.
+- UTF-8 first: Text is turned into UTF-8 bytes before encoding, so non-English text and emoji survive the round trip.
+- URL-safe Base64: Decoding also accepts the URL-safe alphabet with - and _.
+- Q: Is Base64 encryption? A: No. It only changes how bytes are written. Anyone can decode it.
+- Q: When do I URL-encode? A: When a value goes inside a URL, like a search query, so characters like & and spaces do not break it.
+
+### Password and UUID Generator
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/password/
+Strong passwords and v4 UUIDs, made with your browser's secure random generator. Nothing is sent or saved.
+- Real randomness: It uses crypto.getRandomValues, the same source browsers use for encryption, with no bias between characters.
+- No look-alikes: Characters that are easy to confuse, like l, 1, O and 0, are left out.
+- Q: How long should a password be? A: At least 16 characters for accounts that matter, and use a password manager so you never retype it.
+- Q: Are the UUIDs unique? A: v4 UUIDs have 122 random bits, so a clash is practically impossible.
+
+### chmod Calculator
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/chmod/
+Tick who can read, write and run a file. You get the number, the letters and the command to paste.
+- Three digits: One each for the owner, the group and everyone else. Read is 4, write is 2 and run is 1, added together.
+- Common picks: 644 for normal files, 755 for scripts and folders, 600 for SSH keys.
+- Q: What does 777 do? A: It lets anyone read, change and run the file. It is almost never what you want on a server.
+- Q: Why does SSH refuse my key? A: Private keys must not be readable by others. Run chmod 600 on the key file.
+Common permissions:
+- 644 : -rw-r--r-- : Normal files: you edit, everyone reads
+- 755 : -rwxr-xr-x : Scripts, programs and folders
+- 600 : -rw------- : SSH private keys and secrets
+- 700 : -rwx------ : Private folders like ~/.ssh
+- 640 : -rw-r----- : Config files your group needs to read
+- 775 : -rwxrwxr-x : Shared project folders
+- 444 : -r--r--r-- : Files nobody should change
+- 777 : -rwxrwxrwx : Almost never: anyone can change it
+
+## Tracks
+### AI
+https://sabbagh-moh.github.io/devops-lounge/tracks/ai/
+Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.
+Roadmap: https://roadmap.sh/ai-engineer
+
+### Web Dev
+https://sabbagh-moh.github.io/devops-lounge/tracks/web-dev/
+General and full-stack web development: how the pieces fit together, from the browser to the database and deployment.
+Roadmap: https://roadmap.sh/full-stack
+
+### App Dev
+https://sabbagh-moh.github.io/devops-lounge/tracks/app-dev/
+Desktop and cross-platform applications: packaging, native integration, updates and making software feel at home on every OS.
+Roadmap: https://roadmap.sh/software-architect
+
+### Frontend
+https://sabbagh-moh.github.io/devops-lounge/tracks/frontend/
+UI, CSS, accessibility, performance and frameworks. Share what you are building and how you solved the tricky parts.
+Roadmap: https://roadmap.sh/frontend
+
+### Backend
+https://sabbagh-moh.github.io/devops-lounge/tracks/backend/
+APIs, databases, queues, caching and the systems behind them. Good place to talk through design decisions.
+Roadmap: https://roadmap.sh/backend
+
+### Mobile
+https://sabbagh-moh.github.io/devops-lounge/tracks/mobile/
+Native and hybrid iOS and Android. The roadmap below covers Android, and there is an iOS one at roadmap.sh/ios.
+Roadmap: https://roadmap.sh/android
+
+### Data and ML
+https://sabbagh-moh.github.io/devops-lounge/tracks/data-and-ml/
+Data engineering, analysis and classic machine learning: pipelines, notebooks, features and models.
+Roadmap: https://roadmap.sh/ai-data-scientist
+
+### Cyber Security
+https://sabbagh-moh.github.io/devops-lounge/tracks/cyber-security/
+Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.
+Roadmap: https://roadmap.sh/cyber-security
+
+### DevOps and Cloud
+https://sabbagh-moh.github.io/devops-lounge/tracks/devops-and-cloud/
+CI/CD, containers, infrastructure as code, observability and keeping production calm.
+Roadmap: https://roadmap.sh/devops
+
+### Game Dev
+https://sabbagh-moh.github.io/devops-lounge/tracks/game-dev/
+Engines, graphics, gameplay code and shipping your first game. Share builds and ask for playtesters.
+Roadmap: https://roadmap.sh/game-developer
+
+## The Vault: 249 hand-picked resources
+### AI for developers
+Hand-picked talks, papers, courses and tools for building with large language models, from your first prompt to agents in production. Each one comes with a short note on why it is worth your time.
+- Intro to Large Language Models: Karpathy's one-hour talk (https://www.youtube.com/watch?v=zjkBMFhNj_g): A single free talk that explains an LLM as an artifact (a big parameter file plus a small program that runs it), how training and fine-tuning produce one, and where the security problems come from. Start here if you use models daily but have never looked inside.
+- The Illustrated Transformer (https://jalammar.github.io/illustrated-transformer/): Jay Alammar's diagram-driven walkthrough of the architecture from the original transformer paper: self-attention, multi-head attention, positional encoding and the encoder and decoder stacks. Read it before the paper, then keep it open next to the paper.
+- Attention Is All You Need, the original transformer paper (https://arxiv.org/abs/1706.03762): The 2017 paper that introduced the transformer and dropped recurrence in favour of attention. Dense in places, but short, and nearly every modern language model descends from it. Pair it with the illustrated walkthrough.
+- Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (https://arxiv.org/abs/2005.11401): The paper that named RAG: a generator combined with a dense vector index over Wikipedia, trained together. Useful for understanding what the acronym originally meant before it became a catch-all for "put documents in the prompt".
+- Hugging Face LLM Course (https://huggingface.co/learn/llm-course/chapter1/1): A free, hands-on course on using and fine-tuning transformer models with the Hugging Face libraries. Good first stop if you want to move from calling an API to understanding tokenizers, models and training loops.
+- Hugging Face Agents Course (https://huggingface.co/learn/agents-course/unit0/introduction): A free course on building, running and evaluating AI agents, with practical units rather than only theory. Reach for it when you want a structured path into agents instead of piecing blog posts together.
+- Practical Deep Learning for Coders (fast.ai) (https://course.fast.ai/): A free, code-first course that teaches deep learning top-down: you build working models early and learn the theory underneath as you go. A strong fit for developers who learn by running things.
+- Neural Networks: Zero to Hero (https://karpathy.ai/zero-to-hero.html): Free video series by Andrej Karpathy that builds from backpropagation by hand up to a GPT-style language model in code. Slow and rewarding: the best way to make the maths feel concrete if you are willing to type along.
+- Generative AI for Beginners from Microsoft (https://github.com/microsoft/generative-ai-for-beginners): A free, open-source 21-lesson course. Lessons are either "Learn" (concepts) or "Build" (code in Python and TypeScript where possible). Pick the lessons you need; they do not have to be taken in order.
+- Prompt Engineering Guide by DAIR.AI (https://www.promptingguide.ai/): A free, community-maintained reference covering prompting techniques, with examples and links to the papers behind them. Use it as a lookup when you want to name and try a technique such as few-shot, chain-of-thought or ReAct.
+- Anthropic prompt engineering documentation (https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview): Vendor docs, but the habits transfer to other models: be explicit, show examples, structure your inputs clearly, and iterate against a small set of test cases. Free to read; running the examples needs API access.
+- OpenAI prompt engineering guide (https://developers.openai.com/api/docs/guides/prompt-engineering): OpenAI's official guidance on writing prompts and structuring messages. Read it alongside another vendor's guide: where the two agree, you can trust the advice to travel across models. Free to read; API use is billed.
+- Building Effective Agents: workflows vs agents (https://www.anthropic.com/research/building-effective-agents): A calm essay that separates predefined workflows from model-directed agents and lays out five composable patterns. Its main advice is to start with the simplest thing that works and add complexity only when it measurably helps.
+- LLM Powered Autonomous Agents by Lilian Weng (https://lilianweng.github.io/posts/2023-06-23-agent/): A thorough overview of agents built around a language model, organised around planning, memory and tool use, with pointers to the research behind each. A good map of the territory before you pick a framework.
+- LangGraph: stateful, long-running agent orchestration (https://github.com/langchain-ai/langgraph): MIT-licensed, low-level framework for agents modelled as stateful graphs, with durable execution so a run can resume after a failure. Reach for it when a plain loop stops being enough and you need control over state and flow.
+- Model Context Protocol: the official introduction (https://modelcontextprotocol.io/): Home of the open protocol that lets AI applications connect to tools, data and prompts through a common interface. Start with the introduction and architecture pages, then build a small server of your own.
+- MCP reference servers repository (https://github.com/modelcontextprotocol/servers): Reference implementations of MCP servers, including a filesystem server. Read the source before writing your own; seeing how tools are declared and results returned is faster than reading the spec cold. Review any server before you run it.
+- LlamaIndex documentation for building RAG over your data (https://developers.llamaindex.ai/python/framework/): Docs for an open-source framework that covers loading data, indexing, retrieval and query engines. A practical way to get a first retrieval pipeline running so you can see where quality really gets lost.
+- Sentence Transformers: embeddings, retrieval and reranking (https://www.sbert.net/): The standard open-source Python library for computing text embeddings and running rerankers, with thousands of pretrained models on the Hugging Face Hub. Runs locally and for free; a good default for semantic search prototypes.
+- Ollama: run open models locally with one command (https://github.com/ollama/ollama): Open-source runner that pulls a model and serves it with ollama run, plus a local REST API on port 11434. The quickest route to trying open models offline; customise behaviour later with a Modelfile.
+- llama.cpp: C/C++ inference for local models (https://github.com/ggml-org/llama.cpp): The engine behind much of the local-model ecosystem, running GGUF models on CPUs and GPUs. It includes llama-server with an OpenAI-compatible API. Choose it when you want control over quantisation, context size and offload.
+- Open WebUI: a self-hosted chat interface for local models (https://github.com/open-webui/open-webui): Open-source, self-hosted web interface designed to run fully offline. It connects to Ollama or any OpenAI-compatible API, so you can give a team a familiar chat UI over models you host yourself.
+- Anthropic's open skills repository (https://github.com/anthropics/skills): A repository of example Agent Skills: folders of instructions, scripts and resources that an agent loads when relevant. Study a few before writing your own; the structure and tone of the descriptions are the useful lesson.
+- Agent Skills: the open format (https://agentskills.io): Documentation for the open Agent Skills format, built around a SKILL.md file with a name and description plus optional scripts and references. Read this to see what stays portable between tools that support skills.
+- Aider: AI pair programming in your terminal (https://aider.chat/): Free, open-source terminal tool that edits code in your repository and works with git. It connects to most hosted models and to local ones, so you pay only your model provider, or nothing if you run locally.
+- Continue: open-source coding agent for VS Code, JetBrains and the CLI (https://github.com/continuedev/continue): Apache-2.0 coding assistant available as a VS Code extension, JetBrains plugin and CLI. Pick it when you want an editor-integrated assistant that you can point at the model of your choice, hosted or local.
+- MLflow for tracing and evaluating AI applications (https://mlflow.org/docs/latest/): Open-source platform that covers experiment tracking for classic models and tracing, evaluation and monitoring for LLM apps and agents. Choose it when you want one self-hostable tool across both kinds of work.
+- Langfuse: open-source LLM observability (https://langfuse.com/docs): MIT-licensed, self-hostable platform for tracing LLM calls and agent runs. Use it to see what your application actually sent and received, which is the first step to debugging quality problems in production.
+- OWASP Top 10 for LLM Applications (https://genai.owasp.org/llm-top-10/): The community-maintained list of the main risks in LLM apps, led by prompt injection and including excessive agency, system prompt leakage and unbounded consumption. Use it as a review checklist before you ship.
+- Simon Willison's prompt injection series (https://simonwillison.net/series/prompt-injection/): A running series of posts on prompt injection, the attack where untrusted text steers a model. Free and practical; read it to understand why filtering alone is not a defence and why architecture matters.
+- The tool-use loop in four steps, and the stop reason that drives it (https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview): Tool use looks magical until you see the loop. You describe your tools (name, description, input schema), the model answers with a structured call instead of text, your code runs it, and you send the result back. The documented signal for "the model wants a tool" is stop_reason: "tool_use" plus tool_use blocks; your reply goes in a tool_result block carrying the matching tool_use_id.
+
+Skeleton (Anthropic-style shapes, other providers differ in names but not in structure):
+``python
+messages = [{"role": "user", "content": question}]
+for _ in range(8):  # hard cap on turns
+    resp = client.messages.create(model=MODEL, max_tokens=1024,
+                                  tools=tools, messages=messages)
+    if resp.stop_reason != "tool_use":
+        break
+    messages.append({"role": "assistant", "content": resp.content})
+    results = [run_tool(b) for b in resp.content if b.type == "tool_use"]
+    messages.append({"role": "user", "content": results})
+`
+Two habits worth copying: always cap iterations, and have run_tool` return errors as text the model can read rather than raising.
+- Write tool descriptions like an onboarding note for a new teammate (https://www.anthropic.com/research/writing-tools-for-agents): Agents fail on tools more often than on reasoning, and the fix is usually in the tool definition. The guidance in Anthropic's engineering write-up boils down to a few rules you can apply today:
+
+- Name tools with a shared prefix per service or resource, so similar ones group together.
+- Describe niche terms and query formats as you would to a new colleague, and prefer unambiguous parameters (user_id rather than user).
+- Return high-signal fields (names, types) instead of raw UUIDs, and offer a concise/detailed switch.
+- Paginate, filter and truncate by default so one call cannot flood the context.
+- Make errors say how to fix the input.
+
+A before/after:
+``
+before: search(q)  -> "Searches stuff"
+after:  tickets_search(query, status="open", limit=10)
+        "Full-text search over support tickets. status is one of
+         open|closed|all. Returns title, id, assignee. Use
+         tickets_get(id) for the full thread."
+``
+Then test with realistic multi-step tasks and read the transcripts to see where the agent hesitates.
+- ReAct: let the model think between tool calls (https://arxiv.org/abs/2210.03629): The ReAct paper (Yao et al.) proposes interleaving reasoning traces with actions, so the model plans, acts, looks at what came back, and adjusts. Most agent loops you will meet today are descendants of that idea.
+
+You can reproduce the pattern with plain prompting before reaching for a framework:
+``
+You can use these tools: search(query), read(url).
+Work in this format until you can answer:
+Thought: what you need to find out next
+Action: one tool call
+Observation: (filled in by the system)
+...
+Final: the answer, citing the observations you used
+`
+Your code does the boring part: parse the Action, run it, append the Observation, and call the model again. Stop on Final` or after a fixed number of rounds. Reading the paper is worthwhile for its failure analysis: the loop only helps when observations are reliable, so spend your effort on tool quality.
+- Context engineering: compaction, notes and sub-agents (https://www.anthropic.com/research/effective-context-engineering-for-ai-agents): Long agent runs fail when the context fills with stale detail. Anthropic's engineering article frames context engineering as curating the smallest useful set of tokens at every model call, and names techniques for work that outgrows one window:
+
+1. Compaction: summarise a nearly full conversation and continue in a fresh window.
+2. Structured note-taking: the agent writes progress to a file and reloads it later.
+3. Sub-agents: a worker explores in a clean context and hands back a condensed summary.
+4. Just-in-time retrieval: keep paths and queries in context, load the content only when needed.
+
+A cheap way to start is a notes file:
+``
+NOTES.md
+## Goal
+## Decisions made (and why)
+## Done / Next
+## Files that matter
+``
+Instruct the agent to update it after each milestone and to read it first in any new session. It costs a few lines and survives resets.
+- Chain-of-thought prompting: show your reasoning steps in the examples (https://arxiv.org/abs/2201.11903): The chain-of-thought paper (Wei et al.) showed that including worked, step-by-step reasoning in few-shot examples lets large models solve multi-step problems they otherwise miss. The practical lesson: when accuracy matters, give the model room and a pattern for intermediate steps.
+
+Template you can adapt:
+``
+Q: A pipeline has 3 stages taking 4, 7 and 5 minutes. Stages 2 and 3
+   run in parallel after stage 1. How long end to end?
+A: Stage 1 takes 4. Stages 2 and 3 run together, so they take
+   max(7, 5) = 7. Total 4 + 7 = 11 minutes. Answer: 11
+
+Q: <your real question>
+A:
+``
+Two cautions. Check the final answer, not the story: fluent reasoning can still be wrong. And many current models reason by default, so test whether the explicit scaffold still improves results on your task before paying for the extra tokens.
+- Lost in the Middle: where you put evidence in a long prompt matters (https://arxiv.org/abs/2307.03172): This paper measured how models use long contexts and found performance tends to be best when the relevant information sits at the beginning or end, and worse when it is buried in the middle. Models differ and have changed since, so treat it as a reason to test rather than a law.
+
+A quick experiment for your own RAG or document-QA setup:
+``
+1. Take 20 questions with known answers.
+2. For each, build the prompt with the answer-bearing passage at
+   position first / middle / last among ~10 distractor passages.
+3. Score accuracy per position.
+``
+If the middle is weaker, cheap mitigations include retrieving fewer, better passages, reranking so the strongest evidence lands near the edges, and repeating the question after the context. Whatever you change, rerun the same 20 questions so you know it helped.
+- Typed outputs you can trust: validated results with Pydantic AI (https://github.com/pydantic/pydantic-ai): Free-form text is a poor interface between a model and your code. Pydantic AI, from the Pydantic team, lets you declare the shape you want and get back a validated object, which turns "parse and hope" into a typed contract.
+
+Sketch (the model string is a placeholder, use whichever provider you have a key for):
+``python
+from pydantic import BaseModel
+from pydantic_ai import Agent
+
+class Ticket(BaseModel):
+    severity: int
+    summary: str
+
+agent = Agent("provider:model-name", output_type=Ticket)
+result = agent.run_sync("Checkout page 500s for all EU users")
+print(result.output)   # a validated Ticket, not a string
+``
+Why it helps: invalid shapes are caught at the boundary, your IDE knows the fields, and tests can assert on real types. Keep the schema small and the field names self-explanatory, since the model reads them too.
+- MCP in one picture: host, client, server and what each owns (https://modelcontextprotocol.io/docs/learn/architecture): MCP confuses people because three roles share one name. The architecture page separates them cleanly:
+
+- Host: the AI application (an editor, a chat app, a CLI agent) that coordinates everything.
+- Client: a component inside the host that keeps one connection to one server.
+- Server: a program that provides context, locally over stdio or remotely over streamable HTTP.
+
+Servers can expose three primitives: tools (functions the model can invoke), resources (data for context) and prompts (reusable templates). Clients discover tools with tools/list and invoke them with tools/call.
+
+Mental model for debugging:
+``
+host -> creates one client per server
+client -> server: tools/list   (what can you do?)
+client -> server: tools/call   (do this, with these arguments)
+``
+When something misbehaves, ask which layer: is the server returning the wrong thing, is the client not surfacing it, or is the host not offering it to the model? The protocol evolves, so confirm details in the current spec.
+- Anatomy of an MCP tool: schema, results and the isError flag (https://modelcontextprotocol.io/specification/2026-07-28/server/tools): A tool in the MCP spec is a small contract: a unique name, a human-readable description, and an inputSchema written as JSON Schema. Servers can also declare an optional outputSchema for structured results.
+
+``json
+{
+  "name": "tickets_search",
+  "description": "Search support tickets by text. Returns id and title.",
+  "inputSchema": {
+    "type": "object",
+    "properties": { "query": { "type": "string" } },
+    "required": ["query"]
+  }
+}
+`
+The part people miss is error handling. Protocol errors (unknown tool, malformed request) are JSON-RPC errors. Failures inside the tool, such as a bad date format, should come back as a normal result with isError: true` and a message the model can act on, so it can correct itself and retry.
+
+The spec also says there should be a human in the loop who can deny tool calls, and that clients should treat tool annotations as untrusted unless the server is trusted. Design your tools with both in mind.
+- Before you install an MCP server: a security checklist from the spec authors (https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices): The MCP project publishes its own security best practices, and one section should change how you install things: local servers run with your privileges. A one-click config can launch an arbitrary command, so the page says clients must show the exact command and get explicit approval first.
+
+A checklist you can apply as a user:
+``
+[ ] Read the exact command and arguments the config will run
+[ ] Prefer servers whose source you have read or that you trust
+[ ] Run local servers in a container or sandbox with minimal
+    file and network access
+[ ] Grant narrow scopes (read-only before write)
+[ ] Prefer stdio for local servers; protect any local HTTP one
+    with a token
+``
+If you build servers, the page also covers token passthrough (never accept tokens not issued for your server), SSRF when clients fetch URLs, hijacking of state handles, and scope minimisation. Skim those headings even if you only consume servers; they explain why the rules exist.
+- Code execution with MCP: stop dragging every tool result through the model (https://www.anthropic.com/research/code-execution-with-mcp): Two costs appear when an agent talks to many MCP tools directly: every tool definition sits in context up front, and every intermediate result passes through the model. Anthropic's article describes an alternative: present MCP servers as code modules the agent can browse, and let it write code that calls them.
+
+The shape of it:
+``
+servers/
+  drive/getDocument.ts
+  crm/updateRecord.ts
+
+// agent-written code, run in a sandbox
+const doc = await drive.getDocument({ id });
+await crm.updateRecord({ id: leadId, notes: doc.content });
+``
+The document body never enters the model's context; only what the code chooses to return does. The article reports a large token reduction on its own example, but treat that number as illustrative. The trade-off is real: you now need a secure execution sandbox, resource limits and monitoring. Adopt it when tool counts or payload sizes hurt, not by default.
+- Contextual retrieval: give every chunk a sentence of context before embedding (https://www.anthropic.com/research/contextual-retrieval): Chunking loses context: a chunk saying "revenue grew 3% over the previous quarter" no longer says which company or period. Contextual Retrieval fixes this by having a model write a short, chunk-specific note placing the chunk in its document, then prepending it before indexing.
+
+A prompt in that spirit:
+``
+<document>{{WHOLE_DOCUMENT}}</document>
+<chunk>{{CHUNK}}</chunk>
+In one or two sentences, say where this chunk sits in the
+document so it can be found by search. Answer with only that.
+``
+Index the augmented text for both embeddings and a BM25 keyword index, since exact identifiers are where embeddings slip. In Anthropic's own tests, this combination cut failed top-20 retrievals by 49 percent, and adding a reranker took it to 67 percent. Those are their datasets, so measure on yours. Cost note: it adds one model call per chunk at indexing time.
+- Pick an embedding model with MTEB, then verify on your own queries (https://huggingface.co/spaces/mteb/leaderboard): The MTEB leaderboard on Hugging Face ranks embedding models across many tasks, which makes it a good place to build a shortlist. It is a bad place to make the final call, because your documents and queries are not the benchmark's.
+
+A 30-minute procedure:
+``
+1. Filter the leaderboard by your language(s), a model size you
+   can host, and a context length that fits your chunks.
+2. Shortlist 3 models, including one small open model.
+3. Write 30-50 real queries and note which document should win.
+4. Embed your corpus with each model; compute recall@5.
+5. Compare against cost, latency and storage dimensions.
+``
+Keep the same chunking across runs so you are testing the model, not the splitter. Also remember that switching models later means re-embedding everything, so record the model name and version next to the vectors.
+- Vector search in Postgres: your first pgvector query and index (https://github.com/pgvector/pgvector): If you already run Postgres, pgvector lets you keep embeddings next to your relational data. The README's basics fit in a few lines:
+
+``sql
+CREATE EXTENSION vector;
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3));
+
+-- nearest neighbours by L2 distance
+SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
+
+-- cosine distance, and an HNSW index that matches it
+SELECT * FROM items ORDER BY embedding <=> '[3,1,2]' LIMIT 5;
+CREATE INDEX ON items USING hnsw (embedding vector_cosine_ops);
+`
+Three details trip people up. The vector size (3 here) must equal your embedding model's output size. The operator in your query (<->, <=>) should match the operator class of the index, or the index will not be used. And <=> returns distance, so similarity is 1 - distance`. IVFFlat is the other index type if you need it.
+- Evals begin with assertions: Hamel Husain's level-one tests (https://hamel.dev/blog/posts/evals/): Teams stall on evals because they imagine a platform. Hamel Husain's widely read post describes three levels, and the first is plain assertions, like you would write in pytest, that run fast and cheap while you develop. He also notes you keep adding tests as you see new failures in real data.
+
+A starter in that spirit:
+``python
+import json, pytest
+from myapp import answer
+
+CASES = [
+  ("What is your refund window?", "30 days"),
+  ("Do you ship to Canada?", "Canada"),
+]
+
+@pytest.mark.parametrize("q,must_contain", CASES)
+def test_mentions_fact(q, must_contain):
+    assert must_contain in answer(q)
+
+def test_valid_json():
+    json.loads(answer("Return the order as JSON", fmt="json"))
+``
+Run it on every prompt change. Each production bug becomes a new case. Later levels (reading traces, model-graded checks, A/B tests) build on this habit,.
+- A first prompt eval in a YAML file with promptfoo (https://www.promptfoo.dev/docs/intro/): Promptfoo is an open-source tool that treats prompts like testable code: you declare prompts, providers and test cases, run them, and compare. Its docs describe the cycle as defining test cases, running them, then iterating.
+
+A minimal config shape (provider ids vary, check the docs for yours):
+``yaml
+# promptfooconfig.yaml
+prompts:
+  - "Summarise in one sentence: {{text}}"
+providers:
+  - openai:<model-name>   # swap for your provider id
+tests:
+  - vars: { text: "The deploy failed because the config key was missing." }
+    assert:
+      - type: icontains
+        value: config
+      - type: llm-rubric
+        value: "Is a single sentence and does not invent causes"
+`
+Run npx promptfoo@latest eval and then npx promptfoo@latest view` to compare outputs side by side. Use cheap deterministic assertions first, and add the rubric-graded ones only for qualities you cannot check with a string match. Swapping providers lets you see the cost-quality trade-off on your own cases.
+- LLM-as-judge works, and it has biases you must control for (https://arxiv.org/abs/2306.05685): The MT-Bench paper (Zheng et al.) studied using strong models to grade other models' answers. Its finding was encouraging: strong judges agreed with human preferences about as often as humans agree with each other. It also listed biases: position bias, verbosity bias and self-enhancement bias (favouring text from the same model family).
+
+Controls you can add when you build a judge:
+``
+- Pairwise grading: run each comparison twice with A/B swapped;
+  count only consistent verdicts.
+- Rubrics: ask for a score on named criteria, not "which is better".
+- Length: tell the judge not to reward length; check for correlation.
+- Self-preference: avoid grading a model with itself.
+- Calibration: have a human label 30 examples and compare.
+``
+Treat the judge as an instrument that needs calibration against human labels on your task, not as ground truth.
+- Inspect AI: write an eval as a task, a solver and a scorer (https://inspect.aisi.org.uk/): Inspect is an open-source framework for LLM evaluations from the UK AI Security Institute. Its structure is worth learning even if you end up using something else: an eval is a Task with a dataset, a solver (how the model is driven) and a scorer (how answers are graded).
+
+The docs' own example has this shape:
+``python
+from inspect_ai import Task, task
+from inspect_ai.scorer import model_graded_qa
+from inspect_ai.solver import generate
+
+@task
+def my_eval():
+    return Task(
+        dataset=my_dataset,          # your samples
+        solver=generate(),
+        scorer=model_graded_qa(),
+    )
+`
+Run it with inspect eval my_eval.py --model provider/model`. The decorator registers the function so the CLI can find it by name. The project also ships a large collection of pre-built evaluations, which is a good place to see how experienced teams structure datasets and scorers.
+- Shape a local model with an Ollama Modelfile (https://docs.ollama.com/modelfile): Once Ollama is installed, a Modelfile lets you save a configured variant instead of retyping settings. It starts from a base with FROM (a model name or a local GGUF file) and can set parameters and a system prompt.
+
+``
+# Modelfile
+FROM llama3.2
+PARAMETER temperature 0.2
+SYSTEM """
+You are a terse code reviewer. Point out bugs first, style last.
+"""
+`
+Build and run it:
+`
+ollama create reviewer -f Modelfile
+ollama run reviewer
+``
+Why bother: the behaviour travels with the name, so teammates get the same setup, and you can keep several variants (a strict reviewer, a loose brainstormer) side by side. Keep the SYSTEM text short and testable. Check the Modelfile reference for the full list of instructions and parameters, since they change between releases.
+- Serve a local model over an OpenAI-style API with llama-server (https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md): llama.cpp ships llama-server, an HTTP server that exposes OpenAI-compatible endpoints such as /v1/chat/completions. Because many tools can target an OpenAI-style base URL, this lets editors, scripts and agents use a model on your machine.
+
+``
+llama-server -m ./model.gguf -c 8192 --port 8080 -ngl auto
+
+curl localhost:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"messages":[{"role":"user","content":"Say hi in five words"}]}'
+`
+What the flags do: -m picks the GGUF file, -c sets the context window, --port chooses the port (set it explicitly rather than relying on defaults), and -ngl controls how many layers go to the GPU. If you bind beyond localhost with --host, add --api-key`, since the server has no authentication by default. Larger context uses more memory, so raise it only as far as you need.
+- Run vLLM when one local user becomes many (https://docs.vllm.ai/en/latest/): Ollama and llama.cpp shine for one person on one machine. When several users or jobs hit the same model, throughput starts to matter, and vLLM is built for that. Its README highlights PagedAttention for managing attention memory, continuous batching of incoming requests, and an OpenAI-compatible API server.
+
+Starting point on a GPU machine:
+``
+pip install vllm
+vllm serve <model-id-from-hugging-face>
+# then point any OpenAI-style client at the server's /v1 URL
+``
+Decide before you deploy:
+- Will the model fit in GPU memory with room for the KV cache?
+- What concurrency and context length do you really need?
+- Who can reach the endpoint, and is there an API key in front?
+- How will you monitor latency and queueing?
+Load-test with your real prompt lengths rather than a toy example; batching behaviour depends heavily on them.
+- Docker Model Runner: pull and run a model like an image (https://docs.docker.com/ai/model-runner/): If your team already lives in Docker, Docker Model Runner offers a familiar workflow for local models. The docs show commands in the style of the image CLI:
+
+``
+docker model pull ai/smollm2
+docker model run ai/smollm2
+`
+You can also configure settings such as context size with docker model configure`, per the docs. The appeal is consistency: models are pulled by name from a registry, versions are explicit, and the same muscle memory covers containers and models. It is a reasonable choice for developer machines and CI experiments where you want repeatable pulls without installing yet another runner.
+
+Practical tips: pin a specific tag in scripts rather than relying on a default, keep an eye on disk use since models are large, and confirm what hardware acceleration your platform supports in the current docs, because that varies by OS.
+- QLoRA: fine-tune a large model on modest hardware (https://arxiv.org/abs/2305.14314): QLoRA (Dettmers et al.) backpropagates through a frozen, 4-bit quantised base model into small LoRA adapters. The authors report fine-tuning a 65B-parameter model on a single 48GB GPU while keeping full 16-bit fine-tuning quality, which is why the technique spread so widely.
+
+You do not need to implement it. The Hugging Face PEFT library packages LoRA-style methods, and the shape of the setup is:
+``python
+from peft import LoraConfig, get_peft_model
+
+config = LoraConfig(r=16, lora_alpha=32, task_type="CAUSAL_LM")
+model = get_peft_model(base_model, config)
+model.print_trainable_parameters()
+``
+Before reaching for fine-tuning, check three cheaper options: better prompts, retrieval, and a small eval set that shows what is actually failing. Fine-tuning is best for style, format and narrow behaviours, not for loading in fast-changing facts. Keep the data clean; adapters faithfully learn your mistakes too.
+- Write your first SKILL.md: a description that triggers, a body that guides (https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview): A skill is a folder with a SKILL.md file. Its frontmatter needs a name (lowercase letters, numbers, hyphens; up to 64 characters) and a description (non-empty, up to 1,024 characters). The description is what the agent matches your request against, so it must say what the skill does and when to use it.
+
+``markdown
+---
+name: release-notes
+description: Drafts release notes from merged pull requests. Use when
+  the user asks for a changelog, release notes or "what shipped".
+---
+# Release notes
+1. List merged PRs since the last tag (git log --merges).
+2. Group by: Features, Fixes, Internal.
+3. One line each, user-facing language, link the PR.
+See TEMPLATE.md for the output format.
+``
+The docs describe loading in stages: only name and description are always in context, the body loads when triggered, and extra files or scripts load only when referenced. So keep the body focused and push detail into side files. Only install skills from sources you trust, since they can include scripts.
+- Skill hygiene from the open spec: size, structure, validation (https://agentskills.io/specification): The Agent Skills specification is the portable part: a directory with SKILL.md, plus optional scripts/, references/ and assets/. Notably, the name must match the parent directory name, must not start or end with a hyphen, and must not contain consecutive hyphens.
+
+Guidance from the spec worth adopting:
+``
+- Keep SKILL.md under about 500 lines; recommended < 5000 tokens.
+- Move reference material to separate files, one level deep.
+- Keep each reference file focused; they load on demand.
+- Write a description with concrete trigger words, not "helps
+  with PDFs".
+- Validate: skills-ref validate ./my-skill
+`
+Optional fields include license, compatibility (for environment needs such as required tools), metadata and an experimental allowed-tools`. Tool support for the optional fields varies, so test in the agent you actually use. A good habit is to write the description last, once you know what the skill really covers.
+- Give your coding agent a way to check its own work (https://code.claude.com/docs/en/best-practices): The Claude Code best-practices page makes a point that applies to any coding agent: give it a check to run. If the agent can run tests, a linter or a build and read the result, it can correct itself instead of handing you plausible-looking code. (The tool itself needs a paid plan or API access; the habits are free and transfer.)
+
+Practical steps:
+``
+1. Put the one command that proves "done" in your instructions
+   file, e.g.  npm test && npm run lint
+2. Ask for a specific outcome, not "improve this":
+   "Fix the failing test in billing.spec.ts without changing
+    its assertions."
+3. Keep the instructions file short; every line costs attention
+   on every task.
+4. If a rule must never be broken, don't rely on prose;
+   enforce it with a hook or permission rule.
+``
+The docs make that last distinction explicit: instructions are guidance the model can weigh, while hooks and permissions are deterministic. Choose accordingly.
+- AGENTS.md: one instructions file for many coding agents (https://agents.md): AGENTS.md is a plain Markdown file at the repository root, described by its site as a README for agents. The same page lists many supporting tools, including Codex, Cursor, Aider, Gemini CLI, Zed, Windsurf and GitHub Copilot's coding agent, so one file can serve several of them. Nested files in subdirectories can tailor guidance for sub-projects.
+
+Recommended contents from the site are project overview, build and test commands, code style, testing expectations, security notes and commit or PR rules. A compact version:
+``markdown
+# AGENTS.md
+## Setup
+- Install: pnpm install
+- Test: pnpm test (must pass before any commit)
+## Conventions
+- TypeScript strict; no default exports
+- Small PRs; conventional commit messages
+## Do not
+- Edit files under /generated
+``
+Keep it factual and short, and update it when commands change. A stale instruction file is worse than none, because the agent will follow it confidently.
+- Copilot custom instructions: repository-wide and path-specific (https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions): GitHub's docs describe two levels of repository instructions for Copilot. Repository-wide guidance lives in .github/copilot-instructions.md. Path-specific guidance goes in files named NAME.instructions.md under .github/instructions, each with frontmatter whose applyTo takes glob patterns.
+
+``markdown
+---
+applyTo: "/*.ts,/*.tsx"
+---
+Use named exports. Prefer zod for runtime validation.
+Tests live next to the file as *.test.ts.
+``
+The docs also say AGENTS.md is supported, with the nearest file in the tree taking precedence, and that a single CLAUDE.md or GEMINI.md at the root can be used instead. So if your team mixes assistants, you can often share one set of rules rather than maintain three. Scope rules by path to keep each instruction short and relevant, and review what the assistant actually does with them in a real pull request.
+- The lethal trifecta: the three capabilities you must not combine carelessly (https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Simon Willison names three capabilities that become dangerous together in an agent: access to your private data, exposure to untrusted content, and the ability to communicate externally in a way that could exfiltrate data. If one agent has all three, an attacker who can get text in front of it may be able to steer it into sending your data out.
+
+Use it as a design review:
+``
+For each agent or tool bundle, answer:
+1. Private data?     (mail, repos, tickets, secrets)
+2. Untrusted input?  (web pages, inbound email, issues, PDFs)
+3. Outbound channel? (HTTP requests, email, links that load images)
+If all three are yes, remove one of them.
+``
+Removing the outbound channel (no arbitrary network, no auto-loading links) is often the cheapest cut. He also points out that mixing tools from different MCP servers can assemble the trifecta without anyone intending to. Guardrail prompts help but are not a reliable boundary; architecture is.
+- Indirect prompt injection: the attack arrives inside the data (https://arxiv.org/abs/2302.12173): Greshake et al. studied indirect prompt injection: instead of typing malicious instructions to a model, an attacker plants them in content the application will later retrieve, such as a web page or document. The model reads them as part of its context and may follow them. Retrieval and tool use are what make this practical.
+
+Defensive habits to apply when you build:
+``
+- Treat everything retrieved as data, never as instructions;
+  mark it clearly as untrusted in the prompt.
+- Give the model the minimum tools and scopes for the task.
+- Require human confirmation for side effects (send, delete, pay).
+- Strip or block outbound channels that data could leave through.
+- Log tool calls so you can audit what the model was steered into.
+- Red-team with your own planted instructions in test documents.
+``
+Labelling data as untrusted lowers risk but does not remove it, so the structural controls matter most. Read the paper's threat taxonomy to see how many routes into a context window exist.
+
+### Core developer skills
+The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.
+- Git Mistake First Aid: Plain-English Recovery Recipes (https://dangitgit.com/): A short, no-jargon page of recipes for the Git situations that make people panic: committed to the wrong branch, a bad commit message, an undo that went too far. Bookmark it, then read the explanations so the fix stops feeling like magic.
+- Atlassian Git Tutorials: Workflows, Merging and Rewriting History (https://www.atlassian.com/git/tutorials): Free, well-illustrated tutorials that go beyond commit and push: branching workflows, merge versus rebase, undoing changes and rewriting history. A good second Git resource once the basics are comfortable and you start working in a team.
+- Linux Journey: A Gentle Path From First Command to Confident User (https://linuxjourney.com/): Free lessons in small chunks covering the command line, users and permissions, processes, networking and more. Start here if the terminal still feels foreign, and use the quizzes to check what actually stuck before moving on.
+- explainshell: Paste a Command, See What Every Part Means (https://explainshell.com/): Paste any shell command and each flag and argument is matched to the relevant excerpt from its manual page. Handy for decoding a copied one-liner before you run it, and for learning how pipes and options fit together.
+- BashPitfalls: The Shell Mistakes Everyone Makes Once (https://mywiki.wooledge.org/BashPitfalls): A catalogue of common Bash bugs, each with a short explanation and a safer pattern: unquoted variables, parsing ls output, misuse of test. Read it before writing scripts that will run unattended, then run ShellCheck on what you have.
+- Brendan Gregg on Linux Performance: Tools Mapped to the Stack (https://www.brendangregg.com/linuxperf.html): A reference page that maps observability and tracing tools to the parts of a Linux system they inspect, with diagrams and talks. Reach for it when a box is slow and you need to know which tool answers which question.
+- The USE Method: A Checklist for Finding Bottlenecks (https://www.brendangregg.com/usemethod.html): A simple method for performance problems: for every resource, check utilization, saturation and errors. It gives you a systematic order of questions instead of guessing, and applies to CPUs, disks, networks and queues alike.
+- Docker Build Best Practices: Smaller, Faster, Safer Images (https://docs.docker.com/build/building/best-practices/): The official guidance on writing Dockerfiles: choosing base images, multi-stage builds, layer caching, pinning and cleanup. Use it as a review checklist the next time an image feels bloated or a build keeps missing the cache.
+- iximiuz Labs: Hands-On Container and Linux Playgrounds (https://labs.iximiuz.com/): Browser-based playgrounds and challenges for containers, Linux internals and Kubernetes, with a number of free ones. Good for building a real mental model of what a container is, by poking at namespaces and cgroups yourself.
+- Use The Index, Luke: A Free Book on SQL Indexing (https://use-the-index-luke.com/): A free online guide to how database indexes work and how to design them for real queries. It covers the anatomy of an index, the WHERE clause, sorting and joins. Read it when queries are slow and you want to understand why.
+- PostgreSQL Exercises: Practice SQL Against a Real Database (https://pgexercises.com/): Graded SQL exercises on a small club-membership schema, running in the browser with hints and worked answers. Moves from simple selects to joins, aggregates and window functions, so it is a good place to practice after a first course.
+- Learn OpenAPI: The Official Introduction to Describing APIs (https://learn.openapis.org/): The official learning site from the OpenAPI Initiative explains how to describe an HTTP API in a machine-readable contract. Start here before generating docs, mocks or client code, so the spec becomes the shared source of truth for the team.
+- Microsoft Web API Design Best Practices: A Practical Checklist (https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design): A thorough guide to designing HTTP APIs: resource naming, methods and status codes, pagination, versioning and async operations. Useful as a review checklist for a new API, whatever stack or cloud you build on.
+- System Design Primer: A Map of Scaling Concepts and Trade-offs (https://github.com/donnemartin/system-design-primer): A large open-source study guide covering load balancers, caching, databases, queues and consistency, with diagrams and example designs. Use it to build vocabulary and a mental catalogue of trade-offs before design discussions or interviews.
+- Amazon Builders Library: How Large Systems Fail and Recover (https://aws.amazon.com/builders-library/): Articles by Amazon engineers on operating distributed systems, including timeouts, retries with backoff and jitter, and avoiding overload. Read them when you design for failure and want the reasoning behind patterns, not only the names.
+- The Practical Test Pyramid: Deciding What to Test Where (https://martinfowler.com/articles/practical-test-pyramid.html): A long, example-driven article on balancing unit, integration, contract and end-to-end tests. Read it when your suite is slow or flaky, or when you cannot decide at which level a new test belongs.
+- Software Engineering at Google: The Testing Overview Chapter (https://abseil.io/resources/swe-book/html/ch11.html): A free chapter on why tests matter at scale, how test size relates to speed and reliability, and what makes tests maintainable. A good grounding for arguing about test strategy with evidence rather than taste.
+- OWASP Top 10: The Standard Awareness List for Web Risks (https://owasp.org/www-project-top-ten/): The widely referenced list of the most critical web application security risks, with explanations and prevention advice for each. Use it as a shared vocabulary for reviews and threat conversations, and as a map of what to study next.
+- Hacksplaining: Interactive Lessons on How Attacks Work (https://www.hacksplaining.com/lessons): Short, free, interactive lessons that walk through attacks such as SQL injection and cross-site scripting, then show how to prevent them in code. A friendly way to see the attacker view before you dig into deeper labs.
+- AWS Well-Architected Framework: A Review Lens for Cloud Designs (https://aws.amazon.com/architecture/well-architected/): A set of questions and best practices across areas like security, reliability, cost and operations. Even outside AWS it is a handy checklist for design reviews, and the questions are free to read without an account.
+- Microsoft Learn: Free Cloud Fundamentals and Role-Based Paths (https://learn.microsoft.com/en-us/training/): Free, structured modules and learning paths on cloud concepts, networking, identity and DevOps, many with sandbox environments. A solid starting point if you want guided practice instead of piecing docs together alone.
+- Tech Interview Handbook: Resume, Coding and Behavioral Prep (https://www.techinterviewhandbook.org/): A free, curated handbook on the whole job search: resumes, preparing for coding rounds, behavioral questions and negotiation. Use it as a single organized starting point, then dive into the sections that match your stage.
+- StaffEng Guides: Growing Beyond Senior Engineer (https://staffeng.com/guides/): Practical guides on technical leadership at senior levels: scope, influence, working with leadership and writing for decisions. Helpful even earlier, since it shows which habits you can start building now.
+- NeetCode Roadmap: A Structured Path Through Coding Problems (https://neetcode.io/roadmap): A free roadmap that groups algorithm problems by pattern, such as two pointers, graphs and dynamic programming, with a visual map of dependencies. Handy for turning random practice into a deliberate plan for coding interviews.
+- Google Technical Writing Courses: Clearer Docs, Issues and Emails (https://developers.google.com/tech-writing): Free, short courses on writing clear technical prose: precise words, active voice, organizing documents and reviewing drafts. Useful for design docs, pull request descriptions and any message that others must act on.
+- Undo the Undo: Recovering Lost Commits With git reflog (https://git-scm.com/docs/git-reflog): Git rarely deletes work right away. Every time HEAD or a branch tip moves, the reflog records where it was, so a botched reset or rebase is usually recoverable.
+
+``bash
+git reflog                  # find the entry from before the mistake
+git branch rescue HEAD@{3}  # pin that state to a new branch
+git switch rescue
+`
+
+Read entries like HEAD@{3} as "where HEAD was three moves ago". Create a branch from the right one before doing anything else, because a branch name is what keeps commits safe from cleanup.
+
+Two limits worth knowing: the reflog is local to your clone, and entries expire. By default unreachable ones are pruned after about 30 days and reachable ones after about 90, controlled by gc.reflogExpire and gc.reflogExpireUnreachable`. So recover soon, and never rely on it as a backup.
+- Challenge: Rescue a Branch You Just Deleted (https://git-scm.com/docs/git-branch): Ten minutes, a scratch repo, no risk. Prove to yourself that a deleted branch is not gone.
+
+``bash
+git init rescue-lab && cd rescue-lab
+git commit --allow-empty -m "base"
+git switch -c feature/payments
+echo "important work" > pay.txt && git add pay.txt && git commit -m "add payments"
+git switch -            # back to the first branch
+git branch -D feature/payments
+`
+
+Now recover it:
+
+1. Run git reflog and find the "add payments" commit.
+2. Run git branch feature/payments <sha> with that hash.
+3. Check with git log feature/payments --oneline and confirm pay.txt exists after switching.
+
+Stretch goal: repeat the exercise, but this time lose the commit by running git reset --hard HEAD~1 on the branch itself, and recover it the same way. Notice that the capital D in -D` only means "delete even if unmerged"; the commits stay in the object store until garbage collection removes them.
+- Interactive Rebase: Tidy a Branch Before Asking for Review (https://git-scm.com/docs/git-rebase): A reviewer reads your history as a story, so make it readable. Interactive rebase lets you reshape local commits before they are shared.
+
+``bash
+git rebase -i origin/main
+`
+
+In the editor, change the word at the start of a line:
+- reword to fix a message
+- squash or fixup to fold a commit into the one above it
+- drop to remove it, and reorder lines to reorder commits
+
+A neat habit: when you spot a fix for an earlier commit, record it with git commit --fixup <sha>, then later run git rebase -i --autosquash origin/main and Git arranges the fixup commits for you.
+
+Rewriting changes commit hashes, so only do it on commits nobody else has based work on. If you must update a branch you already pushed, prefer git push --force-with-lease over --force, because it refuses to overwrite commits you have not seen. If the rebase goes wrong, git rebase --abort` restores where you started.
+- Find the Commit That Broke It: Automated git bisect (https://git-scm.com/docs/git-bisect): When a regression appeared "sometime in the last 200 commits", binary search beats reading diffs. Git bisect halves the range each step, so even a few hundred commits take around eight checks.
+
+``bash
+git bisect start
+git bisect bad                 # current commit is broken
+git bisect good v2.3.0         # a commit or tag known to be fine
+git bisect run ./check.sh
+git bisect reset
+`
+
+The script passed to run decides the verdict by exit code: 0 means good, 1 to 127 (except 125) means bad, and 125 means "cannot test this commit, skip it". A script can be as small as a single test command, for example npm test -- -t "login" or a curl that fails on a bad status.
+
+Tips: keep the script outside the repository tree or untracked so checkouts do not remove it, and make sure the build step is inside the script. Finish with git bisect reset` to return to your branch.
+- Scrub a Leaked File From History With git filter-repo (https://github.com/newren/git-filter-repo): If a credentials file or a huge binary landed in history, deleting it in a new commit does not remove it from old ones. The maintained tool for rewriting history is git filter-repo, which the Git project itself points to in place of filter-branch.
+
+``bash
+git clone --no-local your-repo scrub && cd scrub
+git filter-repo --invert-paths --path config/secrets.env
+git remote add origin <url>
+git push --force --all
+``
+
+Notes:
+- It insists on a fresh clone as a safety check, so work on a copy.
+- Every commit after the file's first appearance gets a new hash, so every collaborator must re-clone or carefully reset, and open pull requests will need attention.
+- Forks, caches and CI logs may still hold the old data, and hosting platforms can keep unreachable commits for a while.
+
+The key point for secrets: assume they are compromised the moment they are pushed. Rotate the credential first; the history rewrite is cleanup, not remediation.
+- Challenge: Find What Is Filling the Disk in Five Minutes (https://man7.org/linux/man-pages/man1/du.1.html): A full disk takes services down quietly, so practice the hunt before you need it.
+
+1. Check which filesystem is full: df -h
+2. Check inodes too, since many tiny files can exhaust them with space to spare: df -i
+3. Descend one level at a time:
+
+``bash
+sudo du -xh --max-depth=1 /var 2>/dev/null | sort -h | tail -n 10
+`
+
+Repeat on the largest directory until you reach the culprit. The -x flag keeps du on one filesystem, and sort -h understands sizes like 4.0K and 2.1G.
+
+Your task: run this on your own machine or a VM, write down the three biggest directories under /var, and explain what each one is for. Bonus: a deleted file that a process still holds open keeps using space. Look for it with sudo lsof +L1`, which lists open files whose link count is zero.
+- Inspect a Running Process Through /proc (https://man7.org/linux/man-pages/man5/proc.5.html): Linux exposes live process state as files, so you can answer many "what is this thing doing?" questions with cat and ls, even on a minimal container image without extra tools.
+
+``bash
+PID=$(pgrep -n myapp)
+tr '\0' ' ' < /proc/$PID/cmdline; echo   # exact command line
+grep -E 'State|VmRSS|Threads' /proc/$PID/status
+ls -l /proc/$PID/fd | head                # open files and sockets
+cat /proc/$PID/limits                     # per-process limits
+ls -l /proc/$PID/cwd /proc/$PID/exe       # where it runs and what it is
+`
+
+The command line is NUL-separated, hence the tr. A growing count in fd points to a descriptor leak, and Max open files in limits tells you how close you are to the ceiling. VmRSS is resident memory.
+
+You can read your own processes freely; other users' details need root. The manual page above documents every file, and is worth skimming once for maps, smaps and environ`.
+- Make Bash Scripts Fail Loudly: set -euo pipefail Explained (https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html): A script that keeps going after an error can do real damage. A common opening is:
+
+``bash
+#!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "failed at line $LINENO" >&2' ERR
+`
+
+- -e exits when a command fails
+- -u treats an unset variable as an error, catching typos like $DIR_NAEM
+- -o pipefail makes a pipeline fail if any stage fails, not just the last
+
+Know the limits. -e is ignored in places such as an if condition or the left side of && and ||, and in a few subshell cases, so it is a safety net, not a substitute for checking results you care about. Tolerate an expected failure explicitly: grep -q foo file || true.
+
+Also quote your variables, and run ShellCheck. The manual page linked here lists every option precisely, including the exceptions to -e`.
+- Trace a Hung Process With strace (https://man7.org/linux/man-pages/man1/strace.1.html): When a process is stuck and the logs are silent, strace shows what it asks the kernel to do. A blocked read on a socket, a connect to the wrong address, or endless open failures all stand out.
+
+``bash
+sudo strace -f -tt -T -s 200 -o trace.txt -p <PID>
+strace -f -e trace=network -o net.txt ./myprogram
+strace -c ./myprogram        # syscall count and time summary
+`
+
+Meaning of the flags: -f follows child threads and processes, -tt adds timestamps, -T shows time spent inside each call, -s lengthens printed strings, and -o writes to a file. Filtering with -e trace=` cuts the noise.
+
+Read the last lines first: if the final line is a call that has not returned, that is where it is stuck. Expect a slowdown while tracing, and attaching may need root or relaxed ptrace settings. Avoid tracing a busy production process for long.
+- Multi-Stage Docker Builds: Ship the Binary, Not the Toolchain (https://docs.docker.com/build/building/multi-stage/): Build tools, caches and source code have no business in your runtime image. A multi-stage build compiles in one stage and copies only the result into a small final one.
+
+``dockerfile
+FROM golang:1 AS build
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 go build -o /out/app .
+
+FROM scratch
+COPY --from=build /out/app /app
+USER 10001:10001
+ENTRYPOINT ["/app"]
+`
+
+Results: a much smaller image, a smaller attack surface, and faster pulls. Copying the dependency files before the source keeps the download layer cached until they change.
+
+Caveats: scratch has no shell, CA certificates or timezone data, so copy those in or choose a minimal base such as a distroless one if you need them. Interpreted languages follow the same idea: install dependencies in a builder stage and copy the prepared directory over. You can also stop at a stage with docker build --target build .` to debug it.
+- Challenge: Lock Down a Container and Prove It Worked (https://docs.docker.com/reference/cli/docker/container/run/): Run a container with fewer privileges, then verify each restriction yourself. Needs Docker and about fifteen minutes.
+
+``bash
+docker run --rm -it \
+  --user 10001:10001 \
+  --read-only --tmpfs /tmp \
+  --cap-drop=ALL \
+  --security-opt no-new-privileges \
+  --pids-limit 100 --memory 256m \
+  alpine sh
+`
+
+Inside the container, test:
+1. id should show uid 10001, not root.
+2. touch /x should fail with a read-only filesystem error, while touch /tmp/x succeeds.
+3. grep CapEff /proc/self/status should show all zeros, meaning no effective capabilities.
+
+Now loosen one flag at a time and notice what changes. Then ask the harder question for your own service: which flags does it actually need, and what breaks when you remove the rest? Put the result into a Compose file or Kubernetes security context so it is repeatable. Never use --privileged` as a shortcut to make an error disappear.
+- Read a Postgres Query Plan Without Guessing (https://www.postgresql.org/docs/current/using-explain.html): The plan tells you what the database did, so you can stop guessing at indexes.
+
+``sql
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM orders WHERE customer_id = 42 ORDER BY created_at DESC LIMIT 10;
+`
+
+What to look for:
+- The scan type: Seq Scan reads the whole table, Index Scan and Bitmap Heap Scan use an index.
+- Estimated versus actual rows. A big gap means stale statistics (run ANALYZE) or a misleading predicate.
+- Rows Removed by Filter: many rows read and thrown away suggests a missing or wrong index.
+- Timing is per node and may be multiplied by the loop count.
+
+Important: ANALYZE really executes the statement. For writes, wrap it: BEGIN; EXPLAIN ANALYZE UPDATE ...; ROLLBACK;`. And a sequential scan on a small table is often the right choice, so judge by timing, not by the node name alone.
+- Challenge: Fix a Slow Query With the Right Composite Index (https://www.postgresql.org/docs/current/indexes-multicolumn.html): Build a million-row table, watch a query struggle, then fix it. About twenty minutes in PostgreSQL.
+
+``sql
+CREATE TABLE orders AS
+SELECT g AS id,
+       (random()*10000)::int AS customer_id,
+       now() - random() * interval '365 days' AS created_at
+FROM generate_series(1, 1000000) g;
+ANALYZE orders;
+
+EXPLAIN ANALYZE
+SELECT * FROM orders WHERE customer_id = 42 ORDER BY created_at DESC LIMIT 10;
+
+CREATE INDEX orders_cust_created ON orders (customer_id, created_at);
+ANALYZE orders;
+-- rerun the EXPLAIN ANALYZE above
+`
+
+Compare the plans and timings. The index lets the database jump to one customer and read rows already in date order, so no sorting is needed.
+
+Then experiment: drop it and create (created_at, customer_id)` instead. Why is the first query worse now? Multicolumn B-tree indexes are most useful when the query constrains the leading columns, so put equality columns first, then the sort or range column.
+- Isolation Levels in Plain Terms: Pick One on Purpose (https://www.postgresql.org/docs/current/transaction-iso.html): Transactions are not automatically safe from each other. In PostgreSQL the default is Read Committed: each statement sees data committed before it started, so two reads in one transaction can differ.
+
+A classic bug is read-modify-write:
+
+``sql
+-- risky: two sessions can both read 100 and write 90
+SELECT balance FROM accounts WHERE id = 1;
+UPDATE accounts SET balance = 90 WHERE id = 1;
+
+-- safe: let the database do it atomically
+UPDATE accounts SET balance = balance - 10
+WHERE id = 1 AND balance >= 10;
+`
+
+Your options, roughly from lightest to strongest: an atomic UPDATE like the one above, SELECT ... FOR UPDATE` to lock the row, or a stricter level such as Repeatable Read or Serializable.
+
+The catch with the strict levels: the database may abort a transaction with a serialization failure (SQLSTATE 40001), and your code must retry the whole transaction. In PostgreSQL, Read Uncommitted behaves like Read Committed. Other databases differ, so check yours.
+- Idempotency Keys: Make Retried POST Requests Safe (https://docs.stripe.com/api/idempotent_requests): Networks drop responses, not just requests. If a client retries a payment after a timeout, you must not charge twice. The standard fix is a client-generated idempotency key.
+
+Stripe documents a good reference design: the client sends an Idempotency-Key header with a random value such as a UUID (their keys can be up to 255 characters), and the server stores the first result and replays it for retries. Reusing a key with different parameters is rejected.
+
+A minimal server-side shape:
+
+``sql
+CREATE TABLE idempotency (
+  key text PRIMARY KEY,
+  request_hash text NOT NULL,
+  response jsonb,
+  created_at timestamptz DEFAULT now()
+);
+``
+
+1. Insert the key before doing work. A unique violation means it is a retry or a concurrent duplicate.
+2. If the stored hash differs from this request, return an error.
+3. Run the operation and save the response in the same transaction where possible.
+4. Expire old keys; Stripe prunes after at least 24 hours.
+
+GET and DELETE are already idempotent by definition, so keys matter mainly for POST.
+- Challenge: Replace Offset Pagination With a Keyset Cursor (https://use-the-index-luke.com/no-offset): OFFSET pagination gets slower the deeper you go, and it can skip or repeat rows when data changes between pages. Keyset pagination fixes both. Try it in thirty minutes on any SQL database with a table of a few hundred thousand rows.
+
+Page one:
+
+``sql
+SELECT id, created_at FROM events
+ORDER BY created_at DESC, id DESC
+LIMIT 20;
+`
+
+Next page, using the last row you returned:
+
+`sql
+SELECT id, created_at FROM events
+WHERE (created_at, id) < ($1, $2)
+ORDER BY created_at DESC, id DESC
+LIMIT 20;
+`
+
+Steps:
+1. Create an index on (created_at, id).
+2. Compare EXPLAIN output for this query against OFFSET 100000.
+3. Encode (created_at, id) as an opaque base64 string and return it as next_cursor in your API response.
+
+The tie-breaker id` matters because timestamps repeat. The trade-off: you lose jump-to-page-N, which is usually fine for feeds and exports.
+- Change an API Without Breaking Anyone: Compatibility Rules (https://google.aip.dev/180): Clients you do not control will depend on every detail you expose. Google's API improvement proposal on backwards compatibility spells out what is safe within one major version.
+
+Generally safe: adding new methods, new response fields, and optional request fields whose default preserves old behavior. Adding enum values to responses is allowed but risky, since clients may not handle unknown values, so document it.
+
+Breaking: removing anything, renaming (which is removal plus addition), changing a field's type, changing a default, changing a value's format, or tightening semantics that clients rely on.
+
+Habits that follow:
+- Make new request fields optional.
+- Tell clients to ignore unknown response fields and handle unknown enum values.
+- To rename, add the new name, keep the old one, deprecate it publicly, and remove it only in a new major version.
+- Review diffs of your OpenAPI file in CI to catch accidental breaks.
+
+When a break is truly necessary, version it and give people time to migrate.
+- Cache-Aside Done Right: TTLs, Invalidation and Stampedes (https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside): Cache-aside is the usual pattern: the application checks the cache, falls back to the database on a miss, and fills the cache itself.
+
+``python
+def get_user(uid):
+    v = cache.get(f"user:{uid}")
+    if v is not None:
+        return v
+    v = db.fetch_user(uid)
+    cache.set(f"user:{uid}", v, ttl=300 + random.randint(0, 60))
+    return v
+
+def update_user(uid, data):
+    db.update_user(uid, data)
+    cache.delete(f"user:{uid}")   # delete, don't rewrite
+``
+
+Points to get right:
+- Always set a TTL, so mistakes eventually heal. Add jitter so many keys do not expire together.
+- On writes, update the database first and then delete the key. Deleting is simpler than rewriting.
+- A hot key expiring can send many requests to the database at once. Let one request rebuild it while the others wait or serve slightly stale data.
+- Decide whether caching "not found" is worth it, with a short TTL.
+
+Remember the cache is an optimization; the system must still work, slowly, without it.
+- At-Least-Once Queues Need Idempotent Consumers (https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html): Most queues promise at-least-once delivery. A message can arrive twice, so a consumer that is not safe to repeat will eventually bill someone twice.
+
+Take SQS as a concrete example. A received message becomes invisible for the visibility timeout (default 30 seconds). If you do not delete it in time, it reappears and another consumer may process it. You can extend it with ChangeMessageVisibility, up to a 12-hour total limit.
+
+Safe consumer recipe:
+1. Pick a stable id: the message id or, better, a business id such as an order number.
+2. In one database transaction, insert that id into a processed table with a unique constraint and apply the effect.
+3. If the insert conflicts, skip the work.
+4. Delete the message only after the transaction commits.
+5. Set the timeout above your typical processing time, and configure a dead-letter queue so poison messages stop looping.
+
+Alert on dead-letter queue depth and on message age, since those show trouble before users do.
+- Challenge: Test Your Code With Properties, Not Just Examples (https://hypothesis.readthedocs.io/en/latest/quickstart.html): Example-based tests check what you thought of. Property-based tests check rules and let the library hunt for counterexamples. Try it in twenty minutes with Python.
+
+``bash
+pip install hypothesis pytest
+`
+
+`python
+from hypothesis import given, strategies as st
+
+@given(st.lists(st.integers()))
+def test_sort_is_idempotent(xs):
+    assert sorted(sorted(xs)) == sorted(xs)
+
+@given(st.lists(st.integers()))
+def test_sort_keeps_length(xs):
+    assert len(sorted(xs)) == len(xs)
+`
+
+Run pytest. Now pick a function of your own and write a round-trip property, such as decode(encode(x)) == x`. When a property fails, Hypothesis shrinks the input to a small failing example, which is often the real lesson. If it fails on something you consider invalid input, tighten the strategy and write down the assumption. Good property candidates: round trips, idempotence, "output is never longer than input", and comparing a fast implementation to a simple one.
+- Test Behavior, Not Implementation: Guiding Principles for UI Tests (https://testing-library.com/docs/guiding-principles/): Tests that break on every refactor teach teams to ignore them. The Testing Library project argues for tests that resemble how people use the software, because that is where confidence comes from.
+
+Practical consequences, in any stack:
+- Query elements the way a user finds them: by role, label or visible text, not by CSS class or internal component names.
+- Assert on outcomes a user can see, such as a message appearing, not on state variables or method calls.
+- Avoid testing private helpers directly. If a refactor changes internals but not behavior, the test should still pass.
+- Mock at the network boundary, not inside your own modules.
+
+A quick self-check for any test: if I rename an internal function, does it fail? If yes, it is coupled to implementation. If I break the feature, does it fail? If no, it is not protecting anything.
+
+Use a few end-to-end tests for critical journeys and let faster, focused tests cover the rest.
+- Broken Access Control: Stop Users Reading Each Other's Data (https://owasp.org/Top10/A01_2021-Broken_Access_Control/): In the 2021 edition of the OWASP Top 10 this category ranked first, and the common form is simple: change an id in a URL and see someone else's record.
+
+``sql
+-- vulnerable: trusts the id alone
+SELECT * FROM invoices WHERE id = $1;
+
+-- safer: ownership is part of the query
+SELECT * FROM invoices WHERE id = $1 AND owner_id = $2;
+`
+
+Here $2` comes from the authenticated session, never from the request.
+
+Habits that prevent most cases:
+- Deny by default; require an explicit permission check on every endpoint.
+- Enforce authorization on the server for every request. Hiding a button is not access control.
+- Centralize checks in one policy layer instead of scattering ad hoc ifs.
+- Prefer unguessable ids as defense in depth, not as the only defense.
+- Write tests that log in as user A and request user B's resources, expecting 403 or 404.
+
+Log denied attempts and alert on bursts of them.
+- Challenge: Break and Fix a Query With SQL Injection (https://owasp.org/www-community/attacks/SQL_Injection): Run this on your own machine, in a throwaway file, to see the attack and the fix side by side. About ten minutes with Python.
+
+``python
+import sqlite3
+db = sqlite3.connect(":memory:")
+db.execute("create table users(name text, secret text)")
+db.execute("insert into users values ('ana','a1'), ('bob','b2')")
+
+name = "x' OR '1'='1"
+bad = db.execute(f"select * from users where name = '{name}'").fetchall()
+good = db.execute("select * from users where name = ?", (name,)).fetchall()
+print(bad)   # every row leaks
+print(good)  # []
+``
+
+The first query lets input rewrite the SQL. In the second, the driver sends the value separately from the statement, so it can only ever be data.
+
+Your tasks:
+1. Predict the output before running.
+2. Find one place in a project of yours that builds SQL by concatenation and convert it.
+3. Handle what placeholders cannot: table names, column names and ORDER BY direction. Check those against a fixed allowlist in code.
+
+ORMs help but still allow raw string fragments, so review those too.
+- IAM Least Privilege: Grant What the Job Needs, Nothing More (https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html): Broad permissions turn a small leak into a big incident. The AWS IAM best-practices guide is worth reading even if you use another cloud, because the ideas transfer.
+
+Core habits: prefer temporary credentials (roles) over long-lived access keys, require MFA for people, remove unused identities, and start narrow.
+
+A scoped policy, read access to one prefix in one bucket:
+
+``json
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": ["s3:GetObject"],
+    "Resource": "arn:aws:s3:::my-bucket/reports/*"
+  }]
+}
+``
+
+How to get there in practice: begin with the smallest policy you can, test, and add what is denied. IAM Access Analyzer can help by generating a policy from recorded activity and by flagging resources shared outside your account. Remember that an explicit deny always wins over an allow, and avoid wildcards in both actions and resources unless you can justify them.
+
+Review roles on a schedule; permissions only ever grow unless someone prunes them.
+- Challenge: Audit Your Cloud Account for Public Storage (https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html): Accidentally public buckets are a classic cloud leak. Spend fifteen minutes checking an AWS account you own, using read-only commands. (Other clouds have equivalents; the habit is the point.)
+
+``bash
+aws s3api list-buckets --query 'Buckets[].Name' --output text
+aws s3api get-public-access-block --bucket NAME
+aws s3api get-bucket-policy-status --bucket NAME
+`
+
+How to read the results:
+- get-public-access-block shows whether the four Block Public Access settings are on. An error saying no configuration exists means that bucket has none.
+- get-bucket-policy-status reports IsPublic for the bucket policy.
+- Also check the account-level setting with aws s3control get-public-access-block --account-id <id>`.
+
+Your tasks: list every bucket that is not fully blocked, write down why each should be public (usually none should), and plan to enable Block Public Access at the account level. Serve public websites through a CDN instead of opening buckets. Do not change anything until you know which application depends on it.
+- Debug Production With Logs, Metrics and Traces: Start With a Question (https://opentelemetry.io/docs/concepts/observability-primer/): Production debugging goes faster when you pick the right signal. Roughly: metrics say that something is wrong, traces say where in the request path, and logs say why.
+
+A workable sequence:
+1. State the symptom as a measurable question: "p95 latency of checkout rose after 14:00".
+2. Use metrics to scope it: which service, endpoint, region, version?
+3. Open a slow trace to find the span that takes the time.
+4. Search logs for that request id to read the detail.
+
+This only works if you prepared. Emit structured logs (JSON with fields) and include a request or trace id in every line, and pass it across service calls. Keep metric labels low-cardinality, so avoid user ids as labels.
+
+Then form one hypothesis at a time and test it with a query, instead of changing things. The OpenTelemetry primer linked here explains the vocabulary of signals, context propagation and instrumentation clearly.
+- Resume Basics: One Page That Survives a Quick Skim (https://www.techinterviewhandbook.org/resume/): A recruiter or engineer may spend under a minute on a first pass, so optimize for scanning.
+
+Structure: contact line, short experience entries in reverse chronological order, projects, education, skills. Keep it to one page when you have under roughly a decade of experience.
+
+Write each bullet as action, what you did, and the result:
+
+``text
+Weak:   Responsible for the billing service.
+Better: Reduced invoice generation time by moving the job to a queue, cutting timeouts for large accounts.
+``
+
+Only use numbers you can defend in an interview; if you cannot measure it, describe the visible outcome honestly. Lead with the technologies that matter for the role, drop the ones you would not want to be quizzed on, and skip photos, rating bars and long objective statements.
+
+Practical checks: export to PDF, make the text selectable, use a standard font, and ask a friend to circle the first three things they remember. Tailor the top third for each application.
+- Behavioral Interviews: Build a Story Bank Before You Need It (https://www.techinterviewhandbook.org/behavioral-interview/): Behavioral questions test judgment and teamwork. Prepare, because improvised stories ramble.
+
+A reliable shape is STAR: Situation, Task, Action, Result. Spend most of your time on Action and Result, and say "I" for what you did and "we" for what the team did.
+
+Build a bank of four or five real stories from your work, studies or projects, and tag each with themes:
+- a conflict or disagreement you worked through
+- a failure and what changed afterward
+- a tight deadline or trade-off
+- leading or helping without authority
+- something you learned quickly
+
+Write each as bullet points, not a script, then practice aloud and time it to about two minutes. Prepare the follow-ups too: what would you do differently, and what did you measure?
+
+Use only experiences that really happened. Interviewers probe details and inconsistencies show quickly. Finish with a result and a lesson, and close the loop if asked.
+- Code Review That Helps: Habits for Authors and Reviewers (https://google.github.io/eng-practices/review/): Google's public engineering practices describe a simple standard: approve a change once it improves the overall health of the codebase, even if it is not how you would have written it. Perfect is not the bar.
+
+For authors:
+- Keep changes small and focused; they get reviewed faster and more carefully.
+- Write a description that says what and why, and link the issue.
+- Review your own diff first and run the tests.
+
+For reviewers:
+- Look at design, correctness, tests, naming and readability, roughly in that order of importance.
+- Prefix minor preferences with "Nit:" so the author knows they are optional.
+- Explain why, and ask questions before assuming a mistake.
+- Respond promptly. Waiting for review is the biggest cost to the author.
+
+Disagreement tip: when stuck in a loop, move to a call or a short design chat, then write the outcome in the thread. Comment on the code, never on the person.
+- Write a Design Doc That Surfaces Trade-offs Early (https://www.industrialempathy.com/posts/design-docs-at-google/): A design doc is for finding problems while changes are still cheap. It is worth writing when a design is ambiguous or the choice involves real trade-offs, and not worth it when it would only describe obvious implementation.
+
+A useful outline:
+1. Context and scope: what this is and why now.
+2. Goals and non-goals: non-goals prevent argument about things you never meant to solve.
+3. The design: overview first, then APIs, data storage and key flows, with a diagram.
+4. Alternatives considered, and why each lost.
+5. Cross-cutting concerns: security, privacy, observability, rollout.
+
+Keep it short for small work; a page or two is fine. Large projects naturally run longer, but split anything that sprawls.
+
+Before sending, ask: could a reader tell what decision I want from them? Put that at the top, name reviewers, and set a date for comments. Record the final decision in the doc so it remains useful later.
+
+### Open source worth reading
+Awesome lists, starter templates and complete applications on GitHub, sorted by area. Reading real code is the fastest way to learn how projects are put together.
+- awesome: the list that defines the format (https://github.com/sindresorhus/awesome): awesome is the meta-list behind the whole awesome-list convention, and it is the place to start when you want a curated index of anything from languages to tooling. Read create-list.md first: it explains what separates a useful list from link spam, which is handy if you ever curate one yourself. Then browse readme.md by topic. License: CC0-1.0, so you can reuse the material freely.
+- awesome-selfhosted: services you can run yourself (https://github.com/awesome-selfhosted/awesome-selfhosted): A long, well-sorted catalogue of free software you can host on your own machines, grouped by what it replaces: wikis, monitoring, chat, media, backups and much more. Useful for homelab ideas and for finding a mature project to read. Start with README.md for the categories; non-free.md keeps proprietary entries separate so the main list stays clean. License: CC-BY-SA-3.0 for the list content.
+- awesome-go: the Go ecosystem, categorised (https://github.com/avelino/awesome-go): If you write Go, this is the quickest way to find a library for routing, databases, CLIs, testing or concurrency without guessing. Entries are filtered for quality, so the list is shorter than a raw search. Fun extra: the repo ships its own Go code (main.go, pkg/, tmpl/) that builds the site, so you get a small real program to read too. License: MIT.
+- awesome-ios: Swift and iOS libraries by topic (https://github.com/vsouza/awesome-ios): A large index of iOS and Swift projects grouped by purpose: networking, architecture, UI components, testing, tooling and learning material. Good when you need to compare two or three options before adding a dependency. Open README.md and use the table of contents; the architecture and testing sections are the most useful for people past their first app. License: MIT.
+- magictools: a game developer's reference shelf (https://github.com/ellisonleao/magictools): One list that covers the practical side of making games: engines, art and audio tools, level editors, tutorials and communities. It is a good map if you are choosing a first engine or looking for free assets and tooling around it. Everything lives in README.md, organised by discipline, so skim the headings and jump to your area. License: MIT.
+- awesome-machine-learning: libraries by language (https://github.com/josephmisiti/awesome-machine-learning): A language-by-language index of machine learning libraries, which makes it easy to see what exists in, say, Go or Rust and not only Python. Besides README.md, there are separate files for courses.md, books.md and ml-curriculum.md, handy for building a study plan. Treat it as a map and verify maintenance status before depending on any entry. License: CC0.
+- kubernetes-the-hard-way: build a cluster by hand (https://github.com/kelseyhightower/kubernetes-the-hard-way): A classic tutorial that sets up Kubernetes step by step without installers, so you meet certificates, the API server, etcd and kubelet configuration directly. The numbered files in docs/ are the path; units/ and configs/ hold the files you generate or install. Not updated recently, but the concepts remain valid and the repo is still worth working through once. License: Apache-2.0.
+- OWASP Cheat Sheet Series: concise security guidance (https://github.com/OWASP/CheatSheetSeries): Short, practical notes on how to build safely: authentication, session handling, input validation, secrets, REST security, Docker and many more. They are written for developers, not auditors. Browse the cheatsheets/ folder and start with Authentication_Cheat_Sheet.md, then read whatever matches your stack. Good to keep open during code review. License: CC BY-SA 4.0.
+- LLMs-from-scratch: build a GPT-style model step by step (https://github.com/rasbt/LLMs-from-scratch): Code companion to a book on implementing a small language model in PyTorch, from tokenisation and attention to pretraining and fine-tuning. Chapters are folders, each with a 01_main-chapter-code directory; begin with ch03 for attention and ch04 for the full model. Bonus folders go deeper on topics such as KV cache and weight loading. License: Apache-2.0.
+- ML-For-Beginners: a 12-week classical ML curriculum (https://github.com/microsoft/ML-For-Beginners): A lesson-based course built around classical machine learning: regression, classification, clustering, NLP and time series, with quizzes and notebooks. Each topic is a numbered folder, so you can read in order or jump in. 2-Regression is a gentle first stop, and 3-Web-App shows how to put a model behind a small app. License: MIT.
+- rustlings: small exercises that teach Rust (https://github.com/rust-lang/rustlings): Tiny broken programs you fix until they compile, each one introducing a Rust idea such as ownership, enums or traits. It runs in your terminal and checks your work as you save. Look in exercises/ for the tasks and solutions/ once you are stuck. A fast way to get over the borrow checker's first hurdles. License: MIT.
+- godot-demo-projects: small Godot games to read and run (https://github.com/godotengine/godot-demo-projects): Official demos that each isolate one feature of the Godot engine, so you can open a project and see exactly how it is wired. Browse 2d/, 3d/ and gui/, and read networking/ if you want multiplayer examples such as multiplayer_pong. Great for learning scenes, signals and GDScript by reading working code. License: MIT.
+- full-stack-fastapi-template: a deployable API and UI (https://github.com/fastapi/full-stack-fastapi-template): A complete starting point pairing a FastAPI backend with a React frontend, PostgreSQL and Docker Compose. It is useful as a reference for auth, migrations, tests and deployment wiring. Open backend/ and frontend/ for the code, compose.yml to see the stack, then development.md and deployment.md for the workflow. License: MIT.
+- create-t3-app: opinionated TypeScript web scaffolding (https://github.com/t3-oss/create-t3-app): A CLI that scaffolds a typed Next.js project, letting you opt into pieces like tRPC, Prisma or Drizzle and Tailwind. Reading cli/ shows how a good scaffolder composes templates and installers, which is a neat lesson on its own; www/ holds the documentation site. Use it when you want a well-trodden full-stack TypeScript layout. License: MIT.
+- epic-stack: a full web app foundation with decisions explained (https://github.com/epicweb-dev/epic-stack): A production-minded starter for a React Router app with Prisma, Playwright tests and Fly.io deployment config. What sets it apart is documentation of why choices were made: read docs/ and the decisions folder inside it before the code. Then explore app/, prisma/ and tests/ to see how it all fits. License: MIT.
+- awesome-compose: Docker Compose samples for common stacks (https://github.com/docker/awesome-compose): Ready-made Compose setups for pairings like Flask with Redis, Django, Nginx with Go and MySQL, Elasticsearch with Kibana, and more. Each sample is a folder with its own compose.yaml-style config, so you can copy only what you need. Handy for learning multi-container networking and volumes by running real examples. License: CC0-1.0.
+- react-native-template-obytes: Expo app with good defaults (https://github.com/obytes/react-native-template-obytes): A mobile starter built on Expo and TypeScript with Maestro end-to-end flows in .maestro/, EAS build config in eas.json, and an organised src/ folder. Worth reading for how it sets up env handling, linting, commit hooks and tests so a team can start with discipline. License: MIT.
+- chatbot: a Next.js AI chat app you can deploy (https://github.com/vercel/chatbot): A maintained reference for building a streaming chat product with the AI SDK, a database and authentication. Read app/ for routes, lib/ for data and model plumbing, artifacts/ for the artifacts feature, and tests/ for Playwright coverage. Good if you want to see how a modern AI app is structured end to end. License: Apache-2.0.
+- cookiecutter-data-science: a sane layout for ML projects (https://github.com/drivendataorg/cookiecutter-data-science): A project template that gives data work a consistent structure for data, notebooks, source code and docs. The generated layout sits in the folder named {{ cookiecutter.repo_name }}, and ccds.json defines the prompts you answer. It also ships a Makefile with common tasks. A good habit-former for reproducible work. License: MIT.
+- starter-workflows: GitHub Actions templates by use case (https://github.com/actions/starter-workflows): The official source of the workflow suggestions GitHub shows when you set up Actions. Folders like ci/, code-scanning/ and deployments/ hold YAML for building and testing many languages, scanning code and deploying to clouds. Read a few to learn caching, matrices and permissions idioms. License: MIT.
+- architecture-samples: Android app structure, compared (https://github.com/android/architecture-samples): Google's reference to-do app showing how to structure an Android project with Compose, Hilt and Room. The main code is in app/ and shared test helpers live in shared-test/, so you can study the layers and how tests are organised. Pair it with Now in Android once the basics are comfortable. License: Apache-2.0.
+- microservices-demo: Online Boutique on Kubernetes (https://github.com/GoogleCloudPlatform/microservices-demo): A polyglot web shop split into small services that talk over gRPC, designed to demonstrate cloud-native tooling. Start with kubernetes-manifests/ and skaffold.yaml to run it, then read service code under src/ and the API contracts in protos/. terraform/ and kustomize/ show alternative ways to deploy. License: Apache-2.0.
+- excalidraw: a whiteboard app and an embeddable library (https://github.com/excalidraw/excalidraw): A real, widely used React app that is also published as a component. The editor lives in packages/excalidraw, the hosted app shell in excalidraw-app/, and dev-docs/ covers the internals and embedding. Study it for canvas rendering, state management and how a library is carved out of an app. License: MIT.
+- Now in Android: a full modern Android reference (https://github.com/android/nowinandroid): A working news app that Google uses to demonstrate current Android practice: modular layout, Compose UI, offline-first data and thorough testing. Look at core/ and feature/ to see the module split, build-logic/ for convention plugins, and docs/ for architecture notes. Heavy but very instructive. License: Apache-2.0.
+- Godot Engine: read a real game engine's source (https://github.com/godotengine/godot): A full 2D and 3D engine and editor in C++. Intimidating at first, but the layout helps: core/ holds fundamental types and the object system, scene/ the node tree, servers/ rendering and physics backends, and modules/ optional features. Pick one subsystem, such as input, and trace it through. License: MIT.
+- Trivy: a vulnerability and misconfiguration scanner in Go (https://github.com/aquasecurity/trivy): A defensive scanner for container images, filesystems, IaC and dependencies. Reading it teaches how artifacts are unpacked and matched against advisories: pkg/fanal handles analysis of images and files, cmd/ wires the CLI, and docs/ explains usage. Run it against your own Dockerfile first. License: Apache-2.0.
+- llama.cpp: LLM inference in plain C and C++ (https://github.com/ggml-org/llama.cpp): A compact route to understanding how local language models actually run: quantised weights, a tensor library and efficient CPU and GPU backends. Read src/ for the model code, ggml/ for the tensor core, and convert_hf_to_gguf.py to see how models are converted. examples/ shows usage patterns. License: MIT.
+- raylib: a friendly C library for making games (https://github.com/raysan5/raylib): A small, readable graphics and game library with a simple API and almost no dependencies. The examples/ folder is the best tutorial, with short programs covering 2D, 3D, audio and input, while src/ is approachable if you want to see how it works. CONVENTIONS.md documents the code style. License: zlib, a permissive one.
+- age: a small, modern file encryption tool in Go (https://github.com/FiloSottile/age): A compact encryption library and CLI designed to be simple and hard to misuse. The core is a handful of readable files such as age.go, x25519.go and scrypt.go, with the command in cmd/ and extensibility in plugin/. A good example of a deliberately small cryptographic API. License: BSD-3-Clause.
+- awesome-rust: where Rust projects are indexed (https://github.com/rust-unofficial/awesome-rust): A broad index of Rust libraries, applications and resources, organised by domain from web frameworks to embedded and games. Handy for discovering mature crates before you write your own. Open README.md, and see CONTRIBUTING.md if you want to add something. The repo also contains a small Rust crate (Cargo.toml, src/) alongside the list. License: CC0-1.0.
+- awesome-docker: containers, tooling and learning resources (https://github.com/veggiemonk/awesome-docker): A curated map of the Docker ecosystem: tooling, security scanners, orchestration, CI helpers and tutorials. Read README.md by section when you hit a specific problem such as image size or registry choice. Alongside the list there is Go code in cmd/ and internal/, plus a website/ folder. License: Apache-2.0.
+- awesome-android-ui: components worth studying (https://github.com/wasabeef/awesome-android-ui): A visual catalogue of Android UI libraries: animations, lists, dialogs, charts, transitions and more, with pointers to each repo. Useful when you want a polished interaction and would rather read an existing implementation. Everything is in README.md, and the art/ folder holds images. Check each library's maintenance before adopting. License: MIT.
+- awesome-scalability: reading list for large-system design (https://github.com/binhnguyennus/awesome-scalability): A reading list of engineering write-ups on scalability, availability and stability, grouped by topic and by company. Good for getting beyond textbook diagrams to how real systems failed and recovered. Work through README.md one section at a time and note the trade-offs each article makes. License: MIT.
+- TheAlgorithms/Python: algorithms with readable implementations (https://github.com/TheAlgorithms/Python): A large collection of algorithms and data structures written in plain Python for study. Folders such as dynamic_programming/, data_structures/, backtracking/ and ciphers/ make it easy to look up a topic, and DIRECTORY.md is the full index. Treat it as teaching code, not production code. License: MIT.
+- ansible-for-devops: playbooks that grow with the book (https://github.com/geerlingguy/ansible-for-devops): Example playbooks from a well-known Ansible book, from simple to multi-server setups. Begin with first-ansible-playbook/, then lamp-infrastructure/, deployments-rolling/ and molecule/ for testing roles. The author notes that not every example follows every best practice, since each one illustrates a feature. Not updated every month, but the lessons last. License: MIT.
+- generative-ai-for-beginners: lessons on building LLM apps (https://github.com/microsoft/generative-ai-for-beginners): A numbered course on building with large language models, covering prompts, text generation apps, chat, search, RAG and agents. Each lesson is a folder with explanations and code. Try 06-text-generation-apps, 15-rag-and-vector-databases and 17-ai-agents for practical angles. License: MIT.
+- OWASP Web Security Testing Guide: a methodical checklist (https://github.com/OWASP/wstg): A defensive guide for testing web applications you own or are authorised to assess, organised by area such as authentication, session management and input handling. Use document/ for the chapters and checklists/ for working lists you can follow during a review. It also teaches developers what testers look for. License: CC BY-SA 4.0.
+- micrograd: backpropagation in a few hundred lines (https://github.com/karpathy/micrograd): A tiny automatic-differentiation engine plus a small neural network library, built to show what frameworks do under the hood. Read micrograd/engine.py for the value graph and micrograd/nn.py for the layers, then run demo.ipynb. An evening's reading that makes training loops much less mysterious. License: MIT.
+- mal: write a Lisp interpreter in small steps (https://github.com/kanaka/mal): A guided project to build a Lisp in numbered steps, with the same design implemented in dozens of languages under impls/. Start with process/guide.md, then compare your language's version with another you know. A rewarding way to learn parsing, evaluation, environments and tail calls. License: MPL-2.0.
+- the-super-tiny-compiler: see a compiler in one file (https://github.com/jamiebuilds/the-super-tiny-compiler): A heavily commented JavaScript file that compiles a toy Lisp-like syntax into C-like calls, walking through tokenising, parsing, transforming and code generation. Read the-super-tiny-compiler.js top to bottom and run test.js. Older and small, but still a clear introduction to compiler stages. License: CC BY 4.0.
+- openai-cookbook: worked examples for API-based apps (https://github.com/openai/openai-cookbook): A large set of notebooks and articles on building with LLM APIs: retrieval, function calling, evaluation, embeddings and more. Browse examples/ for runnable code and articles/ for longer guides. Treat the patterns as transferable even if you use another provider. License: MIT.
+- handson-ml3: notebooks for classical and deep learning (https://github.com/ageron/handson-ml3): The code companion to a popular machine learning book, delivered as Jupyter notebooks that move from the basics to neural networks with Keras. Start with 02_end_to_end_machine_learning_project.ipynb for a full workflow, including data cleaning and evaluation. The notebooks explain choices as they go. License: Apache-2.0.
+- OpenRCT2: a C++ game rebuilt and maintained in the open (https://github.com/OpenRCT2/OpenRCT2): An open-source reimplementation of a classic park simulation game. Because it models rides, guests, finances and a scenario world, it is a rich place to study simulation code. Start in src/openrct2, especially its world folder, and check docs/ for the build instructions. Original game data is needed to play. License: GPL-3.0.
+- Mindustry: a complete Java game with desktop, Android and server (https://github.com/Anuken/Mindustry): A tower defence and factory game with its logic in core/, platform launchers in desktop/, android/ and ios/, and a headless server/ module. Reading it shows how one Java codebase targets many platforms with shared game code. CONTRIBUTING.md is the entry point for newcomers. License: GPL-3.0.
+- opentelemetry-demo: a shop instrumented end to end (https://github.com/open-telemetry/opentelemetry-demo): A multi-language storefront built to show traces, metrics and logs in practice. Look through src/ to see the same telemetry ideas applied in different languages, and open compose.yaml for the local stack. A strong reference for observability wiring. License: Apache-2.0.
+- Signal-Android: study a security-minded messenger (https://github.com/signalapp/Signal-Android): The Android client of a privacy-focused messenger, with a large modular Gradle layout (app/, lib/, core/) and a reproducible-builds/ folder explaining verifiable builds. Read it for encryption integration, background work and testing at scale. Heavy going, so pick one feature to trace. License: AGPL-3.0, which has strong copyleft terms.
+- cal.diy: a scheduling app as a TypeScript monorepo (https://github.com/calcom/cal.diy): A large Next.js scheduling application organised into apps/ (including web, api and docs) and shared packages/ such as prisma, trpc and emails. Useful for seeing how a real product splits concerns across a monorepo. Check the README for how this repository relates to the hosted product. License: MIT.
+- cookiecutter-django: production defaults for Django (https://github.com/cookiecutter/cookiecutter-django): A project generator that outputs a Django app with Docker, settings per environment, testing, and optional extras. Generate one, then read the template under {{cookiecutter.project_slug}} and the hooks/ that tailor the result. docs/ explains each option. License: BSD-3-Clause.
+- Next-js-Boilerplate: a tidy starter with tests (https://github.com/ixartz/Next-js-Boilerplate): A Next.js and TypeScript starter that bundles Tailwind, a database layer with Drizzle, linting, Vitest and Playwright. See src/ for the app, migrations/ for schema history and tests/ for how the checks are organised. Handy when you want a starting point with quality gates already in place. License: MIT.
+- ardanlabs/service: a layered Go service starter (https://github.com/ardanlabs/service): A reference layout for production Go web services with Kubernetes in mind. The structure is explicit: app/ for entry points, business/ for domain logic, foundation/ for reusable pieces, and zarf/ for deployment config. Good reading on package design and project layering. License: Apache-2.0.
+- flutter/samples: small apps for each Flutter feature (https://github.com/flutter/samples): The Flutter team's collection of samples, each in its own folder: animations/, form_app/, compass_app/ and more. Pick one that matches the feature you need and read its code. compass_app/ is the one to study for app architecture. License: BSD-3-Clause.
+- terraform-aws-vpc: a module worth copying habits from (https://github.com/terraform-aws-modules/terraform-aws-vpc): A widely used Terraform module for AWS networking. Read main.tf, variables.tf and outputs.tf for how a flexible module exposes options, then run the scenarios in examples/ and look at modules/. A good lesson in module design and interface choices. License: Apache-2.0.
+- prisma-examples: ready-to-run TypeScript data layer samples (https://github.com/prisma/prisma-examples): A collection of example projects that pair Prisma with different frameworks and databases. Browse orm/ for framework samples, databases/ for database-specific setups and deployment-platforms/ for hosting. Note the default branch is called latest. License: Apache-2.0.
+- podinfo: a small Go service for Kubernetes demos (https://github.com/stefanprodan/podinfo): A tiny web service used to try out deployment patterns. The repo includes Helm in charts/, plain manifests in kustomize/, a timoni/ module and signing config in .cosign/. Deploy it to learn rollout, health checks and supply-chain tooling. License: Apache-2.0.
+- pydantic-ai: typed agents in Python (https://github.com/pydantic/pydantic-ai): An agent framework from the Pydantic team that leans on type hints for tools and structured outputs. Read pydantic_ai_slim/ for the core, pydantic_graph/ for graph-based control flow and pydantic_evals/ for evaluation, with examples/ to run. A good study in API design for LLM code. License: MIT.
+- Bevy: a data-driven game engine in Rust (https://github.com/bevyengine/bevy): A modular engine built around an entity component system. The examples/ directory is organised by topic, and examples/ecs is the place to learn the core model, while crates/ shows how the engine is split. Fast-moving, so check the version when copying code. License: MIT or Apache-2.0.
+- DuckDB: an analytical database you can read (https://github.com/duckdb/duckdb): An in-process SQL engine for analytics, written in C++. The src/ directory follows the query pipeline: parser, planner, optimizer, execution and storage. extension/ and benchmark/ are good side trips. A strong choice if you want to learn how databases work. License: MIT.
+- OpenSSF Scorecard: automated checks on repo security habits (https://github.com/ossf/scorecard): A Go tool that scores open source projects on practices such as branch protection, dependency updates and pinned workflows. Read ARCHITECTURE.md, then look at checks/ and checks/raw/ to see how each check is implemented. Run it on your own repository. License: Apache-2.0.
+- Falco: runtime threat detection for containers (https://github.com/falcosecurity/falco): A defensive runtime security tool that watches system activity and raises alerts based on rules. It is worth reading for how kernel events are turned into policy: see userspace/, then falco.yaml and config/ for configuration. Run it in a lab cluster to understand its output. License: Apache-2.0.
+
+### Free ways to learn to code
+Free courses, books, docs and practice sites, sorted by area and marked by level, so you can start where you are.
+- CS50x (https://cs50.harvard.edu/x/): Harvard's free introduction to computer science. A demanding and very well-taught foundation for any track.
+- freeCodeCamp (https://www.freecodecamp.org/): A free interactive curriculum with projects and certifications, covering web development, Python, data and more.
+- The Odin Project (https://www.theodinproject.com/): A free, project-based full-stack web curriculum that teaches you to use real tools from the start.
+- Full Stack Open (https://fullstackopen.com/en/): The University of Helsinki's free course on modern web development with React, Node.js and testing.
+- The Missing Semester of Your CS Education (https://missing.csail.mit.edu/): MIT lectures on the tools most courses skip: the shell, editors, Git, debugging and more.
+- Practical Deep Learning for Coders (https://course.fast.ai/): fast.ai's free course teaches deep learning by building working models first and explaining the theory after.
+- Kaggle Learn (https://www.kaggle.com/learn): Short, free, hands-on micro-courses on Python, pandas, SQL and machine learning that run in the browser.
+- Android Basics with Compose (https://developer.android.com/courses/android-basics-compose/course): Google's free course for building Android apps with Kotlin and Jetpack Compose, with no experience needed.
+- OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/): Concise, practical guidance on specific application security topics such as authentication and input validation.
+- Devhints (https://devhints.io/): A big collection of short, readable cheatsheets for languages, frameworks and command-line tools.
+- tldr pages (https://tldr.sh/): Community-written command-line help with practical examples, instead of long man pages.
+- GitHub Git Cheat Sheet (https://education.github.com/git-cheat-sheet-education.pdf): A one-page PDF of the Git commands you will use every day.
+- roadmap.sh (https://roadmap.sh/): Community-built learning roadmaps and guides for almost every developer role.
+- MDN: Learn web development (https://developer.mozilla.org/en-US/docs/Learn_web_development): Mozilla's structured path through HTML, CSS and JavaScript, from one of the web's most trusted references.
+- web.dev Learn (https://web.dev/learn): Free courses from Chrome's developer relations team on CSS, performance, accessibility and more.
+- The Twelve-Factor App (https://12factor.net/): A short, influential guide to building services that are easy to deploy, configure and scale.
+- Learn OpenGL (https://learnopengl.com/): A free, thorough guide to modern graphics programming, from your first triangle to advanced lighting.
+- Site Reliability Engineering (https://sre.google/sre-book/table-of-contents/): Google's book on running production systems, free to read online.
+- Pro Git (https://git-scm.com/book/en/v2): The complete Git book, free to read online, from the basics to how Git works internally.
+- Eloquent JavaScript (https://eloquentjavascript.net/): A well-loved book on JavaScript and programming in general, free to read online.
+- The Rust Programming Language (https://doc.rust-lang.org/book/): The official Rust book, free online. A clear introduction to ownership and systems programming.
+- The Swift Programming Language (https://docs.swift.org/swift-book/): The official guide to Swift, free online. The language behind modern iOS development.
+- Docker: Get started (https://docs.docker.com/get-started/): The official hands-on introduction to containers, images and Compose.
+- Kubernetes Basics (https://kubernetes.io/docs/tutorials/kubernetes-basics/): The official interactive tutorial for deploying, scaling and updating an app on Kubernetes.
+- The Python Tutorial (https://docs.python.org/3/tutorial/): The official Python tutorial. A clear tour of the language for people who have programmed a little.
+- Flutter documentation (https://docs.flutter.dev/): Official docs and learning paths for building iOS, Android, web and desktop apps from one codebase.
+- Godot documentation (https://docs.godotengine.org/en/stable/): Official docs for the free, open-source Godot engine, including step-by-step first game tutorials.
+- Learn Git Branching (https://learngitbranching.js.org/): An interactive, visual way to learn branching and rebasing right in your browser.
+- SQLBolt (https://sqlbolt.com/): Short interactive lessons that teach SQL by writing real queries in the browser.
+- A Tour of Go (https://go.dev/tour/): The official interactive introduction to Go. You run every example in the browser.
+- Web Security Academy (https://portswigger.net/web-security): Free, legal labs from PortSwigger that teach real web vulnerabilities and how to prevent them.
+- OverTheWire Wargames (https://overthewire.org/wargames/): Legal hacking games that teach Linux and security concepts. Start with Bandit.
+- freeCodeCamp on YouTube (https://www.youtube.com/c/Freecodecamp): Thousands of hours of free full-length programming courses on nearly every topic.
+
+### Tools developers keep
+Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.
+- OpenTofu (https://opentofu.org/): An open-source, community-driven infrastructure-as-code tool that is a fork of Terraform.
+- Ansible (https://docs.ansible.com/): Agentless automation for configuring servers and deploying software using readable YAML playbooks.
+- Prometheus (https://prometheus.io/): A widely used open-source monitoring system and time-series database with its own query language.
+- Grafana (https://grafana.com/oss/grafana/): Open-source dashboards for your metrics, logs and traces from many data sources.
+- Trivy (https://trivy.dev/): An open-source scanner for vulnerabilities and misconfigurations in containers, code and infrastructure.
+- FastAPI (https://fastapi.tiangolo.com/): A modern Python web framework that uses type hints for validation and automatic API docs.
+- PostgreSQL (https://www.postgresql.org/): A powerful open-source relational database and a safe default for most applications.
+- Vite (https://vite.dev/): A fast frontend build tool and dev server with instant updates as you edit.
+- Playwright (https://playwright.dev/): Reliable end-to-end browser testing across Chromium, Firefox and WebKit.
+- scikit-learn (https://scikit-learn.org/): The standard Python library for classic machine learning, with excellent documentation.
+- Hugging Face Transformers (https://github.com/huggingface/transformers): An open-source library for using and training state-of-the-art machine learning models.
+- Flutter (https://flutter.dev/): Google's open-source UI toolkit for building mobile, web and desktop apps from a single codebase.
+- Tauri (https://tauri.app/): Build small, secure desktop and mobile apps with a web frontend and a Rust backend.
+- Godot Engine (https://godotengine.org/): A free and open-source 2D and 3D game engine with no royalties.
+- ripgrep (https://github.com/BurntSushi/ripgrep): An extremely fast tool for searching code that respects your .gitignore by default.
+- jq (https://jqlang.org/): A small command-line tool for slicing, filtering and transforming JSON.
+- k9s (https://k9scli.io/): A terminal UI for managing Kubernetes clusters. It makes it much faster to inspect pods, read logs and jump between resources than typing kubectl commands.
+- lazygit (https://github.com/jesseduffield/lazygit): A simple terminal UI for Git. Staging single lines, rebasing and resolving conflicts all become much easier to see and do.
+- ShellCheck (https://www.shellcheck.net/): A linter that finds bugs in shell scripts, such as unquoted variables. Try it in the browser or add it to your CI.
+- Caddy (https://caddyserver.com/): A web server and reverse proxy that gets and renews HTTPS certificates automatically, with very little configuration.
+- fzf (https://github.com/junegunn/fzf): A general-purpose fuzzy finder for the command line. Use it to search files, shell history, Git branches and anything else you can pipe into it.
+- Gitleaks (https://github.com/gitleaks/gitleaks): Finds passwords, API keys and tokens in your Git history. Run it as a pre-commit hook or in CI before a secret gets out.
+- DuckDB (https://duckdb.org/): An in-process analytical database. Query CSV and Parquet files with SQL on your laptop, with no server to run.
+- pre-commit (https://pre-commit.com/): A framework for managing Git hooks, so linters and formatters run automatically before every commit.
+- hadolint (https://github.com/hadolint/hadolint): A Dockerfile linter that catches bad practices and checks the shell code inside your RUN instructions.
+- Bruno (https://www.usebruno.com/): An open-source API client that stores your collections as plain files, so they can live in Git with your code.
+- dive (https://github.com/wagoodman/dive): Explore each layer of a Docker image and find wasted space, so you can make your images smaller.
+- htmx (https://htmx.org/): A small library that adds dynamic behaviour with HTML attributes. Build interactive pages without a large frontend framework.
+- Semgrep (https://github.com/semgrep/semgrep): Fast static analysis for many languages, with rules that look like the code you are searching for.
+- act (https://github.com/nektos/act): Run your GitHub Actions workflows locally to test changes without pushing a commit every time.
+- SQLite (https://www.sqlite.org/): A small, reliable database stored in a single file, with no server required. It is often all a small project needs.
+- bat (https://github.com/sharkdp/bat): A cat replacement with syntax highlighting, line numbers and Git integration.
+- Uptime Kuma (https://github.com/louislam/uptime-kuma): A self-hosted monitoring tool with a clean dashboard, status pages and many notification options.
+- MkDocs (https://www.mkdocs.org/): Turn a folder of Markdown files into a clean documentation site, with very little setup.
+- ZAP (https://www.zaproxy.org/): A free, open-source web application security scanner. Only use it against applications you own or have permission to test.
+- Hoppscotch (https://hoppscotch.io/): A lightweight, open-source API testing tool that runs in your browser and can also be self-hosted.
+- Valkey (https://valkey.io/): An open-source, high-performance key-value datastore, forked from Redis and backed by the Linux Foundation.
+- tmux (https://github.com/tmux/tmux): A terminal multiplexer. Split your terminal into panes and keep sessions running after you disconnect from a server.
+- Renovate (https://github.com/renovatebot/renovate): Automates dependency updates by opening pull requests, so your projects do not silently fall behind.
+- Wireshark (https://www.wireshark.org/): The classic network protocol analyzer. See exactly what is on the wire when something will not connect.
+- Excalidraw (https://excalidraw.com/): A free, open-source whiteboard with a hand-drawn style. It is great for quick architecture diagrams.
+- HTTPie (https://github.com/httpie/cli): A friendly command-line HTTP client with readable syntax and formatted output, made for working with APIs.
+
+## Tips
+- git commit --amend changes your most recent commit. Avoid amending a commit you have already pushed to a shared branch, because it rewrites history.
+- Use git switch -c new-branch to create a branch and move to it in one step.
+- git stash sets aside your uncommitted changes so you can switch tasks. git stash pop brings them back.
+- Lost a commit? git reflog lists where HEAD has been recently, so you can usually get it back.
+- git bisect uses a binary search through your history to find the commit that introduced a bug.
+- git log --oneline --graph --all gives you a quick visual map of your branches.
+- git diff --staged shows exactly what your next commit will contain.
+- git add -p lets you stage parts of a file, which helps keep each commit focused on one change.
+- Write commit messages that explain why a change was made. The diff already shows what changed.
+- Keep secrets out of Git. If one is ever committed, assume it is compromised and revoke it, even after you delete it from history.
+- Add a .gitignore before your first commit so build output and .env files never get tracked.
+- In the shell, Ctrl+R searches your command history. It saves a lot of retyping.
+- !! in Bash repeats your last command. sudo !! reruns it with sudo.
+- Quote your shell variables: "$file" rather than $file. Unquoted variables break on spaces.
+- Start Bash scripts with set -euo pipefail so they stop on errors, unset variables and failed pipes.
+- curl -I https://example.com fetches only the response headers, which is handy for checking redirects and caching.
+- ss -tulpn shows which processes are listening on which ports on Linux. It replaces the older netstat.
+- du -sh * | sort -h shows what is using disk space in the current folder, sorted by size.
+- tail -f app.log follows a log file live. journalctl -u myservice -f does the same for a systemd service.
+- chmod 777 is rarely the right fix. Find out which user needs access and give only that user what it needs.
+- Use SSH keys rather than passwords for your servers, then disable password login.
+- In Docker, copy your dependency manifest and install before you copy your source code. Layer caching will make rebuilds much faster.
+- Multi-stage Docker builds keep compilers and build tools out of your final image, so it is smaller and has less to attack.
+- Do not run containers as root unless you must. Add a USER instruction to your Dockerfile.
+- Pin your base images to a specific version. latest can change under you and break a build with no code change.
+- Add a .dockerignore file so node_modules, .git and secrets do not end up in your build context.
+- docker system df shows how much space images, containers and volumes use. docker system prune removes unused data, so read its warning first.
+- In Kubernetes, set resource requests and limits on your containers so one workload cannot starve the others.
+- A liveness probe restarts a stuck container. A readiness probe stops traffic until the container is ready. They solve different problems.
+- kubectl describe pod <name> is usually the first step in debugging. Its Events section often tells you exactly what went wrong.
+- Make your CI fail fast: run linting and unit tests before slower integration tests and builds.
+- Treat your infrastructure like code: keep it in version control and review changes like any other pull request.
+- Deploys should be boring. Small, frequent releases are easier to review, debug and roll back than big ones.
+- Practice restoring your backups. A backup you have never restored is only a hope.
+- Alert on symptoms users feel, like errors and slow responses, rather than on every internal metric.
+- Structured logs (such as JSON) are far easier to search and filter than free-form text.
+- Log enough to debug a problem, but never log passwords, tokens or personal data.
+- Always use parameterized queries for SQL. Building queries by joining strings invites SQL injection.
+- Store passwords with a slow password hash such as Argon2 or bcrypt. Never store them in plain text, and do not use a fast hash like MD5 or SHA-256 alone.
+- Validate input on the server, even if you already validate it in the browser. Client-side checks can be bypassed.
+- Run npm audit, pip-audit or your language's equivalent regularly to find dependencies with known vulnerabilities.
+- Add an index for columns you filter on often, and use EXPLAIN to confirm your query actually uses it.
+- An N+1 query problem happens when you run one query per row in a loop. Fetch the related data in one query instead.
+- Wrap related database writes in a transaction, so they either all succeed or all fail together.
+- Use <button> for actions and <a> for navigation. You get keyboard support and accessibility for free.
+- Every meaningful image needs useful alt text. Purely decorative images should use an empty alt="".
+- CSS gap works with both flexbox and grid. It is often simpler than adding margins to each child.
+- Open the browser's Network tab before guessing. It shows the exact request, response and timing.
+- Use const by default in JavaScript. Use let only when a value really needs to change.
+- await in a loop runs tasks one at a time. Use Promise.all when they can safely run at the same time.
+- In Python, use a virtual environment per project: python -m venv .venv. It keeps dependencies from clashing.
+- In Python, avoid a mutable default argument such as def f(items=[]). The same list is shared across calls. Use None instead.
+- Read the whole error message from the top, especially the first line that mentions your code. It usually says more than it first seems.
+- When you are stuck, write the smallest example that reproduces the bug. You will often find the cause while doing it.
+- Explain your bug out loud to someone, or to a rubber duck. Saying it step by step often exposes the wrong assumption.
+- Change one thing at a time when debugging. If you change five things, you will not know which one mattered.
+- A failing test is the best way to start fixing a bug. It proves the bug exists and shows when it is gone.
+- Test behaviour rather than implementation details, so your tests still pass when you refactor.
+- Name things for what they mean, not how they work. Good names can replace a lot of comments.
+- Comments should explain why the code does something surprising. The code itself should show what it does.
+- Read other people's code. Picking one open-source project and following how it works teaches things tutorials cannot.
+- Take breaks. Many hard bugs get solved on a walk, once your brain stops repeating the same wrong idea.
