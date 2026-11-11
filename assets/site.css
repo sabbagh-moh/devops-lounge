@@ -6,7 +6,7 @@
   --text: #fff; --text-2: #AEAEB2; --text-3: #8E8E93;
   --ok: #30D158; --info: #0A84FF;
   --dc-rail: #1E1F22; --dc-side: #2B2D31; --dc-main: #313338; --dc-embed: #2B2D31; --dc-text: #DBDEE1; --dc-muted: #949BA4; --dc-blurple: #5865F2;
-  --sans: 'Geist', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --mono: 'Geist Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
   --arabic: 'Alexandria', 'Segoe UI', Tahoma, sans-serif;
   --ease: cubic-bezier(.2, .8, .2, 1);
@@ -46,8 +46,8 @@ button.btn { border: 0; cursor: pointer; font-family: var(--sans); }
 @media (max-width: 860px) { .nav-links { display: none; } .nav .wrap { justify-content: space-between; } }
 
 h1, h2, h3 { margin: 0; font-weight: 600; text-wrap: balance; }
-.display { font-size: clamp(46px, 5.6vw, 84px); letter-spacing: -.06em; line-height: .96; }
-.title { font-size: clamp(38px, 5vw, 72px); letter-spacing: -.05em; line-height: 1; }
+.display { font-size: clamp(46px, 5.6vw, 84px); letter-spacing: -.045em; line-height: 1; font-weight: 500; }
+.title { font-size: clamp(38px, 5vw, 72px); letter-spacing: -.04em; line-height: 1.04; font-weight: 500; }
 .lede { font-size: clamp(18px, 1.6vw, 21px); color: var(--text-2); max-width: 34ch; margin: 22px 0 0; line-height: 1.45; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 section.block { padding-block: 112px 0; }
@@ -168,7 +168,7 @@ section.block { padding-block: 112px 0; }
 .faq details p { margin: 0 0 26px; color: var(--text-2); max-width: 60ch; }
 
 .final { margin-top: 112px; border-radius: 36px; background: #fff; color: #000; padding: clamp(40px, 7vw, 96px); display: flex; flex-wrap: wrap; gap: 32px; align-items: end; justify-content: space-between; }
-.final h2 { font-size: clamp(44px, 6.4vw, 96px); letter-spacing: -.06em; line-height: .95; max-width: 10ch; }
+.final h2 { font-size: clamp(44px, 6.4vw, 96px); letter-spacing: -.045em; line-height: 1; max-width: 10ch; font-weight: 500; }
 .final p { margin: 18px 0 0; color: #3D3D3D; max-width: 32ch; font-size: 18px; }
 .final .btn-primary { background: #000; color: #fff; }
 .final .btn-primary:hover { background: #222; }
@@ -229,7 +229,7 @@ footer a:hover { color: #fff; }
   .final .btn { width: 100%; justify-content: center; height: 58px; }
 }
 /* ---------- hero: one wide headline, set in two lines, the server below ---------- */
-.hero-title { font-size: clamp(48px, 7.2vw, 112px); max-width: none; text-wrap: initial; }
+.hero-title { font-size: clamp(46px, 6.1vw, 94px); max-width: none; text-wrap: initial; }
 .hero-title span { display: block; }
 .hero-title span + span { color: var(--text); }
 .hero-sub { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px 48px; margin-top: 32px; }
@@ -447,6 +447,34 @@ input[type=range] { width: 100%; accent-color: #fff; }
 .scale button:hover { transform: translateY(-3px); }
 .scale span { font: 11px var(--mono); }
 @media (max-width: 760px) { .scale { grid-template-columns: repeat(3, minmax(0, 1fr)); } .color-pair { grid-template-columns: 1fr; } }
+
+
+/* ---------- brand light: the violet and blue wash from the Discord banners, rising from below ---------- */
+:root {
+  --wash-violet: rgba(122, 99, 232, .55);
+  --wash-blue: rgba(91, 143, 232, .48);
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .055 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.hero, .wall, .page-head, .final, .story { position: relative; isolation: isolate; }
+.hero::before, .wall::before, .page-head::before, .final::before, .story::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; left: 50%; bottom: 0; width: min(1500px, 140vw); height: 70%; transform: translateX(-50%);
+  background:
+    radial-gradient(42% 60% at 40% 100%, var(--wash-violet), transparent 72%),
+    radial-gradient(38% 56% at 62% 100%, var(--wash-blue), transparent 72%);
+  filter: blur(40px); opacity: .9;
+}
+.hero::after, .wall::after, .final::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--grain); opacity: .9; }
+.hero::before { height: 520px; bottom: 560px; opacity: 1; }
+@media (max-width: 600px) { .hero::before { bottom: 440px; height: 380px; } }
+.wall::before { height: 80%; opacity: .7; }
+.page-head::before { height: 120%; bottom: -20%; opacity: .55; width: min(1200px, 120vw); }
+.story::before { top: 0; bottom: auto; height: 340px; transform: translateX(-50%) scaleY(-1); opacity: .45; }
+
+.final { background: #000; color: #fff; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.final::before { width: 130%; height: 95%; opacity: 1; filter: blur(30px); }
+.final p { color: var(--text-2); }
+.final .btn-primary { background: #fff; color: #000; }
+.final .btn-primary:hover { background: #E5E5EA; }
 
 /* ---------- bot trap story ---------- */
 .trap-channel { font-weight: 600; color: var(--text-2); margin-bottom: 14px; font-size: 15px; }
