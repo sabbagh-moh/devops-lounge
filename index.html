@@ -37,8 +37,8 @@
 <main>
 
 <section class="hero bleed"><div class="wrap">
-  <h1 class="display hero-title"><span>Stuck on a bug?</span> <span>Someone here has fixed it.</span></h1>
-  <div class="hero-sub">
+  <h1 class="display hero-title"><span class="line"><span>Stuck on a bug?</span></span> <span class="line"><span>Someone here has fixed it.</span></span></h1>
+  <div class="hero-sub" data-hero-sub>
     <p class="lede">A free Discord server for developers and DevOps engineers, from your first “hello world” to running production.</p>
     <div class="actions"><a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a><a class="btn btn-quiet" href="/devops-lounge/tools/prompt-builder/">Try the Prompt Builder</a></div>
   </div>
@@ -78,17 +78,46 @@
 </div>
 </div></section>
 
-<section class="wall"><div class="wrap-wide"><div class="wall-lines" aria-hidden="true"><div><span lang="en" class="lit">English</span><span lang="ar">العربية</span><span lang="es">Español</span><span lang="pt">Português</span></div><div><span lang="fr">Français</span><span lang="ru">Русский</span><span lang="en">English</span><span lang="ar">العربية</span><span lang="es">Español</span></div><div><span lang="pt">Português</span><span lang="fr">Français</span><span lang="ru">Русский</span><span lang="en">English</span></div></div></div>
-  <div class="wrap wall-caption"><h2>Six languages. One server.</h2><p>English is shared by everyone. Arabic, Spanish, Portuguese, French and Russian each get their own rooms.</p></div>
+<section class="story" aria-labelledby="story-title"><div class="wrap">
+  <h2 class="title story-title" id="story-title" data-reveal>What happens when you join.</h2>
+  <div class="cards">
+    <article class="card" style="--i:0">
+      <div class="card-copy"><span class="step">1</span><h3>Pick your path.</h3><p>Choose your language and what you code. The server opens the rooms for you and hides the rest.</p></div>
+      <div class="card-visual"><div class="dc-menu">
+        <div class="dc-select">Pick what you want to see <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></div>
+        <ul><li class="on"><span class="box-mark"></span><b>AI</b><small>Talk about building with LLMs: prompts, agents, retrieval,</small></li><li><span class="box-mark"></span><b>Web Dev</b><small>General and full-stack web development: how the pieces fit</small></li><li><span class="box-mark"></span><b>App Dev</b><small>Desktop and cross-platform applications: packaging, native</small></li><li class="on"><span class="box-mark"></span><b>Frontend</b><small>UI, CSS, accessibility, performance and frameworks</small></li><li><span class="box-mark"></span><b>Backend</b><small>APIs, databases, queues, caching and the systems behind th</small></li><li class="on"><span class="box-mark"></span><b>Mobile</b><small>Native and hybrid iOS and Android</small></li></ul>
+      </div></div>
+    </article>
+    <article class="card" style="--i:1">
+      <div class="card-copy"><span class="step">2</span><h3>Ask, and it stays found.</h3><p>Questions live in a forum. When one is answered it gets a Solved tag, so the next person finds the answer in seconds.</p></div>
+      <div class="card-visual"><div class="dc-forum">
+        <div class="dc-forum-head"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg><b>ask-a-question</b></div>
+        <div class="dc-post"><b>Docker container exits right after start</b><div><span class="solved">✓ Solved</span><span class="">Docker</span></div></div><div class="dc-post"><b>useEffect runs twice in development</b><div><span class="solved">✓ Solved</span><span class="">React</span></div></div><div class="dc-post"><b>How do I structure a FastAPI project?</b><div><span class="">Python</span></div></div><div class="dc-post"><b>Terraform state lock will not release</b><div><span class="solved">✓ Solved</span><span class="">DevOps</span></div></div>
+        <p class="example">Example threads, to show the layout.</p>
+      </div></div>
+    </article>
+    <article class="card" style="--i:2">
+      <div class="card-copy"><span class="step">3</span><h3>Show what you build.</h3><p>Post your project in the showroom. People upvote, review your code, and the best ones get shared.</p></div>
+      <div class="card-visual"><div class="dc-show">
+        <div class="dc-show-img"><span>your-project.dev</span></div>
+        <div class="dc-show-body"><b>Your project, right here.</b><p>A short line on what it does and what you used to build it.</p>
+        <div class="dc-show-actions"><span class="up">▲ Upvote</span><span>Request a review</span></div></div>
+      </div></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="wall" data-wall><div class="wrap-wide"><div class="wall-lines" aria-hidden="true"><div><span lang="en" class="lit">English</span><span lang="ar">العربية</span><span lang="es">Español</span><span lang="pt">Português</span></div><div><span lang="fr">Français</span><span lang="ru">Русский</span><span lang="en">English</span><span lang="ar">العربية</span><span lang="es">Español</span></div><div><span lang="pt">Português</span><span lang="fr">Français</span><span lang="ru">Русский</span><span lang="en">English</span></div></div></div>
+  <div class="wrap wall-caption"><h2 data-reveal>Six languages. One server.</h2><p data-reveal>English is shared by everyone. Arabic, Spanish, Portuguese, French and Russian each get their own rooms.</p></div>
 </section>
 
-<section class="block"><div class="wrap">
-  <div class="block-head"><h2 class="title">Pick what you work on.</h2><p>You only see the rooms you choose, each with a starter pack and a roadmap.</p></div>
+<section class="block"><div class="wrap split-layout">
+  <div class="split-head"><h2 class="title" data-reveal>Ten tracks. Pick yours.</h2><p data-reveal>You only see the rooms you choose, each with a starter pack and a roadmap.</p></div>
   <ul class="index"><li><a href="/devops-lounge/tracks/ai/"><h3>AI</h3><span class="n">60 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/web-dev/"><h3>Web Dev</h3><span class="n">38 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/app-dev/"><h3>App Dev</h3><span class="n">12 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/frontend/"><h3>Frontend</h3><span class="n">17 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/backend/"><h3>Backend</h3><span class="n">21 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/mobile/"><h3>Mobile</h3><span class="n">11 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/data-and-ml/"><h3>Data and ML</h3><span class="n">10 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/cyber-security/"><h3>Cyber Security</h3><span class="n">14 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/devops-and-cloud/"><h3>DevOps and Cloud</h3><span class="n">26 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li><a href="/devops-lounge/tracks/game-dev/"><h3>Game Dev</h3><span class="n">10 picks</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li></ul>
 </div></section>
 
 <section class="block"><div class="wrap">
-  <div class="block-head"><h2 class="title">Tools that run in your browser.</h2><p>Free, instant and private. Nothing you type leaves the page.</p></div>
+  <div class="block-head"><h2 class="title" data-reveal>Tools that run in your browser.</h2><p data-reveal>Free, instant and private. Nothing you type leaves the page.</p></div>
   <div class="bento"><a class="tile tile-hero" href="/devops-lounge/tools/prompt-builder/">
   <pre class="mini-prompt"><span>You are a senior TypeScript engineer who works with React.</span>
 <b>## Task</b>
@@ -97,6 +126,24 @@ A hook that debounces a search input
 - Handle errors and invalid input
 - Include unit tests</pre>
   <div class="tile-copy"><h3>Prompt Builder</h3><p>Turn a rough idea into a prompt that gets good answers.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/token-counter/">
+  <span class="sample">1,284 tokens</span>
+  <div class="tile-copy"><h3>Token Counter</h3><p>Estimate tokens and see if your text fits a context window.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/tool-schema/">
+  <span class="sample">get_weather()</span>
+  <div class="tile-copy"><h3>AI Tool Schema Builder</h3><p>Function-calling schemas for OpenAI, Claude and MCP.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/json-to-types/">
+  <span class="sample">User[]</span>
+  <div class="tile-copy"><h3>JSON to TypeScript</h3><p>TypeScript interfaces, Zod or JSON Schema from any JSON.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/curl-converter/">
+  <span class="sample">curl -X POST</span>
+  <div class="tile-copy"><h3>cURL Converter</h3><p>Turn a cURL command into fetch, axios or Python.</p></div>
+</a><a class="tile" href="/devops-lounge/tools/diff/">
+  <span class="sample">+ port: 3000</span>
+  <div class="tile-copy"><h3>Text Diff</h3><p>See exactly which lines changed between two texts.</p></div>
+</a><a class="tile tile-wide" href="/devops-lounge/tools/color-contrast/">
+  <span class="sample">4.6 : 1</span>
+  <div class="tile-copy"><h3>Color and Contrast</h3><p>Convert colors and check WCAG contrast.</p></div>
 </a><a class="tile" href="/devops-lounge/tools/cron/">
   <span class="sample">30 9 * * 1-5</span>
   <div class="tile-copy"><h3>Cron Builder</h3><p>Build a cron schedule and see exactly when it runs.</p></div>
@@ -104,7 +151,7 @@ A hook that debounces a search input
   <span class="sample">/\w+@\w+/</span>
   <div class="tile-copy"><h3>Regex Tester</h3><p>Test a regular expression and see every match highlighted.</p></div>
 </a><a class="tile" href="/devops-lounge/tools/json/">
-  <span class="sample">{ &quot;ok&quot;: true }</span>
+  <span class="sample">{ ok }</span>
   <div class="tile-copy"><h3>JSON Formatter</h3><p>Format, validate and minify JSON, with the exact error spot.</p></div>
 </a><a class="tile" href="/devops-lounge/tools/jwt/">
   <span class="sample">eyJhbGciOi…</span>
@@ -115,7 +162,7 @@ A hook that debounces a search input
 </a><a class="tile" href="/devops-lounge/tools/base64/">
   <span class="sample">TG91bmdl</span>
   <div class="tile-copy"><h3>Base64 and URL Encoder</h3><p>Encode and decode Base64 and URL text, Unicode included.</p></div>
-</a><a class="tile" href="/devops-lounge/tools/password/">
+</a><a class="tile tile-wide" href="/devops-lounge/tools/password/">
   <span class="sample">k7#Qm…</span>
   <div class="tile-copy"><h3>Password and UUID Generator</h3><p>Strong random passwords and UUIDs, made on your device.</p></div>
 </a><a class="tile" href="/devops-lounge/tools/chmod/">
@@ -125,9 +172,9 @@ A hook that debounces a search input
 </div></section>
 
 <section class="block bleed"><div class="wrap">
-  <div class="block-head"><h2 class="title">The Vault.</h2><p>Every pick comes with a short note on why it is worth your time. New ones land in the server every day.</p></div>
+  <div class="block-head"><h2 class="title" data-reveal>The Vault.</h2><p data-reveal>Every pick comes with a short note on why it is worth your time. New ones land in the server every day.</p></div>
   <div class="vault">
-    <div class="count"><div><b>249</b><p>free resources, picked by hand and sorted by topic.</p></div>
+    <div class="count"><div><b data-count="249">249</b><p>free resources, picked by hand and sorted by topic.</p></div>
       <nav class="split" aria-label="Vault sections"><a href="/devops-lounge/ai/">AI 60</a><a href="/devops-lounge/skills/">Skills 55</a><a href="/devops-lounge/open-source/">Open source 59</a><a href="/devops-lounge/learn/">Learn 33</a><a href="/devops-lounge/toolbox/">Toolbox 42</a></nav></div>
     <div class="shelf"><a class="pick" href="https://arxiv.org/abs/2005.11401" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy">arxiv.org</div><h3>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</h3><p>The paper that named RAG: a generator combined with a dense vector index over Wikipedia, trained together.</p><span class="tag">Papers · Intermediate</span></a><a class="pick" href="https://huggingface.co/learn/llm-course/chapter1/1" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy">huggingface.co</div><h3>Hugging Face LLM Course</h3><p>A free, hands-on course on using and fine-tuning transformer models with the Hugging Face libraries.</p><span class="tag">Courses · Beginner</span></a><a class="pick" href="https://explainshell.com/" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=explainshell.com&sz=64" width="20" height="20" alt="" loading="lazy">explainshell.com</div><h3>explainshell: Paste a Command, See What Every Part Means</h3><p>Paste any shell command and each flag and argument is matched to the relevant excerpt from its manual page.</p><span class="tag">Linux · Beginner</span></a><a class="pick" href="https://mywiki.wooledge.org/BashPitfalls" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=mywiki.wooledge.org&sz=64" width="20" height="20" alt="" loading="lazy">mywiki.wooledge.org</div><h3>BashPitfalls: The Shell Mistakes Everyone Makes Once</h3><p>A catalogue of common Bash bugs, each with a short explanation and a safer pattern: unquoted variables, parsing ls output, misuse of test.</p><span class="tag">Linux · Intermediate</span></a><a class="pick" href="https://github.com/vsouza/awesome-ios" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy">github.com</div><h3>awesome-ios: Swift and iOS libraries by topic</h3><p>A large index of iOS and Swift projects grouped by purpose: networking, architecture, UI components, testing, tooling and learning material.</p><span class="tag">Awesome List · Beginner</span></a><a class="pick" href="https://github.com/ellisonleao/magictools" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy">github.com</div><h3>magictools: a game developer's reference shelf</h3><p>One list that covers the practical side of making games: engines, art and audio tools, level editors, tutorials and communities.</p><span class="tag">Awesome List · Beginner</span></a><a class="pick" href="https://fullstackopen.com/en/" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=fullstackopen.com&sz=64" width="20" height="20" alt="" loading="lazy">fullstackopen.com</div><h3>Full Stack Open</h3><p>The University of Helsinki's free course on modern web development with React, Node.js and testing.</p><span class="tag">Free course · Intermediate</span></a><a class="pick" href="https://missing.csail.mit.edu/" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=missing.csail.mit.edu&sz=64" width="20" height="20" alt="" loading="lazy">missing.csail.mit.edu</div><h3>The Missing Semester of Your CS Education</h3><p>MIT lectures on the tools most courses skip: the shell, editors, Git, debugging and more.</p><span class="tag">Free course · Beginner</span></a><a class="pick" href="https://grafana.com/oss/grafana/" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=grafana.com&sz=64" width="20" height="20" alt="" loading="lazy">grafana.com</div><h3>Grafana</h3><p>Open-source dashboards for your metrics, logs and traces from many data sources.</p><span class="tag">Tool</span></a><a class="pick" href="https://trivy.dev/" rel="noopener"><div class="src"><img src="https://www.google.com/s2/favicons?domain=trivy.dev&sz=64" width="20" height="20" alt="" loading="lazy">trivy.dev</div><h3>Trivy</h3><p>An open-source scanner for vulnerabilities and misconfigurations in containers, code and infrastructure.</p><span class="tag">CLI</span></a></div>
   </div>
@@ -135,15 +182,20 @@ A hook that debounces a search input
 
 <section class="block"><div class="wrap calm">
   <div class="calm-copy">
-    <h2 class="title">Calm by design.</h2>
+    <h2 class="title" data-reveal>Spam never reaches the chat.</h2>
     <ul>
-      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.6 8 11 4.6-1.4 8-6 8-11V5l-8-3zm0 5a2.5 2.5 0 0 1 1 4.8V16h-2v-4.2A2.5 2.5 0 0 1 12 7z"/></svg><span><b>A bot trap.</b> Spam bots post in the first channel they can. Ours is a trap, and staff review every catch.</span></li>
-      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 13h3l2-6 4 12 3-9 2 3h4v2h-5l-1-1.5-3 9-4-12-1 3H3z"/></svg><span><b>Raid protection.</b> When a wave of new accounts arrives, they wait in quarantine instead of the chat.</span></li>
-      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18l-7 8.5V20l-4-2v-4.5L3 5z"/></svg><span><b>AutoMod.</b> Scam links, mass mentions and slurs never reach the rooms.</span></li>
+      <li data-reveal><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.6 8 11 4.6-1.4 8-6 8-11V5l-8-3zm0 5a2.5 2.5 0 0 1 1 4.8V16h-2v-4.2A2.5 2.5 0 0 1 12 7z"/></svg><span><b>A bot trap.</b> Spam bots post in the first channel they can. Ours is a trap, and staff review every catch.</span></li>
+      <li data-reveal><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 13h3l2-6 4 12 3-9 2 3h4v2h-5l-1-1.5-3 9-4-12-1 3H3z"/></svg><span><b>Raid protection.</b> When a wave of new accounts arrives, they wait in quarantine instead of the chat.</span></li>
+      <li data-reveal><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18l-7 8.5V20l-4-2v-4.5L3 5z"/></svg><span><b>AutoMod.</b> Scam links, mass mentions and slurs never reach the rooms.</span></li>
     </ul>
   </div>
-  <div class="stage"><div class="stage-inner">
-    <div class="msg"><img src="/devops-lounge/assets/logo-64.png" alt=""><div>
+  <div class="stage" data-trap><div class="stage-inner">
+    <div class="trap-channel"><b>#</b> bot-detector</div>
+    <div class="msg spam"><span class="avatar-blank" aria-hidden="true"></span><div>
+      <div class="who">new-account <time>Today at 03:12</time></div>
+      <p class="spam-text">Free Nitro for everyone, claim it here before it runs out</p>
+    </div></div>
+    <div class="msg review"><img src="/devops-lounge/assets/logo-64.png" alt=""><div>
       <div class="who">DevOps Bot <i>APP</i> <time>Today at 03:12</time></div>
       <div class="embed"><b style="color:#F2F3F5">Caught by the bot trap</b><p>Free Nitro for everyone, claim it here before it runs out</p>
         <div class="f"><div><b>Member</b>@new-account</div><div><b>Account created</b>2 hours ago</div><div><b>Joined</b>a minute ago</div></div>
@@ -154,8 +206,8 @@ A hook that debounces a search input
   </div></div>
 </div></section>
 
-<section class="block"><div class="wrap">
-  <div class="block-head"><h2 class="title">Questions.</h2></div>
+<section class="block"><div class="wrap split-layout">
+  <div class="split-head"><h2 class="title" data-reveal>Questions.</h2><p data-reveal>Anything else? Ask in the server, someone will answer.</p></div>
   <div class="faq"><details><summary>What is DevOps Lounge?</summary><p>A free Discord community for developers and DevOps engineers at every level. Members ask questions, share projects, review code and find people to build with.</p></details><details><summary>Is it free?</summary><p>Yes. Joining is free and there is nothing to buy.</p></details><details><summary>I am just starting out. Is it for me?</summary><p>Yes. There is a beginner track and a beginner corner, and every help forum welcomes first questions. Experienced engineers are there too, which is what makes the answers good.</p></details><details><summary>What languages can I talk in?</summary><p>English is shared by everyone, and there are rooms in Arabic, Spanish, Portuguese, French and Russian.</p></details><details><summary>What topics does it cover?</summary><p>Ten tracks: AI, web, app development, frontend, backend, mobile, data and ML, security, DevOps and cloud, and game development, plus career and interview help.</p></details><details><summary>How do I get help with my code?</summary><p>Post in the ask-a-question forum with what you tried and the error you see. When it is solved, the thread is tagged so others can find the answer later. There is also a code review forum.</p></details></div>
 </div></section>
 
@@ -169,5 +221,8 @@ A hook that debounces a search input
   <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
 </body>
 </html>

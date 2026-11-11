@@ -14,6 +14,12 @@ Members ask programming questions in forums with solved tags, get code reviews, 
 
 ## Free tools (run in the browser)
 - [Prompt Builder](https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/): Write your idea the way you would say it. The builder spots your language, framework, error and visual style, and turns it into a prompt that gets better answers.
+- [Token Counter](https://sabbagh-moh.github.io/devops-lounge/tools/token-counter/): Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
+- [AI Tool Schema Builder](https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/): Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
+- [JSON to TypeScript](https://sabbagh-moh.github.io/devops-lounge/tools/json-to-types/): Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
+- [cURL Converter](https://sabbagh-moh.github.io/devops-lounge/tools/curl-converter/): Paste a cURL command from API docs or your browser's network tab. Get clean fetch, axios or Python requests code with headers, body and auth carried over.
+- [Text Diff](https://sabbagh-moh.github.io/devops-lounge/tools/diff/): Paste two versions of a file, a config or any text. Added and removed lines are marked with their line numbers.
+- [Color and Contrast](https://sabbagh-moh.github.io/devops-lounge/tools/color-contrast/): Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a background for WCAG, and pick a lighter or darker shade.
 - [Cron Builder](https://sabbagh-moh.github.io/devops-lounge/tools/cron/): Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
 - [Regex Tester](https://sabbagh-moh.github.io/devops-lounge/tools/regex/): Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
 - [JSON Formatter](https://sabbagh-moh.github.io/devops-lounge/tools/json/): Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.

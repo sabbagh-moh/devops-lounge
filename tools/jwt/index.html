@@ -44,7 +44,7 @@
 </div>
   <section class="group"><h2>How it works</h2><ul class="steps"><li><b>Decoded, not verified</b>The header and payload are only Base64URL-encoded, so anyone can read them. Checking the signature needs the key.</li><li><b>Never paste secrets</b>Tokens from production give access. Decode them here, where nothing is sent anywhere, then rotate any token you shared by mistake.</li></ul></section>
   <section class="group"><h2>Questions</h2><div class="faq"><details><summary>Can you verify the signature?</summary><p>Not here on purpose. Verifying needs your secret or public key, and a key should never be pasted into a website.</p></details><details><summary>Why does my token show as expired?</summary><p>The exp claim is in Unix seconds. If it is in the past, servers reject the token.</p></details></div></section>
-  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
+  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/tool-schema/">AI Tool Schema Builder</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
 </div>
 
 <div class="wrap"><section class="final">
@@ -57,5 +57,8 @@
   <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
 <script src="/devops-lounge/assets/tools/kit.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
 </body>
 </html>

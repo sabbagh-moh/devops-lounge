@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Tool Schema Builder: function calling JSON for OpenAI, Claude and MCP | DevOps Lounge</title>
+<meta name="description" content="Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the mode">
+<link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DevOps Lounge">
+<meta property="og:title" content="AI Tool Schema Builder: function calling JSON for OpenAI, Claude and MCP | DevOps Lounge">
+<meta property="og:description" content="Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the mode">
+<meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/">
+<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/devops-lounge/assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="stylesheet" href="/devops-lounge/assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Tool Schema Builder","url":"https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.","keywords":"function calling schema, openai tools json, claude tool use schema, mcp tool inputSchema, json schema for llm tools"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I make a parameter optional?","acceptedAnswer":{"@type":"Answer","text":"Untick Required. It stays in the properties but leaves the required list."}},{"@type":"Question","name":"Where do I put this?","acceptedAnswer":{"@type":"Answer","text":"In the tools list of your API request, or in the tools your MCP server lists."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"},{"@type":"ListItem","position":3,"name":"AI Tool Schema Builder","item":"https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/"}]}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a></nav>
+  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
+</div></header>
+<main>
+
+<div class="wrap">
+  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">AI tool schema builder</h1><p class="lede">Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.</p></section>
+  
+<div class="tool" id="schema-tool">
+  <div class="tool-grid">
+    <div class="stack">
+      <label class="field"><span>Tool name</span><input id="ts-name" value="get_weather" spellcheck="false"></label>
+      <label class="field"><span>What it does, when to use it, what it returns</span><textarea id="ts-desc" rows="3">Get the current weather for a city. Use it when the user asks about weather right now. Returns temperature and conditions.</textarea></label>
+      <span class="field-label">Parameters</span>
+      <ul class="params" id="ts-rows"></ul>
+      <button type="button" class="btn btn-quiet btn-sm" id="ts-add">Add a parameter</button>
+    </div>
+    <div class="stack">
+      <div class="seg" role="tablist"><button type="button" role="tab" data-target="openai" aria-selected="true">OpenAI</button><button type="button" role="tab" data-target="anthropic" aria-selected="false">Claude</button><button type="button" role="tab" data-target="mcp" aria-selected="false">MCP</button></div>
+      <pre class="out tall" id="ts-out"></pre>
+      <div class="toolbar"><button type="button" class="btn btn-primary btn-sm" data-copy-from="ts-out">Copy JSON</button></div>
+      <ul class="tips-list" id="ts-tips"></ul>
+    </div>
+  </div>
+</div>
+  <section class="group"><h2>How it works</h2><ul class="steps"><li><b>One definition, three formats</b>OpenAI wraps the schema in a function object, Claude calls it input_schema, and MCP calls it inputSchema. The parameters are the same JSON Schema.</li><li><b>Strict mode</b>When every parameter is required, the OpenAI version turns on strict mode so the model must follow the schema exactly.</li><li><b>Descriptions matter</b>Models choose tools and fill values from the descriptions. The tips point out anything vague.</li></ul></section>
+  <section class="group"><h2>Questions</h2><div class="faq"><details><summary>Can I make a parameter optional?</summary><p>Untick Required. It stays in the properties but leaves the required list.</p></details><details><summary>Where do I put this?</summary><p>In the tools list of your API request, or in the tools your MCP server lists.</p></details></div></section>
+  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/jwt/">JWT Decoder</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
+</div>
+
+<div class="wrap"><section class="final">
+  <div><h2>Built something with it?</h2><p>Show it in the server, get a code review, or ask the people who use these tools every day.</p></div>
+  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
+</section></div>
+</main>
+<footer><div class="wrap">
+  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
+</div></footer>
+<script src="/devops-lounge/assets/tools/ai.js" defer></script>
+<script src="/devops-lounge/assets/tools/kit.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
+</body>
+</html>
