@@ -22,34 +22,42 @@
 <link rel="apple-touch-icon" href="/assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="preload" href="/assets/theme/fonts/InterDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/theme/css/theme.css">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('motion-ready')},2500)</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Cyber Security resources","url":"https://lounge.xmoh.dev/tracks/cyber-security/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://lounge.xmoh.dev/"},"mainEntity":{"@type":"ItemList","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://github.com/OWASP/CheatSheetSeries","name":"OWASP Cheat Sheet Series: concise security guidance"},{"@type":"ListItem","position":2,"url":"https://github.com/aquasecurity/trivy","name":"Trivy: a vulnerability and misconfiguration scanner in Go"},{"@type":"ListItem","position":3,"url":"https://github.com/FiloSottile/age","name":"age: a small, modern file encryption tool in Go"},{"@type":"ListItem","position":4,"url":"https://github.com/OWASP/wstg","name":"OWASP Web Security Testing Guide: a methodical checklist"},{"@type":"ListItem","position":5,"url":"https://github.com/ossf/scorecard","name":"OpenSSF Scorecard: automated checks on repo security habits"},{"@type":"ListItem","position":6,"url":"https://github.com/falcosecurity/falco","name":"Falco: runtime threat detection for containers"},{"@type":"ListItem","position":7,"url":"https://cheatsheetseries.owasp.org/","name":"OWASP Cheat Sheet Series"},{"@type":"ListItem","position":8,"url":"https://portswigger.net/web-security","name":"Web Security Academy"},{"@type":"ListItem","position":9,"url":"https://overthewire.org/wargames/","name":"OverTheWire Wargames"},{"@type":"ListItem","position":10,"url":"https://trivy.dev/","name":"Trivy"},{"@type":"ListItem","position":11,"url":"https://github.com/gitleaks/gitleaks","name":"Gitleaks"},{"@type":"ListItem","position":12,"url":"https://github.com/semgrep/semgrep","name":"Semgrep"},{"@type":"ListItem","position":13,"url":"https://www.zaproxy.org/","name":"ZAP"},{"@type":"ListItem","position":14,"url":"https://www.wireshark.org/","name":"Wireshark"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lounge.xmoh.dev/"},{"@type":"ListItem","position":2,"name":"Tracks","item":"https://lounge.xmoh.dev/tracks/"},{"@type":"ListItem","position":3,"name":"Cyber Security","item":"https://lounge.xmoh.dev/tracks/cyber-security/"}]}</script>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="brand" href="/"><img src="/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/ai/">Resources</a><a href="/tools/">Tools</a><a href="/tracks/" aria-current="page">Tracks</a><a href="/tips/">Tips</a></nav>
-  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
-</div></header>
-<main>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-wrapper">
+<div class="navbar-wrapper"><header class="navbar" data-nav>
+  <div class="nav-components"><div class="nav-container"><div class="nav-content-wrapper">
+    <a href="/" class="brand-icon-wrapper" aria-label="DevOps Lounge home"><img src="/assets/logo-64.png" width="30" height="30" alt="" class="brand-mark"><span class="brand-name">DevOps Lounge</span></a>
+    <nav class="nav-link-wrapper" id="site-menu" aria-label="Main"><a href="/ai/" class="nav-link">Resources</a><a href="/tools/" class="nav-link">Tools</a><a href="/tracks/" class="nav-link" aria-current="page">Tracks</a><a href="/tips/" class="nav-link">Tips</a><div class="button-mobile"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join on Discord</span><span class="button-background-gradient" aria-hidden="true"></span></a></div></nav>
+    <div class="login-details-wrapper"><a href="https://discord.gg/XHtBz8rZp5" class="primary-button-dark" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-dark-text">Join</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+    <button type="button" class="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu"><span class="nav-menu-btn-inner"><span class="top-line"></span><span class="center-line"></span><span class="bottom-line"></span></span></button>
+  </div></div><div class="hero-bottom-line nav"></div></div>
+</header></div>
+<main class="main-wrapper" id="main">
 
-<div class="wrap">
-  <section class="page-head">
-    <a class="crumb" href="/tracks/">Tracks</a>
-    <h1 class="title">Cyber Security developers on Discord</h1>
-    <p class="lede">Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.</p>
-    <div class="actions"><a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join the Cyber Security track</a><a class="btn btn-quiet" href="https://roadmap.sh/cyber-security" rel="noopener">Cyber Security roadmap</a></div>
-  </section>
-  <section class="group"><ul class="steps">
+
+<section class="section-page-hero"><div class="page-hero-wrap"><div class="container"><div class="section-heading-wrap align-center page-heading">
+  <a class="crumb" href="/tracks/">Tracks</a>
+  <h1 data-reveal-load="text" class="heading-style-h1 is-page">Cyber Security developers on Discord</h1>
+  <p data-reveal-load="fade" class="text-size-md">Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.</p><div class="button-wrap" data-reveal-load="fade"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join the Cyber Security track</span><span class="button-background-gradient" aria-hidden="true"></span></a><a href="https://roadmap.sh/cyber-security" class="primary-button-dark" rel="noopener"><span class="button-dark-text">Cyber Security roadmap</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+</div></div></div></section>
+<div class="container page-body">
+  <section class="group"><ul class="steps" data-reveal="group">
     <li><b>Join the server</b>Free, and it takes a minute.</li>
     <li><b>Pick Cyber Security</b>The Cyber Security room opens, with a pinned starter pack and the roadmap.</li>
     <li><b>Ask and share</b>Solved questions get tagged, so the answers stay easy to find.</li>
   </ul></section>
-  <section class="group"><h2>Tools for Cyber Security work</h2><div class="tool-row"><a class="tile" href="/tools/jwt/"><div class="tile-copy"><h3>JWT Decoder</h3><p>Read a JSON Web Token and check when it expires.</p></div></a><a class="tile" href="/tools/password/"><div class="tile-copy"><h3>Password and UUID Generator</h3><p>Strong random passwords and UUIDs, made on your device.</p></div></a><a class="tile" href="/tools/base64/"><div class="tile-copy"><h3>Base64 and URL Encoder</h3><p>Encode and decode Base64 and URL text, Unicode included.</p></div></a></div></section>
-  <section class="group"><h2>Start with these <small>14</small></h2><ul class="list">
+  <section class="group"><h2>Tools for Cyber Security work</h2><div class="tool-row"><a class="features-card tool-card" href="/tools/jwt/"><span class="tool-card-sample">eyJhbGciOi…</span><span class="featured-text-wrap"><span class="text-size-xlarge">JWT Decoder</span><span class="text-size-regular">Read a JSON Web Token and check when it expires.</span></span></a><a class="features-card tool-card" href="/tools/password/"><span class="tool-card-sample">k7#Qm…</span><span class="featured-text-wrap"><span class="text-size-xlarge">Password and UUID Generator</span><span class="text-size-regular">Strong random passwords and UUIDs, made on your device.</span></span></a><a class="features-card tool-card" href="/tools/base64/"><span class="tool-card-sample">TG91bmdl</span><span class="featured-text-wrap"><span class="text-size-xlarge">Base64 and URL Encoder</span><span class="text-size-regular">Encode and decode Base64 and URL text, Unicode included.</span></span></a></div></section>
+  <section class="group"><h2>Start with these <small>14</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://github.com/OWASP/CheatSheetSeries" rel="noopener">OWASP Cheat Sheet Series: concise security guidance</a></h3>
   <p>Short, practical notes on how to build safely: authentication, session handling, input validation, secrets, REST security, Docker and many more. They are written for developers, not auditors. Browse the <code>cheatsheets/</code> folder and start with <code>Authentication_Cheat_Sheet.md</code>, then read whatever matches your stack. Good to keep open during code review. License: CC BY-SA 4.0.</p>
@@ -122,18 +130,71 @@
 </li></ul></section>
 </div>
 
-<div class="wrap"><section class="final">
-  <div><h2>Meet the Cyber Security crowd.</h2><p>Get unstuck faster and show what you are building to people who do the same work.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
-  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
-</section></div>
-</main>
-<footer><div class="wrap">
-  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/ai/">AI</a><a href="/skills/">Skills</a><a href="/open-source/">Open source</a><a href="/learn/">Learn</a><a href="/toolbox/">Toolbox</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a><a href="/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt">llms.txt</a></nav>
-</div></footer>
+<section class="section-cta" id="join"><div class="section-cta-wrap"><div class="container"><div class="cta-inner-wrap">
+  <div class="cta-content-wrap">
+    <div class="cta-text-block"><h2 data-reveal="text" class="heading-style-h2">Meet the Cyber Security crowd.</h2><p data-reveal="fade" class="text-size-regular">Get unstuck faster and show what you are building to people who do the same work.</p></div>
+    <div data-reveal="fade" class="button-wrap"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join on Discord</span><span class="button-background-gradient" aria-hidden="true"></span></a><a href="/tools/" class="primary-button-dark"><span class="button-dark-text">Browse free tools</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+    <p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p>
+  </div>
+  <div class="cta-image-wrap" aria-hidden="true"><div class="cta-device" data-reveal="image">
+<div class="app" role="img" aria-label="The DevOps Lounge Discord server, showing the AI hub forum with posts from DevOps Bot">
+  <div class="rail"><img src="/assets/logo-64.png" alt=""><i></i></div>
+  <div class="side">
+    <div class="server">DevOps Lounge</div>
+    <div class="cat">START HERE</div>
+    <div class="ch"><b>#</b>welcome</div><div class="ch"><b>#</b>choose-your-path</div>
+    <div class="cat">THE VAULT</div>
+    <div class="ch on"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>ai-hub</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>skills</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>source-code</div><div class="ch"><b>#</b>dev-news</div>
+    <div class="cat">HELP &amp; SUPPORT</div>
+    <div class="ch"><b>#</b>ask-a-question</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>code-review</div>
+    <div class="cat">COMMUNITY</div>
+    <div class="ch"><b>#</b>general</div><div class="ch"><b>#</b>wins-and-memes</div>
+  </div>
+  <div class="main">
+    <div class="head"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>ai-hub<span>Hand-picked AI material, posted through the day</span></div>
+    <div class="feed">
+      <div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" rel="noopener">The tool-use loop in four steps, and the stop reason that drives it</a><p>Tool use looks magical until you see the loop.</p>
+          <div class="f"><div><b>Topic</b>Agents</div><div><b>Level</b>Beginner</div><div><b>Source</b>platform.claude.com</div></div></div>
+      </div></div><div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://www.anthropic.com/research/writing-tools-for-agents" rel="noopener">Write tool descriptions like an onboarding note for a new teammate</a><p>Agents fail on tools more often than on reasoning, and the fix is usually in the tool definition.</p>
+          <div class="f"><div><b>Topic</b>Agents</div><div><b>Level</b>Intermediate</div><div><b>Source</b>anthropic.com</div></div></div>
+      </div></div><div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://arxiv.org/abs/2210.03629" rel="noopener">ReAct: let the model think between tool calls</a><p>The ReAct paper (Yao et al.) proposes interleaving reasoning traces with actions, so the model plans, acts, looks at what came back, and adjusts.</p>
+          <div class="f"><div><b>Topic</b>Papers</div><div><b>Level</b>Intermediate</div><div><b>Source</b>arxiv.org</div></div></div>
+      </div></div>
+    </div>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</div></div></div>
+</div></div></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-wrap">
+  <div class="footer-top"><div data-reveal="group" class="footer-content-wrapper">
+    <div class="footer-top-left">
+      <a href="/" class="footer-logo-wrap"><img loading="lazy" src="/assets/logo-64.png" width="34" height="34" alt="" class="footer-mark"><span class="footer-brand">DevOps Lounge</span></a>
+      <div class="footer-text-block"><div class="footer-heading">Learn in public. Ship with friends.</div><div class="text-size-regular">A free Discord community for developers and DevOps engineers, from the first “hello world” to production.</div></div>
+    </div>
+    <div class="footer-top-right">
+      <div class="footer-link-wrapper"><div class="footer-text-title">Explore</div><div class="footer-link-text"><a href="/ai/" class="footer-link">AI</a><a href="/skills/" class="footer-link">Skills</a><a href="/open-source/" class="footer-link">Open source</a><a href="/tools/" class="footer-link">Tools</a><a href="/tracks/" class="footer-link">Tracks</a><a href="/tips/" class="footer-link">Tips</a></div></div>
+      <div class="footer-link-wrapper"><div class="footer-text-title">More</div><div class="footer-link-text"><a href="https://discord.gg/XHtBz8rZp5" class="footer-link" rel="noopener">Join on Discord</a><a href="/ar/" lang="ar" class="footer-link" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt" class="footer-link">llms.txt</a><a href="/sitemap.xml" class="footer-link">Sitemap</a></div></div>
+    </div>
+  </div></div>
+  <div data-reveal="fade" class="footer-social-wrap"><a href="https://discord.gg/XHtBz8rZp5" class="footer-bottom-link" rel="noopener">Discord</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="https://discords.com/servers/devops-lounge" class="footer-bottom-link" rel="noopener">Discords.com</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tools/" class="footer-bottom-link">Free tools</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tracks/" class="footer-bottom-link">Tracks</a></div>
+  <div class="footer-bottom">
+    <div class="footer-wordmark" aria-hidden="true" data-reveal="image">DEVOPS LOUNGE</div>
+    <div class="bottom-text-wrap"><div class="text-size-regular">Made by the community, for the community.</div><div class="bottom-link-wrap"><a href="/llms.txt" class="footer-bottom-link">For AI assistants</a><a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a></div></div>
+  </div>
+</div></div></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="/assets/motion.js" defer></script>
 <script src="/assets/live.js" defer></script>
 </body>

@@ -22,28 +22,36 @@
 <link rel="apple-touch-icon" href="/assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="preload" href="/assets/theme/fonts/InterDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/theme/css/theme.css">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('motion-ready')},2500)</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Developer skills: Git, Linux, Docker, SQL, system design and more","url":"https://lounge.xmoh.dev/skills/","isPartOf":{"@type":"WebSite","name":"DevOps Lounge","url":"https://lounge.xmoh.dev/"},"mainEntity":{"@type":"ItemList","numberOfItems":55,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://dangitgit.com/","name":"Git Mistake First Aid: Plain-English Recovery Recipes"},{"@type":"ListItem","position":2,"url":"https://www.atlassian.com/git/tutorials","name":"Atlassian Git Tutorials: Workflows, Merging and Rewriting History"},{"@type":"ListItem","position":3,"url":"https://linuxjourney.com/","name":"Linux Journey: A Gentle Path From First Command to Confident User"},{"@type":"ListItem","position":4,"url":"https://explainshell.com/","name":"explainshell: Paste a Command, See What Every Part Means"},{"@type":"ListItem","position":5,"url":"https://mywiki.wooledge.org/BashPitfalls","name":"BashPitfalls: The Shell Mistakes Everyone Makes Once"},{"@type":"ListItem","position":6,"url":"https://www.brendangregg.com/linuxperf.html","name":"Brendan Gregg on Linux Performance: Tools Mapped to the Stack"},{"@type":"ListItem","position":7,"url":"https://www.brendangregg.com/usemethod.html","name":"The USE Method: A Checklist for Finding Bottlenecks"},{"@type":"ListItem","position":8,"url":"https://docs.docker.com/build/building/best-practices/","name":"Docker Build Best Practices: Smaller, Faster, Safer Images"},{"@type":"ListItem","position":9,"url":"https://labs.iximiuz.com/","name":"iximiuz Labs: Hands-On Container and Linux Playgrounds"},{"@type":"ListItem","position":10,"url":"https://use-the-index-luke.com/","name":"Use The Index, Luke: A Free Book on SQL Indexing"},{"@type":"ListItem","position":11,"url":"https://pgexercises.com/","name":"PostgreSQL Exercises: Practice SQL Against a Real Database"},{"@type":"ListItem","position":12,"url":"https://learn.openapis.org/","name":"Learn OpenAPI: The Official Introduction to Describing APIs"},{"@type":"ListItem","position":13,"url":"https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design","name":"Microsoft Web API Design Best Practices: A Practical Checklist"},{"@type":"ListItem","position":14,"url":"https://github.com/donnemartin/system-design-primer","name":"System Design Primer: A Map of Scaling Concepts and Trade-offs"},{"@type":"ListItem","position":15,"url":"https://aws.amazon.com/builders-library/","name":"Amazon Builders Library: How Large Systems Fail and Recover"},{"@type":"ListItem","position":16,"url":"https://martinfowler.com/articles/practical-test-pyramid.html","name":"The Practical Test Pyramid: Deciding What to Test Where"},{"@type":"ListItem","position":17,"url":"https://abseil.io/resources/swe-book/html/ch11.html","name":"Software Engineering at Google: The Testing Overview Chapter"},{"@type":"ListItem","position":18,"url":"https://owasp.org/www-project-top-ten/","name":"OWASP Top 10: The Standard Awareness List for Web Risks"},{"@type":"ListItem","position":19,"url":"https://www.hacksplaining.com/lessons","name":"Hacksplaining: Interactive Lessons on How Attacks Work"},{"@type":"ListItem","position":20,"url":"https://aws.amazon.com/architecture/well-architected/","name":"AWS Well-Architected Framework: A Review Lens for Cloud Designs"},{"@type":"ListItem","position":21,"url":"https://learn.microsoft.com/en-us/training/","name":"Microsoft Learn: Free Cloud Fundamentals and Role-Based Paths"},{"@type":"ListItem","position":22,"url":"https://www.techinterviewhandbook.org/","name":"Tech Interview Handbook: Resume, Coding and Behavioral Prep"},{"@type":"ListItem","position":23,"url":"https://staffeng.com/guides/","name":"StaffEng Guides: Growing Beyond Senior Engineer"},{"@type":"ListItem","position":24,"url":"https://neetcode.io/roadmap","name":"NeetCode Roadmap: A Structured Path Through Coding Problems"},{"@type":"ListItem","position":25,"url":"https://developers.google.com/tech-writing","name":"Google Technical Writing Courses: Clearer Docs, Issues and Emails"},{"@type":"ListItem","position":26,"url":"https://git-scm.com/docs/git-reflog","name":"Undo the Undo: Recovering Lost Commits With git reflog"},{"@type":"ListItem","position":27,"url":"https://git-scm.com/docs/git-branch","name":"Challenge: Rescue a Branch You Just Deleted"},{"@type":"ListItem","position":28,"url":"https://git-scm.com/docs/git-rebase","name":"Interactive Rebase: Tidy a Branch Before Asking for Review"},{"@type":"ListItem","position":29,"url":"https://git-scm.com/docs/git-bisect","name":"Find the Commit That Broke It: Automated git bisect"},{"@type":"ListItem","position":30,"url":"https://github.com/newren/git-filter-repo","name":"Scrub a Leaked File From History With git filter-repo"},{"@type":"ListItem","position":31,"url":"https://man7.org/linux/man-pages/man1/du.1.html","name":"Challenge: Find What Is Filling the Disk in Five Minutes"},{"@type":"ListItem","position":32,"url":"https://man7.org/linux/man-pages/man5/proc.5.html","name":"Inspect a Running Process Through /proc"},{"@type":"ListItem","position":33,"url":"https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html","name":"Make Bash Scripts Fail Loudly: set -euo pipefail Explained"},{"@type":"ListItem","position":34,"url":"https://man7.org/linux/man-pages/man1/strace.1.html","name":"Trace a Hung Process With strace"},{"@type":"ListItem","position":35,"url":"https://docs.docker.com/build/building/multi-stage/","name":"Multi-Stage Docker Builds: Ship the Binary, Not the Toolchain"},{"@type":"ListItem","position":36,"url":"https://docs.docker.com/reference/cli/docker/container/run/","name":"Challenge: Lock Down a Container and Prove It Worked"},{"@type":"ListItem","position":37,"url":"https://www.postgresql.org/docs/current/using-explain.html","name":"Read a Postgres Query Plan Without Guessing"},{"@type":"ListItem","position":38,"url":"https://www.postgresql.org/docs/current/indexes-multicolumn.html","name":"Challenge: Fix a Slow Query With the Right Composite Index"},{"@type":"ListItem","position":39,"url":"https://www.postgresql.org/docs/current/transaction-iso.html","name":"Isolation Levels in Plain Terms: Pick One on Purpose"},{"@type":"ListItem","position":40,"url":"https://docs.stripe.com/api/idempotent_requests","name":"Idempotency Keys: Make Retried POST Requests Safe"},{"@type":"ListItem","position":41,"url":"https://use-the-index-luke.com/no-offset","name":"Challenge: Replace Offset Pagination With a Keyset Cursor"},{"@type":"ListItem","position":42,"url":"https://google.aip.dev/180","name":"Change an API Without Breaking Anyone: Compatibility Rules"},{"@type":"ListItem","position":43,"url":"https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside","name":"Cache-Aside Done Right: TTLs, Invalidation and Stampedes"},{"@type":"ListItem","position":44,"url":"https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html","name":"At-Least-Once Queues Need Idempotent Consumers"},{"@type":"ListItem","position":45,"url":"https://hypothesis.readthedocs.io/en/latest/quickstart.html","name":"Challenge: Test Your Code With Properties, Not Just Examples"},{"@type":"ListItem","position":46,"url":"https://testing-library.com/docs/guiding-principles/","name":"Test Behavior, Not Implementation: Guiding Principles for UI Tests"},{"@type":"ListItem","position":47,"url":"https://owasp.org/Top10/A01_2021-Broken_Access_Control/","name":"Broken Access Control: Stop Users Reading Each Other's Data"},{"@type":"ListItem","position":48,"url":"https://owasp.org/www-community/attacks/SQL_Injection","name":"Challenge: Break and Fix a Query With SQL Injection"},{"@type":"ListItem","position":49,"url":"https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html","name":"IAM Least Privilege: Grant What the Job Needs, Nothing More"},{"@type":"ListItem","position":50,"url":"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html","name":"Challenge: Audit Your Cloud Account for Public Storage"},{"@type":"ListItem","position":51,"url":"https://opentelemetry.io/docs/concepts/observability-primer/","name":"Debug Production With Logs, Metrics and Traces: Start With a Question"},{"@type":"ListItem","position":52,"url":"https://www.techinterviewhandbook.org/resume/","name":"Resume Basics: One Page That Survives a Quick Skim"},{"@type":"ListItem","position":53,"url":"https://www.techinterviewhandbook.org/behavioral-interview/","name":"Behavioral Interviews: Build a Story Bank Before You Need It"},{"@type":"ListItem","position":54,"url":"https://google.github.io/eng-practices/review/","name":"Code Review That Helps: Habits for Authors and Reviewers"},{"@type":"ListItem","position":55,"url":"https://www.industrialempathy.com/posts/design-docs-at-google/","name":"Write a Design Doc That Surfaces Trade-offs Early"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lounge.xmoh.dev/"},{"@type":"ListItem","position":2,"name":"Skills","item":"https://lounge.xmoh.dev/skills/"}]}</script>
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="brand" href="/"><img src="/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/ai/" aria-current="page">Resources</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a></nav>
-  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
-</div></header>
-<main>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-wrapper">
+<div class="navbar-wrapper"><header class="navbar" data-nav>
+  <div class="nav-components"><div class="nav-container"><div class="nav-content-wrapper">
+    <a href="/" class="brand-icon-wrapper" aria-label="DevOps Lounge home"><img src="/assets/logo-64.png" width="30" height="30" alt="" class="brand-mark"><span class="brand-name">DevOps Lounge</span></a>
+    <nav class="nav-link-wrapper" id="site-menu" aria-label="Main"><a href="/ai/" class="nav-link" aria-current="page">Resources</a><a href="/tools/" class="nav-link">Tools</a><a href="/tracks/" class="nav-link">Tracks</a><a href="/tips/" class="nav-link">Tips</a><div class="button-mobile"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join on Discord</span><span class="button-background-gradient" aria-hidden="true"></span></a></div></nav>
+    <div class="login-details-wrapper"><a href="https://discord.gg/XHtBz8rZp5" class="primary-button-dark" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-dark-text">Join</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+    <button type="button" class="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu"><span class="nav-menu-btn-inner"><span class="top-line"></span><span class="center-line"></span><span class="bottom-line"></span></span></button>
+  </div></div><div class="hero-bottom-line nav"></div></div>
+</header></div>
+<main class="main-wrapper" id="main">
 
-<div class="wrap">
-  <section class="page-head">
-    <a class="crumb" href="/">DevOps Lounge</a>
-    <h1 class="title">Core developer skills</h1>
-    <p class="lede">The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.</p>
-    <nav class="meta" aria-label="Jump to"><a href="#git">Git 7</a><a href="#linux">Linux 7</a><a href="#sql">SQL 5</a><a href="#apis">APIs 5</a><a href="#docker">Docker 4</a><a href="#system-design">System Design 4</a><a href="#testing">Testing 4</a><a href="#security">Security 4</a><a href="#cloud">Cloud 4</a><a href="#debugging">Debugging 3</a><a href="#career">Career 3</a><a href="#soft-skills">Soft Skills 3</a><a href="#interviews">Interviews 2</a></nav>
-  </section>
-  <section class="group" id="git"><h2>Git <small>7</small></h2><ul class="list">
+
+<section class="section-page-hero"><div class="page-hero-wrap"><div class="container"><div class="section-heading-wrap align-center page-heading">
+  <a class="crumb" href="/">DevOps Lounge</a>
+  <h1 data-reveal-load="text" class="heading-style-h1 is-page">Core developer skills</h1>
+  <p data-reveal-load="fade" class="text-size-md">The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.</p><nav class="meta" aria-label="Jump to"><a href="#git">Git <small>7</small></a><a href="#linux">Linux <small>7</small></a><a href="#sql">SQL <small>5</small></a><a href="#apis">APIs <small>5</small></a><a href="#docker">Docker <small>4</small></a><a href="#system-design">System Design <small>4</small></a><a href="#testing">Testing <small>4</small></a><a href="#security">Security <small>4</small></a><a href="#cloud">Cloud <small>4</small></a><a href="#debugging">Debugging <small>3</small></a><a href="#career">Career <small>3</small></a><a href="#soft-skills">Soft Skills <small>3</small></a><a href="#interviews">Interviews <small>2</small></a></nav>
+</div></div></div></section>
+<div class="container page-body">
+  <section class="group" id="git"><h2>Git <small>7</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://dangitgit.com/" rel="noopener">Git Mistake First Aid: Plain-English Recovery Recipes</a></h3>
   <p>A short, no-jargon page of recipes for the Git situations that make people panic: committed to the wrong branch, a bad commit message, an undo that went too far. Bookmark it, then read the explanations so the fix stops feeling like magic.</p>
@@ -86,7 +94,7 @@
 - Every commit after the file's first appearance gets a new hash, so every collaborator must re-clone or carefully reset, and open pull requests will need attention.
 - Forks, caches and CI logs may still hold the old data, and hosting platforms can keep unreachable commits for a while. The key point for secrets: assume they are compromised the moment they are pushed. Rotate the credential first; the history rewrite is cleanup, not remediation.</p>
   <div class="src"><img src="/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Git</span><span>Advanced</span></div>
-</li></ul></section><section class="group" id="linux"><h2>Linux <small>7</small></h2><ul class="list">
+</li></ul></section><section class="group" id="linux"><h2>Linux <small>7</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://linuxjourney.com/" rel="noopener">Linux Journey: A Gentle Path From First Command to Confident User</a></h3>
   <p>Free lessons in small chunks covering the command line, users and permissions, processes, networking and more. Start here if the terminal still feels foreign, and use the quizzes to check what actually stuck before moving on.</p>
@@ -125,7 +133,7 @@
   <h3><a href="https://man7.org/linux/man-pages/man1/strace.1.html" rel="noopener">Trace a Hung Process With strace</a></h3>
   <p>When a process is stuck and the logs are silent, strace shows what it asks the kernel to do. A blocked <code>read</code> on a socket, a <code>connect</code> to the wrong address, or endless <code>open</code> failures all stand out. Meaning of the flags: <code>-f</code> follows child threads and processes, <code>-tt</code> adds timestamps, <code>-T</code> shows time spent inside each call, <code>-s</code> lengthens printed strings, and <code>-o</code> writes to a file. Filtering with <code>-e trace=</code> cuts the noise. Read the last lines first: if the final line is a call that has not returned, that is where it is stuck. Expect a slowdown while tracing, and attaching may need root or relaxed ptrace settings. Avoid tracing a busy production process for long.</p>
   <div class="src"><img src="/assets/icons/man7.org.png" width="20" height="20" alt="" loading="lazy" data-host="man7.org"><span>man7.org</span><span>Linux</span><span>Advanced</span></div>
-</li></ul></section><section class="group" id="sql"><h2>SQL <small>5</small></h2><ul class="list">
+</li></ul></section><section class="group" id="sql"><h2>SQL <small>5</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://use-the-index-luke.com/" rel="noopener">Use The Index, Luke: A Free Book on SQL Indexing</a></h3>
   <p>A free online guide to how database indexes work and how to design them for real queries. It covers the anatomy of an index, the WHERE clause, sorting and joins. Read it when queries are slow and you want to understand why.</p>
@@ -154,7 +162,7 @@
   <h3><a href="https://www.postgresql.org/docs/current/transaction-iso.html" rel="noopener">Isolation Levels in Plain Terms: Pick One on Purpose</a></h3>
   <p>Transactions are not automatically safe from each other. In PostgreSQL the default is Read Committed: each statement sees data committed before it started, so two reads in one transaction can differ. A classic bug is read-modify-write: Your options, roughly from lightest to strongest: an atomic UPDATE like the one above, <code>SELECT ... FOR UPDATE</code> to lock the row, or a stricter level such as Repeatable Read or Serializable. The catch with the strict levels: the database may abort a transaction with a serialization failure (SQLSTATE 40001), and your code must retry the whole transaction. In PostgreSQL, Read Uncommitted behaves like Read Committed. Other databases differ, so check yours.</p>
   <div class="src"><img src="/assets/icons/postgresql.org.png" width="20" height="20" alt="" loading="lazy" data-host="postgresql.org"><span>postgresql.org</span><span>SQL</span><span>Advanced</span></div>
-</li></ul></section><section class="group" id="apis"><h2>APIs <small>5</small></h2><ul class="list">
+</li></ul></section><section class="group" id="apis"><h2>APIs <small>5</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://learn.openapis.org/" rel="noopener">Learn OpenAPI: The Official Introduction to Describing APIs</a></h3>
   <p>The official learning site from the OpenAPI Initiative explains how to describe an HTTP API in a machine-readable contract. Start here before generating docs, mocks or client code, so the spec becomes the shared source of truth for the team.</p>
@@ -189,7 +197,7 @@
 - To rename, add the new name, keep the old one, deprecate it publicly, and remove it only in a new major version.
 - Review diffs of your OpenAPI file in CI to catch accidental breaks. When a break is truly necessary, version it and give people time to migrate.</p>
   <div class="src"><img src="/assets/icons/google.aip.dev.png" width="20" height="20" alt="" loading="lazy" data-host="google.aip.dev"><span>google.aip.dev</span><span>APIs</span><span>Advanced</span></div>
-</li></ul></section><section class="group" id="docker"><h2>Docker <small>4</small></h2><ul class="list">
+</li></ul></section><section class="group" id="docker"><h2>Docker <small>4</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://docs.docker.com/build/building/best-practices/" rel="noopener">Docker Build Best Practices: Smaller, Faster, Safer Images</a></h3>
   <p>The official guidance on writing Dockerfiles: choosing base images, multi-stage builds, layer caching, pinning and cleanup. Use it as a review checklist the next time an image feels bloated or a build keeps missing the cache.</p>
@@ -212,7 +220,7 @@
 2. <code>touch /x</code> should fail with a read-only filesystem error, while <code>touch /tmp/x</code> succeeds.
 3. <code>grep CapEff /proc/self/status</code> should show all zeros, meaning no effective capabilities. Now loosen one flag at a time and notice what changes. Then ask the harder question for your own service: which flags does it actually need, and what breaks when you remove the rest? Put the result into a Compose file or Kubernetes security context so it is repeatable. Never use <code>--privileged</code> as a shortcut to make an error disappear.</p>
   <div class="src"><img src="/assets/icons/docs.docker.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.docker.com"><span>docs.docker.com</span><span>Docker</span><span>Intermediate</span></div>
-</li></ul></section><section class="group" id="system-design"><h2>System Design <small>4</small></h2><ul class="list">
+</li></ul></section><section class="group" id="system-design"><h2>System Design <small>4</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://github.com/donnemartin/system-design-primer" rel="noopener">System Design Primer: A Map of Scaling Concepts and Trade-offs</a></h3>
   <p>A large open-source study guide covering load balancers, caching, databases, queues and consistency, with diagrams and example designs. Use it to build vocabulary and a mental catalogue of trade-offs before design discussions or interviews.</p>
@@ -241,7 +249,7 @@
 4. Delete the message only after the transaction commits.
 5. Set the timeout above your typical processing time, and configure a dead-letter queue so poison messages stop looping. Alert on dead-letter queue depth and on message age, since those show trouble before users do.</p>
   <div class="src"><img src="/assets/icons/docs.aws.amazon.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.aws.amazon.com"><span>docs.aws.amazon.com</span><span>System Design</span><span>Advanced</span></div>
-</li></ul></section><section class="group" id="testing"><h2>Testing <small>4</small></h2><ul class="list">
+</li></ul></section><section class="group" id="testing"><h2>Testing <small>4</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://martinfowler.com/articles/practical-test-pyramid.html" rel="noopener">The Practical Test Pyramid: Deciding What to Test Where</a></h3>
   <p>A long, example-driven article on balancing unit, integration, contract and end-to-end tests. Read it when your suite is slow or flaky, or when you cannot decide at which level a new test belongs.</p>
@@ -265,7 +273,7 @@
 - Avoid testing private helpers directly. If a refactor changes internals but not behavior, the test should still pass.
 - Mock at the network boundary, not inside your own modules. A quick self-check for any test: if I rename an internal function, does it fail? If yes, it is coupled to implementation. If I break the feature, does it fail? If no, it is not protecting anything. Use a few end-to-end tests for critical journeys and let faster, focused tests cover the rest.</p>
   <div class="src"><img src="/assets/icons/testing-library.com.png" width="20" height="20" alt="" loading="lazy" data-host="testing-library.com"><span>testing-library.com</span><span>Testing</span><span>Beginner</span></div>
-</li></ul></section><section class="group" id="security"><h2>Security <small>4</small></h2><ul class="list">
+</li></ul></section><section class="group" id="security"><h2>Security <small>4</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://owasp.org/www-project-top-ten/" rel="noopener">OWASP Top 10: The Standard Awareness List for Web Risks</a></h3>
   <p>The widely referenced list of the most critical web application security risks, with explanations and prevention advice for each. Use it as a shared vocabulary for reviews and threat conversations, and as a map of what to study next.</p>
@@ -293,7 +301,7 @@
 2. Find one place in a project of yours that builds SQL by concatenation and convert it.
 3. Handle what placeholders cannot: table names, column names and ORDER BY direction. Check those against a fixed allowlist in code. ORMs help but still allow raw string fragments, so review those too.</p>
   <div class="src"><img src="/assets/icons/owasp.org.png" width="20" height="20" alt="" loading="lazy" data-host="owasp.org"><span>owasp.org</span><span>Security</span><span>Beginner</span></div>
-</li></ul></section><section class="group" id="cloud"><h2>Cloud <small>4</small></h2><ul class="list">
+</li></ul></section><section class="group" id="cloud"><h2>Cloud <small>4</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://aws.amazon.com/architecture/well-architected/" rel="noopener">AWS Well-Architected Framework: A Review Lens for Cloud Designs</a></h3>
   <p>A set of questions and best practices across areas like security, reliability, cost and operations. Even outside AWS it is a handy checklist for design reviews, and the questions are free to read without an account.</p>
@@ -316,7 +324,7 @@
 - <code>get-bucket-policy-status</code> reports <code>IsPublic</code> for the bucket policy.
 - Also check the account-level setting with <code>aws s3control get-public-access-block --account-id &lt;id&gt;</code>. Your tasks: list every bucket that is not fully blocked, write down why each should be public (usually none should), and plan to enable Block Public Access at the account level. Serve public websites through a CDN instead of opening buckets. Do not change anything until you know which application depends on it.</p>
   <div class="src"><img src="/assets/icons/docs.aws.amazon.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.aws.amazon.com"><span>docs.aws.amazon.com</span><span>Cloud</span><span>Beginner</span></div>
-</li></ul></section><section class="group" id="debugging"><h2>Debugging <small>3</small></h2><ul class="list">
+</li></ul></section><section class="group" id="debugging"><h2>Debugging <small>3</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://www.brendangregg.com/linuxperf.html" rel="noopener">Brendan Gregg on Linux Performance: Tools Mapped to the Stack</a></h3>
   <p>A reference page that maps observability and tracing tools to the parts of a Linux system they inspect, with diagrams and talks. Reach for it when a box is slow and you need to know which tool answers which question.</p>
@@ -335,7 +343,7 @@
 3. Open a slow trace to find the span that takes the time.
 4. Search logs for that request id to read the detail. This only works if you prepared. Emit structured logs (JSON with fields) and include a request or trace id in every line, and pass it across service calls. Keep metric labels low-cardinality, so avoid user ids as labels. Then form one hypothesis at a time and test it with a query, instead of changing things. The OpenTelemetry primer linked here explains the vocabulary of signals, context propagation and instrumentation clearly.</p>
   <div class="src"><img src="/assets/icons/opentelemetry.io.png" width="20" height="20" alt="" loading="lazy" data-host="opentelemetry.io"><span>opentelemetry.io</span><span>Debugging</span><span>Intermediate</span></div>
-</li></ul></section><section class="group" id="career"><h2>Career <small>3</small></h2><ul class="list">
+</li></ul></section><section class="group" id="career"><h2>Career <small>3</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://www.techinterviewhandbook.org/" rel="noopener">Tech Interview Handbook: Resume, Coding and Behavioral Prep</a></h3>
   <p>A free, curated handbook on the whole job search: resumes, preparing for coding rounds, behavioral questions and negotiation. Use it as a single organized starting point, then dive into the sections that match your stage.</p>
@@ -350,7 +358,7 @@
   <h3><a href="https://www.techinterviewhandbook.org/resume/" rel="noopener">Resume Basics: One Page That Survives a Quick Skim</a></h3>
   <p>A recruiter or engineer may spend under a minute on a first pass, so optimize for scanning. Structure: contact line, short experience entries in reverse chronological order, projects, education, skills. Keep it to one page when you have under roughly a decade of experience. Write each bullet as action, what you did, and the result: Only use numbers you can defend in an interview; if you cannot measure it, describe the visible outcome honestly. Lead with the technologies that matter for the role, drop the ones you would not want to be quizzed on, and skip photos, rating bars and long objective statements. Practical checks: export to PDF, make the text selectable, use a standard font, and ask a friend to circle the first three things they remember. Tailor the top third for each application.</p>
   <div class="src"><img src="/assets/icons/techinterviewhandbook.org.png" width="20" height="20" alt="" loading="lazy" data-host="techinterviewhandbook.org"><span>techinterviewhandbook.org</span><span>Career</span><span>Beginner</span></div>
-</li></ul></section><section class="group" id="soft-skills"><h2>Soft Skills <small>3</small></h2><ul class="list">
+</li></ul></section><section class="group" id="soft-skills"><h2>Soft Skills <small>3</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://developers.google.com/tech-writing" rel="noopener">Google Technical Writing Courses: Clearer Docs, Issues and Emails</a></h3>
   <p>Free, short courses on writing clear technical prose: precise words, active voice, organizing documents and reviewing drafts. Useful for design docs, pull request descriptions and any message that others must act on.</p>
@@ -377,7 +385,7 @@
 4. Alternatives considered, and why each lost.
 5. Cross-cutting concerns: security, privacy, observability, rollout. Keep it short for small work; a page or two is fine. Large projects naturally run longer, but split anything that sprawls. Before sending, ask: could a reader tell what decision I want from them? Put that at the top, name reviewers, and set a date for comments. Record the final decision in the doc so it remains useful later.</p>
   <div class="src"><img src="/assets/icons/industrialempathy.com.png" width="20" height="20" alt="" loading="lazy" data-host="industrialempathy.com"><span>industrialempathy.com</span><span>Soft Skills</span><span>Intermediate</span></div>
-</li></ul></section><section class="group" id="interviews"><h2>Interviews <small>2</small></h2><ul class="list">
+</li></ul></section><section class="group" id="interviews"><h2>Interviews <small>2</small></h2><ul class="list" data-reveal="group">
 <li class="res">
   <h3><a href="https://neetcode.io/roadmap" rel="noopener">NeetCode Roadmap: A Structured Path Through Coding Problems</a></h3>
   <p>A free roadmap that groups algorithm problems by pattern, such as two pointers, graphs and dynamic programming, with a visual map of dependencies. Handy for turning random practice into a deliberate plan for coding interviews.</p>
@@ -393,21 +401,74 @@
 - something you learned quickly Write each as bullet points, not a script, then practice aloud and time it to about two minutes. Prepare the follow-ups too: what would you do differently, and what did you measure? Use only experiences that really happened. Interviewers probe details and inconsistencies show quickly. Finish with a result and a lesson, and close the loop if asked.</p>
   <div class="src"><img src="/assets/icons/techinterviewhandbook.org.png" width="20" height="20" alt="" loading="lazy" data-host="techinterviewhandbook.org"><span>techinterviewhandbook.org</span><span>Interviews</span><span>Beginner</span></div>
 </li></ul></section>
-  <section class="group"><h2>More from the Vault</h2><nav class="meta" style="margin:0"><a href="/ai/">AI for developers 60</a><a href="/open-source/">Open source worth reading 59</a><a href="/learn/">Free ways to learn to code 33</a><a href="/toolbox/">Tools developers keep 42</a></nav></section>
+  <section class="group"><h2>More from the Vault</h2><nav class="meta"><a href="/ai/">AI for developers <small>60</small></a><a href="/open-source/">Open source worth reading <small>59</small></a><a href="/learn/">Free ways to learn to code <small>33</small></a><a href="/toolbox/">Tools developers keep <small>42</small></a></nav></section>
 </div>
 
-<div class="wrap"><section class="final">
-  <div><h2>Talk it through with people who use these</h2><p>Ask about any of these in the server, share what you build with them, and get new picks every day.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
-  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
-</section></div>
-</main>
-<footer><div class="wrap">
-  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/ai/">AI</a><a href="/skills/">Skills</a><a href="/open-source/">Open source</a><a href="/learn/">Learn</a><a href="/toolbox/">Toolbox</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a><a href="/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt">llms.txt</a></nav>
-</div></footer>
+<section class="section-cta" id="join"><div class="section-cta-wrap"><div class="container"><div class="cta-inner-wrap">
+  <div class="cta-content-wrap">
+    <div class="cta-text-block"><h2 data-reveal="text" class="heading-style-h2">Talk it through with people who use these</h2><p data-reveal="fade" class="text-size-regular">Ask about any of these in the server, share what you build with them, and get new picks every day.</p></div>
+    <div data-reveal="fade" class="button-wrap"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join on Discord</span><span class="button-background-gradient" aria-hidden="true"></span></a><a href="/tools/" class="primary-button-dark"><span class="button-dark-text">Browse free tools</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+    <p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p>
+  </div>
+  <div class="cta-image-wrap" aria-hidden="true"><div class="cta-device" data-reveal="image">
+<div class="app" role="img" aria-label="The DevOps Lounge Discord server, showing the AI hub forum with posts from DevOps Bot">
+  <div class="rail"><img src="/assets/logo-64.png" alt=""><i></i></div>
+  <div class="side">
+    <div class="server">DevOps Lounge</div>
+    <div class="cat">START HERE</div>
+    <div class="ch"><b>#</b>welcome</div><div class="ch"><b>#</b>choose-your-path</div>
+    <div class="cat">THE VAULT</div>
+    <div class="ch on"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>ai-hub</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>skills</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>source-code</div><div class="ch"><b>#</b>dev-news</div>
+    <div class="cat">HELP &amp; SUPPORT</div>
+    <div class="ch"><b>#</b>ask-a-question</div><div class="ch"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>code-review</div>
+    <div class="cat">COMMUNITY</div>
+    <div class="ch"><b>#</b>general</div><div class="ch"><b>#</b>wins-and-memes</div>
+  </div>
+  <div class="main">
+    <div class="head"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 5h.5A1.5 1.5 0 0 1 22 10.5V17a1.5 1.5 0 0 1-1.5 1.5H20V21l-3-2.5h-5a1.5 1.5 0 0 1-1.5-1.5V17H16a4 4 0 0 0 4-4V9z"/></svg>ai-hub<span>Hand-picked AI material, posted through the day</span></div>
+    <div class="feed">
+      <div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" rel="noopener">The tool-use loop in four steps, and the stop reason that drives it</a><p>Tool use looks magical until you see the loop.</p>
+          <div class="f"><div><b>Topic</b>Agents</div><div><b>Level</b>Beginner</div><div><b>Source</b>platform.claude.com</div></div></div>
+      </div></div><div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://www.anthropic.com/research/writing-tools-for-agents" rel="noopener">Write tool descriptions like an onboarding note for a new teammate</a><p>Agents fail on tools more often than on reasoning, and the fix is usually in the tool definition.</p>
+          <div class="f"><div><b>Topic</b>Agents</div><div><b>Level</b>Intermediate</div><div><b>Source</b>anthropic.com</div></div></div>
+      </div></div><div class="msg"><img src="/assets/logo-64.png" alt=""><div>
+        <div class="who">DevOps Bot <i>APP</i></div>
+        <div class="embed"><a href="https://arxiv.org/abs/2210.03629" rel="noopener">ReAct: let the model think between tool calls</a><p>The ReAct paper (Yao et al.) proposes interleaving reasoning traces with actions, so the model plans, acts, looks at what came back, and adjusts.</p>
+          <div class="f"><div><b>Topic</b>Papers</div><div><b>Level</b>Intermediate</div><div><b>Source</b>arxiv.org</div></div></div>
+      </div></div>
+    </div>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</div></div></div>
+</div></div></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-wrap">
+  <div class="footer-top"><div data-reveal="group" class="footer-content-wrapper">
+    <div class="footer-top-left">
+      <a href="/" class="footer-logo-wrap"><img loading="lazy" src="/assets/logo-64.png" width="34" height="34" alt="" class="footer-mark"><span class="footer-brand">DevOps Lounge</span></a>
+      <div class="footer-text-block"><div class="footer-heading">Learn in public. Ship with friends.</div><div class="text-size-regular">A free Discord community for developers and DevOps engineers, from the first “hello world” to production.</div></div>
+    </div>
+    <div class="footer-top-right">
+      <div class="footer-link-wrapper"><div class="footer-text-title">Explore</div><div class="footer-link-text"><a href="/ai/" class="footer-link">AI</a><a href="/skills/" class="footer-link">Skills</a><a href="/open-source/" class="footer-link">Open source</a><a href="/tools/" class="footer-link">Tools</a><a href="/tracks/" class="footer-link">Tracks</a><a href="/tips/" class="footer-link">Tips</a></div></div>
+      <div class="footer-link-wrapper"><div class="footer-text-title">More</div><div class="footer-link-text"><a href="https://discord.gg/XHtBz8rZp5" class="footer-link" rel="noopener">Join on Discord</a><a href="/ar/" lang="ar" class="footer-link" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt" class="footer-link">llms.txt</a><a href="/sitemap.xml" class="footer-link">Sitemap</a></div></div>
+    </div>
+  </div></div>
+  <div data-reveal="fade" class="footer-social-wrap"><a href="https://discord.gg/XHtBz8rZp5" class="footer-bottom-link" rel="noopener">Discord</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="https://discords.com/servers/devops-lounge" class="footer-bottom-link" rel="noopener">Discords.com</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tools/" class="footer-bottom-link">Free tools</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tracks/" class="footer-bottom-link">Tracks</a></div>
+  <div class="footer-bottom">
+    <div class="footer-wordmark" aria-hidden="true" data-reveal="image">DEVOPS LOUNGE</div>
+    <div class="bottom-text-wrap"><div class="text-size-regular">Made by the community, for the community.</div><div class="bottom-link-wrap"><a href="/llms.txt" class="footer-bottom-link">For AI assistants</a><a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a></div></div>
+  </div>
+</div></div></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="/assets/motion.js" defer></script>
 <script src="/assets/live.js" defer></script>
 </body>

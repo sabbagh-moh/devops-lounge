@@ -22,28 +22,57 @@
 <link rel="apple-touch-icon" href="/assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="preload" href="/assets/theme/fonts/InterDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/theme/css/theme.css">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('motion-ready')},2500)</script>
 
 
 
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="brand" href="/"><img src="/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/ai/">Resources</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a></nav>
-  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
-</div></header>
-<main>
-<div class="wrap"><section class="page-head"><h1 class="title">Nothing here.</h1><p class="lede">The page moved or never existed. <a href="/">Go to the homepage</a>.</p></section></div>
-</main>
-<footer><div class="wrap">
-  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/ai/">AI</a><a href="/skills/">Skills</a><a href="/open-source/">Open source</a><a href="/learn/">Learn</a><a href="/toolbox/">Toolbox</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a><a href="/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt">llms.txt</a></nav>
-</div></footer>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-wrapper">
+<div class="navbar-wrapper"><header class="navbar" data-nav>
+  <div class="nav-components"><div class="nav-container"><div class="nav-content-wrapper">
+    <a href="/" class="brand-icon-wrapper" aria-label="DevOps Lounge home"><img src="/assets/logo-64.png" width="30" height="30" alt="" class="brand-mark"><span class="brand-name">DevOps Lounge</span></a>
+    <nav class="nav-link-wrapper" id="site-menu" aria-label="Main"><a href="/ai/" class="nav-link">Resources</a><a href="/tools/" class="nav-link">Tools</a><a href="/tracks/" class="nav-link">Tracks</a><a href="/tips/" class="nav-link">Tips</a><div class="button-mobile"><a href="https://discord.gg/XHtBz8rZp5" class="button-white" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-text">Join on Discord</span><span class="button-background-gradient" aria-hidden="true"></span></a></div></nav>
+    <div class="login-details-wrapper"><a href="https://discord.gg/XHtBz8rZp5" class="primary-button-dark" rel="noopener"><span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></span><span class="button-dark-text">Join</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+    <button type="button" class="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open the menu"><span class="nav-menu-btn-inner"><span class="top-line"></span><span class="center-line"></span><span class="bottom-line"></span></span></button>
+  </div></div><div class="hero-bottom-line nav"></div></div>
+</header></div>
+<main class="main-wrapper" id="main">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<section class="section-page-hero"><div class="page-hero-wrap"><div class="container"><div class="section-heading-wrap align-center page-heading">
+  
+  <h1 data-reveal-load="text" class="heading-style-h1 is-page">Nothing here.</h1>
+  <p data-reveal-load="fade" class="text-size-md">The page moved or never existed.</p><div class="button-wrap"><a href="/" class="button-white"><span class="button-text">Go to the homepage</span><span class="button-background-gradient" aria-hidden="true"></span></a><a href="/tools/" class="primary-button-dark"><span class="button-dark-text">Free tools</span><span class="glowing-wrap" aria-hidden="true"><span class="glowing-background-one"></span><span class="glowing-background-two"></span><span class="glowing-box-rotate"><span class="glowing-box-hidden"><span class="glowing-triangle"></span></span></span></span></a></div>
+</div></div></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-wrap">
+  <div class="footer-top"><div data-reveal="group" class="footer-content-wrapper">
+    <div class="footer-top-left">
+      <a href="/" class="footer-logo-wrap"><img loading="lazy" src="/assets/logo-64.png" width="34" height="34" alt="" class="footer-mark"><span class="footer-brand">DevOps Lounge</span></a>
+      <div class="footer-text-block"><div class="footer-heading">Learn in public. Ship with friends.</div><div class="text-size-regular">A free Discord community for developers and DevOps engineers, from the first “hello world” to production.</div></div>
+    </div>
+    <div class="footer-top-right">
+      <div class="footer-link-wrapper"><div class="footer-text-title">Explore</div><div class="footer-link-text"><a href="/ai/" class="footer-link">AI</a><a href="/skills/" class="footer-link">Skills</a><a href="/open-source/" class="footer-link">Open source</a><a href="/tools/" class="footer-link">Tools</a><a href="/tracks/" class="footer-link">Tracks</a><a href="/tips/" class="footer-link">Tips</a></div></div>
+      <div class="footer-link-wrapper"><div class="footer-text-title">More</div><div class="footer-link-text"><a href="https://discord.gg/XHtBz8rZp5" class="footer-link" rel="noopener">Join on Discord</a><a href="/ar/" lang="ar" class="footer-link" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt" class="footer-link">llms.txt</a><a href="/sitemap.xml" class="footer-link">Sitemap</a></div></div>
+    </div>
+  </div></div>
+  <div data-reveal="fade" class="footer-social-wrap"><a href="https://discord.gg/XHtBz8rZp5" class="footer-bottom-link" rel="noopener">Discord</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="https://discords.com/servers/devops-lounge" class="footer-bottom-link" rel="noopener">Discords.com</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tools/" class="footer-bottom-link">Free tools</a><img loading="lazy" src="/assets/theme/images/arrow.svg" alt="" class="footer-arrow-icon"><a href="/tracks/" class="footer-bottom-link">Tracks</a></div>
+  <div class="footer-bottom">
+    <div class="footer-wordmark" aria-hidden="true" data-reveal="image">DEVOPS LOUNGE</div>
+    <div class="bottom-text-wrap"><div class="text-size-regular">Made by the community, for the community.</div><div class="bottom-link-wrap"><a href="/llms.txt" class="footer-bottom-link">For AI assistants</a><a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a></div></div>
+  </div>
+</div></div></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="/assets/motion.js" defer></script>
 <script src="/assets/live.js" defer></script>
 </body>

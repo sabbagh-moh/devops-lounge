@@ -2,7 +2,8 @@
 // Nothing is shown until real numbers arrive, and the result is reused for five minutes.
 (() => {
   const spots = document.querySelectorAll('[data-live-line]');
-  if (!spots.length) return;
+  const loose = [...document.querySelectorAll('[data-live]')].filter((el) => !el.closest('[data-live-line]'));
+  if (!spots.length && !loose.length) return;
   const KEY = 'devops-lounge-live';
   const show = ({ members, online }) => {
     for (const spot of spots) {
@@ -12,6 +13,11 @@
       // With nobody online, only the member count is shown.
       spot.querySelectorAll('[data-live-online-part]').forEach((el) => { el.hidden = online < 1; });
       spot.hidden = !(members > 0);
+    }
+    // Numbers that stand on their own, like the feature card, keep their placeholder until real ones arrive.
+    for (const el of loose) {
+      const value = el.getAttribute('data-live') === 'online' ? online : members;
+      if (value > 0) el.textContent = new Intl.NumberFormat(el.closest('[lang]')?.lang || undefined).format(value);
     }
   };
   try {
