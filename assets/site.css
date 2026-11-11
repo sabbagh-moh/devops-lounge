@@ -514,3 +514,13 @@ body { background-image: var(--grain); }
 #pb-detected .u { display: inline-flex; align-items: baseline; gap: 8px; background: #000; border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 13.5px; color: #fff; }
 #pb-detected .u i { font-style: normal; color: var(--text-3); font-size: 12px; }
 #pb-detected .hint { color: var(--text-3); font-size: 14px; }
+
+/* ---------- live numbers from the server ---------- */
+.hero-cta { display: grid; justify-items: end; gap: 14px; }
+.live { display: inline-flex; align-items: center; gap: 9px; margin: 0; font-size: 14.5px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.live b { color: #fff; font-weight: 600; }
+.live .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); flex: none; }
+.final .live { margin-top: 22px; }
+.hero-copy .live { margin-top: 18px; }
+@media (max-width: 1020px) { .hero-cta { justify-items: start; } }
+@media (max-width: 600px) { .hero-cta { width: 100%; } }
