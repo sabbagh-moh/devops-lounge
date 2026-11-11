@@ -5,45 +5,45 @@
 Members ask programming questions in forums with solved tags, get code reviews, share projects in a showroom, and find collaborators. There are ten tracks (AI, web, app, frontend, backend, mobile, data and ML, security, DevOps and cloud, game dev) and rooms in English, Arabic, Spanish, Portuguese, French and Russian. The server posts curated resources several times a day.
 
 ## Resources
-- [AI for developers](https://sabbagh-moh.github.io/devops-lounge/ai/): 60 picks. Hand-picked talks, papers, courses and tools for building with large language models, from your first prompt to agents in production. Each one comes with a short note on why it is worth your time.
-- [Core developer skills](https://sabbagh-moh.github.io/devops-lounge/skills/): 55 picks. The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.
-- [Open source worth reading](https://sabbagh-moh.github.io/devops-lounge/open-source/): 59 picks. Awesome lists, starter templates and complete applications on GitHub, sorted by area. Reading real code is the fastest way to learn how projects are put together.
-- [Free ways to learn to code](https://sabbagh-moh.github.io/devops-lounge/learn/): 33 picks. Free courses, books, docs and practice sites, sorted by area and marked by level, so you can start where you are.
-- [Tools developers keep](https://sabbagh-moh.github.io/devops-lounge/toolbox/): 42 picks. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.
-- [Tips for developers](https://sabbagh-moh.github.io/devops-lounge/tips/): 62 short practical tips.
+- [AI for developers](https://lounge.xmoh.dev/ai/): 60 picks. Hand-picked talks, papers, courses and tools for building with large language models, from your first prompt to agents in production. Each one comes with a short note on why it is worth your time.
+- [Core developer skills](https://lounge.xmoh.dev/skills/): 55 picks. The skills every developer leans on, whatever the stack: version control, the terminal, containers, databases, testing, security and the career side of the job.
+- [Open source worth reading](https://lounge.xmoh.dev/open-source/): 59 picks. Awesome lists, starter templates and complete applications on GitHub, sorted by area. Reading real code is the fastest way to learn how projects are put together.
+- [Free ways to learn to code](https://lounge.xmoh.dev/learn/): 33 picks. Free courses, books, docs and practice sites, sorted by area and marked by level, so you can start where you are.
+- [Tools developers keep](https://lounge.xmoh.dev/toolbox/): 42 picks. Command-line tools, frameworks and libraries that save time every week, from Kubernetes dashboards to infrastructure as code.
+- [Tips for developers](https://lounge.xmoh.dev/tips/): 62 short practical tips.
 
 ## Free tools (run in the browser)
-- [Prompt Builder](https://sabbagh-moh.github.io/devops-lounge/tools/prompt-builder/): Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
-- [Token Counter](https://sabbagh-moh.github.io/devops-lounge/tools/token-counter/): Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
-- [AI Tool Schema Builder](https://sabbagh-moh.github.io/devops-lounge/tools/tool-schema/): Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
-- [MCP Config Generator](https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/): Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.
-- [llms.txt Generator](https://sabbagh-moh.github.io/devops-lounge/tools/llms-txt/): Paste your sitemap.xml or a list of pages. Get a clean llms.txt that tells AI assistants what your site is and which pages matter, ready to upload to your site's root.
-- [JSON to TypeScript](https://sabbagh-moh.github.io/devops-lounge/tools/json-to-types/): Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
-- [cURL Converter](https://sabbagh-moh.github.io/devops-lounge/tools/curl-converter/): Paste a cURL command from API docs or your browser's network tab. Get clean fetch, axios or Python requests code with headers, body and auth carried over.
-- [Text Diff](https://sabbagh-moh.github.io/devops-lounge/tools/diff/): Paste two versions of a file, a config or any text. Added and removed lines are marked with their line numbers.
-- [Color and Contrast](https://sabbagh-moh.github.io/devops-lounge/tools/color-contrast/): Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a background for WCAG, and pick a lighter or darker shade.
-- [Git Command Finder](https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/): Describe what you want to do in plain words, like "undo last commit" or "rename branch". Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.
-- [CIDR Calculator](https://sabbagh-moh.github.io/devops-lounge/tools/cidr/): Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.
-- [Cron Builder](https://sabbagh-moh.github.io/devops-lounge/tools/cron/): Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
-- [Regex Tester](https://sabbagh-moh.github.io/devops-lounge/tools/regex/): Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
-- [JSON Formatter](https://sabbagh-moh.github.io/devops-lounge/tools/json/): Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.
-- [JWT Decoder](https://sabbagh-moh.github.io/devops-lounge/tools/jwt/): Paste a token to read its header and payload, and see when it was issued and when it expires.
-- [Timestamp Converter](https://sabbagh-moh.github.io/devops-lounge/tools/timestamp/): Paste a Unix timestamp in seconds or milliseconds, or any date, and get every format you need.
-- [Base64 and URL Encoder](https://sabbagh-moh.github.io/devops-lounge/tools/base64/): Encode or decode Base64 and URL text. Arabic, emoji and every other character are handled correctly.
-- [Password and UUID Generator](https://sabbagh-moh.github.io/devops-lounge/tools/password/): Strong passwords and v4 UUIDs, made with your browser's secure random generator. Nothing is sent or saved.
-- [chmod Calculator](https://sabbagh-moh.github.io/devops-lounge/tools/chmod/): Tick who can read, write and run a file. You get the number, the letters and the command to paste.
+- [Prompt Builder](https://lounge.xmoh.dev/tools/prompt-builder/): Write your idea the way you would say it, like "a store like Gymshark". The builder works out what you want, adds the pages, stack, references and quality bar an expert would, and for images the film look, light and lens.
+- [Token Counter](https://lounge.xmoh.dev/tools/token-counter/): Paste a prompt, a document or code. See roughly how many tokens it uses, whether it fits common context windows, and what it costs to send.
+- [AI Tool Schema Builder](https://lounge.xmoh.dev/tools/tool-schema/): Describe a tool and its parameters once. Get the exact JSON that OpenAI function calling, Claude tool use and MCP servers expect, with tips that help the model call it right.
+- [MCP Config Generator](https://lounge.xmoh.dev/tools/mcp-config/): Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.
+- [llms.txt Generator](https://lounge.xmoh.dev/tools/llms-txt/): Paste your sitemap.xml or a list of pages. Get a clean llms.txt that tells AI assistants what your site is and which pages matter, ready to upload to your site's root.
+- [JSON to TypeScript](https://lounge.xmoh.dev/tools/json-to-types/): Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
+- [cURL Converter](https://lounge.xmoh.dev/tools/curl-converter/): Paste a cURL command from API docs or your browser's network tab. Get clean fetch, axios or Python requests code with headers, body and auth carried over.
+- [Text Diff](https://lounge.xmoh.dev/tools/diff/): Paste two versions of a file, a config or any text. Added and removed lines are marked with their line numbers.
+- [Color and Contrast](https://lounge.xmoh.dev/tools/color-contrast/): Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a background for WCAG, and pick a lighter or darker shade.
+- [Git Command Finder](https://lounge.xmoh.dev/tools/git-commands/): Describe what you want to do in plain words, like "undo last commit" or "rename branch". Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.
+- [CIDR Calculator](https://lounge.xmoh.dev/tools/cidr/): Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.
+- [Cron Builder](https://lounge.xmoh.dev/tools/cron/): Type a cron expression or build one field by field. It is explained in plain words, with the next five run times in your time zone.
+- [Regex Tester](https://lounge.xmoh.dev/tools/regex/): Write a pattern, paste some text, and every match lights up as you type, with the captured groups listed below.
+- [JSON Formatter](https://lounge.xmoh.dev/tools/json/): Paste JSON to format it, check that it is valid, sort the keys or minify it. Errors point to the line and column.
+- [JWT Decoder](https://lounge.xmoh.dev/tools/jwt/): Paste a token to read its header and payload, and see when it was issued and when it expires.
+- [Timestamp Converter](https://lounge.xmoh.dev/tools/timestamp/): Paste a Unix timestamp in seconds or milliseconds, or any date, and get every format you need.
+- [Base64 and URL Encoder](https://lounge.xmoh.dev/tools/base64/): Encode or decode Base64 and URL text. Arabic, emoji and every other character are handled correctly.
+- [Password and UUID Generator](https://lounge.xmoh.dev/tools/password/): Strong passwords and v4 UUIDs, made with your browser's secure random generator. Nothing is sent or saved.
+- [chmod Calculator](https://lounge.xmoh.dev/tools/chmod/): Tick who can read, write and run a file. You get the number, the letters and the command to paste.
 
 ## Tracks
-- [AI](https://sabbagh-moh.github.io/devops-lounge/tracks/ai/): Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.
-- [Web Dev](https://sabbagh-moh.github.io/devops-lounge/tracks/web-dev/): General and full-stack web development: how the pieces fit together, from the browser to the database and deployment.
-- [App Dev](https://sabbagh-moh.github.io/devops-lounge/tracks/app-dev/): Desktop and cross-platform applications: packaging, native integration, updates and making software feel at home on every OS.
-- [Frontend](https://sabbagh-moh.github.io/devops-lounge/tracks/frontend/): UI, CSS, accessibility, performance and frameworks. Share what you are building and how you solved the tricky parts.
-- [Backend](https://sabbagh-moh.github.io/devops-lounge/tracks/backend/): APIs, databases, queues, caching and the systems behind them. Good place to talk through design decisions.
-- [Mobile](https://sabbagh-moh.github.io/devops-lounge/tracks/mobile/): Native and hybrid iOS and Android. The roadmap below covers Android, and there is an iOS one at roadmap.sh/ios.
-- [Data and ML](https://sabbagh-moh.github.io/devops-lounge/tracks/data-and-ml/): Data engineering, analysis and classic machine learning: pipelines, notebooks, features and models.
-- [Cyber Security](https://sabbagh-moh.github.io/devops-lounge/tracks/cyber-security/): Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.
-- [DevOps and Cloud](https://sabbagh-moh.github.io/devops-lounge/tracks/devops-and-cloud/): CI/CD, containers, infrastructure as code, observability and keeping production calm.
-- [Game Dev](https://sabbagh-moh.github.io/devops-lounge/tracks/game-dev/): Engines, graphics, gameplay code and shipping your first game. Share builds and ask for playtesters.
+- [AI](https://lounge.xmoh.dev/tracks/ai/): Talk about building with LLMs: prompts, agents, retrieval, evals and getting models into production. Questions at every level are welcome, and the deep material lives in the server.
+- [Web Dev](https://lounge.xmoh.dev/tracks/web-dev/): General and full-stack web development: how the pieces fit together, from the browser to the database and deployment.
+- [App Dev](https://lounge.xmoh.dev/tracks/app-dev/): Desktop and cross-platform applications: packaging, native integration, updates and making software feel at home on every OS.
+- [Frontend](https://lounge.xmoh.dev/tracks/frontend/): UI, CSS, accessibility, performance and frameworks. Share what you are building and how you solved the tricky parts.
+- [Backend](https://lounge.xmoh.dev/tracks/backend/): APIs, databases, queues, caching and the systems behind them. Good place to talk through design decisions.
+- [Mobile](https://lounge.xmoh.dev/tracks/mobile/): Native and hybrid iOS and Android. The roadmap below covers Android, and there is an iOS one at roadmap.sh/ios.
+- [Data and ML](https://lounge.xmoh.dev/tracks/data-and-ml/): Data engineering, analysis and classic machine learning: pipelines, notebooks, features and models.
+- [Cyber Security](https://lounge.xmoh.dev/tracks/cyber-security/): Defensive security and legal practice. Learn on systems you own or labs that allow it, and see the rules for what is not allowed here.
+- [DevOps and Cloud](https://lounge.xmoh.dev/tracks/devops-and-cloud/): CI/CD, containers, infrastructure as code, observability and keeping production calm.
+- [Game Dev](https://lounge.xmoh.dev/tracks/game-dev/): Engines, graphics, gameplay code and shipping your first game. Share builds and ask for playtesters.
 
 ## FAQ
 - **What is DevOps Lounge?** A free Discord community for developers and DevOps engineers at every level. Members ask questions, share projects, review code and find people to build with.
