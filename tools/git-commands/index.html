@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Git Command Finder: undo a commit, rename a branch, fix mistakes, with the exact commands | DevOps Lounge</title>
+<meta name="description" content="Describe what you want to do in plain words, like &quot;undo last commit&quot; or &quot;rename branch&quot;. Get the exact commands, what they do, and a warning when they rewrite">
+<link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DevOps Lounge">
+<meta property="og:title" content="Git Command Finder: undo a commit, rename a branch, fix mistakes, with the exact commands | DevOps Lounge">
+<meta property="og:description" content="Describe what you want to do in plain words, like &quot;undo last commit&quot; or &quot;rename branch&quot;. Get the exact commands, what they do, and a warning when they rewrite">
+<meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/">
+<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-git-commands.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-git-commands.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/devops-lounge/assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="stylesheet" href="/devops-lounge/assets/site.css">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Git Command Finder","url":"https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Describe what you want to do in plain words, like \"undo last commit\" or \"rename branch\". Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.","keywords":"git undo last commit, git rename branch, git commands cheat sheet, git revert pushed commit, git fix mistakes"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between reset and revert?","acceptedAnswer":{"@type":"Answer","text":"reset moves your branch back and can drop commits; revert adds a new commit that undoes an old one. Use revert on anything already pushed."}},{"@type":"Question","name":"What does --force-with-lease do?","acceptedAnswer":{"@type":"Answer","text":"It force-pushes only if nobody else pushed in the meantime, so you do not overwrite a teammate's work."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"},{"@type":"ListItem","position":3,"name":"Git Command Finder","item":"https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/"}]}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a></nav>
+  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
+</div></header>
+<main>
+
+<div class="wrap">
+  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">Git command finder</h1><p class="lede">Describe what you want to do in plain words, like &quot;undo last commit&quot; or &quot;rename branch&quot;. Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.</p></section>
+  
+<div class="tool" id="git-tool">
+  <label class="field big"><span>What do you want to do? <span class="note" id="git-count"></span></span><input id="git-search" placeholder="undo last commit" autocomplete="off" spellcheck="false"></label>
+  <div class="git-list"><details class="git-item" id="undo-last-commit-keep-changes" data-search="Undo the last commit but keep my changes reset soft uncommit revert last commit keep files git reset --soft HEAD~1"><summary>Undo the last commit but keep my changes</summary>
+    <div class="git-body"><pre class="out" id="cmd-undo-last-commit-keep-changes">git reset --soft HEAD~1</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-undo-last-commit-keep-changes">Copy</button>
+    <p>The commit is gone and its changes go back to staged, ready to commit again. Use HEAD~2 to undo two commits.</p><p class="note">If you already pushed, prefer git revert so you do not rewrite shared history.</p><a class="permalink" href="#undo-last-commit-keep-changes">Link to this</a></div></details><details class="git-item" id="undo-last-commit-discard" data-search="Undo the last commit and throw away its changes reset hard delete commit discard git reset --hard HEAD~1"><summary>Undo the last commit and throw away its changes<span class="danger">Rewrites or deletes</span></summary>
+    <div class="git-body"><pre class="out" id="cmd-undo-last-commit-discard">git reset --hard HEAD~1</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-undo-last-commit-discard">Copy</button>
+    <p>Removes the commit and every change in it from your working folder.</p><p class="note">If you already pushed, use git revert HEAD instead.</p><a class="permalink" href="#undo-last-commit-discard">Link to this</a></div></details><details class="git-item" id="revert-pushed-commit" data-search="Undo a commit that is already pushed revert public shared remote safe undo git revert <commit-sha> git push"><summary>Undo a commit that is already pushed</summary>
+    <div class="git-body"><pre class="out" id="cmd-revert-pushed-commit">git revert &lt;commit-sha>
+git push</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-revert-pushed-commit">Copy</button>
+    <p>Creates a new commit that reverses the old one. History stays intact, which is safe for shared branches.</p><a class="permalink" href="#revert-pushed-commit">Link to this</a></div></details><details class="git-item" id="change-last-commit-message" data-search="Change the last commit message amend rename commit message typo git commit --amend -m "Better message""><summary>Change the last commit message</summary>
+    <div class="git-body"><pre class="out" id="cmd-change-last-commit-message">git commit --amend -m "Better message"</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-change-last-commit-message">Copy</button>
+    <p>Replaces the most recent commit with one that has the new message.</p><p class="note">Already pushed? Run git push --force-with-lease, and only on a branch nobody else is using.</p><a class="permalink" href="#change-last-commit-message">Link to this</a></div></details><details class="git-item" id="add-file-to-last-commit" data-search="Add a forgotten file to the last commit amend forgot file no-edit git add path/to/file git commit --amend --no-edit"><summary>Add a forgotten file to the last commit</summary>
+    <div class="git-body"><pre class="out" id="cmd-add-file-to-last-commit">git add path/to/file
+git commit --amend --no-edit</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-add-file-to-last-commit">Copy</button>
+    <p>Folds the file into the last commit and keeps its message.</p><a class="permalink" href="#add-file-to-last-commit">Link to this</a></div></details><details class="git-item" id="unstage-file" data-search="Unstage a file (undo git add) unstage restore staged remove from index git add undo git restore --staged path/to/file"><summary>Unstage a file (undo git add)</summary>
+    <div class="git-body"><pre class="out" id="cmd-unstage-file">git restore --staged path/to/file</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-unstage-file">Copy</button>
+    <p>The file stays changed on disk; it just leaves the staging area. Use . to unstage everything.</p><a class="permalink" href="#unstage-file">Link to this</a></div></details><details class="git-item" id="discard-file-changes" data-search="Throw away my changes to a file discard restore checkout reset file changes git restore path/to/file"><summary>Throw away my changes to a file<span class="danger">Rewrites or deletes</span></summary>
+    <div class="git-body"><pre class="out" id="cmd-discard-file-changes">git restore path/to/file</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-discard-file-changes">Copy</button>
+    <p>Puts the file back to how it was in the last commit.</p><a class="permalink" href="#discard-file-changes">Link to this</a></div></details><details class="git-item" id="commit-to-wrong-branch" data-search="I committed to the wrong branch wrong branch move commit main git reset --soft HEAD~1 git stash git switch right-branch git stash pop git commit -m "Message""><summary>I committed to the wrong branch</summary>
+    <div class="git-body"><pre class="out" id="cmd-commit-to-wrong-branch">git reset --soft HEAD~1
+git stash
+git switch right-branch
+git stash pop
+git commit -m "Message"</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-commit-to-wrong-branch">Copy</button>
+    <p>Takes the commit off this branch, carries the changes over and commits them where they belong.</p><a class="permalink" href="#commit-to-wrong-branch">Link to this</a></div></details><details class="git-item" id="move-changes-new-branch" data-search="Move my uncommitted changes to a new branch new branch carry changes switch create git switch -c new-branch"><summary>Move my uncommitted changes to a new branch</summary>
+    <div class="git-body"><pre class="out" id="cmd-move-changes-new-branch">git switch -c new-branch</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-move-changes-new-branch">Copy</button>
+    <p>Uncommitted changes come with you to the new branch automatically.</p><a class="permalink" href="#move-changes-new-branch">Link to this</a></div></details><details class="git-item" id="create-branch" data-search="Create a branch and switch to it new branch checkout -b switch -c git switch -c feature/name"><summary>Create a branch and switch to it</summary>
+    <div class="git-body"><pre class="out" id="cmd-create-branch">git switch -c feature/name</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-create-branch">Copy</button>
+    <p>The modern form of git checkout -b feature/name.</p><a class="permalink" href="#create-branch">Link to this</a></div></details><details class="git-item" id="rename-branch" data-search="Rename a branch, locally and on the remote rename branch move -m remote git branch -m old-name new-name git push origin -u new-name git push origin --delete old-name"><summary>Rename a branch, locally and on the remote</summary>
+    <div class="git-body"><pre class="out" id="cmd-rename-branch">git branch -m old-name new-name
+git push origin -u new-name
+git push origin --delete old-name</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-rename-branch">Copy</button>
+    <p>Renames it locally, pushes the new name and removes the old one from the remote.</p><a class="permalink" href="#rename-branch">Link to this</a></div></details><details class="git-item" id="delete-branch" data-search="Delete a branch, locally and on the remote delete remove branch remote git branch -d branch-name git push origin --delete branch-name"><summary>Delete a branch, locally and on the remote</summary>
+    <div class="git-body"><pre class="out" id="cmd-delete-branch">git branch -d branch-name
+git push origin --delete branch-name</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-delete-branch">Copy</button>
+    <p>Use -D instead of -d to delete a branch that is not merged yet.</p><a class="permalink" href="#delete-branch">Link to this</a></div></details><details class="git-item" id="stash-changes" data-search="Put my changes aside for a moment (stash) stash save shelve temporary pop apply git stash push -m "What I was doing" git stash list git stash pop"><summary>Put my changes aside for a moment (stash)</summary>
+    <div class="git-body"><pre class="out" id="cmd-stash-changes">git stash push -m "What I was doing"
+git stash list
+git stash pop</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-stash-changes">Copy</button>
+    <p>Saves your work, cleans the folder, and brings it back later with pop.</p><a class="permalink" href="#stash-changes">Link to this</a></div></details><details class="git-item" id="see-changes" data-search="See what I changed diff changes staged compare git diff git diff --staged"><summary>See what I changed</summary>
+    <div class="git-body"><pre class="out" id="cmd-see-changes">git diff
+git diff --staged</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-see-changes">Copy</button>
+    <p>The first shows unstaged changes, the second what is about to be committed.</p><a class="permalink" href="#see-changes">Link to this</a></div></details><details class="git-item" id="recover-lost-commit" data-search="Get back a lost commit or a deleted branch reflog recover lost deleted branch undo reset git reflog git branch recovered <commit-sha>"><summary>Get back a lost commit or a deleted branch</summary>
+    <div class="git-body"><pre class="out" id="cmd-recover-lost-commit">git reflog
+git branch recovered &lt;commit-sha></pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-recover-lost-commit">Copy</button>
+    <p>reflog lists everywhere HEAD has been, even after a reset. Pick the commit and put a branch on it.</p><a class="permalink" href="#recover-lost-commit">Link to this</a></div></details><details class="git-item" id="squash-commits" data-search="Squash my last few commits into one squash combine merge commits rebase git reset --soft HEAD~3 git commit -m "One clear message""><summary>Squash my last few commits into one</summary>
+    <div class="git-body"><pre class="out" id="cmd-squash-commits">git reset --soft HEAD~3
+git commit -m "One clear message"</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-squash-commits">Copy</button>
+    <p>Combines the last three commits. For more control, use git rebase -i HEAD~3.</p><p class="note">If they were pushed, you will need git push --force-with-lease.</p><a class="permalink" href="#squash-commits">Link to this</a></div></details><details class="git-item" id="sync-fork" data-search="Update my fork from the original repository fork upstream sync update rebase git remote add upstream https://github.com/OWNER/REPO.git git fetch upstream git rebase upstream/main git push --force-with-lease"><summary>Update my fork from the original repository</summary>
+    <div class="git-body"><pre class="out" id="cmd-sync-fork">git remote add upstream https://github.com/OWNER/REPO.git
+git fetch upstream
+git rebase upstream/main
+git push --force-with-lease</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-sync-fork">Copy</button>
+    <p>Adds the original repo once, then replays your work on top of its latest main.</p><a class="permalink" href="#sync-fork">Link to this</a></div></details><details class="git-item" id="pull-rebase" data-search="Pull without creating a merge commit pull rebase merge commit linear history git pull --rebase git config --global pull.rebase true"><summary>Pull without creating a merge commit</summary>
+    <div class="git-body"><pre class="out" id="cmd-pull-rebase">git pull --rebase
+git config --global pull.rebase true</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-pull-rebase">Copy</button>
+    <p>Replays your local commits on top of the remote. The second line makes it the default.</p><a class="permalink" href="#pull-rebase">Link to this</a></div></details><details class="git-item" id="abort-merge" data-search="Cancel a merge or rebase that went wrong abort merge rebase conflict cancel git merge --abort git rebase --abort"><summary>Cancel a merge or rebase that went wrong</summary>
+    <div class="git-body"><pre class="out" id="cmd-abort-merge">git merge --abort
+git rebase --abort</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-abort-merge">Copy</button>
+    <p>Puts everything back to how it was before you started.</p><a class="permalink" href="#abort-merge">Link to this</a></div></details><details class="git-item" id="cherry-pick" data-search="Copy one commit to another branch cherry pick copy commit apply git switch target-branch git cherry-pick <commit-sha>"><summary>Copy one commit to another branch</summary>
+    <div class="git-body"><pre class="out" id="cmd-cherry-pick">git switch target-branch
+git cherry-pick &lt;commit-sha></pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-cherry-pick">Copy</button>
+    <p>Applies that single commit on top of the current branch.</p><a class="permalink" href="#cherry-pick">Link to this</a></div></details><details class="git-item" id="stop-tracking-file" data-search="Stop tracking a file but keep it on disk gitignore untrack rm cached remove file keep git rm --cached path/to/file echo "path/to/file" >> .gitignore git commit -m "Stop tracking file""><summary>Stop tracking a file but keep it on disk</summary>
+    <div class="git-body"><pre class="out" id="cmd-stop-tracking-file">git rm --cached path/to/file
+echo "path/to/file" >> .gitignore
+git commit -m "Stop tracking file"</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-stop-tracking-file">Copy</button>
+    <p>Removes it from the repository, keeps your local copy, and ignores it from now on.</p><a class="permalink" href="#stop-tracking-file">Link to this</a></div></details><details class="git-item" id="remove-secret-from-history" data-search="Remove a leaked password or key from history secret leaked password key token filter-repo history pip install git-filter-repo git filter-repo --invert-paths --path path/to/secret-file git push --force --all"><summary>Remove a leaked password or key from history<span class="danger">Rewrites or deletes</span></summary>
+    <div class="git-body"><pre class="out" id="cmd-remove-secret-from-history">pip install git-filter-repo
+git filter-repo --invert-paths --path path/to/secret-file
+git push --force --all</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-remove-secret-from-history">Copy</button>
+    <p>First rotate the secret: anyone may already have it. Then remove it from every commit.</p><a class="permalink" href="#remove-secret-from-history">Link to this</a></div></details><details class="git-item" id="change-remote-url" data-search="Change the remote URL remote origin url set-url ssh https git remote set-url origin git@github.com:OWNER/REPO.git git remote -v"><summary>Change the remote URL</summary>
+    <div class="git-body"><pre class="out" id="cmd-change-remote-url">git remote set-url origin git@github.com:OWNER/REPO.git
+git remote -v</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-change-remote-url">Copy</button>
+    <p>Points origin somewhere new, for example from HTTPS to SSH.</p><a class="permalink" href="#change-remote-url">Link to this</a></div></details><details class="git-item" id="pretty-log" data-search="See the history as a compact graph log graph oneline history tree git log --oneline --graph --decorate --all"><summary>See the history as a compact graph</summary>
+    <div class="git-body"><pre class="out" id="cmd-pretty-log">git log --oneline --graph --decorate --all</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-pretty-log">Copy</button>
+    <p>One line per commit with branches drawn as a graph.</p><a class="permalink" href="#pretty-log">Link to this</a></div></details><details class="git-item" id="who-changed-line" data-search="Find who changed a line blame who changed line author git blame -L 10,20 path/to/file"><summary>Find who changed a line</summary>
+    <div class="git-body"><pre class="out" id="cmd-who-changed-line">git blame -L 10,20 path/to/file</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-who-changed-line">Copy</button>
+    <p>Shows the last commit and author for lines 10 to 20.</p><a class="permalink" href="#who-changed-line">Link to this</a></div></details><details class="git-item" id="find-bug-commit" data-search="Find the commit that introduced a bug bisect bug regression find commit git bisect start git bisect bad git bisect good <last-good-sha> git bisect reset"><summary>Find the commit that introduced a bug</summary>
+    <div class="git-body"><pre class="out" id="cmd-find-bug-commit">git bisect start
+git bisect bad
+git bisect good &lt;last-good-sha>
+git bisect reset</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-find-bug-commit">Copy</button>
+    <p>Git checks out commits halfway between good and bad; you mark each one until it finds the culprit.</p><a class="permalink" href="#find-bug-commit">Link to this</a></div></details><details class="git-item" id="tag-release" data-search="Tag a release tag release version semver push tags git tag -a v1.2.0 -m "Release 1.2.0" git push origin v1.2.0"><summary>Tag a release</summary>
+    <div class="git-body"><pre class="out" id="cmd-tag-release">git tag -a v1.2.0 -m "Release 1.2.0"
+git push origin v1.2.0</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-tag-release">Copy</button>
+    <p>An annotated tag with a message, pushed to the remote.</p><a class="permalink" href="#tag-release">Link to this</a></div></details><details class="git-item" id="undo-pull" data-search="Undo a git pull undo pull merge orig_head git reset --hard ORIG_HEAD"><summary>Undo a git pull<span class="danger">Rewrites or deletes</span></summary>
+    <div class="git-body"><pre class="out" id="cmd-undo-pull">git reset --hard ORIG_HEAD</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-undo-pull">Copy</button>
+    <p>Goes back to where you were before the pull.</p><a class="permalink" href="#undo-pull">Link to this</a></div></details><details class="git-item" id="shallow-clone" data-search="Clone only the latest version of one branch shallow clone depth single branch fast git clone --depth 1 --branch main https://github.com/OWNER/REPO.git"><summary>Clone only the latest version of one branch</summary>
+    <div class="git-body"><pre class="out" id="cmd-shallow-clone">git clone --depth 1 --branch main https://github.com/OWNER/REPO.git</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-shallow-clone">Copy</button>
+    <p>Much faster for big repositories when you do not need the history.</p><a class="permalink" href="#shallow-clone">Link to this</a></div></details><details class="git-item" id="set-identity" data-search="Set my name and email for commits config user name email identity git config --global user.name "Your Name" git config --global user.email "you@example.com""><summary>Set my name and email for commits</summary>
+    <div class="git-body"><pre class="out" id="cmd-set-identity">git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-set-identity">Copy</button>
+    <p>Drop --global to set them for this repository only.</p><a class="permalink" href="#set-identity">Link to this</a></div></details><details class="git-item" id="clean-untracked" data-search="Delete untracked files clean untracked remove files folders git clean -n -d git clean -f -d"><summary>Delete untracked files<span class="danger">Rewrites or deletes</span></summary>
+    <div class="git-body"><pre class="out" id="cmd-clean-untracked">git clean -n -d
+git clean -f -d</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-clean-untracked">Copy</button>
+    <p>The first line previews what would be deleted. The second deletes it.</p><a class="permalink" href="#clean-untracked">Link to this</a></div></details><details class="git-item" id="resolve-conflict-theirs" data-search="Resolve a conflict by taking one side conflict ours theirs resolve merge git checkout --theirs path/to/file git checkout --ours path/to/file git add path/to/file"><summary>Resolve a conflict by taking one side</summary>
+    <div class="git-body"><pre class="out" id="cmd-resolve-conflict-theirs">git checkout --theirs path/to/file
+git checkout --ours path/to/file
+git add path/to/file</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-resolve-conflict-theirs">Copy</button>
+    <p>During a merge, theirs is the incoming branch and ours is yours. During a rebase the two are swapped. Add the file to mark it resolved.</p><a class="permalink" href="#resolve-conflict-theirs">Link to this</a></div></details><details class="git-item" id="undo-amend" data-search="Undo a git commit --amend undo amend reflog previous git reset --soft HEAD@{1}"><summary>Undo a git commit --amend</summary>
+    <div class="git-body"><pre class="out" id="cmd-undo-amend">git reset --soft HEAD@{1}</pre><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cmd-undo-amend">Copy</button>
+    <p>Returns to the commit as it was before the amend, keeping the new changes staged.</p><a class="permalink" href="#undo-amend">Link to this</a></div></details></div>
+</div>
+  
+  <section class="group"><h2>How it works</h2><ul class="steps"><li><b>Plain words</b>Type it the way you would ask a friend. The list narrows as you type and opens the only match.</li><li><b>Safe by default</b>Anything that rewrites history or deletes work is marked, and pushed-branch cases point to the safe alternative.</li><li><b>Every situation has a link</b>Share the exact fix with a teammate: each one has its own link.</li></ul></section>
+  <section class="group"><h2>Questions</h2><div class="faq"><details><summary>What is the difference between reset and revert?</summary><p>reset moves your branch back and can drop commits; revert adds a new commit that undoes an old one. Use revert on anything already pushed.</p></details><details><summary>What does --force-with-lease do?</summary><p>It force-pushes only if nobody else pushed in the meantime, so you do not overwrite a teammate's work.</p></details></div></section>
+  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/tool-schema/">AI Tool Schema Builder</a><a href="/devops-lounge/tools/mcp-config/">MCP Config Generator</a><a href="/devops-lounge/tools/llms-txt/">llms.txt Generator</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/cidr/">CIDR Calculator</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/jwt/">JWT Decoder</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
+</div>
+
+<div class="wrap"><section class="final">
+  <div><h2>Built something with it?</h2><p>Show it in the server, get a code review, or ask the people who use these tools every day.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
+  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
+</section></div>
+</main>
+<footer><div class="wrap">
+  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
+</div></footer>
+<script src="/devops-lounge/assets/tools/dev3.js" defer></script>
+<script src="/devops-lounge/assets/tools/kit.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
+<script src="/devops-lounge/assets/live.js" defer></script>
+</body>
+</html>

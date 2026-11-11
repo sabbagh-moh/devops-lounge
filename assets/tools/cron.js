@@ -105,6 +105,49 @@
 
   const fmt = new Intl.DateTimeFormat(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
+  // ---------- the same schedule for systemd, GitHub Actions and Kubernetes ----------
+  const SYS_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const sysField = (raw, set, min, width) => {
+    if (raw === '*') return '*';
+    const step = raw.match(/^\*\/(\d+)$/);
+    if (step) return `${String(min).padStart(width, '0')}/${step[1]}`;
+    return [...set].sort((a, b) => a - b).map((n) => String(n).padStart(width, '0')).join(',');
+  };
+  function systemd(c) {
+    const [mi, ho, dom, mo, dow] = c.parts;
+    const days = c.dowAny ? '' : `${[...c.sets[4]].sort((a, b) => a - b).map((d) => SYS_DAYS[d]).join(',')} `;
+    const onCalendar = `${days}*-${sysField(mo, c.sets[3], 1, 2)}-${sysField(dom, c.sets[2], 1, 2)} ${sysField(ho, c.sets[1], 0, 2)}:${sysField(mi, c.sets[0], 0, 2)}:00`;
+    const warn = !c.domAny && !c.dowAny ? '\n# Note: cron runs when EITHER the day of month OR the weekday matches; systemd needs BOTH. Split it into two OnCalendar lines if you need the cron behavior.' : '';
+    return `# /etc/systemd/system/my-job.timer\n[Unit]\nDescription=Run my-job on a schedule\n\n[Timer]\nOnCalendar=${onCalendar}\nPersistent=true\n\n[Install]\nWantedBy=timers.target${warn}\n\n# Check it with: systemd-analyze calendar "${onCalendar}"\n# Enable it with: sudo systemctl enable --now my-job.timer`;
+  }
+  // GitHub Actions always reads cron in UTC, so a local schedule has to be shifted.
+  function github(c, expr) {
+    const offset = -new Date().getTimezoneOffset();
+    const [mi, ho, dom, mo, dow] = c.parts;
+    const head = 'on:\n  schedule:\n';
+    if (offset === 0) return `${head}    - cron: '${expr}'\n\n# Your time zone is UTC, so no change is needed. Runs can start a few minutes late when GitHub is busy.`;
+    const minutes = [...c.sets[0]]; const hours = [...c.sets[1]];
+    const simple = minutes.length === 1 && !/[*/]/.test(mi) && !/[*/]/.test(ho);
+    if (!simple) return `${head}    - cron: '${expr}'\n\n# GitHub runs schedules in UTC and you are UTC${offset > 0 ? '+' : '-'}${Math.abs(offset / 60)}. This expression repeats through the day, so it may not need shifting; check that the hours still make sense in UTC.`;
+    const shifted = hours.map((h) => h * 60 + minutes[0] - offset);
+    const dayShift = Math.floor(shifted[0] / 1440);
+    if (shifted.some((t) => Math.floor(t / 1440) !== dayShift) || (dayShift !== 0 && !c.domAny)) return `${head}    - cron: '${expr}'\n\n# GitHub runs schedules in UTC. This one crosses midnight when shifted from your time zone, so convert it by hand: subtract ${offset / 60} hours.`;
+    const norm = shifted.map((t) => ((t % 1440) + 1440) % 1440);
+    const newMin = norm[0] % 60; const newHours = [...new Set(norm.map((t) => Math.floor(t / 60)))].sort((a, b) => a - b);
+    const newDow = c.dowAny || dayShift === 0 ? dow : [...c.sets[4]].map((d) => (d + dayShift + 7) % 7).sort((a, b) => a - b).join(',');
+    const utc = `${newMin} ${newHours.join(',')} ${dom} ${mo} ${newDow}`;
+    return `${head}    - cron: '${utc}'\n\n# Same moment as '${expr}' in your time zone (UTC${offset > 0 ? '+' : '-'}${Math.abs(offset / 60)}), written in UTC because GitHub always uses UTC.\n# Runs can start a few minutes late when GitHub is busy, and the shortest interval is every 5 minutes.`;
+  }
+  const k8s = (expr, zone) => `apiVersion: batch/v1\nkind: CronJob\nmetadata:\n  name: my-job\nspec:\n  schedule: "${expr}"\n  timeZone: "${zone}"\n  concurrencyPolicy: Forbid\n  successfulJobsHistoryLimit: 3\n  failedJobsHistoryLimit: 3\n  jobTemplate:\n    spec:\n      backoffLimit: 2\n      template:\n        spec:\n          restartPolicy: OnFailure\n          containers:\n            - name: my-job\n              image: your-image:tag\n              command: ["/bin/sh", "-c", "echo running"]`;
+  const more = root.querySelector('#cron-more');
+  function renderMore(c, expr) {
+    if (!more) return;
+    const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    more.innerHTML = [['systemd timer', systemd(c)], ['GitHub Actions (UTC)', github(c, expr)], ['Kubernetes CronJob', k8s(expr, zone)]]
+      .map(([title, code], i) => `<div class="cron-alt"><div class="cron-alt-head"><b>${title}</b><button type="button" class="btn btn-quiet btn-sm" data-copy-from="cron-alt-${i}">Copy</button></div><pre class="out" id="cron-alt-${i}"></pre></div>`).join('');
+    [systemd(c), github(c, expr), k8s(expr, zone)].forEach((code, i) => { more.querySelector(`#cron-alt-${i}`).textContent = code; });
+  }
+
   function render(fromFields = false) {
     if (fromFields) input.value = fields.map((f) => f.value.trim() || '*').join(' ');
     else {
@@ -117,6 +160,7 @@
       say.classList.remove('bad');
       const runs = upcoming(c);
       next.innerHTML = runs.length ? runs.map((r) => `<li>${fmt.format(r)}</li>`).join('') : '<li>No run in the next two years. Check the day and month fields.</li>';
+      renderMore(c, (ALIASES[input.value.trim().toLowerCase()] ?? input.value.trim()).replace(/\s+/g, ' '));
     } catch (e) {
       say.textContent = e.message;
       say.classList.add('bad');

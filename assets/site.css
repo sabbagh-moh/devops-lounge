@@ -524,3 +524,57 @@ body { background-image: var(--grain); }
 .hero-copy .live { margin-top: 18px; }
 @media (max-width: 1020px) { .hero-cta { justify-items: start; } }
 @media (max-width: 600px) { .hero-cta { width: 100%; } }
+
+/* ---------- polish pass ---------- */
+/* Rows of meta wrap instead of pushing out of their card. */
+.src { flex-wrap: wrap; row-gap: 4px; }
+code { overflow-wrap: anywhere; }
+/* The server view bleeds to the screen edge but never past it. */
+.hero, .block.bleed { overflow-x: clip; }
+/* Section headings: one calm size, so the hero stays the loudest thing on the page. */
+.title { font-size: clamp(34px, 3.9vw, 56px); letter-spacing: -.035em; line-height: 1.08; }
+.wall-caption h2 { font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; max-width: 20ch; }
+.story-title { max-width: 20ch; }
+/* Join story: the real channel name instead of a step number. */
+.card-copy .step { display: inline-block; width: auto; height: auto; border-radius: 999px; padding: 6px 12px; font: 500 13.5px var(--mono); background: var(--fill); color: var(--text-2); margin-bottom: 22px; }
+.card:nth-child(3) .step { background: #E5E5EA; color: #3D3D3D; }
+.card-copy h3 { font-size: clamp(28px, 3vw, 44px); letter-spacing: -.035em; line-height: 1.08; font-weight: 500; }
+/* The light effects never widen the page. */
+.story { overflow-x: clip; }
+.page-head::before { width: 100%; }
+
+/* Cron: the same schedule for systemd, GitHub Actions and Kubernetes */
+.cron-more { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; margin-top: 22px; }
+.cron-alt { display: grid; gap: 10px; align-content: start; }
+.cron-alt-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.cron-alt-head b { margin: 0; font: 600 15px var(--sans); color: #fff; }
+.cron-alt .out { min-height: 0; font-size: 13.5px; }
+
+/* MCP config */
+.mcp-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.mcp-list li { background: #000; border-radius: 14px; padding: 12px 14px; display: grid; gap: 8px; }
+.mcp-list li label { color: #fff; font-size: 15px; }
+.mcp-list textarea { font: 13px/1.5 var(--mono); min-height: 0; }
+.mcp-list li:not(:has(input:checked)) textarea { display: none; }
+.mcp-custom summary { cursor: pointer; color: var(--text-2); font-size: 14px; }
+.mcp-custom summary:hover { color: #fff; }
+
+/* Git command finder */
+.git-list { display: grid; gap: 8px; margin-top: 18px; }
+.git-item { background: var(--fill); border-radius: 16px; transition: background .2s; }
+.git-item[open] { background: var(--fill-2); }
+.git-item summary { cursor: pointer; list-style: none; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-size: 16px; color: #fff; }
+.git-item summary::-webkit-details-marker { display: none; }
+.git-item summary::after { content: '+'; color: var(--text-3); font: 400 20px var(--mono); flex: none; transition: transform .2s; }
+.git-item[open] summary::after { transform: rotate(45deg); }
+.git-item .danger { margin-left: auto; font: 500 12px var(--mono); color: #FF9F0A; background: rgba(255, 159, 10, .12); padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.git-body { padding: 0 20px 18px; display: grid; gap: 10px; justify-items: start; }
+.git-body .out { min-height: 0; }
+.git-body p { margin: 0; color: var(--text-2); max-width: 70ch; }
+.git-body .permalink { font-size: 13px; color: var(--text-3); }
+.git-body .permalink:hover { color: #fff; }
+@media (max-width: 600px) { .git-item summary { flex-wrap: wrap; } .git-item .danger { margin-left: 0; } }
+
+/* CIDR subnets */
+.subnets ol { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; max-height: 320px; overflow: auto; }
+.subnets li code { display: block; background: #000; padding: 8px 10px; border-radius: 10px; font-size: 13px; }

@@ -47,689 +47,322 @@
 <li class="res">
   <h3><a href="https://arxiv.org/abs/1706.03762" rel="noopener">Attention Is All You Need, the original transformer paper</a></h3>
   <p>The 2017 paper that introduced the transformer and dropped recurrence in favour of attention. Dense in places, but short, and nearly every modern language model descends from it. Pair it with the illustrated walkthrough.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2005.11401" rel="noopener">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></h3>
   <p>The paper that named RAG: a generator combined with a dense vector index over Wikipedia, trained together. Useful for understanding what the acronym originally meant before it became a catch-all for &quot;put documents in the prompt&quot;.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2210.03629" rel="noopener">ReAct: let the model think between tool calls</a></h3>
-  <p>The ReAct paper (Yao et al.) proposes interleaving reasoning traces with actions, so the model plans, acts, looks at what came back, and adjusts. Most agent loops you will meet today are descendants of that idea.
-
-You can reproduce the pattern with plain prompting before reaching for a framework:
-``<code>
-You can use these tools: search(query), read(url).
-Work in this format until you can answer:
-Thought: what you need to find out next
-Action: one tool call
-Observation: (filled in by the system)
-...
-Final: the answer, citing the observations you used
-</code>`<code>
-Your code does the boring part: parse the </code>Action<code>, run it, append the </code>Observation<code>, and call the model again. Stop on </code>Final` or after a fixed number of rounds. Reading the paper is worthwhile for its failure analysis: the loop only helps when observations are reliable, so spend your effort on tool quality.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
+  <p>The ReAct paper (Yao et al.) proposes interleaving reasoning traces with actions, so the model plans, acts, looks at what came back, and adjusts. Most agent loops you will meet today are descendants of that idea. You can reproduce the pattern with plain prompting before reaching for a framework: Your code does the boring part: parse the <code>Action</code>, run it, append the <code>Observation</code>, and call the model again. Stop on <code>Final</code> or after a fixed number of rounds. Reading the paper is worthwhile for its failure analysis: the loop only helps when observations are reliable, so spend your effort on tool quality.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2307.03172" rel="noopener">Lost in the Middle: where you put evidence in a long prompt matters</a></h3>
-  <p>This paper measured how models use long contexts and found performance tends to be best when the relevant information sits at the beginning or end, and worse when it is buried in the middle. Models differ and have changed since, so treat it as a reason to test rather than a law.
-
-A quick experiment for your own RAG or document-QA setup:
-``<code>
-1. Take 20 questions with known answers.
-2. For each, build the prompt with the answer-bearing passage at
-   position first / middle / last among ~10 distractor passages.
-3. Score accuracy per position.
-</code>``
-If the middle is weaker, cheap mitigations include retrieving fewer, better passages, reranking so the strongest evidence lands near the edges, and repeating the question after the context. Whatever you change, rerun the same 20 questions so you know it helped.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
+  <p>This paper measured how models use long contexts and found performance tends to be best when the relevant information sits at the beginning or end, and worse when it is buried in the middle. Models differ and have changed since, so treat it as a reason to test rather than a law. A quick experiment for your own RAG or document-QA setup: If the middle is weaker, cheap mitigations include retrieving fewer, better passages, reranking so the strongest evidence lands near the edges, and repeating the question after the context. Whatever you change, rerun the same 20 questions so you know it helped.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2306.05685" rel="noopener">LLM-as-judge works, and it has biases you must control for</a></h3>
-  <p>The MT-Bench paper (Zheng et al.) studied using strong models to grade other models' answers. Its finding was encouraging: strong judges agreed with human preferences about as often as humans agree with each other. It also listed biases: position bias, verbosity bias and self-enhancement bias (favouring text from the same model family).
-
-Controls you can add when you build a judge:
-``<code>
-- Pairwise grading: run each comparison twice with A/B swapped;
-  count only consistent verdicts.
-- Rubrics: ask for a score on named criteria, not &quot;which is better&quot;.
-- Length: tell the judge not to reward length; check for correlation.
-- Self-preference: avoid grading a model with itself.
-- Calibration: have a human label 30 examples and compare.
-</code>``
-Treat the judge as an instrument that needs calibration against human labels on your task, not as ground truth.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
+  <p>The MT-Bench paper (Zheng et al.) studied using strong models to grade other models' answers. Its finding was encouraging: strong judges agreed with human preferences about as often as humans agree with each other. It also listed biases: position bias, verbosity bias and self-enhancement bias (favouring text from the same model family). Controls you can add when you build a judge: Treat the judge as an instrument that needs calibration against human labels on your task, not as ground truth.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2305.14314" rel="noopener">QLoRA: fine-tune a large model on modest hardware</a></h3>
-  <p>QLoRA (Dettmers et al.) backpropagates through a frozen, 4-bit quantised base model into small LoRA adapters. The authors report fine-tuning a 65B-parameter model on a single 48GB GPU while keeping full 16-bit fine-tuning quality, which is why the technique spread so widely.
-
-You do not need to implement it. The Hugging Face PEFT library packages LoRA-style methods, and the shape of the setup is:
-``<code>python
-from peft import LoraConfig, get_peft_model
-
-config = LoraConfig(r=16, lora_alpha=32, task_type=&quot;CAUSAL_LM&quot;)
-model = get_peft_model(base_model, config)
-model.print_trainable_parameters()
-</code>``
-Before reaching for fine-tuning, check three cheaper options: better prompts, retrieval, and a small eval set that shows what is actually failing. Fine-tuning is best for style, format and narrow behaviours, not for loading in fast-changing facts. Keep the data clean; adapters faithfully learn your mistakes too.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
+  <p>QLoRA (Dettmers et al.) backpropagates through a frozen, 4-bit quantised base model into small LoRA adapters. The authors report fine-tuning a 65B-parameter model on a single 48GB GPU while keeping full 16-bit fine-tuning quality, which is why the technique spread so widely. You do not need to implement it. The Hugging Face PEFT library packages LoRA-style methods, and the shape of the setup is: Before reaching for fine-tuning, check three cheaper options: better prompts, retrieval, and a small eval set that shows what is actually failing. Fine-tuning is best for style, format and narrow behaviours, not for loading in fast-changing facts. Keep the data clean; adapters faithfully learn your mistakes too.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2302.12173" rel="noopener">Indirect prompt injection: the attack arrives inside the data</a></h3>
-  <p>Greshake et al. studied indirect prompt injection: instead of typing malicious instructions to a model, an attacker plants them in content the application will later retrieve, such as a web page or document. The model reads them as part of its context and may follow them. Retrieval and tool use are what make this practical.
-
-Defensive habits to apply when you build:
-``<code>
-- Treat everything retrieved as data, never as instructions;
-  mark it clearly as untrusted in the prompt.
-- Give the model the minimum tools and scopes for the task.
-- Require human confirmation for side effects (send, delete, pay).
-- Strip or block outbound channels that data could leave through.
-- Log tool calls so you can audit what the model was steered into.
-- Red-team with your own planted instructions in test documents.
-</code>``
-Labelling data as untrusted lowers risk but does not remove it, so the structural controls matter most. Read the paper's threat taxonomy to see how many routes into a context window exist.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
+  <p>Greshake et al. studied indirect prompt injection: instead of typing malicious instructions to a model, an attacker plants them in content the application will later retrieve, such as a web page or document. The model reads them as part of its context and may follow them. Retrieval and tool use are what make this practical. Defensive habits to apply when you build: Labelling data as untrusted lowers risk but does not remove it, so the structural controls matter most. Read the paper's threat taxonomy to see how many routes into a context window exist.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Papers</span><span>Advanced</span></div>
 </li></ul></section><section class="group" id="agents"><h2>Agents <small>7</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener">Building Effective Agents: workflows vs agents</a></h3>
   <p>A calm essay that separates predefined workflows from model-directed agents and lays out five composable patterns. Its main advice is to start with the simplest thing that works and add complexity only when it measurably helps.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/anthropic.com.png" width="20" height="20" alt="" loading="lazy" data-host="anthropic.com"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://lilianweng.github.io/posts/2023-06-23-agent/" rel="noopener">LLM Powered Autonomous Agents by Lilian Weng</a></h3>
   <p>A thorough overview of agents built around a language model, organised around planning, memory and tool use, with pointers to the research behind each. A good map of the territory before you pick a framework.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=lilianweng.github.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>lilianweng.github.io</span><span>Agents</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/lilianweng.github.io.png" width="20" height="20" alt="" loading="lazy" data-host="lilianweng.github.io"><span>lilianweng.github.io</span><span>Agents</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/langchain-ai/langgraph" rel="noopener">LangGraph: stateful, long-running agent orchestration</a></h3>
   <p>MIT-licensed, low-level framework for agents modelled as stateful graphs, with durable execution so a run can resume after a failure. Reach for it when a plain loop stops being enough and you need control over state and flow.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Agents</span><span>Advanced</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Agents</span><span>Advanced</span></div>
 </li>
 <li class="res">
   <h3><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" rel="noopener">The tool-use loop in four steps, and the stop reason that drives it</a></h3>
-  <p>Tool use looks magical until you see the loop. You describe your tools (name, description, input schema), the model answers with a structured call instead of text, your code runs it, and you send the result back. The documented signal for &quot;the model wants a tool&quot; is <code>stop_reason: &quot;tool_use&quot;</code> plus <code>tool_use</code> blocks; your reply goes in a <code>tool_result</code> block carrying the matching <code>tool_use_id</code>.
-
-Skeleton (Anthropic-style shapes, other providers differ in names but not in structure):
-``<code>python
-messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: question}]
-for _ in range(8):  # hard cap on turns
-    resp = client.messages.create(model=MODEL, max_tokens=1024,
-                                  tools=tools, messages=messages)
-    if resp.stop_reason != &quot;tool_use&quot;:
-        break
-    messages.append({&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: resp.content})
-    results = [run_tool(b) for b in resp.content if b.type == &quot;tool_use&quot;]
-    messages.append({&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: results})
-</code>`<code>
-Two habits worth copying: always cap iterations, and have </code>run_tool` return errors as text the model can read rather than raising.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=platform.claude.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>platform.claude.com</span><span>Agents</span><span>Beginner</span></div>
+  <p>Tool use looks magical until you see the loop. You describe your tools (name, description, input schema), the model answers with a structured call instead of text, your code runs it, and you send the result back. The documented signal for &quot;the model wants a tool&quot; is <code>stop_reason: &quot;tool_use&quot;</code> plus <code>tool_use</code> blocks; your reply goes in a <code>tool_result</code> block carrying the matching <code>tool_use_id</code>. Skeleton (Anthropic-style shapes, other providers differ in names but not in structure): Two habits worth copying: always cap iterations, and have <code>run_tool</code> return errors as text the model can read rather than raising.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/platform.claude.com.png" width="20" height="20" alt="" loading="lazy" data-host="platform.claude.com"><span>platform.claude.com</span><span>Agents</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.anthropic.com/research/writing-tools-for-agents" rel="noopener">Write tool descriptions like an onboarding note for a new teammate</a></h3>
-  <p>Agents fail on tools more often than on reasoning, and the fix is usually in the tool definition. The guidance in Anthropic's engineering write-up boils down to a few rules you can apply today:
-
-- Name tools with a shared prefix per service or resource, so similar ones group together.
+  <p>Agents fail on tools more often than on reasoning, and the fix is usually in the tool definition. The guidance in Anthropic's engineering write-up boils down to a few rules you can apply today: - Name tools with a shared prefix per service or resource, so similar ones group together.
 - Describe niche terms and query formats as you would to a new colleague, and prefer unambiguous parameters (<code>user_id</code> rather than <code>user</code>).
 - Return high-signal fields (names, types) instead of raw UUIDs, and offer a concise/detailed switch.
 - Paginate, filter and truncate by default so one call cannot flood the context.
-- Make errors say how to fix the input.
-
-A before/after:
-``<code>
-before: search(q)  -&gt; &quot;Searches stuff&quot;
-after:  tickets_search(query, status=&quot;open&quot;, limit=10)
-        &quot;Full-text search over support tickets. status is one of
-         open|closed|all. Returns title, id, assignee. Use
-         tickets_get(id) for the full thread.&quot;
-</code>``
-Then test with realistic multi-step tasks and read the transcripts to see where the agent hesitates.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
+- Make errors say how to fix the input. A before/after: Then test with realistic multi-step tasks and read the transcripts to see where the agent hesitates.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/anthropic.com.png" width="20" height="20" alt="" loading="lazy" data-host="anthropic.com"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents" rel="noopener">Context engineering: compaction, notes and sub-agents</a></h3>
-  <p>Long agent runs fail when the context fills with stale detail. Anthropic's engineering article frames context engineering as curating the smallest useful set of tokens at every model call, and names techniques for work that outgrows one window:
-
-1. Compaction: summarise a nearly full conversation and continue in a fresh window.
+  <p>Long agent runs fail when the context fills with stale detail. Anthropic's engineering article frames context engineering as curating the smallest useful set of tokens at every model call, and names techniques for work that outgrows one window: 1. Compaction: summarise a nearly full conversation and continue in a fresh window.
 2. Structured note-taking: the agent writes progress to a file and reloads it later.
 3. Sub-agents: a worker explores in a clean context and hands back a condensed summary.
-4. Just-in-time retrieval: keep paths and queries in context, load the content only when needed.
-
-A cheap way to start is a notes file:
-``<code>
-NOTES.md
-## Goal
-## Decisions made (and why)
-## Done / Next
-## Files that matter
-</code>``
-Instruct the agent to update it after each milestone and to read it first in any new session. It costs a few lines and survives resets.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
+4. Just-in-time retrieval: keep paths and queries in context, load the content only when needed. A cheap way to start is a notes file: Instruct the agent to update it after each milestone and to read it first in any new session. It costs a few lines and survives resets.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/anthropic.com.png" width="20" height="20" alt="" loading="lazy" data-host="anthropic.com"><span>anthropic.com</span><span>Agents</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" rel="noopener">The lethal trifecta: the three capabilities you must not combine carelessly</a></h3>
-  <p>Simon Willison names three capabilities that become dangerous together in an agent: access to your private data, exposure to untrusted content, and the ability to communicate externally in a way that could exfiltrate data. If one agent has all three, an attacker who can get text in front of it may be able to steer it into sending your data out.
-
-Use it as a design review:
-``<code>
-For each agent or tool bundle, answer:
-1. Private data?     (mail, repos, tickets, secrets)
-2. Untrusted input?  (web pages, inbound email, issues, PDFs)
-3. Outbound channel? (HTTP requests, email, links that load images)
-If all three are yes, remove one of them.
-</code>``
-Removing the outbound channel (no arbitrary network, no auto-loading links) is often the cheapest cut. He also points out that mixing tools from different MCP servers can assemble the trifecta without anyone intending to. Guardrail prompts help but are not a reliable boundary; architecture is.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=simonwillison.net&sz=64" width="20" height="20" alt="" loading="lazy"><span>simonwillison.net</span><span>Agents</span><span>Intermediate</span></div>
+  <p>Simon Willison names three capabilities that become dangerous together in an agent: access to your private data, exposure to untrusted content, and the ability to communicate externally in a way that could exfiltrate data. If one agent has all three, an attacker who can get text in front of it may be able to steer it into sending your data out. Use it as a design review: Removing the outbound channel (no arbitrary network, no auto-loading links) is often the cheapest cut. He also points out that mixing tools from different MCP servers can assemble the trifecta without anyone intending to. Guardrail prompts help but are not a reliable boundary; architecture is.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/simonwillison.net.png" width="20" height="20" alt="" loading="lazy" data-host="simonwillison.net"><span>simonwillison.net</span><span>Agents</span><span>Intermediate</span></div>
 </li></ul></section><section class="group" id="local-ai"><h2>Local AI <small>7</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://github.com/ollama/ollama" rel="noopener">Ollama: run open models locally with one command</a></h3>
   <p>Open-source runner that pulls a model and serves it with ollama run, plus a local REST API on port 11434. The quickest route to trying open models offline; customise behaviour later with a Modelfile.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Local AI</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Local AI</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/ggml-org/llama.cpp" rel="noopener">llama.cpp: C/C++ inference for local models</a></h3>
   <p>The engine behind much of the local-model ecosystem, running GGUF models on CPUs and GPUs. It includes llama-server with an OpenAI-compatible API. Choose it when you want control over quantisation, context size and offload.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Local AI</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Local AI</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/open-webui/open-webui" rel="noopener">Open WebUI: a self-hosted chat interface for local models</a></h3>
   <p>Open-source, self-hosted web interface designed to run fully offline. It connects to Ollama or any OpenAI-compatible API, so you can give a team a familiar chat UI over models you host yourself.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Local AI</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Local AI</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://docs.ollama.com/modelfile" rel="noopener">Shape a local model with an Ollama Modelfile</a></h3>
-  <p>Once Ollama is installed, a Modelfile lets you save a configured variant instead of retyping settings. It starts from a base with <code>FROM</code> (a model name or a local GGUF file) and can set parameters and a system prompt.
-
-``<code>
-# Modelfile
-FROM llama3.2
-PARAMETER temperature 0.2
-SYSTEM &quot;&quot;&quot;
-You are a terse code reviewer. Point out bugs first, style last.
-&quot;&quot;&quot;
-</code>`<code>
-Build and run it:
-</code>`<code>
-ollama create reviewer -f Modelfile
-ollama run reviewer
-</code>``
-Why bother: the behaviour travels with the name, so teammates get the same setup, and you can keep several variants (a strict reviewer, a loose brainstormer) side by side. Keep the SYSTEM text short and testable. Check the Modelfile reference for the full list of instructions and parameters, since they change between releases.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=docs.ollama.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>docs.ollama.com</span><span>Local AI</span><span>Beginner</span></div>
+  <p>Once Ollama is installed, a Modelfile lets you save a configured variant instead of retyping settings. It starts from a base with <code>FROM</code> (a model name or a local GGUF file) and can set parameters and a system prompt. Build and run it: Why bother: the behaviour travels with the name, so teammates get the same setup, and you can keep several variants (a strict reviewer, a loose brainstormer) side by side. Keep the SYSTEM text short and testable. Check the Modelfile reference for the full list of instructions and parameters, since they change between releases.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/docs.ollama.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.ollama.com"><span>docs.ollama.com</span><span>Local AI</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" rel="noopener">Serve a local model over an OpenAI-style API with llama-server</a></h3>
-  <p>llama.cpp ships <code>llama-server</code>, an HTTP server that exposes OpenAI-compatible endpoints such as <code>/v1/chat/completions</code>. Because many tools can target an OpenAI-style base URL, this lets editors, scripts and agents use a model on your machine.
-
-``<code>
-llama-server -m ./model.gguf -c 8192 --port 8080 -ngl auto
-
-curl localhost:8080/v1/chat/completions \
-  -H &quot;Content-Type: application/json&quot; \
-  -d '{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Say hi in five words&quot;}]}'
-</code>`<code>
-What the flags do: </code>-m<code> picks the GGUF file, </code>-c<code> sets the context window, </code>--port<code> chooses the port (set it explicitly rather than relying on defaults), and </code>-ngl<code> controls how many layers go to the GPU. If you bind beyond localhost with </code>--host<code>, add </code>--api-key`, since the server has no authentication by default. Larger context uses more memory, so raise it only as far as you need.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Local AI</span><span>Intermediate</span></div>
+  <p>llama.cpp ships <code>llama-server</code>, an HTTP server that exposes OpenAI-compatible endpoints such as <code>/v1/chat/completions</code>. Because many tools can target an OpenAI-style base URL, this lets editors, scripts and agents use a model on your machine. What the flags do: <code>-m</code> picks the GGUF file, <code>-c</code> sets the context window, <code>--port</code> chooses the port (set it explicitly rather than relying on defaults), and <code>-ngl</code> controls how many layers go to the GPU. If you bind beyond localhost with <code>--host</code>, add <code>--api-key</code>, since the server has no authentication by default. Larger context uses more memory, so raise it only as far as you need.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Local AI</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://docs.vllm.ai/en/latest/" rel="noopener">Run vLLM when one local user becomes many</a></h3>
-  <p>Ollama and llama.cpp shine for one person on one machine. When several users or jobs hit the same model, throughput starts to matter, and vLLM is built for that. Its README highlights PagedAttention for managing attention memory, continuous batching of incoming requests, and an OpenAI-compatible API server.
-
-Starting point on a GPU machine:
-``<code>
-pip install vllm
-vllm serve &lt;model-id-from-hugging-face&gt;
-# then point any OpenAI-style client at the server's /v1 URL
-</code>``
-Decide before you deploy:
+  <p>Ollama and llama.cpp shine for one person on one machine. When several users or jobs hit the same model, throughput starts to matter, and vLLM is built for that. Its README highlights PagedAttention for managing attention memory, continuous batching of incoming requests, and an OpenAI-compatible API server. Starting point on a GPU machine: Decide before you deploy:
 - Will the model fit in GPU memory with room for the KV cache?
 - What concurrency and context length do you really need?
 - Who can reach the endpoint, and is there an API key in front?
 - How will you monitor latency and queueing?
 Load-test with your real prompt lengths rather than a toy example; batching behaviour depends heavily on them.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=docs.vllm.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>docs.vllm.ai</span><span>Local AI</span><span>Advanced</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/docs.vllm.ai.png" width="20" height="20" alt="" loading="lazy" data-host="docs.vllm.ai"><span>docs.vllm.ai</span><span>Local AI</span><span>Advanced</span></div>
 </li>
 <li class="res">
   <h3><a href="https://docs.docker.com/ai/model-runner/" rel="noopener">Docker Model Runner: pull and run a model like an image</a></h3>
-  <p>If your team already lives in Docker, Docker Model Runner offers a familiar workflow for local models. The docs show commands in the style of the image CLI:
-
-``<code>
-docker model pull ai/smollm2
-docker model run ai/smollm2
-</code>`<code>
-You can also configure settings such as context size with </code>docker model configure`, per the docs. The appeal is consistency: models are pulled by name from a registry, versions are explicit, and the same muscle memory covers containers and models. It is a reasonable choice for developer machines and CI experiments where you want repeatable pulls without installing yet another runner.
-
-Practical tips: pin a specific tag in scripts rather than relying on a default, keep an eye on disk use since models are large, and confirm what hardware acceleration your platform supports in the current docs, because that varies by OS.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=docs.docker.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>docs.docker.com</span><span>Local AI</span><span>Beginner</span></div>
+  <p>If your team already lives in Docker, Docker Model Runner offers a familiar workflow for local models. The docs show commands in the style of the image CLI: You can also configure settings such as context size with <code>docker model configure</code>, per the docs. The appeal is consistency: models are pulled by name from a registry, versions are explicit, and the same muscle memory covers containers and models. It is a reasonable choice for developer machines and CI experiments where you want repeatable pulls without installing yet another runner. Practical tips: pin a specific tag in scripts rather than relying on a default, keep an eye on disk use since models are large, and confirm what hardware acceleration your platform supports in the current docs, because that varies by OS.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/docs.docker.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.docker.com"><span>docs.docker.com</span><span>Local AI</span><span>Beginner</span></div>
 </li></ul></section><section class="group" id="mcp"><h2>MCP <small>6</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://modelcontextprotocol.io/" rel="noopener">Model Context Protocol: the official introduction</a></h3>
   <p>Home of the open protocol that lets AI applications connect to tools, data and prompts through a common interface. Start with the introduction and architecture pages, then build a small server of your own.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>modelcontextprotocol.io</span><span>MCP</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/modelcontextprotocol.io.png" width="20" height="20" alt="" loading="lazy" data-host="modelcontextprotocol.io"><span>modelcontextprotocol.io</span><span>MCP</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/modelcontextprotocol/servers" rel="noopener">MCP reference servers repository</a></h3>
   <p>Reference implementations of MCP servers, including a filesystem server. Read the source before writing your own; seeing how tools are declared and results returned is faster than reading the spec cold. Review any server before you run it.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>MCP</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>MCP</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://modelcontextprotocol.io/docs/learn/architecture" rel="noopener">MCP in one picture: host, client, server and what each owns</a></h3>
-  <p>MCP confuses people because three roles share one name. The architecture page separates them cleanly:
-
-- Host: the AI application (an editor, a chat app, a CLI agent) that coordinates everything.
+  <p>MCP confuses people because three roles share one name. The architecture page separates them cleanly: - Host: the AI application (an editor, a chat app, a CLI agent) that coordinates everything.
 - Client: a component inside the host that keeps one connection to one server.
-- Server: a program that provides context, locally over stdio or remotely over streamable HTTP.
-
-Servers can expose three primitives: tools (functions the model can invoke), resources (data for context) and prompts (reusable templates). Clients discover tools with <code>tools/list</code> and invoke them with <code>tools/call</code>.
-
-Mental model for debugging:
-``<code>
-host -&gt; creates one client per server
-client -&gt; server: tools/list   (what can you do?)
-client -&gt; server: tools/call   (do this, with these arguments)
-</code>``
-When something misbehaves, ask which layer: is the server returning the wrong thing, is the client not surfacing it, or is the host not offering it to the model? The protocol evolves, so confirm details in the current spec.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>modelcontextprotocol.io</span><span>MCP</span><span>Beginner</span></div>
+- Server: a program that provides context, locally over stdio or remotely over streamable HTTP. Servers can expose three primitives: tools (functions the model can invoke), resources (data for context) and prompts (reusable templates). Clients discover tools with <code>tools/list</code> and invoke them with <code>tools/call</code>. Mental model for debugging: When something misbehaves, ask which layer: is the server returning the wrong thing, is the client not surfacing it, or is the host not offering it to the model? The protocol evolves, so confirm details in the current spec.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/modelcontextprotocol.io.png" width="20" height="20" alt="" loading="lazy" data-host="modelcontextprotocol.io"><span>modelcontextprotocol.io</span><span>MCP</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://modelcontextprotocol.io/specification/2026-07-28/server/tools" rel="noopener">Anatomy of an MCP tool: schema, results and the isError flag</a></h3>
-  <p>A tool in the MCP spec is a small contract: a unique <code>name</code>, a human-readable <code>description</code>, and an <code>inputSchema</code> written as JSON Schema. Servers can also declare an optional <code>outputSchema</code> for structured results.
-
-``<code>json
-{
-  &quot;name&quot;: &quot;tickets_search&quot;,
-  &quot;description&quot;: &quot;Search support tickets by text. Returns id and title.&quot;,
-  &quot;inputSchema&quot;: {
-    &quot;type&quot;: &quot;object&quot;,
-    &quot;properties&quot;: { &quot;query&quot;: { &quot;type&quot;: &quot;string&quot; } },
-    &quot;required&quot;: [&quot;query&quot;]
-  }
-}
-</code>`<code>
-The part people miss is error handling. Protocol errors (unknown tool, malformed request) are JSON-RPC errors. Failures inside the tool, such as a bad date format, should come back as a normal result with </code>isError: true` and a message the model can act on, so it can correct itself and retry.
-
-The spec also says there should be a human in the loop who can deny tool calls, and that clients should treat tool annotations as untrusted unless the server is trusted. Design your tools with both in mind.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>modelcontextprotocol.io</span><span>MCP</span><span>Intermediate</span></div>
+  <p>A tool in the MCP spec is a small contract: a unique <code>name</code>, a human-readable <code>description</code>, and an <code>inputSchema</code> written as JSON Schema. Servers can also declare an optional <code>outputSchema</code> for structured results. The part people miss is error handling. Protocol errors (unknown tool, malformed request) are JSON-RPC errors. Failures inside the tool, such as a bad date format, should come back as a normal result with <code>isError: true</code> and a message the model can act on, so it can correct itself and retry. The spec also says there should be a human in the loop who can deny tool calls, and that clients should treat tool annotations as untrusted unless the server is trusted. Design your tools with both in mind.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/modelcontextprotocol.io.png" width="20" height="20" alt="" loading="lazy" data-host="modelcontextprotocol.io"><span>modelcontextprotocol.io</span><span>MCP</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices" rel="noopener">Before you install an MCP server: a security checklist from the spec authors</a></h3>
-  <p>The MCP project publishes its own security best practices, and one section should change how you install things: local servers run with your privileges. A one-click config can launch an arbitrary command, so the page says clients must show the exact command and get explicit approval first.
-
-A checklist you can apply as a user:
-``<code>
-[ ] Read the exact command and arguments the config will run
-[ ] Prefer servers whose source you have read or that you trust
-[ ] Run local servers in a container or sandbox with minimal
-    file and network access
-[ ] Grant narrow scopes (read-only before write)
-[ ] Prefer stdio for local servers; protect any local HTTP one
-    with a token
-</code>``
-If you build servers, the page also covers token passthrough (never accept tokens not issued for your server), SSRF when clients fetch URLs, hijacking of state handles, and scope minimisation. Skim those headings even if you only consume servers; they explain why the rules exist.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=modelcontextprotocol.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>modelcontextprotocol.io</span><span>MCP</span><span>Advanced</span></div>
+  <p>The MCP project publishes its own security best practices, and one section should change how you install things: local servers run with your privileges. A one-click config can launch an arbitrary command, so the page says clients must show the exact command and get explicit approval first. A checklist you can apply as a user: If you build servers, the page also covers token passthrough (never accept tokens not issued for your server), SSRF when clients fetch URLs, hijacking of state handles, and scope minimisation. Skim those headings even if you only consume servers; they explain why the rules exist.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/modelcontextprotocol.io.png" width="20" height="20" alt="" loading="lazy" data-host="modelcontextprotocol.io"><span>modelcontextprotocol.io</span><span>MCP</span><span>Advanced</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.anthropic.com/research/code-execution-with-mcp" rel="noopener">Code execution with MCP: stop dragging every tool result through the model</a></h3>
-  <p>Two costs appear when an agent talks to many MCP tools directly: every tool definition sits in context up front, and every intermediate result passes through the model. Anthropic's article describes an alternative: present MCP servers as code modules the agent can browse, and let it write code that calls them.
-
-The shape of it:
-``<code>
-servers/
-  drive/getDocument.ts
-  crm/updateRecord.ts
-
-// agent-written code, run in a sandbox
-const doc = await drive.getDocument({ id });
-await crm.updateRecord({ id: leadId, notes: doc.content });
-</code>``
-The document body never enters the model's context; only what the code chooses to return does. The article reports a large token reduction on its own example, but treat that number as illustrative. The trade-off is real: you now need a secure execution sandbox, resource limits and monitoring. Adopt it when tool counts or payload sizes hurt, not by default.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>MCP</span><span>Advanced</span></div>
+  <p>Two costs appear when an agent talks to many MCP tools directly: every tool definition sits in context up front, and every intermediate result passes through the model. Anthropic's article describes an alternative: present MCP servers as code modules the agent can browse, and let it write code that calls them. The shape of it: The document body never enters the model's context; only what the code chooses to return does. The article reports a large token reduction on its own example, but treat that number as illustrative. The trade-off is real: you now need a secure execution sandbox, resource limits and monitoring. Adopt it when tool counts or payload sizes hurt, not by default.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/anthropic.com.png" width="20" height="20" alt="" loading="lazy" data-host="anthropic.com"><span>anthropic.com</span><span>MCP</span><span>Advanced</span></div>
 </li></ul></section><section class="group" id="courses"><h2>Courses <small>5</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://huggingface.co/learn/llm-course/chapter1/1" rel="noopener">Hugging Face LLM Course</a></h3>
   <p>A free, hands-on course on using and fine-tuning transformer models with the Hugging Face libraries. Good first stop if you want to move from calling an API to understanding tokenizers, models and training loops.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/huggingface.co.png" width="20" height="20" alt="" loading="lazy" data-host="huggingface.co"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://huggingface.co/learn/agents-course/unit0/introduction" rel="noopener">Hugging Face Agents Course</a></h3>
   <p>A free course on building, running and evaluating AI agents, with practical units rather than only theory. Reach for it when you want a structured path into agents instead of piecing blog posts together.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/huggingface.co.png" width="20" height="20" alt="" loading="lazy" data-host="huggingface.co"><span>huggingface.co</span><span>Courses</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://course.fast.ai/" rel="noopener">Practical Deep Learning for Coders (fast.ai)</a></h3>
   <p>A free, code-first course that teaches deep learning top-down: you build working models early and learn the theory underneath as you go. A strong fit for developers who learn by running things.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=course.fast.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>course.fast.ai</span><span>Courses</span><span>Intermediate</span></div>
+  <div class="src"><span>course.fast.ai</span><span>Courses</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://karpathy.ai/zero-to-hero.html" rel="noopener">Neural Networks: Zero to Hero</a></h3>
   <p>Free video series by Andrej Karpathy that builds from backpropagation by hand up to a GPT-style language model in code. Slow and rewarding: the best way to make the maths feel concrete if you are willing to type along.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=karpathy.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>karpathy.ai</span><span>Courses</span><span>Intermediate</span></div>
+  <div class="src"><span>karpathy.ai</span><span>Courses</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/microsoft/generative-ai-for-beginners" rel="noopener">Generative AI for Beginners from Microsoft</a></h3>
   <p>A free, open-source 21-lesson course. Lessons are either &quot;Learn&quot; (concepts) or &quot;Build&quot; (code in Python and TypeScript where possible). Pick the lessons you need; they do not have to be taken in order.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Courses</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Courses</span><span>Beginner</span></div>
 </li></ul></section><section class="group" id="prompting"><h2>Prompting <small>5</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://www.promptingguide.ai/" rel="noopener">Prompt Engineering Guide by DAIR.AI</a></h3>
   <p>A free, community-maintained reference covering prompting techniques, with examples and links to the papers behind them. Use it as a lookup when you want to name and try a technique such as few-shot, chain-of-thought or ReAct.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=promptingguide.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>promptingguide.ai</span><span>Prompting</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/promptingguide.ai.png" width="20" height="20" alt="" loading="lazy" data-host="promptingguide.ai"><span>promptingguide.ai</span><span>Prompting</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" rel="noopener">Anthropic prompt engineering documentation</a></h3>
   <p>Vendor docs, but the habits transfer to other models: be explicit, show examples, structure your inputs clearly, and iterate against a small set of test cases. Free to read; running the examples needs API access.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=platform.claude.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>platform.claude.com</span><span>Prompting</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/platform.claude.com.png" width="20" height="20" alt="" loading="lazy" data-host="platform.claude.com"><span>platform.claude.com</span><span>Prompting</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://developers.openai.com/api/docs/guides/prompt-engineering" rel="noopener">OpenAI prompt engineering guide</a></h3>
   <p>OpenAI's official guidance on writing prompts and structuring messages. Read it alongside another vendor's guide: where the two agree, you can trust the advice to travel across models. Free to read; API use is billed.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=developers.openai.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>developers.openai.com</span><span>Prompting</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/developers.openai.com.png" width="20" height="20" alt="" loading="lazy" data-host="developers.openai.com"><span>developers.openai.com</span><span>Prompting</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://simonwillison.net/series/prompt-injection/" rel="noopener">Simon Willison's prompt injection series</a></h3>
   <p>A running series of posts on prompt injection, the attack where untrusted text steers a model. Free and practical; read it to understand why filtering alone is not a defence and why architecture matters.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=simonwillison.net&sz=64" width="20" height="20" alt="" loading="lazy"><span>simonwillison.net</span><span>Prompting</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/simonwillison.net.png" width="20" height="20" alt="" loading="lazy" data-host="simonwillison.net"><span>simonwillison.net</span><span>Prompting</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://arxiv.org/abs/2201.11903" rel="noopener">Chain-of-thought prompting: show your reasoning steps in the examples</a></h3>
-  <p>The chain-of-thought paper (Wei et al.) showed that including worked, step-by-step reasoning in few-shot examples lets large models solve multi-step problems they otherwise miss. The practical lesson: when accuracy matters, give the model room and a pattern for intermediate steps.
-
-Template you can adapt:
-``<code>
-Q: A pipeline has 3 stages taking 4, 7 and 5 minutes. Stages 2 and 3
-   run in parallel after stage 1. How long end to end?
-A: Stage 1 takes 4. Stages 2 and 3 run together, so they take
-   max(7, 5) = 7. Total 4 + 7 = 11 minutes. Answer: 11
-
-Q: &lt;your real question&gt;
-A:
-</code>``
-Two cautions. Check the final answer, not the story: fluent reasoning can still be wrong. And many current models reason by default, so test whether the explicit scaffold still improves results on your task before paying for the extra tokens.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=arxiv.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>arxiv.org</span><span>Prompting</span><span>Beginner</span></div>
+  <p>The chain-of-thought paper (Wei et al.) showed that including worked, step-by-step reasoning in few-shot examples lets large models solve multi-step problems they otherwise miss. The practical lesson: when accuracy matters, give the model room and a pattern for intermediate steps. Template you can adapt: Two cautions. Check the final answer, not the story: fluent reasoning can still be wrong. And many current models reason by default, so test whether the explicit scaffold still improves results on your task before paying for the extra tokens.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/arxiv.org.png" width="20" height="20" alt="" loading="lazy" data-host="arxiv.org"><span>arxiv.org</span><span>Prompting</span><span>Beginner</span></div>
 </li></ul></section><section class="group" id="rag"><h2>RAG <small>5</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://developers.llamaindex.ai/python/framework/" rel="noopener">LlamaIndex documentation for building RAG over your data</a></h3>
   <p>Docs for an open-source framework that covers loading data, indexing, retrieval and query engines. A practical way to get a first retrieval pipeline running so you can see where quality really gets lost.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=developers.llamaindex.ai&sz=64" width="20" height="20" alt="" loading="lazy"><span>developers.llamaindex.ai</span><span>RAG</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/developers.llamaindex.ai.png" width="20" height="20" alt="" loading="lazy" data-host="developers.llamaindex.ai"><span>developers.llamaindex.ai</span><span>RAG</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.sbert.net/" rel="noopener">Sentence Transformers: embeddings, retrieval and reranking</a></h3>
   <p>The standard open-source Python library for computing text embeddings and running rerankers, with thousands of pretrained models on the Hugging Face Hub. Runs locally and for free; a good default for semantic search prototypes.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=sbert.net&sz=64" width="20" height="20" alt="" loading="lazy"><span>sbert.net</span><span>RAG</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/sbert.net.png" width="20" height="20" alt="" loading="lazy" data-host="sbert.net"><span>sbert.net</span><span>RAG</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.anthropic.com/research/contextual-retrieval" rel="noopener">Contextual retrieval: give every chunk a sentence of context before embedding</a></h3>
-  <p>Chunking loses context: a chunk saying &quot;revenue grew 3% over the previous quarter&quot; no longer says which company or period. Contextual Retrieval fixes this by having a model write a short, chunk-specific note placing the chunk in its document, then prepending it before indexing.
-
-A prompt in that spirit:
-``<code>
-&lt;document&gt;{{WHOLE_DOCUMENT}}&lt;/document&gt;
-&lt;chunk&gt;{{CHUNK}}&lt;/chunk&gt;
-In one or two sentences, say where this chunk sits in the
-document so it can be found by search. Answer with only that.
-</code>``
-Index the augmented text for both embeddings and a BM25 keyword index, since exact identifiers are where embeddings slip. In Anthropic's own tests, this combination cut failed top-20 retrievals by 49 percent, and adding a reranker took it to 67 percent. Those are their datasets, so measure on yours. Cost note: it adds one model call per chunk at indexing time.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>anthropic.com</span><span>RAG</span><span>Intermediate</span></div>
+  <p>Chunking loses context: a chunk saying &quot;revenue grew 3% over the previous quarter&quot; no longer says which company or period. Contextual Retrieval fixes this by having a model write a short, chunk-specific note placing the chunk in its document, then prepending it before indexing. A prompt in that spirit: Index the augmented text for both embeddings and a BM25 keyword index, since exact identifiers are where embeddings slip. In Anthropic's own tests, this combination cut failed top-20 retrievals by 49 percent, and adding a reranker took it to 67 percent. Those are their datasets, so measure on yours. Cost note: it adds one model call per chunk at indexing time.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/anthropic.com.png" width="20" height="20" alt="" loading="lazy" data-host="anthropic.com"><span>anthropic.com</span><span>RAG</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://huggingface.co/spaces/mteb/leaderboard" rel="noopener">Pick an embedding model with MTEB, then verify on your own queries</a></h3>
-  <p>The MTEB leaderboard on Hugging Face ranks embedding models across many tasks, which makes it a good place to build a shortlist. It is a bad place to make the final call, because your documents and queries are not the benchmark's.
-
-A 30-minute procedure:
-``<code>
-1. Filter the leaderboard by your language(s), a model size you
-   can host, and a context length that fits your chunks.
-2. Shortlist 3 models, including one small open model.
-3. Write 30-50 real queries and note which document should win.
-4. Embed your corpus with each model; compute recall@5.
-5. Compare against cost, latency and storage dimensions.
-</code>``
-Keep the same chunking across runs so you are testing the model, not the splitter. Also remember that switching models later means re-embedding everything, so record the model name and version next to the vectors.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=64" width="20" height="20" alt="" loading="lazy"><span>huggingface.co</span><span>RAG</span><span>Intermediate</span></div>
+  <p>The MTEB leaderboard on Hugging Face ranks embedding models across many tasks, which makes it a good place to build a shortlist. It is a bad place to make the final call, because your documents and queries are not the benchmark's. A 30-minute procedure: Keep the same chunking across runs so you are testing the model, not the splitter. Also remember that switching models later means re-embedding everything, so record the model name and version next to the vectors.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/huggingface.co.png" width="20" height="20" alt="" loading="lazy" data-host="huggingface.co"><span>huggingface.co</span><span>RAG</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/pgvector/pgvector" rel="noopener">Vector search in Postgres: your first pgvector query and index</a></h3>
-  <p>If you already run Postgres, pgvector lets you keep embeddings next to your relational data. The README's basics fit in a few lines:
-
-``<code>sql
-CREATE EXTENSION vector;
-CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3));
-
--- nearest neighbours by L2 distance
-SELECT * FROM items ORDER BY embedding &lt;-&gt; '[3,1,2]' LIMIT 5;
-
--- cosine distance, and an HNSW index that matches it
-SELECT * FROM items ORDER BY embedding &lt;=&gt; '[3,1,2]' LIMIT 5;
-CREATE INDEX ON items USING hnsw (embedding vector_cosine_ops);
-</code>`<code>
-Three details trip people up. The vector size (3 here) must equal your embedding model's output size. The operator in your query (</code>&lt;-&gt;<code>, </code>&lt;=&gt;<code>) should match the operator class of the index, or the index will not be used. And </code>&lt;=&gt;<code> returns distance, so similarity is </code>1 - distance`. IVFFlat is the other index type if you need it.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>RAG</span><span>Beginner</span></div>
+  <p>If you already run Postgres, pgvector lets you keep embeddings next to your relational data. The README's basics fit in a few lines: Three details trip people up. The vector size (3 here) must equal your embedding model's output size. The operator in your query (<code>&lt;-&gt;</code>, <code>&lt;=&gt;</code>) should match the operator class of the index, or the index will not be used. And <code>&lt;=&gt;</code> returns distance, so similarity is <code>1 - distance</code>. IVFFlat is the other index type if you need it.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>RAG</span><span>Beginner</span></div>
 </li></ul></section><section class="group" id="ai-coding"><h2>AI Coding <small>5</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://aider.chat/" rel="noopener">Aider: AI pair programming in your terminal</a></h3>
   <p>Free, open-source terminal tool that edits code in your repository and works with git. It connects to most hosted models and to local ones, so you pay only your model provider, or nothing if you run locally.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=aider.chat&sz=64" width="20" height="20" alt="" loading="lazy"><span>aider.chat</span><span>AI Coding</span><span>Intermediate</span></div>
+  <div class="src"><span>aider.chat</span><span>AI Coding</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://github.com/continuedev/continue" rel="noopener">Continue: open-source coding agent for VS Code, JetBrains and the CLI</a></h3>
   <p>Apache-2.0 coding assistant available as a VS Code extension, JetBrains plugin and CLI. Pick it when you want an editor-integrated assistant that you can point at the model of your choice, hosted or local.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>AI Coding</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>AI Coding</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://code.claude.com/docs/en/best-practices" rel="noopener">Give your coding agent a way to check its own work</a></h3>
-  <p>The Claude Code best-practices page makes a point that applies to any coding agent: give it a check to run. If the agent can run tests, a linter or a build and read the result, it can correct itself instead of handing you plausible-looking code. (The tool itself needs a paid plan or API access; the habits are free and transfer.)
-
-Practical steps:
-``<code>
-1. Put the one command that proves &quot;done&quot; in your instructions
-   file, e.g.  npm test &amp;&amp; npm run lint
-2. Ask for a specific outcome, not &quot;improve this&quot;:
-   &quot;Fix the failing test in billing.spec.ts without changing
-    its assertions.&quot;
-3. Keep the instructions file short; every line costs attention
-   on every task.
-4. If a rule must never be broken, don't rely on prose;
-   enforce it with a hook or permission rule.
-</code>``
-The docs make that last distinction explicit: instructions are guidance the model can weigh, while hooks and permissions are deterministic. Choose accordingly.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=code.claude.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>code.claude.com</span><span>AI Coding</span><span>Intermediate</span></div>
+  <p>The Claude Code best-practices page makes a point that applies to any coding agent: give it a check to run. If the agent can run tests, a linter or a build and read the result, it can correct itself instead of handing you plausible-looking code. (The tool itself needs a paid plan or API access; the habits are free and transfer.) Practical steps: The docs make that last distinction explicit: instructions are guidance the model can weigh, while hooks and permissions are deterministic. Choose accordingly.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/code.claude.com.png" width="20" height="20" alt="" loading="lazy" data-host="code.claude.com"><span>code.claude.com</span><span>AI Coding</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://agents.md" rel="noopener">AGENTS.md: one instructions file for many coding agents</a></h3>
-  <p>AGENTS.md is a plain Markdown file at the repository root, described by its site as a README for agents. The same page lists many supporting tools, including Codex, Cursor, Aider, Gemini CLI, Zed, Windsurf and GitHub Copilot's coding agent, so one file can serve several of them. Nested files in subdirectories can tailor guidance for sub-projects.
-
-Recommended contents from the site are project overview, build and test commands, code style, testing expectations, security notes and commit or PR rules. A compact version:
-``<code>markdown
-# AGENTS.md
-## Setup
-- Install: pnpm install
-- Test: pnpm test (must pass before any commit)
-## Conventions
-- TypeScript strict; no default exports
-- Small PRs; conventional commit messages
-## Do not
-- Edit files under /generated
-</code>``
-Keep it factual and short, and update it when commands change. A stale instruction file is worse than none, because the agent will follow it confidently.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=agents.md&sz=64" width="20" height="20" alt="" loading="lazy"><span>agents.md</span><span>AI Coding</span><span>Beginner</span></div>
+  <p>AGENTS.md is a plain Markdown file at the repository root, described by its site as a README for agents. The same page lists many supporting tools, including Codex, Cursor, Aider, Gemini CLI, Zed, Windsurf and GitHub Copilot's coding agent, so one file can serve several of them. Nested files in subdirectories can tailor guidance for sub-projects. Recommended contents from the site are project overview, build and test commands, code style, testing expectations, security notes and commit or PR rules. A compact version: Keep it factual and short, and update it when commands change. A stale instruction file is worse than none, because the agent will follow it confidently.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/agents.md.png" width="20" height="20" alt="" loading="lazy" data-host="agents.md"><span>agents.md</span><span>AI Coding</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions" rel="noopener">Copilot custom instructions: repository-wide and path-specific</a></h3>
-  <p>GitHub's docs describe two levels of repository instructions for Copilot. Repository-wide guidance lives in <code>.github/copilot-instructions.md</code>. Path-specific guidance goes in files named <code>NAME.instructions.md</code> under <code>.github/instructions</code>, each with frontmatter whose <code>applyTo</code> takes glob patterns.
-
-``<code>markdown
----
-applyTo: &quot;<strong>/*.ts,</strong>/*.tsx&quot;
----
-Use named exports. Prefer </code>zod<code> for runtime validation.
-Tests live next to the file as *.test.ts.
-</code>``
-The docs also say AGENTS.md is supported, with the nearest file in the tree taking precedence, and that a single CLAUDE.md or GEMINI.md at the root can be used instead. So if your team mixes assistants, you can often share one set of rules rather than maintain three. Scope rules by path to keep each instruction short and relevant, and review what the assistant actually does with them in a real pull request.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=docs.github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>docs.github.com</span><span>AI Coding</span><span>Intermediate</span></div>
+  <p>GitHub's docs describe two levels of repository instructions for Copilot. Repository-wide guidance lives in <code>.github/copilot-instructions.md</code>. Path-specific guidance goes in files named <code>NAME.instructions.md</code> under <code>.github/instructions</code>, each with frontmatter whose <code>applyTo</code> takes glob patterns. The docs also say AGENTS.md is supported, with the nearest file in the tree taking precedence, and that a single CLAUDE.md or GEMINI.md at the root can be used instead. So if your team mixes assistants, you can often share one set of rules rather than maintain three. Scope rules by path to keep each instruction short and relevant, and review what the assistant actually does with them in a real pull request.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/docs.github.com.png" width="20" height="20" alt="" loading="lazy" data-host="docs.github.com"><span>docs.github.com</span><span>AI Coding</span><span>Intermediate</span></div>
 </li></ul></section><section class="group" id="agent-skills"><h2>Agent Skills <small>4</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://github.com/anthropics/skills" rel="noopener">Anthropic's open skills repository</a></h3>
   <p>A repository of example Agent Skills: folders of instructions, scripts and resources that an agent loads when relevant. Study a few before writing your own; the structure and tone of the descriptions are the useful lesson.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Agent Skills</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Agent Skills</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://agentskills.io" rel="noopener">Agent Skills: the open format</a></h3>
   <p>Documentation for the open Agent Skills format, built around a SKILL.md file with a name and description plus optional scripts and references. Read this to see what stays portable between tools that support skills.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=agentskills.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>agentskills.io</span><span>Agent Skills</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/agentskills.io.png" width="20" height="20" alt="" loading="lazy" data-host="agentskills.io"><span>agentskills.io</span><span>Agent Skills</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" rel="noopener">Write your first SKILL.md: a description that triggers, a body that guides</a></h3>
-  <p>A skill is a folder with a <code>SKILL.md</code> file. Its frontmatter needs a <code>name</code> (lowercase letters, numbers, hyphens; up to 64 characters) and a <code>description</code> (non-empty, up to 1,024 characters). The description is what the agent matches your request against, so it must say what the skill does and when to use it.
-
-``<code>markdown
----
-name: release-notes
-description: Drafts release notes from merged pull requests. Use when
-  the user asks for a changelog, release notes or &quot;what shipped&quot;.
----
-# Release notes
-1. List merged PRs since the last tag (git log --merges).
-2. Group by: Features, Fixes, Internal.
-3. One line each, user-facing language, link the PR.
-See TEMPLATE.md for the output format.
-</code>``
-The docs describe loading in stages: only name and description are always in context, the body loads when triggered, and extra files or scripts load only when referenced. So keep the body focused and push detail into side files. Only install skills from sources you trust, since they can include scripts.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=platform.claude.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>platform.claude.com</span><span>Agent Skills</span><span>Beginner</span></div>
+  <p>A skill is a folder with a <code>SKILL.md</code> file. Its frontmatter needs a <code>name</code> (lowercase letters, numbers, hyphens; up to 64 characters) and a <code>description</code> (non-empty, up to 1,024 characters). The description is what the agent matches your request against, so it must say what the skill does and when to use it. The docs describe loading in stages: only name and description are always in context, the body loads when triggered, and extra files or scripts load only when referenced. So keep the body focused and push detail into side files. Only install skills from sources you trust, since they can include scripts.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/platform.claude.com.png" width="20" height="20" alt="" loading="lazy" data-host="platform.claude.com"><span>platform.claude.com</span><span>Agent Skills</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://agentskills.io/specification" rel="noopener">Skill hygiene from the open spec: size, structure, validation</a></h3>
-  <p>The Agent Skills specification is the portable part: a directory with <code>SKILL.md</code>, plus optional <code>scripts/</code>, <code>references/</code> and <code>assets/</code>. Notably, the <code>name</code> must match the parent directory name, must not start or end with a hyphen, and must not contain consecutive hyphens.
-
-Guidance from the spec worth adopting:
-``<code>
-- Keep SKILL.md under about 500 lines; recommended &lt; 5000 tokens.
-- Move reference material to separate files, one level deep.
-- Keep each reference file focused; they load on demand.
-- Write a description with concrete trigger words, not &quot;helps
-  with PDFs&quot;.
-- Validate: skills-ref validate ./my-skill
-</code>`<code>
-Optional fields include </code>license<code>, </code>compatibility<code> (for environment needs such as required tools), </code>metadata<code> and an experimental </code>allowed-tools`. Tool support for the optional fields varies, so test in the agent you actually use. A good habit is to write the description last, once you know what the skill really covers.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=agentskills.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>agentskills.io</span><span>Agent Skills</span><span>Intermediate</span></div>
+  <p>The Agent Skills specification is the portable part: a directory with <code>SKILL.md</code>, plus optional <code>scripts/</code>, <code>references/</code> and <code>assets/</code>. Notably, the <code>name</code> must match the parent directory name, must not start or end with a hyphen, and must not contain consecutive hyphens. Guidance from the spec worth adopting: Optional fields include <code>license</code>, <code>compatibility</code> (for environment needs such as required tools), <code>metadata</code> and an experimental <code>allowed-tools</code>. Tool support for the optional fields varies, so test in the agent you actually use. A good habit is to write the description last, once you know what the skill really covers.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/agentskills.io.png" width="20" height="20" alt="" loading="lazy" data-host="agentskills.io"><span>agentskills.io</span><span>Agent Skills</span><span>Intermediate</span></div>
 </li></ul></section><section class="group" id="llms"><h2>LLMs <small>3</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" rel="noopener">Intro to Large Language Models: Karpathy's one-hour talk</a></h3>
   <p>A single free talk that explains an LLM as an artifact (a big parameter file plus a small program that runs it), how training and fine-tuning produce one, and where the security problems come from. Start here if you use models daily but have never looked inside.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>youtube.com</span><span>LLMs</span><span>Beginner</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/youtube.com.png" width="20" height="20" alt="" loading="lazy" data-host="youtube.com"><span>youtube.com</span><span>LLMs</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://jalammar.github.io/illustrated-transformer/" rel="noopener">The Illustrated Transformer</a></h3>
   <p>Jay Alammar's diagram-driven walkthrough of the architecture from the original transformer paper: self-attention, multi-head attention, positional encoding and the encoder and decoder stacks. Read it before the paper, then keep it open next to the paper.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=jalammar.github.io&sz=64" width="20" height="20" alt="" loading="lazy"><span>jalammar.github.io</span><span>LLMs</span><span>Intermediate</span></div>
+  <div class="src"><span>jalammar.github.io</span><span>LLMs</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://genai.owasp.org/llm-top-10/" rel="noopener">OWASP Top 10 for LLM Applications</a></h3>
   <p>The community-maintained list of the main risks in LLM apps, led by prompt injection and including excessive agency, system prompt leakage and unbounded consumption. Use it as a review checklist before you ship.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=genai.owasp.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>genai.owasp.org</span><span>LLMs</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/genai.owasp.org.png" width="20" height="20" alt="" loading="lazy" data-host="genai.owasp.org"><span>genai.owasp.org</span><span>LLMs</span><span>Intermediate</span></div>
 </li></ul></section><section class="group" id="mlops"><h2>MLOps <small>3</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://mlflow.org/docs/latest/" rel="noopener">MLflow for tracing and evaluating AI applications</a></h3>
   <p>Open-source platform that covers experiment tracking for classic models and tracing, evaluation and monitoring for LLM apps and agents. Choose it when you want one self-hostable tool across both kinds of work.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=mlflow.org&sz=64" width="20" height="20" alt="" loading="lazy"><span>mlflow.org</span><span>MLOps</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/mlflow.org.png" width="20" height="20" alt="" loading="lazy" data-host="mlflow.org"><span>mlflow.org</span><span>MLOps</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://langfuse.com/docs" rel="noopener">Langfuse: open-source LLM observability</a></h3>
   <p>MIT-licensed, self-hostable platform for tracing LLM calls and agent runs. Use it to see what your application actually sent and received, which is the first step to debugging quality problems in production.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=langfuse.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>langfuse.com</span><span>MLOps</span><span>Intermediate</span></div>
+  <div class="src"><img src="/devops-lounge/assets/icons/langfuse.com.png" width="20" height="20" alt="" loading="lazy" data-host="langfuse.com"><span>langfuse.com</span><span>MLOps</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://hamel.dev/blog/posts/evals/" rel="noopener">Evals begin with assertions: Hamel Husain's level-one tests</a></h3>
-  <p>Teams stall on evals because they imagine a platform. Hamel Husain's widely read post describes three levels, and the first is plain assertions, like you would write in pytest, that run fast and cheap while you develop. He also notes you keep adding tests as you see new failures in real data.
-
-A starter in that spirit:
-``<code>python
-import json, pytest
-from myapp import answer
-
-CASES = [
-  (&quot;What is your refund window?&quot;, &quot;30 days&quot;),
-  (&quot;Do you ship to Canada?&quot;, &quot;Canada&quot;),
-]
-
-@pytest.mark.parametrize(&quot;q,must_contain&quot;, CASES)
-def test_mentions_fact(q, must_contain):
-    assert must_contain in answer(q)
-
-def test_valid_json():
-    json.loads(answer(&quot;Return the order as JSON&quot;, fmt=&quot;json&quot;))
-</code>``
-Run it on every prompt change. Each production bug becomes a new case. Later levels (reading traces, model-graded checks, A/B tests) build on this habit,.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=hamel.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>hamel.dev</span><span>MLOps</span><span>Beginner</span></div>
+  <p>Teams stall on evals because they imagine a platform. Hamel Husain's widely read post describes three levels, and the first is plain assertions, like you would write in pytest, that run fast and cheap while you develop. He also notes you keep adding tests as you see new failures in real data. A starter in that spirit: Run it on every prompt change. Each production bug becomes a new case. Later levels (reading traces, model-graded checks, A/B tests) build on this habit,.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/hamel.dev.png" width="20" height="20" alt="" loading="lazy" data-host="hamel.dev"><span>hamel.dev</span><span>MLOps</span><span>Beginner</span></div>
 </li></ul></section><section class="group" id="tools"><h2>Tools <small>3</small></h2><ul class="list">
 <li class="res">
   <h3><a href="https://github.com/pydantic/pydantic-ai" rel="noopener">Typed outputs you can trust: validated results with Pydantic AI</a></h3>
-  <p>Free-form text is a poor interface between a model and your code. Pydantic AI, from the Pydantic team, lets you declare the shape you want and get back a validated object, which turns &quot;parse and hope&quot; into a typed contract.
-
-Sketch (the model string is a placeholder, use whichever provider you have a key for):
-``<code>python
-from pydantic import BaseModel
-from pydantic_ai import Agent
-
-class Ticket(BaseModel):
-    severity: int
-    summary: str
-
-agent = Agent(&quot;provider:model-name&quot;, output_type=Ticket)
-result = agent.run_sync(&quot;Checkout page 500s for all EU users&quot;)
-print(result.output)   # a validated Ticket, not a string
-</code>``
-Why it helps: invalid shapes are caught at the boundary, your IDE knows the fields, and tests can assert on real types. Keep the schema small and the field names self-explanatory, since the model reads them too.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" width="20" height="20" alt="" loading="lazy"><span>github.com</span><span>Tools</span><span>Intermediate</span></div>
+  <p>Free-form text is a poor interface between a model and your code. Pydantic AI, from the Pydantic team, lets you declare the shape you want and get back a validated object, which turns &quot;parse and hope&quot; into a typed contract. Sketch (the model string is a placeholder, use whichever provider you have a key for): Why it helps: invalid shapes are caught at the boundary, your IDE knows the fields, and tests can assert on real types. Keep the schema small and the field names self-explanatory, since the model reads them too.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/github.com.png" width="20" height="20" alt="" loading="lazy" data-host="github.com"><span>github.com</span><span>Tools</span><span>Intermediate</span></div>
 </li>
 <li class="res">
   <h3><a href="https://www.promptfoo.dev/docs/intro/" rel="noopener">A first prompt eval in a YAML file with promptfoo</a></h3>
-  <p>Promptfoo is an open-source tool that treats prompts like testable code: you declare prompts, providers and test cases, run them, and compare. Its docs describe the cycle as defining test cases, running them, then iterating.
-
-A minimal config shape (provider ids vary, check the docs for yours):
-``<code>yaml
-# promptfooconfig.yaml
-prompts:
-  - &quot;Summarise in one sentence: {{text}}&quot;
-providers:
-  - openai:&lt;model-name&gt;   # swap for your provider id
-tests:
-  - vars: { text: &quot;The deploy failed because the config key was missing.&quot; }
-    assert:
-      - type: icontains
-        value: config
-      - type: llm-rubric
-        value: &quot;Is a single sentence and does not invent causes&quot;
-</code>`<code>
-Run </code>npx promptfoo@latest eval<code> and then </code>npx promptfoo@latest view` to compare outputs side by side. Use cheap deterministic assertions first, and add the rubric-graded ones only for qualities you cannot check with a string match. Swapping providers lets you see the cost-quality trade-off on your own cases.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=promptfoo.dev&sz=64" width="20" height="20" alt="" loading="lazy"><span>promptfoo.dev</span><span>Tools</span><span>Beginner</span></div>
+  <p>Promptfoo is an open-source tool that treats prompts like testable code: you declare prompts, providers and test cases, run them, and compare. Its docs describe the cycle as defining test cases, running them, then iterating. A minimal config shape (provider ids vary, check the docs for yours): Run <code>npx promptfoo@latest eval</code> and then <code>npx promptfoo@latest view</code> to compare outputs side by side. Use cheap deterministic assertions first, and add the rubric-graded ones only for qualities you cannot check with a string match. Swapping providers lets you see the cost-quality trade-off on your own cases.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/promptfoo.dev.png" width="20" height="20" alt="" loading="lazy" data-host="promptfoo.dev"><span>promptfoo.dev</span><span>Tools</span><span>Beginner</span></div>
 </li>
 <li class="res">
   <h3><a href="https://inspect.aisi.org.uk/" rel="noopener">Inspect AI: write an eval as a task, a solver and a scorer</a></h3>
-  <p>Inspect is an open-source framework for LLM evaluations from the UK AI Security Institute. Its structure is worth learning even if you end up using something else: an eval is a <code>Task</code> with a dataset, a solver (how the model is driven) and a scorer (how answers are graded).
-
-The docs' own example has this shape:
-``<code>python
-from inspect_ai import Task, task
-from inspect_ai.scorer import model_graded_qa
-from inspect_ai.solver import generate
-
-@task
-def my_eval():
-    return Task(
-        dataset=my_dataset,          # your samples
-        solver=generate(),
-        scorer=model_graded_qa(),
-    )
-</code>`<code>
-Run it with </code>inspect eval my_eval.py --model provider/model`. The decorator registers the function so the CLI can find it by name. The project also ships a large collection of pre-built evaluations, which is a good place to see how experienced teams structure datasets and scorers.</p>
-  <div class="src"><img src="https://www.google.com/s2/favicons?domain=inspect.aisi.org.uk&sz=64" width="20" height="20" alt="" loading="lazy"><span>inspect.aisi.org.uk</span><span>Tools</span><span>Advanced</span></div>
+  <p>Inspect is an open-source framework for LLM evaluations from the UK AI Security Institute. Its structure is worth learning even if you end up using something else: an eval is a <code>Task</code> with a dataset, a solver (how the model is driven) and a scorer (how answers are graded). The docs' own example has this shape: Run it with <code>inspect eval my_eval.py --model provider/model</code>. The decorator registers the function so the CLI can find it by name. The project also ships a large collection of pre-built evaluations, which is a good place to see how experienced teams structure datasets and scorers.</p>
+  <div class="src"><img src="/devops-lounge/assets/icons/inspect.aisi.org.uk.png" width="20" height="20" alt="" loading="lazy" data-host="inspect.aisi.org.uk"><span>inspect.aisi.org.uk</span><span>Tools</span><span>Advanced</span></div>
 </li></ul></section>
   <section class="group"><h2>More from the Vault</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/skills/">Core developer skills 55</a><a href="/devops-lounge/open-source/">Open source worth reading 59</a><a href="/devops-lounge/learn/">Free ways to learn to code 33</a><a href="/devops-lounge/toolbox/">Tools developers keep 42</a></nav></section>
 </div>
 
 <div class="wrap"><section class="final">
-  <div><h2>Talk it through with people who use it.</h2><p>Ask about any of these in the server, share what you build with them, and get new picks every day.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
+  <div><h2>Talk it through with people who use these</h2><p>Ask about any of these in the server, share what you build with them, and get new picks every day.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
   <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
 </section></div>
 </main>

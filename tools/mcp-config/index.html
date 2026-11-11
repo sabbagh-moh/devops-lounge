@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MCP Config Generator: claude_desktop_config.json, Claude Code, Cursor, VS Code and Windsurf | DevOps Lounge</title>
+<meta name="description" content="Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows np">
+<link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DevOps Lounge">
+<meta property="og:title" content="MCP Config Generator: claude_desktop_config.json, Claude Code, Cursor, VS Code and Windsurf | DevOps Lounge">
+<meta property="og:description" content="Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows np">
+<meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/">
+<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-mcp-config.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-mcp-config.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/devops-lounge/assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
+<link rel="stylesheet" href="/devops-lounge/assets/site.css">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MCP Config Generator","url":"https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.","keywords":"mcp config generator, claude_desktop_config.json, mcp.json cursor, vscode mcp.json, claude code mcp add, model context protocol config"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is claude_desktop_config.json?","acceptedAnswer":{"@type":"Answer","text":"On macOS in ~/Library/Application Support/Claude/, on Windows in %APPDATA%\\Claude\\. Claude Desktop also opens it from Settings, Developer, Edit Config."}},{"@type":"Question","name":"Why does my server not show up?","acceptedAnswer":{"@type":"Answer","text":"Restart the app after saving, check the JSON is valid, and make sure Node.js (for npx), uv (for uvx) or Docker is installed."}},{"@type":"Question","name":"Are these package names current?","acceptedAnswer":{"@type":"Answer","text":"They are the commonly used ones at the time of writing. Check each server's own page before you rely on it."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"},{"@type":"ListItem","position":3,"name":"MCP Config Generator","item":"https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/"}]}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a></nav>
+  <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
+</div></header>
+<main>
+
+<div class="wrap">
+  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">MCP config generator</h1><p class="lede">Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.</p></section>
+  
+<div class="tool" id="mcp-tool">
+  <div class="seg" role="tablist"><button type="button" role="tab" data-client="claude-desktop" aria-selected="true">Claude Desktop</button><button type="button" role="tab" data-client="claude-code" aria-selected="false">Claude Code</button><button type="button" role="tab" data-client="cursor" aria-selected="false">Cursor</button><button type="button" role="tab" data-client="vscode" aria-selected="false">VS Code</button><button type="button" role="tab" data-client="windsurf" aria-selected="false">Windsurf</button></div>
+  <div class="tool-grid">
+    <div class="stack">
+      <span class="field-label">Servers</span>
+      <ul class="mcp-list" id="mcp-list"></ul>
+      <details class="mcp-custom"><summary>Add your own server</summary>
+        <div class="stack" style="margin-top:12px">
+          <label class="field"><span>Name</span><input id="mcp-c-name" placeholder="my-server" spellcheck="false"></label>
+          <label class="field"><span>Command</span><input id="mcp-c-cmd" placeholder="npx" spellcheck="false"></label>
+          <label class="field"><span>Arguments, separated by spaces</span><input id="mcp-c-args" placeholder="-y my-mcp-package" spellcheck="false"></label>
+          <label class="field"><span>Environment, one KEY=value per line</span><textarea id="mcp-c-env" rows="2" placeholder="API_KEY=your-key" spellcheck="false"></textarea></label>
+        </div>
+      </details>
+      <label class="inline"><input type="checkbox" id="mcp-win"> I am on Windows (start npx through cmd /c)</label>
+    </div>
+    <div class="stack">
+      <p class="note" id="mcp-where"></p>
+      <pre class="out tall" id="mcp-out"></pre>
+      <div class="toolbar"><button type="button" class="btn btn-primary btn-sm" data-copy-from="mcp-out">Copy</button></div>
+    </div>
+  </div>
+</div>
+  
+  <section class="group"><h2>How it works</h2><ul class="steps"><li><b>Each app wants a different file</b>Claude Desktop, Cursor and Windsurf use an mcpServers object; VS Code uses servers with a type. Claude Code reads .mcp.json or takes claude mcp add commands.</li><li><b>Windows</b>Some apps cannot start npx directly on Windows. Tick the box and npx is started through cmd /c, which fixes the usual &quot;spawn npx ENOENT&quot; error.</li><li><b>Secrets</b>Tokens go in env, never in arguments. Keep the file out of git when it holds real keys.</li></ul></section>
+  <section class="group"><h2>Questions</h2><div class="faq"><details><summary>Where is claude_desktop_config.json?</summary><p>On macOS in ~/Library/Application Support/Claude/, on Windows in %APPDATA%\Claude\. Claude Desktop also opens it from Settings, Developer, Edit Config.</p></details><details><summary>Why does my server not show up?</summary><p>Restart the app after saving, check the JSON is valid, and make sure Node.js (for npx), uv (for uvx) or Docker is installed.</p></details><details><summary>Are these package names current?</summary><p>They are the commonly used ones at the time of writing. Check each server's own page before you rely on it.</p></details></div></section>
+  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/tool-schema/">AI Tool Schema Builder</a><a href="/devops-lounge/tools/llms-txt/">llms.txt Generator</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/git-commands/">Git Command Finder</a><a href="/devops-lounge/tools/cidr/">CIDR Calculator</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/jwt/">JWT Decoder</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
+</div>
+
+<div class="wrap"><section class="final">
+  <div><h2>Built something with it?</h2><p>Show it in the server, get a code review, or ask the people who use these tools every day.</p><p class="live" data-live-line hidden><span class="dot" aria-hidden="true"></span><span data-live-online-part><b data-live="online"></b> online now · </span><span><b data-live="members"></b> members</span></p></div>
+  <a class="btn btn-primary" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join on Discord</a>
+</section></div>
+</main>
+<footer><div class="wrap">
+  <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
+</div></footer>
+<script src="/devops-lounge/assets/tools/dev3.js" defer></script>
+<script src="/devops-lounge/assets/tools/kit.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
+<script src="/devops-lounge/assets/live.js" defer></script>
+</body>
+</html>

@@ -59,6 +59,25 @@ Describe a tool and its parameters once. Get the exact JSON that OpenAI function
 - Q: Can I make a parameter optional? A: Untick Required. It stays in the properties but leaves the required list.
 - Q: Where do I put this? A: In the tools list of your API request, or in the tools your MCP server lists.
 
+### MCP Config Generator
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/mcp-config/
+Pick the MCP servers you want and the app you use. Get the exact config file, where to save it, and for Claude Code the terminal commands, with the Windows npx fix built in.
+- Each app wants a different file: Claude Desktop, Cursor and Windsurf use an mcpServers object; VS Code uses servers with a type. Claude Code reads .mcp.json or takes claude mcp add commands.
+- Windows: Some apps cannot start npx directly on Windows. Tick the box and npx is started through cmd /c, which fixes the usual "spawn npx ENOENT" error.
+- Secrets: Tokens go in env, never in arguments. Keep the file out of git when it holds real keys.
+- Q: Where is claude_desktop_config.json? A: On macOS in ~/Library/Application Support/Claude/, on Windows in %APPDATA%\Claude\. Claude Desktop also opens it from Settings, Developer, Edit Config.
+- Q: Why does my server not show up? A: Restart the app after saving, check the JSON is valid, and make sure Node.js (for npx), uv (for uvx) or Docker is installed.
+- Q: Are these package names current? A: They are the commonly used ones at the time of writing. Check each server's own page before you rely on it.
+
+### llms.txt Generator
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/llms-txt/
+Paste your sitemap.xml or a list of pages. Get a clean llms.txt that tells AI assistants what your site is and which pages matter, ready to upload to your site's root.
+- The llms.txt format: A Markdown file at your site's root: a title, a one-line summary in a quote, optional context, then sections of links. Less important pages go under Optional.
+- Grouped for you: Pages are grouped by the first part of their path, the largest groups first, and legal or archive pages move to Optional.
+- Make it yours: Rename the link titles and add a short note after each link so assistants know when to use it.
+- Q: Where do I put it? A: At the root of your site, so it opens at yoursite.com/llms.txt, next to robots.txt.
+- Q: Does it replace a sitemap? A: No. The sitemap is for search engines; llms.txt is a short, readable guide for AI assistants. Keep both.
+
 ### JSON to TypeScript
 URL: https://sabbagh-moh.github.io/devops-lounge/tools/json-to-types/
 Paste an API response or any JSON example. Get TypeScript interfaces, a Zod schema or a JSON Schema, with optional fields worked out from arrays.
@@ -99,6 +118,23 @@ Type any color to get HEX, RGB, HSL and OKLCH, check its contrast against a back
 - WCAG levels: Body text needs 4.5:1 for AA and 7:1 for AAA. Large or bold text needs 3:1 for AA.
 - Q: What is OKLCH? A: A color format where lightness matches how bright colors look to people, which makes building palettes easier.
 - Q: Which level should I aim for? A: AA for everything, and AAA for long reading text when you can.
+
+### Git Command Finder
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/git-commands/
+Describe what you want to do in plain words, like "undo last commit" or "rename branch". Get the exact commands, what they do, and a warning when they rewrite history. 33 situations.
+- Plain words: Type it the way you would ask a friend. The list narrows as you type and opens the only match.
+- Safe by default: Anything that rewrites history or deletes work is marked, and pushed-branch cases point to the safe alternative.
+- Every situation has a link: Share the exact fix with a teammate: each one has its own link.
+- Q: What is the difference between reset and revert? A: reset moves your branch back and can drop commits; revert adds a new commit that undoes an old one. Use revert on anything already pushed.
+- Q: What does --force-with-lease do? A: It force-pushes only if nobody else pushed in the meantime, so you do not overwrite a teammate's work.
+
+### CIDR Calculator
+URL: https://sabbagh-moh.github.io/devops-lounge/tools/cidr/
+Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.
+- Usable hosts: Every range loses two addresses, the network and the broadcast, except /31 and /32. Cloud providers often reserve a few more in each subnet.
+- Planning a VPC: Start with a /16 and split it into /24s: one per subnet and zone, with room to grow.
+- Q: What does /24 mean? A: The first 24 bits are the network, leaving 8 bits, or 256 addresses, for hosts.
+- Q: Does it handle IPv6? A: Not yet. It covers IPv4, which is what most subnet planning still uses.
 
 ### Cron Builder
 URL: https://sabbagh-moh.github.io/devops-lounge/tools/cron/
