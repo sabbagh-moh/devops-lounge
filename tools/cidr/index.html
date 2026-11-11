@@ -5,40 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CIDR and Subnet Calculator: IPv4 range, netmask, usable hosts and subnet splitting | DevOps Lounge</title>
 <meta name="description" content="Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it. F">
-<link rel="canonical" href="https://lounge.xmoh.dev/tools/cidr/">
+<link rel="canonical" href="https://sabbagh-moh.github.io/devops-lounge/tools/cidr/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DevOps Lounge">
 <meta property="og:title" content="CIDR and Subnet Calculator: IPv4 range, netmask, usable hosts and subnet splitting | DevOps Lounge">
 <meta property="og:description" content="Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it. F">
-<meta property="og:url" content="https://lounge.xmoh.dev/tools/cidr/">
-<meta property="og:image" content="https://lounge.xmoh.dev/assets/og/tools-cidr.jpg">
+<meta property="og:url" content="https://sabbagh-moh.github.io/devops-lounge/tools/cidr/">
+<meta property="og:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-cidr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://lounge.xmoh.dev/assets/og/tools-cidr.jpg">
+<meta name="twitter:image" content="https://sabbagh-moh.github.io/devops-lounge/assets/og/tools-cidr.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="/assets/logo-64.png" type="image/png">
-<link rel="apple-touch-icon" href="/assets/logo-180.png">
+<link rel="icon" href="/devops-lounge/assets/logo-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/devops-lounge/assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Alexandria:wght@400;600&display=swap">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/devops-lounge/assets/site.css">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CIDR Calculator","url":"https://lounge.xmoh.dev/tools/cidr/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.","keywords":"cidr calculator, subnet calculator, ip range calculator, vpc subnet planner, netmask calculator"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CIDR Calculator","url":"https://sabbagh-moh.github.io/devops-lounge/tools/cidr/","applicationCategory":"DeveloperApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.","keywords":"cidr calculator, subnet calculator, ip range calculator, vpc subnet planner, netmask calculator"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does /24 mean?","acceptedAnswer":{"@type":"Answer","text":"The first 24 bits are the network, leaving 8 bits, or 256 addresses, for hosts."}},{"@type":"Question","name":"Does it handle IPv6?","acceptedAnswer":{"@type":"Answer","text":"Not yet. It covers IPv4, which is what most subnet planning still uses."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lounge.xmoh.dev/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://lounge.xmoh.dev/tools/"},{"@type":"ListItem","position":3,"name":"CIDR Calculator","item":"https://lounge.xmoh.dev/tools/cidr/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sabbagh-moh.github.io/devops-lounge/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://sabbagh-moh.github.io/devops-lounge/tools/"},{"@type":"ListItem","position":3,"name":"CIDR Calculator","item":"https://sabbagh-moh.github.io/devops-lounge/tools/cidr/"}]}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="/"><img src="/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
-  <nav class="nav-links" aria-label="Main"><a href="/ai/">Resources</a><a href="/tools/" aria-current="page">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a></nav>
+  <a class="brand" href="/devops-lounge/"><img src="/devops-lounge/assets/logo-64.png" width="26" height="26" alt="">DevOps Lounge</a>
+  <nav class="nav-links" aria-label="Main"><a href="/devops-lounge/ai/">Resources</a><a href="/devops-lounge/tools/" aria-current="page">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a></nav>
   <a class="btn btn-primary btn-sm" href="https://discord.gg/XHtBz8rZp5" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join</a>
 </div></header>
 <main>
 
 <div class="wrap">
-  <section class="page-head tool-head"><a class="crumb" href="/tools/">Tools</a><h1 class="title">CIDR and subnet calculator</h1><p class="lede">Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.</p></section>
+  <section class="page-head tool-head"><a class="crumb" href="/devops-lounge/tools/">Tools</a><h1 class="title">CIDR and subnet calculator</h1><p class="lede">Type a range like 10.0.0.0/16. See the network, mask, usable hosts and broadcast, split it into smaller subnets, and check whether an address belongs to it.</p></section>
   
 <div class="tool" id="cidr-tool">
   <label class="field big"><span>IPv4 range</span><input id="cidr-in" value="10.0.0.0/16" spellcheck="false" autocomplete="off"></label>
@@ -57,7 +57,7 @@
   
   <section class="group"><h2>How it works</h2><ul class="steps"><li><b>Usable hosts</b>Every range loses two addresses, the network and the broadcast, except /31 and /32. Cloud providers often reserve a few more in each subnet.</li><li><b>Planning a VPC</b>Start with a /16 and split it into /24s: one per subnet and zone, with room to grow.</li></ul></section>
   <section class="group"><h2>Questions</h2><div class="faq"><details><summary>What does /24 mean?</summary><p>The first 24 bits are the network, leaving 8 bits, or 256 addresses, for hosts.</p></details><details><summary>Does it handle IPv6?</summary><p>Not yet. It covers IPv4, which is what most subnet planning still uses.</p></details></div></section>
-  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/tools/prompt-builder/">Prompt Builder</a><a href="/tools/token-counter/">Token Counter</a><a href="/tools/tool-schema/">AI Tool Schema Builder</a><a href="/tools/mcp-config/">MCP Config Generator</a><a href="/tools/llms-txt/">llms.txt Generator</a><a href="/tools/json-to-types/">JSON to TypeScript</a><a href="/tools/curl-converter/">cURL Converter</a><a href="/tools/diff/">Text Diff</a><a href="/tools/color-contrast/">Color and Contrast</a><a href="/tools/git-commands/">Git Command Finder</a><a href="/tools/cron/">Cron Builder</a><a href="/tools/regex/">Regex Tester</a><a href="/tools/json/">JSON Formatter</a><a href="/tools/jwt/">JWT Decoder</a><a href="/tools/timestamp/">Timestamp Converter</a><a href="/tools/base64/">Base64 and URL Encoder</a><a href="/tools/password/">Password and UUID Generator</a><a href="/tools/chmod/">chmod Calculator</a></nav></section>
+  <section class="group"><h2>More tools</h2><nav class="meta" style="margin:0"><a href="/devops-lounge/tools/prompt-builder/">Prompt Builder</a><a href="/devops-lounge/tools/token-counter/">Token Counter</a><a href="/devops-lounge/tools/tool-schema/">AI Tool Schema Builder</a><a href="/devops-lounge/tools/mcp-config/">MCP Config Generator</a><a href="/devops-lounge/tools/llms-txt/">llms.txt Generator</a><a href="/devops-lounge/tools/json-to-types/">JSON to TypeScript</a><a href="/devops-lounge/tools/curl-converter/">cURL Converter</a><a href="/devops-lounge/tools/diff/">Text Diff</a><a href="/devops-lounge/tools/color-contrast/">Color and Contrast</a><a href="/devops-lounge/tools/git-commands/">Git Command Finder</a><a href="/devops-lounge/tools/cron/">Cron Builder</a><a href="/devops-lounge/tools/regex/">Regex Tester</a><a href="/devops-lounge/tools/json/">JSON Formatter</a><a href="/devops-lounge/tools/jwt/">JWT Decoder</a><a href="/devops-lounge/tools/timestamp/">Timestamp Converter</a><a href="/devops-lounge/tools/base64/">Base64 and URL Encoder</a><a href="/devops-lounge/tools/password/">Password and UUID Generator</a><a href="/devops-lounge/tools/chmod/">chmod Calculator</a></nav></section>
 </div>
 
 <div class="wrap"><section class="final">
@@ -67,13 +67,13 @@
 </main>
 <footer><div class="wrap">
   <p>DevOps Lounge · A free Discord community for developers and DevOps engineers.</p>
-  <nav aria-label="Footer"><a href="/ai/">AI</a><a href="/skills/">Skills</a><a href="/open-source/">Open source</a><a href="/learn/">Learn</a><a href="/toolbox/">Toolbox</a><a href="/tools/">Tools</a><a href="/tracks/">Tracks</a><a href="/tips/">Tips</a><a href="/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/llms.txt">llms.txt</a></nav>
+  <nav aria-label="Footer"><a href="/devops-lounge/ai/">AI</a><a href="/devops-lounge/skills/">Skills</a><a href="/devops-lounge/open-source/">Open source</a><a href="/devops-lounge/learn/">Learn</a><a href="/devops-lounge/toolbox/">Toolbox</a><a href="/devops-lounge/tools/">Tools</a><a href="/devops-lounge/tracks/">Tracks</a><a href="/devops-lounge/tips/">Tips</a><a href="/devops-lounge/ar/" lang="ar" onclick="try{localStorage.removeItem('lang')}catch(e){}">العربية</a><a href="/devops-lounge/llms.txt">llms.txt</a></nav>
 </div></footer>
-<script src="/assets/tools/dev3.js" defer></script>
-<script src="/assets/tools/kit.js" defer></script>
+<script src="/devops-lounge/assets/tools/dev3.js" defer></script>
+<script src="/devops-lounge/assets/tools/kit.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="/assets/motion.js" defer></script>
-<script src="/assets/live.js" defer></script>
+<script src="/devops-lounge/assets/motion.js" defer></script>
+<script src="/devops-lounge/assets/live.js" defer></script>
 </body>
 </html>
