@@ -1,0 +1,56 @@
+name: verify-sti2d-nwa
+
+on:
+  push:
+    branches:
+      - sti2d-os-native-build
+    paths:
+      - ".sti2d-build/**"
+      - ".github/workflows/verify-sti2d-nwa.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi make unzip python3 nodejs npm
+
+      - name: Decode source
+        run: |
+          mkdir -p /tmp/sti2d
+          base64 -d .sti2d-build/sti2d_os_native_source.zip.b64 > /tmp/sti2d/source.zip
+          unzip -q /tmp/sti2d/source.zip -d /tmp/sti2d/src
+
+      - name: Checkout Epsilon
+        uses: actions/checkout@v4
+        with:
+          repository: numworks/epsilon
+          path: epsilon
+          ref: master
+
+      - name: Install source
+        run: |
+          rm -rf epsilon/epsilon/external_apps/sti2d_os
+          cp -R /tmp/sti2d/src/sti2d_os_native epsilon/epsilon/external_apps/sti2d_os
+
+      - name: Build NWA
+        working-directory: epsilon/epsilon/external_apps/sti2d_os
+        run: make PLATFORM=device build V=1
+
+      - name: Convert exactly like installer
+        working-directory: epsilon/epsilon/external_apps/sti2d_os
+        run: |
+          npx --yes -- nwlink@1.0.0 nwa-bin output/device/sti2d_os.nwa output/device/sti2d_os.bin
+          ls -lh output/device/sti2d_os.nwa output/device/sti2d_os.bin
+
+      - name: Upload verified files
+        uses: actions/upload-artifact@v4
+        with:
+          name: STI2D-OS-verified
+          path: |
+            epsilon/epsilon/external_apps/sti2d_os/output/device/sti2d_os.nwa
+            epsilon/epsilon/external_apps/sti2d_os/output/device/sti2d_os.bin
