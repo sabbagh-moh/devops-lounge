@@ -24,29 +24,9 @@ jobs:
           base64 -d .sti2d-build/sti2d_os_native_source.zip.b64 > /tmp/sti2d/source.zip
           unzip -q /tmp/sti2d/source.zip -d /tmp/sti2d/src
 
-      - name: Patch math calls and syscall stubs
+      - name: Patch unsupported math calls
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('/tmp/sti2d/src/sti2d_os_native/src/main.c')
-          s = p.read_text()
-          s = s.replace('pow(', 'sti_pow(').replace('sqrt(', 'sti_sqrt(').replace('fmax(', 'sti_fmax(')
-          helpers = r'''
-static double sti_fmax(double a,double b){return a>b?a:b;}
-static double sti_sqrt(double x){
-  if(x<=0.0) return 0.0;
-  double g=x>1.0?x:1.0;
-  for(int i=0;i<18;i++) g=0.5*(g+x/g);
-  return g;
-}
-static double sti_pow(double b,double e){
-  int n=(int)e;
-  if(e<0){ n=-n; double r=1.0; for(int i=0;i<n;i++) r*=b; return r==0.0?0.0:1.0/r; }
-  double r=1.0; for(int i=0;i<n;i++) r*=b; return r;
-}
-'''
-          p.write_text(helpers + '\n' + s)
-          PY
+          python3 -c "from pathlib import Path; p=Path('/tmp/sti2d/src/sti2d_os_native/src/main.c'); s=p.read_text(); s=s.replace('pow(', 'sti_pow(').replace('sqrt(', 'sti_sqrt(').replace('fmax(', 'sti_fmax('); h='static double sti_fmax(double a,double b){return a>b?a:b;}\\nstatic double sti_sqrt(double x){if(x<=0.0)return 0.0;double g=x>1.0?x:1.0;for(int i=0;i<18;i++)g=0.5*(g+x/g);return g;}\\nstatic double sti_pow(double b,double e){int n=(int)e;if(e<0){n=-n;double r=1.0;for(int i=0;i<n;i++)r*=b;return r==0.0?0.0:1.0/r;}double r=1.0;for(int i=0;i<n;i++)r*=b;return r;}\\n'; p.write_text(h+s)"
           echo 'LDFLAGS += --specs=nosys.specs' >> /tmp/sti2d/src/sti2d_os_native/Makefile
 
       - name: Checkout Epsilon
