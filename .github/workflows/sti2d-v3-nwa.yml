@@ -27,16 +27,21 @@ jobs:
           git clone --depth 1 https://github.com/numworks/epsilon.git /tmp/epsilon
           APP=/tmp/epsilon/epsilon/external_apps/sti2d_os
           mkdir -p "$APP/src"
-          base64 -d .sti2d-v3/main.c.gz.b64 | gzip -d > "$APP/src/main.c"
+
+          cat             .sti2d-v3/chunks/00a.txt             .sti2d-v3/chunks/00b.txt             .sti2d-v3/chunks/00c.txt             .sti2d-v3/chunks/01.txt             .sti2d-v3/chunks/02.txt             .sti2d-v3/chunks/03.txt             .sti2d-v3/chunks/04.txt > /tmp/main.c.gz.b64
+
+          test "$(wc -c < /tmp/main.c.gz.b64)" -eq 12712
+          base64 -d /tmp/main.c.gz.b64 | gzip -d > "$APP/src/main.c"
+          test "$(wc -c < "$APP/src/main.c")" -eq 29952
 
           cat > "$APP/Makefile" <<'EOF'
-          APP_NAME = sti2d_os
-          APP_ICON = src/icon.png
-          OUTPUT_DIR = output
-          SOURCES = $(addprefix src/, main.c)
-          include ../build/external_app.mak
-          LDFLAGS += -lm
-          EOF
+APP_NAME = sti2d_os
+APP_ICON = src/icon.png
+OUTPUT_DIR = output
+SOURCES = $(addprefix src/, main.c)
+include ../build/external_app.mak
+LDFLAGS += -lm
+EOF
 
           python3 - <<'PY'
           import struct,zlib
