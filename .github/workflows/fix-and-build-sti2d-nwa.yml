@@ -6,6 +6,7 @@ on:
       - sti2d-os-native-build
     paths:
       - ".github/workflows/fix-and-build-sti2d-nwa.yml"
+      - ".sti2d-build/**"
 
 jobs:
   build:
