@@ -17,23 +17,60 @@ jobs:
       - name: Install ARM toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-arm-none-eabi make python3 unzip
+          sudo apt-get install -y gcc-arm-none-eabi make python3
+          node --version
+          npm --version
 
       - name: Prepare source
         run: |
-          mkdir -p /tmp/sti2d
-          base64 -d .sti2d-v3/sti2d_os_native_v3_source.zip.b64 > /tmp/sti2d/source.zip
-          unzip -q /tmp/sti2d/source.zip -d /tmp/sti2d/src
+          rm -rf /tmp/epsilon
           git clone --depth 1 https://github.com/numworks/epsilon.git /tmp/epsilon
-          rm -rf /tmp/epsilon/epsilon/external_apps/sti2d_os
-          cp -R /tmp/sti2d/src/sti2d_os_native_v3 /tmp/epsilon/epsilon/external_apps/sti2d_os
+          APP=/tmp/epsilon/epsilon/external_apps/sti2d_os
+          mkdir -p "$APP/src"
+          base64 -d .sti2d-v3/main.c.gz.b64 | gzip -d > "$APP/src/main.c"
 
-      - name: Generate icon and build NWA
+          cat > "$APP/Makefile" <<'EOF'
+          APP_NAME = sti2d_os
+          APP_ICON = src/icon.png
+          OUTPUT_DIR = output
+          SOURCES = $(addprefix src/, main.c)
+          include ../build/external_app.mak
+          LDFLAGS += -lm
+          EOF
+
+          python3 - <<'PY'
+          import struct,zlib
+          out='/tmp/epsilon/epsilon/external_apps/sti2d_os/src/icon.png'
+          w,h=55,56
+          rows=[]
+          for y in range(h):
+              row=bytearray([0])
+              for x in range(w):
+                  dx=x-27; dy=y-28
+                  if dx*dx+dy*dy<24*24:
+                      t=(x+y)/(w+h)
+                      r=int(80+80*t); g=int(70+70*t); b=int(230+20*t)
+                  else:
+                      r=g=b=0
+                  row+=bytes((r,g,b,255))
+              rows.append(bytes(row))
+          raw=b''.join(rows)
+          def chunk(t,d):
+              return struct.pack('>I',len(d))+t+d+struct.pack('>I',zlib.crc32(t+d)&0xffffffff)
+          png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(raw,9))+chunk(b'IEND',b'')
+          open(out,'wb').write(png)
+          PY
+
+          wc -c "$APP/src/main.c"
+          file "$APP/src/icon.png"
+
+      - name: Build NWA
         run: |
           cd /tmp/epsilon/epsilon/external_apps/sti2d_os
-          python3 make_icon.py src/icon.png
           make PLATFORM=device build
           cp output/device/sti2d_os.nwa "$GITHUB_WORKSPACE/STI2D_OS_V3.nwa"
+          file "$GITHUB_WORKSPACE/STI2D_OS_V3.nwa"
+          ls -lh "$GITHUB_WORKSPACE/STI2D_OS_V3.nwa"
 
       - name: Upload NWA
         uses: actions/upload-artifact@v4
