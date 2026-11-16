@@ -1,0 +1,60 @@
+name: Build STI2D OS V4 NWA
+
+on:
+  push:
+    branches:
+      - sti2d-os-native-build
+    paths:
+      - ".sti2d-v4/**"
+      - ".github/workflows/sti2d-v4-nwa.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ARM compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi make python3
+
+      - name: Assemble and validate native source
+        run: |
+          git clone --depth 1 https://github.com/numworks/epsilon.git /tmp/epsilon
+          APP=/tmp/epsilon/epsilon/external_apps/sti2d_os
+          mkdir -p "$APP/src"
+
+          cat .sti2d-v3/chunks/00a.txt .sti2d-v3/chunks/00b.txt .sti2d-v3/chunks/00c.txt .sti2d-v3/chunks/01.txt .sti2d-v3/chunks/02.txt .sti2d-v3/chunks/03.txt .sti2d-v3/chunks/04.txt > /tmp/main-v3.gz.b64
+          test "$(wc -c < /tmp/main-v3.gz.b64)" -eq 12712
+          base64 -d /tmp/main-v3.gz.b64 | gzip -d > "$APP/src/main.c"
+          test "$(wc -c < "$APP/src/main.c")" -eq 29952
+
+          test "$(wc -c < .sti2d-v4/math_solver.gz.b64)" -eq 10148
+          base64 -d .sti2d-v4/math_solver.gz.b64 | gzip -d > "$APP/src/math_solver.c"
+          printf '%s  %s\n' 'b496122ffb70d2dad9b03b1a6b546f0352aabbf29e7c2d6a7a201d9376bc58f7' "$APP/src/math_solver.c" | sha256sum -c -
+          python3 .sti2d-v4/patch.py "$APP/src/main.c"
+
+          printf '%s\n' \
+            'APP_NAME = sti2d_os' \
+            'APP_ICON = src/icon.png' \
+            'OUTPUT_DIR = output' \
+            'SOURCES = $(addprefix src/, main.c)' \
+            'include ../build/external_app.mak' \
+            'LDFLAGS += -lm' > "$APP/Makefile"
+
+      - name: Compile NWA using NumWorks EADK
+        run: |
+          cd /tmp/epsilon/epsilon/external_apps/sti2d_os
+          make PLATFORM=device build
+          find output -name '*.nwa' -print
+          cp output/device/sti2d_os.nwa "$GITHUB_WORKSPACE/STI2D_OS_V4.nwa"
+          file "$GITHUB_WORKSPACE/STI2D_OS_V4.nwa"
+          ls -lh "$GITHUB_WORKSPACE/STI2D_OS_V4.nwa"
+
+      - name: Upload compiled app
+        uses: actions/upload-artifact@v4
+        with:
+          name: STI2D_OS_V4_NWA
+          path: STI2D_OS_V4.nwa
+          if-no-files-found: error
