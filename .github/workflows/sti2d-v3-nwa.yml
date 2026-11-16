@@ -28,43 +28,20 @@ jobs:
           APP=/tmp/epsilon/epsilon/external_apps/sti2d_os
           mkdir -p "$APP/src"
 
-          cat             .sti2d-v3/chunks/00a.txt             .sti2d-v3/chunks/00b.txt             .sti2d-v3/chunks/00c.txt             .sti2d-v3/chunks/01.txt             .sti2d-v3/chunks/02.txt             .sti2d-v3/chunks/03.txt             .sti2d-v3/chunks/04.txt > /tmp/main.c.gz.b64
-
+          cat .sti2d-v3/chunks/00a.txt .sti2d-v3/chunks/00b.txt .sti2d-v3/chunks/00c.txt .sti2d-v3/chunks/01.txt .sti2d-v3/chunks/02.txt .sti2d-v3/chunks/03.txt .sti2d-v3/chunks/04.txt > /tmp/main.c.gz.b64
           test "$(wc -c < /tmp/main.c.gz.b64)" -eq 12712
           base64 -d /tmp/main.c.gz.b64 | gzip -d > "$APP/src/main.c"
           test "$(wc -c < "$APP/src/main.c")" -eq 29952
 
-          cat > "$APP/Makefile" <<'EOF'
-APP_NAME = sti2d_os
-APP_ICON = src/icon.png
-OUTPUT_DIR = output
-SOURCES = $(addprefix src/, main.c)
-include ../build/external_app.mak
-LDFLAGS += -lm
-EOF
+          printf '%s\n' \
+            'APP_NAME = sti2d_os' \
+            'APP_ICON = src/icon.png' \
+            'OUTPUT_DIR = output' \
+            'SOURCES = $(addprefix src/, main.c)' \
+            'include ../build/external_app.mak' \
+            'LDFLAGS += -lm' > "$APP/Makefile"
 
-          python3 - <<'PY'
-          import struct,zlib
-          out='/tmp/epsilon/epsilon/external_apps/sti2d_os/src/icon.png'
-          w,h=55,56
-          rows=[]
-          for y in range(h):
-              row=bytearray([0])
-              for x in range(w):
-                  dx=x-27; dy=y-28
-                  if dx*dx+dy*dy<24*24:
-                      t=(x+y)/(w+h)
-                      r=int(80+80*t); g=int(70+70*t); b=int(230+20*t)
-                  else:
-                      r=g=b=0
-                  row+=bytes((r,g,b,255))
-              rows.append(bytes(row))
-          raw=b''.join(rows)
-          def chunk(t,d):
-              return struct.pack('>I',len(d))+t+d+struct.pack('>I',zlib.crc32(t+d)&0xffffffff)
-          png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(raw,9))+chunk(b'IEND',b'')
-          open(out,'wb').write(png)
-          PY
+          python3 -c "import base64;open('$APP/src/icon.png','wb').write(base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAADcAAAA4CAYAAABZjWCTAAABm0lEQVR42u3ax1aDUBSFYd7REnt6772rsWuMPqcQAkYzPl4WUzUHQuDuLAb/A3wjytmKoii0w4W4EBfi0HGJQ5WSEZVSEY1SRxqlRZljjbIndrnTOeXP7ArncyqKpMbFD1RKWLmAlS50KkV1KosqMV0eXGxf9RRWietUFdUSi+Bw0b2PrcLqSbtGauEvzk9YU9RKG/7ggoC1Mga1M8Z2cUHCOllRztgOTgZYV9TLm97iZIL1rQqmNzgZYYOiScOiuRlOZtiwZNKo/OkeJzts7BaHALus2DnGocCuqg5xSLDr2pImIjYODTapO8GBwW4aTBwi7NaquVyPQ4Xdtb7W41Bh9ywcKOyhzcChwlg4VNhjh4FDhT11v3k4RBgLhwp77jFwqLCXPhOHCJtycKiw6YCBQ4W9Dla8r4Idgf2OQ4PNhg5waLDZaOXsH8oOwP7GocDe3OCswGH/42SHvY9Xm90KgGG8Kw8ojH+fA4Q5u6yCwZzfxIFg7tYMIDD3OxQA2OYLogAf0P5tv3x6Vwx+tefh91i4twxxIQ6oH+81nxCIwrRuAAAAAElFTkSuQmCC'))"
 
           wc -c "$APP/src/main.c"
           file "$APP/src/icon.png"
