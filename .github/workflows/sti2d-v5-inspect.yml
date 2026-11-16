@@ -1,0 +1,22 @@
+name: Inspect V5 lesson practice module
+on:
+  push:
+    branches: [sti2d-os-native-build]
+    paths:
+      - ".github/workflows/sti2d-v5-inspect.yml"
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode practice source
+        run: |
+          mkdir -p output
+          base64 -d .sti2d-v5/exam_practice.xz.b64 | xz -d > output/exam_practice.c
+          wc -c output/exam_practice.c
+          sha256sum output/exam_practice.c
+      - name: Upload source
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-practice-source
+          path: output/exam_practice.c
