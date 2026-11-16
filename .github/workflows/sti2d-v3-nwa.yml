@@ -1,0 +1,43 @@
+name: Build STI2D OS V3 NWA
+
+on:
+  push:
+    branches:
+      - sti2d-os-native-build
+    paths:
+      - ".sti2d-v3/**"
+      - ".github/workflows/sti2d-v3-nwa.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ARM toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi make python3 unzip
+
+      - name: Prepare source
+        run: |
+          mkdir -p /tmp/sti2d
+          base64 -d .sti2d-v3/sti2d_os_native_v3_source.zip.b64 > /tmp/sti2d/source.zip
+          unzip -q /tmp/sti2d/source.zip -d /tmp/sti2d/src
+          git clone --depth 1 https://github.com/numworks/epsilon.git /tmp/epsilon
+          rm -rf /tmp/epsilon/epsilon/external_apps/sti2d_os
+          cp -R /tmp/sti2d/src/sti2d_os_native_v3 /tmp/epsilon/epsilon/external_apps/sti2d_os
+
+      - name: Generate icon and build NWA
+        run: |
+          cd /tmp/epsilon/epsilon/external_apps/sti2d_os
+          python3 make_icon.py src/icon.png
+          make PLATFORM=device build
+          cp output/device/sti2d_os.nwa "$GITHUB_WORKSPACE/STI2D_OS_V3.nwa"
+
+      - name: Upload NWA
+        uses: actions/upload-artifact@v4
+        with:
+          name: STI2D_OS_V3_NWA
+          path: STI2D_OS_V3.nwa
+          if-no-files-found: error
