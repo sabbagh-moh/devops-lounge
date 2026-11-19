@@ -16,7 +16,7 @@ jobs:
       - name: Install native ARM compiler
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-arm-none-eabi make python3 xz-utils
+          sudo apt-get install -y --no-install-recommends gcc-arm-none-eabi libnewlib-arm-none-eabi libnewlib-dev make python3 xz-utils
       - name: Assemble validated modules
         run: |
           git clone --depth 1 https://github.com/numworks/epsilon.git /tmp/epsilon
