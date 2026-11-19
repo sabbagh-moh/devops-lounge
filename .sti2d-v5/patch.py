@@ -116,6 +116,7 @@ src=src[:start]+"""static void math_menu(void) {
 }
 """ + src[end:]
 
+src=src.replace("static void physics_menu(void) {","static void converter(void);\nstatic void physics_menu(void) {",1)
 start=src.index('static void physics_menu(void) {')
 end=src.index('\n/* ---------------- CONVERTER ---------------- */', start)
 src=src[:start]+"""static void physics_menu(void) {
